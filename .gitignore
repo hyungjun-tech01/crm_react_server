@@ -1,0 +1,7 @@
+node_modules/
+uploads/*
+thumbnails/*
+temp_output/
+
+.prettierrcv
+.prettierrc
