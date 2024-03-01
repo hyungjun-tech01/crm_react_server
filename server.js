@@ -187,13 +187,44 @@ app.post('/login', async(req, res) => {
 
     const {email, password} = req.body;
     try{
-        const users = await pool.query('SELECT * FROM user_account WHERE email = $1', [email]);
+        const users = await pool.query(`
+        SELECT t.id as "userId", 
+        t.username as "userName", 
+        t.password as "password",
+        t.name as "name",
+        t.email as "email", 
+        t.is_admin as "isAdmin", 
+        t.phone as "phone", 
+        t.organization  as "organization",
+        t.subscribe_to_own_cards  as "subscribeToOwnCards", 
+        t.created_at as "createdAt",
+        t.updated_at as "updatedAt",
+        t.deleted_at as "deletedAt", 
+        t.language as "language",
+        t.password_changed_at as "passwordChangeAt",
+        t.avatar as "avatar"
+        FROM user_account t WHERE t.email = $1`, [email]);
         if(!users.rows.length) return res.json({message:'Invalid email or password'});
 
         const success = await bcrypt.compare(password, users.rows[0].password);
         const token = jwt.sign({email}, 'secret', {expiresIn:'1hr'});
         if(success){
-            res.json({'userId' : users.rows[0].id,'userName' : users.rows[0].username, token});
+            res.json({'userId' : users.rows[0].id,
+                      'userName' : users.rows[0].username, 
+                      'name': users.rows[0].name, 
+                      'email': users.rows[0].email, 
+                      'isAdmin': users.rows[0].isAdmin, 
+                      'phone': users.rows[0].phone,
+                      'organization': users.rows[0].organization, 
+                      'subscribeToOwnCards': users.rows[0].subscribeToOwnCards, 
+                      'createdAt': users.rows[0].createdAt, 
+                      'updatedAt': users.rows[0].updatedAt, 
+                      'deletedAt': users.rows[0].deletedAt, 
+                      'language': users.rows[0].language,
+                      'passwordChangeAt': users.rows[0].passwordChangeAt, 
+                      'avatar': users.rows[0].avatar,
+                      token});
+            console.log("success");
         }else{
             console.log("fail");
             res.json({message:"Invalid email or password"});
