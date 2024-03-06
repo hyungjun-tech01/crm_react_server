@@ -196,6 +196,24 @@ app.get('/companies', async(req, res) => {
     }
 });
 
+app.get('/leads', async(req, res) => {
+    try{
+        console.log("[Get] leads");
+        const allLeadsResult = await pool.query(`
+            select * from tbl_leads_info`);
+
+        if(allLeadsResult.rows.length > 0) {
+            const allLeads = allLeadsResult.rows;
+            res.json(allLeads);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
 /////////////////////////////////////////////////////////////////////
 
 //login
