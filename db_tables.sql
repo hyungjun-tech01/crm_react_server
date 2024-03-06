@@ -141,6 +141,23 @@ CREATE TABLE tbl_user_info (
   department varchar(50), 
   position varchar(50), 
   email varchar(50), 
-  group text, 
-  memo text, 
+  group_ text, 
+  memo text
   );
+
+copy tbl_user_info(
+user_id,
+user_name,
+password,	
+mobile_number,
+phone_number,
+department,
+position,
+email,
+group_,
+memo
+)
+FROM 'd:\user_info.csv' csv;
+
+delete from tbl_user_info t
+where t.user_id = '﻿user_id';
