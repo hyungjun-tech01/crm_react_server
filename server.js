@@ -178,7 +178,41 @@ app.get('/', (req, res)=>{
 });
 
 ////////////////// crm schema query, modify /////////////////////////
+app.get('/companies', async(req, res) => {
+    try{
+        console.log("[Get] Companies");
+        const allCompaniesResult = await pool.query(`
+            select * from tbl_company_info`);
 
+        if(allCompaniesResult.rows.length > 0) {
+            const allCompanies = allCompaniesResult.rows;
+            res.json(allCompanies);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
+app.get('/leads', async(req, res) => {
+    try{
+        console.log("[Get] leads");
+        const allLeadsResult = await pool.query(`
+            select * from tbl_leads_info`);
+
+        if(allLeadsResult.rows.length > 0) {
+            const allLeads = allLeadsResult.rows;
+            res.json(allLeads);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
 
 /////////////////////////////////////////////////////////////////////
 
