@@ -64,7 +64,9 @@ application_engineer,
 region)
  FROM 'd:\company_info.csv' csv;
 
-
+-- 헤더 정보 삭제 
+delete from tbl_company_info t 
+where t.company_code = '﻿company_code';
 
 drop table tbl_leads_info;
 
@@ -123,6 +125,10 @@ recent_user,
 application_engineer,
 status)
 FROM 'd:\lead_info.csv' csv;
+
+-- 헤더 정보 삭제 
+delete from tbl_leads_info t
+where t.leads_code = '﻿leads_code';
 
 drop table invoce; 
 drop table company;
