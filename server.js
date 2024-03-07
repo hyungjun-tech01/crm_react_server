@@ -222,22 +222,17 @@ app.post('/login', async(req, res) => {
     const {email, password} = req.body;
     try{
         const users = await pool.query(`
-        SELECT t.id as "userId", 
-        t.username as "userName", 
+        SELECT t.user_id as "userId", 
+        t.user_name as "userName", 
         t.password as "password",
-        t.name as "name",
-        t.email as "email", 
-        t.is_admin as "isAdmin", 
-        t.phone as "phone", 
-        t.organization  as "organization",
-        t.subscribe_to_own_cards  as "subscribeToOwnCards", 
-        t.created_at as "createdAt",
-        t.updated_at as "updatedAt",
-        t.deleted_at as "deletedAt", 
-        t.language as "language",
-        t.password_changed_at as "passwordChangeAt",
-        t.avatar as "avatar"
-        FROM user_account t WHERE t.email = $1`, [email]);
+		t.mobile_number as "mobileNumber",
+        t.phone_number as "phoneNuber",
+        t.department as "department", 
+        t.position as "position", 
+        t.email as "phone", 
+        t.group_  as "group_",
+        t.memo  as "memo"
+        FROM tbl_user_info t WHERE t.user_id = $1`, [email]);
         if(!users.rows.length){ 
             console.log("fail");
             return res.json({message:"Invalid email or password"});
@@ -246,20 +241,16 @@ app.post('/login', async(req, res) => {
         const success = await bcrypt.compare(password, users.rows[0].password);
         const token = jwt.sign({email}, 'secret', {expiresIn:'1hr'});
         if(success){
-            res.json({userId : users.rows[0].id,
-                      userName : users.rows[0].username, 
-                      name: users.rows[0].name, 
+            res.json({userId : users.rows[0].userId,
+                      userName : users.rows[0].userName, 
+                      mobileNumber: users.rows[0].mobileNumber, 
                       email: users.rows[0].email, 
-                      isAdmin: users.rows[0].isAdmin, 
-                      phone: users.rows[0].phone,
-                      organization: users.rows[0].organization, 
-                      subscribeToOwnCards: users.rows[0].subscribeToOwnCards, 
-                      createdAt: users.rows[0].createdAt, 
-                      updatedAt: users.rows[0].updatedAt, 
-                      deletedAt: users.rows[0].deletedAt, 
-                      language: users.rows[0].language,
-                      passwordChangeAt: users.rows[0].passwordChangeAt, 
-                      avatar: users.rows[0].avatar,
+                      phoneNuber: users.rows[0].phoneNuber, 
+                      department: users.rows[0].department,
+                      position: users.rows[0].position, 
+                      email: users.rows[0].email, 
+                      group_: users.rows[0].group_, 
+                      memo: users.rows[0].memo,
                       token: token,
                       message:"success"});
             console.log("success", token);

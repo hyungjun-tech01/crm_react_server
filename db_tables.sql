@@ -141,7 +141,7 @@ drop table tbl_user_info;
 CREATE TABLE tbl_user_info (
   user_id varchar(50) PRIMARY KEY, 
   user_name varchar(50), 
-  password varchar(50), 
+  password varchar(1000), 
   mobile_number varchar(50), 
   phone_number varchar(50), 
   department varchar(50), 
@@ -167,3 +167,8 @@ FROM 'd:\user_info.csv' csv;
 
 delete from tbl_user_info t
 where t.user_id = '﻿user_id';
+
+-- 일단 admin user 만 password demo로 변경 
+		update tbl_user_info t 
+		set t.password = '$2b$10$p2rkmlGUUc/NvCIKeAQ7E.iQJ4gJEHelofarBvm/UROAu8lekcJUy'
+		where t.user_id = 'admin';
