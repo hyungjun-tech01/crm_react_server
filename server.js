@@ -355,6 +355,49 @@ app.post('/signup', async(req, res) => {
     }
 });
 
+// password hash처리 임시 
+app.get('/passHash', async(req, res) => {
+    console.log('passHash');
+    const salt = bcrypt.genSaltSync(10);
+    //  const hashPassword = bcrypt.hashSync(password, salt);
+      const hashPassword = bcrypt.hashSync('demo', salt);
+    try{
+        const users = await pool.query(`
+        SELECT t.user_id as "userId", 
+        t.user_name as "userName", 
+        t.password as "password",
+		t.mobile_number as "mobileNumber",
+        t.phone_number as "phoneNuber",
+        t.department as "department", 
+        t.position as "position", 
+        t.email as "phone", 
+        t.group_  as "group_",
+        t.memo  as "memo"
+        FROM tbl_user_info t `, []);
+
+        let user;
+        if(users.rows.length > 0 ) {
+            user = users.rows;
+            for (const c of user) {
+                const response = await pool.query(`
+                    update tbl_user_info 
+                    set password = $1 
+                    where user_id = $2`,
+                [hashPassword,c.userId]);
+                console.log(c.userId, c.password);
+            }
+        }
+    }catch{
+
+    }
+
+  //  const salt = bcrypt.genSaltSync(10);
+  //  const hashPassword = bcrypt.hashSync(password, salt);
+  //  const hashPassword = bcrypt.hashSync('demo', salt);
+    console.log('passHash');
+    res.json({message:'passHash'});
+});
+
 app.listen(PORT, ()=> {
     console.log(`Server running on PORT ${PORT}`);
 });
