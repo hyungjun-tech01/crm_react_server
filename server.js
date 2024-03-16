@@ -226,10 +226,10 @@ app.post('/login', async(req, res) => {
         t.user_name as "userName", 
         t.password as "password",
 		t.mobile_number as "mobileNumber",
-        t.phone_number as "phoneNuber",
+        t.phone_number as "phoneNumber",
         t.department as "department", 
         t.position as "position", 
-        t.email as "phone", 
+        t.email as "email", 
         t.group_  as "group_",
         t.memo  as "memo"
         FROM tbl_user_info t WHERE t.user_id = $1`, [email]);
@@ -244,8 +244,7 @@ app.post('/login', async(req, res) => {
             res.json({userId : users.rows[0].userId,
                       userName : users.rows[0].userName, 
                       mobileNumber: users.rows[0].mobileNumber, 
-                      email: users.rows[0].email, 
-                      phoneNuber: users.rows[0].phoneNuber, 
+                      phoneNumber: users.rows[0].phoneNumber, 
                       department: users.rows[0].department,
                       position: users.rows[0].position, 
                       email: users.rows[0].email, 
@@ -253,7 +252,7 @@ app.post('/login', async(req, res) => {
                       memo: users.rows[0].memo,
                       token: token,
                       message:"success"});
-            console.log("success", token);
+            console.log("success", users.rows[0]);
         }else{
             console.log("fail");
             res.json({message:"Invalid email or password"});
@@ -271,24 +270,18 @@ app.post('/getuser', async(req, res) => {
     const {userId} = req.body;
     try{
         const users = await pool.query(`
-        SELECT t.id as "userId", 
-        t.username as "userName", 
-        t.name as "name",
+        SELECT t.user_id as "userId", 
+        t.user_name as "userName", 
+		t.mobile_number as "mobileNumber",
+        t.phone_number as "phoneNumber",
+        t.department as "department", 
+        t.position as "position", 
         t.email as "email", 
-        t.is_admin as "isAdmin", 
-        t.phone as "phone", 
-        t.organization  as "organization",
-        t.subscribe_to_own_cards  as "subscribeToOwnCards", 
-        t.created_at as "createdAt",
-        t.updated_at as "updatedAt",
-        t.deleted_at as "deletedAt", 
-        t.language as "language",
-        t.password_changed_at as "passwordChangeAt",
-        t.avatar as "avatar"
-        FROM user_account t WHERE t.id = $1`, [userId]);
+        t.group_  as "group_",
+        t.memo  as "memo"
+        FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length) 
-            return res.json({detail:'User does not exist'});
-
+            return res.json({message:'User does not exist'});
 
         res.json(users.rows[0]); // 결과 리턴을 해 줌 .
         res.end();
