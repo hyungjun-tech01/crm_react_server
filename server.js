@@ -309,6 +309,95 @@ app.post('/modifyCompany', async(req, res) => {
     }
 });
 
+
+//create/update company 
+app.post('/modifyLead', async(req, res) => {
+    const {
+        action_type                ,   
+        leads_code                 ,   
+        company_code                ,                                                                 
+        leads_index                 ,                                                
+        company_index               ,
+        lead_number                 ,
+        group_                      ,
+        sales_resource              ,
+        region                      ,
+        company_name                ,
+        company_zip_code            ,
+        company_address             ,
+        company_phone_number        ,
+        company_fax_number          ,
+        leads_name                  ,
+        is_keyman                   ,
+        department                  ,
+        position                    ,
+        mobile_number               ,
+        company_name_en             ,
+        email                       ,
+        homepage                    ,
+        modify_user                 ,
+        counter                     ,
+        application_engineer        ,
+        status                      
+                 } = req.body;
+    try{
+        const response = await pool.query(`call p_modify_lead_info($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 
+                                           $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, 
+                                           $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
+                                           $31)`,
+        [action_type                ,   
+            leads_code                 ,   
+            company_code                ,                                                                 
+            leads_index                 ,                                                
+            company_index               ,
+            lead_number                 ,
+            group_                      ,
+            sales_resource              ,
+            region                      ,
+            company_name                ,
+            company_zip_code            ,
+            company_address             ,
+            company_phone_number        ,
+            company_fax_number          ,
+            leads_name                  ,
+            is_keyman                   ,
+            department                  ,
+            position                    ,
+            mobile_number               ,
+            company_name_en             ,
+            email                       ,
+            homepage                    ,
+            modify_user                 ,
+            counter                     ,
+            application_engineer        ,
+            status                      ,
+            null,
+            null,
+            null,
+            null,
+            null
+     ]);
+
+     const out_leads_code = response.rows[0].x_leads_code;
+     const out_create_user = response.rows[0].x_create_user;
+     const out_create_date = response.rows[0].x_create_date;
+     const out_modify_date = response.rows[0].x_modify_date;
+     const out_recent_user = response.rows[0].x_recent_user;
+     
+    res.json({ out_leads_code: out_leads_code,  out_create_user:out_create_user, 
+        out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+
+    console.log({ out_leads_code: out_leads_code,  out_create_user:out_create_user, 
+            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+
+        res.end();
+    }catch(err){
+        console.error(err);
+        res.json({message:err});
+        res.end();
+    }
+});
+
 /////////////////////////////////////////////////////////////////////
 
 //login

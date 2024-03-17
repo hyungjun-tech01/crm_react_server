@@ -71,7 +71,7 @@ where t.company_code = '﻿company_code';
 drop table tbl_leads_info;
 
 CREATE TABLE tbl_leads_info(                                             
- leads_code              varchar(32)   PRIMARY KEY,
+leads_code              varchar(32)   PRIMARY KEY,
 company_code            varchar(32) ,
 leads_index             integer     ,
 company_index           integer     ,

@@ -24,7 +24,7 @@ i_company_fax_number         in text,
 i_homepage                   in text,
 i_memo                       in text,
 i_modify_user                in text,
-i_counter                    in text,
+i_counter                    in integer,
 i_account_code               in text,
 i_bank_name                  in text,
 i_account_owner              in text,
@@ -116,7 +116,7 @@ BEGIN
         now()                       ,
         now()                       ,
         i_modify_user               ,
-        i_counter::integer          ,
+        i_counter                   ,
         i_account_code              ,
         i_bank_name                 ,
         i_account_owner             ,
@@ -156,9 +156,9 @@ BEGIN
            region                 =  COALESCE( i_region, region)       
        where company_code = i_company_code;
 
-       if i_counter != '0' then
+       if i_counter != 0 then
           update tbl_company_info
-          set counter = i_counter::integer
+          set counter = i_counter
           where company_code = i_company_code;
        end if;
 
@@ -219,7 +219,7 @@ null,  -- i_closure_date               in text,
 'http://fablast.com/', -- i_homepage                   in text,
 '24.02.14 MKT 리드/3개 업체 비교 견적 중 >> OCT 리스트 확인 됨', -- i_memo                       in text,
 'admin', -- i_modify_user                in text,
-'10000', -- i_counter                    in text,
+10000, -- i_counter                    in text,
 '551101-01-279278', -- i_account_code               in text,
 '국민은행', -- i_bank_name                  in text,
 '여혜란(대신테크)', -- i_account_owner              in text,
@@ -257,7 +257,7 @@ null,  -- i_closure_date               in text,
 'http://fablast.com/', -- i_homepage                   in text,
 '24.02.14 MKT 리드/3개 업체 비교 견적 중 >> OCT 리스트 확인 됨', -- i_memo                       in text,
 'admin', -- i_modify_user                in text,
-'10000', -- i_counter                    in text,
+10000, -- i_counter                    in text,
 '551101-01-279278', -- i_account_code               in text,
 '국민은행', -- i_bank_name                  in text,
 '여혜란(대신테크)', -- i_account_owner              in text,
