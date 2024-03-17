@@ -172,3 +172,20 @@ where t.user_id = '﻿user_id';
 		update tbl_user_info t 
 		set t.password = '$2b$10$p2rkmlGUUc/NvCIKeAQ7E.iQJ4gJEHelofarBvm/UROAu8lekcJUy'
 		where t.user_id = 'admin';
+
+
+-- log table 
+drop table tbl_logs; 
+CREATE TABLE tbl_logs (
+  log_id serial PRIMARY KEY,
+  user_id varchar(50) , 
+  table_name varchar(500),
+  action_type varchar(100),
+  parameter text,
+  parameter_value text,
+  creation_date timestamp
+  );
+
+
+-- uuid 설치 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
