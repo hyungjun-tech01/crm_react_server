@@ -215,10 +215,11 @@ app.get('/leads', async(req, res) => {
 });
 
 
-//create company 
-app.post('/createCompany', async(req, res) => {
+//create/update company 
+app.post('/modifyCompany', async(req, res) => {
     const {
         action_type                ,   
+        company_code               ,
         company_number             , 
         group_                     ,
         company_scale              ,
@@ -251,8 +252,9 @@ app.post('/createCompany', async(req, res) => {
         const response = await pool.query(`call p_modify_company_info($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 
                                            $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, 
                                            $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-                                           $31, $32, $33)`,
+                                           $31, $32, $33, $34)`,
         [action_type                ,   
+            company_code            ,
             company_number             , 
             group_                     ,
             company_scale              ,
@@ -298,7 +300,7 @@ app.post('/createCompany', async(req, res) => {
 
     console.log({ out_company_code: out_company_code,  out_create_user:out_create_user, 
             out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
-            
+
         res.end();
     }catch(err){
         console.error(err);

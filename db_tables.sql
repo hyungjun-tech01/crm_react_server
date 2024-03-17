@@ -176,6 +176,7 @@ where t.user_id = '﻿user_id';
 
 -- log table 
 drop table tbl_logs; 
+
 CREATE TABLE tbl_logs (
   log_id serial PRIMARY KEY,
   user_id varchar(50) , 
