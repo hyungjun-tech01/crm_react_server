@@ -190,3 +190,153 @@ CREATE TABLE tbl_logs (
 
 -- uuid 설치 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+
+
+-- tbl_consulting_info 
+drop table tbl_consulting_info;
+
+create table tbl_consulting_info(
+consulting_code      varchar(32), 
+lead_code            varchar(32),
+receipt_date         date       ,
+receipt_time         varchar(50),
+consulting_type      varchar(50),
+receiver             varchar(50),
+sales_representative varchar(50),
+company_name         varchar(100),
+company_code         varchar(32),
+lead_name            varchar(50),
+department           varchar(50),
+position             varchar(50),
+phone_number         varchar(100),
+mobile_number        varchar(100),
+email                varchar(200),
+request_content      text        ,
+status               varchar(50) ,
+lead_time            varchar(50) ,
+action_content       text        ,
+request_type         varchar(50) ,
+create_date          date        ,
+creater              varchar(50) ,
+recent_user          varchar(50) ,
+modify_date          date        ,
+product_type         varchar(50) 
+);
+
+
+create table tbl_consulting_temp(
+consulting_code      varchar(32), 
+lead_code            varchar(32),
+receipt_date         varchar(32)       ,
+receipt_time         varchar(50),
+consulting_type      varchar(50),
+receiver             varchar(50),
+sales_representative varchar(50),
+company_name         varchar(100),
+company_code         varchar(32),
+lead_name            varchar(50),
+department           varchar(50),
+position             varchar(50),
+phone_number         varchar(100),
+mobile_number        varchar(100),
+email                varchar(200),
+request_content      text        ,
+status               varchar(50) ,
+lead_time            varchar(50) ,
+action_content       text        ,
+request_type         varchar(50) ,
+create_date          varchar(32)        ,
+creater              varchar(50) ,
+recent_user          varchar(50) ,
+modify_date          varchar(50)  ,
+product_type         varchar(50) 
+);
+
+copy tbl_consulting_temp(
+consulting_code      , 
+lead_code            ,
+receipt_date                ,
+receipt_time         ,
+consulting_type      ,
+receiver             ,
+sales_representative ,
+company_name         ,
+company_code         ,
+lead_name            ,
+department           ,
+position             ,
+phone_number         ,
+mobile_number        ,
+email                ,
+request_content       ,
+status                ,
+lead_time             ,
+action_content        ,
+request_type          ,
+create_date                  ,
+creater               ,
+recent_user           ,
+modify_date            ,
+product_type          
+)
+FROM 'd:\tbl_consulting_info.csv' csv;
+
+delete from tbl_consulting_temp t where t.consulting_code = '﻿식별코드';
+
+
+insert into tbl_consulting_info
+(consulting_code      , 
+lead_code            ,
+receipt_date                ,
+receipt_time         ,
+consulting_type      ,
+receiver             ,
+sales_representative ,
+company_name         ,
+company_code         ,
+lead_name            ,
+department           ,
+position             ,
+phone_number         ,
+mobile_number        ,
+email                ,
+request_content       ,
+status                ,
+lead_time             ,
+action_content        ,
+request_type          ,
+create_date                  ,
+creater               ,
+recent_user           ,
+modify_date            ,
+product_type          
+)
+select  
+consulting_code      , 
+lead_code            ,
+substring(receipt_date,1,10)::date                ,
+receipt_time         ,
+consulting_type      ,
+receiver             ,
+sales_representative ,
+company_name         ,
+company_code         ,
+lead_name            ,
+department           ,
+position             ,
+phone_number         ,
+mobile_number        ,
+email                ,
+request_content       ,
+status                ,
+lead_time             ,
+action_content        ,
+request_type          ,
+substring(create_date,1,10)::date                  ,
+creater               ,
+recent_user           ,
+substring(modify_date,1,10)::date            ,
+product_type          from tbl_consulting_temp;
+
+drop table tbl_consulting_temp;
