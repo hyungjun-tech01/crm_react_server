@@ -301,14 +301,13 @@ app.post('/modifyCompany', async(req, res) => {
     console.log({ out_company_code: out_company_code,  out_create_user:out_create_user, 
             out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
 
-        res.end();
+        res.end();  
     }catch(err){
         console.error(err);
         res.json({message:err});
         res.end();
     }
 });
-
 
 //create/update company 
 app.post('/modifyLead', async(req, res) => {
