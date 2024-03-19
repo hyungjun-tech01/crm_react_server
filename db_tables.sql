@@ -342,3 +342,25 @@ product_type          from tbl_consulting_temp;
 drop table tbl_consulting_temp;
 
 
+-- tbl_purchase_info
+create table tbl_purchase_info(
+purchase_code                 varchar(32) ,                    
+company_code                  varchar(32) ,
+product_code                  varchar(32) ,
+product_type                  varchar(100),
+product_name                  varchar(255),
+serial_number                 varchar(50) ,
+delivery_date                 date            ,
+MA_finish_date                date            ,
+price                         float          ,
+register                      varchar(30) ,
+registration_date             date            ,
+recent_user                   varchar(30) ,
+modify_date                   date            ,
+purchase_memo                 text            ,
+status                        varchar(50) ,
+quantity                      integer         ,
+regcode                       varchar(50) ,
+MA_contact_date               date            ,
+currency                      varchar(10)  default 'KRW'
+)
