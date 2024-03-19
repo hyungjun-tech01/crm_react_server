@@ -197,7 +197,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 drop table tbl_consulting_info;
 
 create table tbl_consulting_info(
-consulting_code      varchar(32), 
+consulting_code      varchar(32) PRIMARY KEY, 
 lead_code            varchar(32),
 receipt_date         date       ,
 receipt_time         varchar(50),
@@ -224,7 +224,7 @@ modify_date          date        ,
 product_type         varchar(50) 
 );
 
-
+-- 임시테이블 데이터 받기 위함 : 작업후 drop 필요 
 create table tbl_consulting_temp(
 consulting_code      varchar(32), 
 lead_code            varchar(32),
@@ -315,7 +315,7 @@ product_type
 select  
 consulting_code      , 
 lead_code            ,
-substring(receipt_date,1,10)::date                ,
+substring(receipt_date,1,10)::date ,
 receipt_time         ,
 consulting_type      ,
 receiver             ,
@@ -333,10 +333,12 @@ status                ,
 lead_time             ,
 action_content        ,
 request_type          ,
-substring(create_date,1,10)::date                  ,
+substring(create_date,1,10)::date  ,
 creater               ,
 recent_user           ,
 substring(modify_date,1,10)::date            ,
 product_type          from tbl_consulting_temp;
 
 drop table tbl_consulting_temp;
+
+
