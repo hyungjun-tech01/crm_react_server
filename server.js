@@ -16,6 +16,7 @@ const util = require('util');
 const fsSync = require('fs');
 const { v4: uuid } = require('uuid');
 const sharp = require('sharp');
+const { timeStamp } = require('console');
 
 const pk_code = () => {
     const tokens = uuid().split('-')
@@ -255,7 +256,7 @@ app.post('/modifyCompany', async(req, res) => {
          } = req.body;
     try{
 
-        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD') currdate`);
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currenDate = current_date.rows[0];
         let v_company_code = company_code;
 
@@ -296,7 +297,7 @@ app.post('/modifyCompany', async(req, res) => {
                 region                         )
             values(
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 
-                $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31);
+                $18, $19, $20, $21, $22::timestamp, $23::timestamp, $24, $25::integer, $26, $27, $28, $29, $30, $31);
             `,[v_company_code,company_number,group_,company_scale,deal_type,company_name,company_name_eng,
                business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
@@ -326,9 +327,9 @@ app.post('/modifyCompany', async(req, res) => {
                   company_fax_number   =  COALESCE( $17, company_fax_number),
                   homepage             =  COALESCE( $18, homepage) ,
                   memo                 =  COALESCE( $19, memo) ,
-                  modify_date          = $20::date          ,
+                  modify_date          = $20::timestamp          ,
                   recent_user          = $21          ,
-                  counter              = COALESCE($22, counter),
+                  counter              = COALESCE($22::integer, counter),
                   account_code         =  COALESCE( $23, account_code)         ,
                   bank_name            =  COALESCE( $24, bank_name)         ,
                   account_owner        =  COALESCE( $25, account_owner)         ,
@@ -363,11 +364,11 @@ app.post('/modifyCompany', async(req, res) => {
     }
 });
 
-//create/update company 
+//create/update lead 
 app.post('/modifyLead', async(req, res) => {
     const {
         action_type                ,   
-        leads_code                 ,   
+        lead_code                 ,   
         company_code                ,                                                                 
         leads_index                 ,                                                
         company_index               ,
@@ -395,15 +396,18 @@ app.post('/modifyLead', async(req, res) => {
                  } = req.body;
     try{
        
-        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD') currdate`);
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currenDate = current_date.rows[0];
-        let v_leads_code = leads_code;
+        let v_lead_code = lead_code;
 
         if (action_type === 'ADD') {
-            v_leads_code  = pk_code();
+            if (company_code === null || company_code === "") {
+                throw new Error('company_code는 not null입니다.');
+            }
+            v_lead_code  = pk_code();
             const response = await pool.query(`
-            insert into tbl_leads_info(
-                leads_code               ,
+            insert into tbl_lead_info(
+                lead_code               ,
                 company_code            ,
                 leads_index             ,
                 company_index           ,
@@ -434,7 +438,7 @@ app.post('/modifyLead', async(req, res) => {
              values(
                 $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,
                 $23,$24,$25,$26,$27,$28 );
-            `,[ v_leads_code,
+            `,[ v_lead_code,
                 company_code            ,
                 leads_index             ,
                 company_index           ,
@@ -465,7 +469,7 @@ app.post('/modifyLead', async(req, res) => {
         }
         if (action_type === 'UPDATE') {
             const response = await pool.query(`
-            update tbl_leads_info 
+            update tbl_lead_info 
                set company_code   =  COALESCE($1,company_code)         ,
                    leads_index   =  COALESCE($2,leads_index)         ,
                    company_index   =  COALESCE($3,company_index)         ,
@@ -486,12 +490,12 @@ app.post('/modifyLead', async(req, res) => {
                    company_name_en      = COALESCE($18, company_name_en)   ,
                    email                = COALESCE($19, email)   ,
                    homepage             = COALESCE($20, homepage)   ,
-                   modify_date          = $21   ,
+                   modify_date          = $21::timestamp   ,
                    recent_user          = $22   ,
                    counter  = COALESCE($23, counter)   ,
                    application_engineer = COALESCE($24, application_engineer)   ,
                    status               = COALESCE($25, status)    
-               where leads_code = $26;
+               where lead_code = $26;
             `,[company_code            ,
                 leads_index             ,
                 company_index           ,
@@ -517,12 +521,12 @@ app.post('/modifyLead', async(req, res) => {
                 counter,
                 application_engineer,
                 status,
-                v_leads_code
+                v_lead_code
             ]);
         }      
 
 
-     const out_leads_code = v_leads_code;
+     const out_leads_code = v_lead_code;
      const out_create_user = action_type === 'ADD' ? modify_user : "";
      const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
      const out_modify_date = currenDate.currdate;
@@ -542,6 +546,37 @@ app.post('/modifyLead', async(req, res) => {
     }
 });
 
+// create/update consult 
+app.post('/modifyConsult', async(req, res) => {
+    const {
+        action_type                ,   
+        leads_code                 ,   
+        company_code                ,                                                                 
+        leads_index                 ,                                                
+        company_index               ,
+        lead_number                 ,
+        group_                      ,
+        sales_resource              ,
+        region                      ,
+        company_name                ,
+        company_zip_code            ,
+        company_address             ,
+        company_phone_number        ,
+        company_fax_number          ,
+        leads_name                  ,
+        is_keyman                   ,
+        department                  ,
+        position                    ,
+        mobile_number               ,
+        company_name_en             ,
+        email                       ,
+        homepage                    ,
+        modify_user                 ,
+        counter                     ,
+        application_engineer        ,
+        status                      
+                 } = req.body;
+});    
 /////////////////////////////////////////////////////////////////////
 
 //login
