@@ -17,6 +17,11 @@ const fsSync = require('fs');
 const { v4: uuid } = require('uuid');
 const sharp = require('sharp');
 
+const pk_code = () => {
+    const tokens = uuid().split('-')
+    return (tokens[2] + tokens[1] + tokens[0] + tokens[3] + tokens[4]).toUpperCase();
+}
+
 try {
     fsUpper.readdirSync('uploads');
 } catch (error) {
@@ -249,59 +254,67 @@ app.post('/modifyCompany', async(req, res) => {
         region                     
          } = req.body;
     try{
-        const response = await pool.query(`call p_modify_company_info($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 
-                                           $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, 
-                                           $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-                                           $31, $32, $33, $34)`,
-        [action_type                ,   
-            company_code            ,
-            company_number             , 
-            group_                     ,
-            company_scale              ,
-            deal_type                  ,
-            company_name               ,
-            company_name_eng           ,
-            business_registration_code ,
-            establishment_date         ,
-            closure_date               ,
-            ceo_name                   ,
-            business_type              ,
-            business_item              ,
-            industry_type              ,
-            company_zip_code           ,
-            company_address            ,
-            company_phone_number       ,
-            company_fax_number         ,
-            homepage                   ,
-            memo                       ,
-            modify_user                ,
-            counter                    ,
-            account_code               ,
-            bank_name                  ,
-            account_owner              ,
-            sales_resource             ,
-            application_engineer       ,
-            region                     ,   
-            null,
-            null,
-            null,
-            null,
-            null
-     ]);
 
-     const out_company_code = response.rows[0].x_company_code;
-     const out_create_user = response.rows[0].x_create_user;
-     const out_create_date = response.rows[0].x_create_date;
-     const out_modify_date = response.rows[0].x_modify_date;
-     const out_recent_user = response.rows[0].x_recent_user;
-     
-    res.json({ out_company_code: out_company_code,  out_create_user:out_create_user, 
-        out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD') currdate`);
+        const currenDate = current_date.rows[0];
 
-    console.log({ out_company_code: out_company_code,  out_create_user:out_create_user, 
-            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
-
+        if (action_type === 'ADD') {
+            const company_code  = pk_code();
+            const response = await pool.query(`
+            insert into tbl_company_info(
+                company_code                   ,
+                company_number                 ,
+                group_                         ,
+                company_scale                  ,
+                deal_type                      ,
+                company_name                   ,
+                company_name_eng               ,
+                business_registration_code     ,
+                establishment_date             ,
+                closure_date                   ,
+                ceo_name                       ,
+                business_type                  ,
+                business_item                  ,
+                industry_type                  ,
+                company_zip_code               ,
+                company_address                ,
+                company_phone_number           ,
+                company_fax_number             ,
+                homepage                       ,
+                memo                           ,
+                create_user                    ,
+                create_date                    ,
+                modify_date                    ,
+                recent_user                    ,
+                counter                        ,
+                account_code                   ,
+                bank_name                      ,
+                account_owner                  ,
+                sales_resource                 ,
+                application_engineer           ,
+                region                         )
+            values(
+                $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 
+                $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31);
+            `,[company_code,company_number,group_,company_scale,deal_type,company_name,company_name_eng,
+               business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
+               industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
+               memo,modify_user,currenDate.currdate,currenDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
+               sales_resource,application_engineer,region
+            ]);
+        }  
+        const out_company_code = company_code;
+        const out_create_user = modify_user;
+        const out_create_date = currenDate.currdate;
+        const out_modify_date = currenDate.currdate;
+        const out_recent_user = modify_user;
+         
+        res.json({ out_company_code: out_company_code,  out_create_user:out_create_user, 
+            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+        console.log({ out_company_code: out_company_code,  out_create_user:out_create_user, 
+                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
         res.end();  
+
     }catch(err){
         console.error(err);
         res.json({message:err});
