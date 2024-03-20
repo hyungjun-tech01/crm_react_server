@@ -394,53 +394,139 @@ app.post('/modifyLead', async(req, res) => {
         status                      
                  } = req.body;
     try{
-
+       
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD') currdate`);
         const currenDate = current_date.rows[0];
         let v_leads_code = leads_code;
 
-        const response = await pool.query(`call p_modify_lead_info($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 
-                                           $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, 
-                                           $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-                                           $31)`,
-        [action_type                ,   
-            leads_code                 ,   
-            company_code                ,                                                                 
-            leads_index                 ,                                                
-            company_index               ,
-            lead_number                 ,
-            group_                      ,
-            sales_resource              ,
-            region                      ,
-            company_name                ,
-            company_zip_code            ,
-            company_address             ,
-            company_phone_number        ,
-            company_fax_number          ,
-            leads_name                  ,
-            is_keyman                   ,
-            department                  ,
-            position                    ,
-            mobile_number               ,
-            company_name_en             ,
-            email                       ,
-            homepage                    ,
-            modify_user                 ,
-            counter                     ,
-            application_engineer        ,
-            status                      ,
-            null,
-            null,
-            null,
-            null,
-            null
-     ]);
+        if (action_type === 'ADD') {
+            v_leads_code  = pk_code();
+            const response = await pool.query(`
+            insert into tbl_leads_info(
+                leads_code               ,
+                company_code            ,
+                leads_index             ,
+                company_index           ,
+                lead_number             ,
+                group_                  ,
+                sales_resource          ,
+                region                  ,
+                company_name            ,
+                company_zip_code        ,
+                company_address         ,
+                company_phone_number    ,
+                company_fax_number      ,
+                leads_name              ,
+                is_keyman               ,
+                department              ,
+                position                ,
+                mobile_number           ,
+                company_name_en         ,
+                email                   ,
+                homepage                ,
+                create_user             ,
+                create_date             ,
+                modify_date             ,
+                recent_user             ,
+                counter                 ,
+                application_engineer    ,
+                status                    )
+             values(
+                $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,
+                $23,$24,$25,$26,$27,$28 );
+            `,[ v_leads_code,
+                company_code            ,
+                leads_index             ,
+                company_index           ,
+                lead_number             ,
+                group_                  ,
+                sales_resource          ,
+                region                  ,
+                company_name            ,
+                company_zip_code        ,
+                company_address         ,
+                company_phone_number    ,
+                company_fax_number      ,
+                leads_name              ,
+                is_keyman               ,
+                department              ,
+                position                ,
+                mobile_number           ,
+                company_name_en         ,
+                email                   ,
+                homepage                ,
+                modify_user             ,
+                currenDate.currdate     ,
+                currenDate.currdate    ,
+                modify_user             ,
+                counter                 ,
+                application_engineer    ,
+                status                   ]);
+        }
+        if (action_type === 'UPDATE') {
+            const response = await pool.query(`
+            update tbl_leads_info 
+               set company_code   =  COALESCE($1,company_code)         ,
+                   leads_index   =  COALESCE($2,leads_index)         ,
+                   company_index   =  COALESCE($3,company_index)         ,
+                   lead_number          = COALESCE($4, lead_number)   ,
+                   group_               = COALESCE($5 , group_)   ,
+                   sales_resource       = COALESCE($6, sales_resource)   ,
+                   region               = COALESCE($7, region)   ,
+                   company_name         = COALESCE($8, company_name)   ,
+                   company_zip_code     = COALESCE($9, company_zip_code)   ,
+                   company_address      = COALESCE($10, company_address)   ,
+                   company_phone_number = COALESCE($11, company_phone_number)   ,
+                   company_fax_number   = COALESCE($12, company_fax_number)   ,
+                   leads_name           = COALESCE($13, leads_name)   ,
+                   is_keyman            = COALESCE($14, is_keyman)   ,
+                   department           = COALESCE($15, department)   ,
+                   position             = COALESCE($16, position)   ,
+                   mobile_number        = COALESCE($17, mobile_number)   ,
+                   company_name_en      = COALESCE($18, company_name_en)   ,
+                   email                = COALESCE($19, email)   ,
+                   homepage             = COALESCE($20, homepage)   ,
+                   modify_date          = $21   ,
+                   recent_user          = $22   ,
+                   counter  = COALESCE($23, counter)   ,
+                   application_engineer = COALESCE($24, application_engineer)   ,
+                   status               = COALESCE($25, status)    
+               where leads_code = $26;
+            `,[company_code            ,
+                leads_index             ,
+                company_index           ,
+                lead_number             ,
+                group_                  ,
+                sales_resource          ,
+                region                  ,
+                company_name            ,
+                company_zip_code        ,
+                company_address         ,
+                company_phone_number    ,
+                company_fax_number      ,
+                leads_name              ,
+                is_keyman               ,
+                department              ,
+                position                ,
+                mobile_number           ,
+                company_name_en         ,
+                email                   ,
+                homepage                ,
+                currenDate.currdate     ,
+                modify_user             ,
+                counter,
+                application_engineer,
+                status,
+                v_leads_code
+            ]);
+        }      
 
-     const out_leads_code = response.rows[0].x_leads_code;
-     const out_create_user = response.rows[0].x_create_user;
-     const out_create_date = response.rows[0].x_create_date;
-     const out_modify_date = response.rows[0].x_modify_date;
-     const out_recent_user = response.rows[0].x_recent_user;
+
+     const out_leads_code = v_leads_code;
+     const out_create_user = action_type === 'ADD' ? modify_user : "";
+     const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
+     const out_modify_date = currenDate.currdate;
+     const out_recent_user = modify_user;
      
     res.json({ out_leads_code: out_leads_code,  out_create_user:out_create_user, 
         out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
