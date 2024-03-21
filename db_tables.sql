@@ -4,7 +4,7 @@ drop table tbl_company_info;
 
 create table tbl_company_info
 (company_code                 varchar	(32)   PRIMARY KEY,
-company_number               varchar	(50)   ,
+company_number               varchar	(50)   not null,
 group_                        varchar	(255)  ,
 company_scale                varchar	(100)  ,
 deal_type                    varchar	(100)  ,
@@ -174,6 +174,9 @@ sales_resource            ,
 application_engineer      ,
 region                   
 from tbl_company_info_temp;
+
+-- 데이터 확인 
+select * from tbl_company_info;
 
 -- temp table  삭제 
 drop table tbl_company_info_temp;
