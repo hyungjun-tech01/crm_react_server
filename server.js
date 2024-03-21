@@ -554,33 +554,175 @@ app.post('/modifyLead', async(req, res) => {
 // create/update consult 
 app.post('/modifyConsult', async(req, res) => {
     const {
-        action_type                ,   
-        lead_code                 ,   
-        company_code                ,                                                                 
-        leads_index                 ,                                                
-        company_index               ,
-        lead_number                 ,
-        group_                      ,
-        sales_resource              ,
-        region                      ,
-        company_name                ,
-        company_zip_code            ,
-        company_address             ,
-        company_phone_number        ,
-        company_fax_number          ,
-        leads_name                  ,
-        is_keyman                   ,
-        department                  ,
-        position                    ,
-        mobile_number               ,
-        company_name_en             ,
-        email                       ,
-        homepage                    ,
-        modify_user                 ,
-        counter                     ,
-        application_engineer        ,
-        status                      
-                 } = req.body;
+        action_type             = defaultNull(req.body.action_type),   
+        consulting_code         = defaultNull(req.body.consulting_code), 
+        lead_code               = defaultNull(req.body.lead_code), 
+        receipt_date            = defaultNull(req.body.receipt_date), 
+        receipt_time            = defaultNull(req.body.receipt_time), 
+        consulting_type         = defaultNull(req.body.consulting_type), 
+        receiver                = defaultNull(req.body.receiver), 
+        sales_representative    = defaultNull(req.body.sales_representative), 
+        company_name            = defaultNull(req.body.company_name), 
+        company_code            = defaultNull(req.body.company_code), 
+        lead_name               = defaultNull(req.body.lead_name), 
+        department              = defaultNull(req.body.department), 
+        position                = defaultNull(req.body.position), 
+        phone_number            = defaultNull(req.body.phone_number), 
+        mobile_number           = defaultNull(req.body.mobile_number), 
+        email                   = defaultNull(req.body.email), 
+        request_content         = defaultNull(req.body.request_content), 
+        status                  = defaultNull(req.body.status), 
+        lead_time               = defaultNull(req.body.lead_time), 
+        action_content          = defaultNull(req.body.action_content), 
+        request_type            = defaultNull(req.body.request_type), 
+        modify_user             = defaultNull(req.body.modify_user),            
+        product_type            = defaultNull(req.body.product_type)
+        } = req.body;
+
+    try{
+
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currenDate = current_date.rows[0];
+        let v_consulting_code = consulting_code;
+
+        if (action_type === 'ADD') {
+            if (company_code === null || company_code === "") {
+                throw new Error('company_code는 not null입니다.');
+            }
+            if (lead_code === null || lead_code === "") {
+                throw new Error('lead_code는 not null입니다.');
+            }
+            v_consulting_code  = pk_code();
+            const response = await pool.query(`
+            insert into tbl_consulting_info(
+                consulting_code         , 
+                lead_code               , 
+                receipt_date            , 
+                receipt_time            , 
+                consulting_type         , 
+                receiver                , 
+                sales_representative    , 
+                company_name            , 
+                company_code            , 
+                lead_name               , 
+                department              , 
+                position                , 
+                phone_number            , 
+                mobile_number           , 
+                email                   , 
+                request_content         , 
+                status                  , 
+                lead_time               , 
+                action_content          , 
+                request_type            , 
+                create_date             ,
+                creater                 ,
+                recent_user             ,
+                modify_date             ,
+                product_type            
+            )
+             values(
+                $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,
+                $23,$24,$25);
+            `,[ v_consulting_code,
+                lead_code               , 
+                receipt_date            , 
+                receipt_time            , 
+                consulting_type         , 
+                receiver                , 
+                sales_representative    , 
+                company_name            , 
+                company_code            , 
+                lead_name               , 
+                department              , 
+                position                , 
+                phone_number            , 
+                mobile_number           , 
+                email                   , 
+                request_content         , 
+                status                  , 
+                lead_time               , 
+                action_content          , 
+                request_type            , 
+                currenDate.currdate     ,
+                modify_user             ,
+                modify_user             ,
+                currenDate.currdate     ,
+                product_type
+            ]);
+        }
+
+        if (action_type === 'UPDATE') {
+            const response = await pool.query(`
+            update tbl_consulting_info 
+               set lead_code               = COALESCE($1, lead_code), 
+                   receipt_date            = COALESCE($2, receipt_date), 
+                   receipt_time            = COALESCE($3, receipt_time), 
+                   consulting_type         = COALESCE($4, consulting_type), 
+                   receiver                = COALESCE($5, receiver), 
+                   sales_representative    = COALESCE($6, sales_representative), 
+                   company_name            = COALESCE($7, company_name), 
+                   company_code            = COALESCE($8, company_code), 
+                   lead_name               = COALESCE($9, lead_name), 
+                   department              = COALESCE($10, department), 
+                   position                = COALESCE($11, position), 
+                   phone_number            = COALESCE($12, phone_number), 
+                   mobile_number           = COALESCE($13, mobile_number), 
+                   email                   = COALESCE($14, email), 
+                   request_content         = COALESCE($15, request_content), 
+                   status                  = COALESCE($16, status), 
+                   lead_time               = COALESCE($17, lead_time), 
+                   action_content          = COALESCE($18, action_content), 
+                   request_type            = COALESCE($19, request_type), 
+                   recent_user             = COALESCE($20, recent_user),
+                   modify_date             = COALESCE($21, modify_date),
+                   product_type            = COALESCE($22, product_type)
+                where consulting_code = $23;
+            `,[lead_code               , 
+                receipt_date            , 
+                receipt_time            , 
+                consulting_type         , 
+                receiver                , 
+                sales_representative    , 
+                company_name            , 
+                company_code            , 
+                lead_name               , 
+                department              , 
+                position                , 
+                phone_number            , 
+                mobile_number           , 
+                email                   , 
+                request_content         , 
+                status                  , 
+                lead_time               , 
+                action_content          , 
+                request_type            , 
+                modify_user             ,
+                currenDate.currdate     ,
+                product_type            ,
+                v_consulting_code
+            ]);
+        }      
+
+        const out_consulting_code = v_consulting_code;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
+        const out_modify_date = currenDate.currdate;
+        const out_recent_user = modify_user;
+        
+       res.json({ out_consulting_code: out_consulting_code,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+       console.log({ out_consulting_code: out_consulting_code,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+   
+        res.end();
+    }catch(err){
+        console.error(err);
+        res.json({message:err});
+        res.end();
+    }
+
 });    
 /////////////////////////////////////////////////////////////////////
 
