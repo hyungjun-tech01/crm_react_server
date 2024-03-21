@@ -18,10 +18,15 @@ const { v4: uuid } = require('uuid');
 const sharp = require('sharp');
 const { timeStamp } = require('console');
 
+
+// uuid 로  pk 생성 
 const pk_code = () => {
     const tokens = uuid().split('-')
     return (tokens[2] + tokens[1] + tokens[0] + tokens[3] + tokens[4]).toUpperCase();
 }
+
+//값이 없으면 null로 세팅
+const defaultNull = (value) => value === undefined ? null : value;
 
 try {
     fsUpper.readdirSync('uploads');
@@ -224,36 +229,36 @@ app.get('/leads', async(req, res) => {
 //create/update company 
 app.post('/modifyCompany', async(req, res) => {
     const {
-        action_type                ,   
-        company_code               ,
-        company_number             , 
-        group_                     ,
-        company_scale              ,
-        deal_type                  ,
-        company_name               ,
-        company_name_eng           ,
-        business_registration_code ,
-        establishment_date         ,
-        closure_date               ,
-        ceo_name                   ,
-        business_type              ,
-        business_item              ,
-        industry_type              ,
-        company_zip_code           ,
-        company_address            ,
-        company_phone_number       ,
-        company_fax_number         ,
-        homepage                   ,
-        memo                       ,
-        modify_user                ,
-        counter                    ,
-        account_code               ,
-        bank_name                  ,
-        account_owner              ,
-        sales_resource             ,
-        application_engineer       ,
-        region                     
-         } = req.body;
+        action_type                = defaultNull(req.body.action_type) ,   
+        company_code               = defaultNull(req.body.company_code) ,
+        company_number             = defaultNull(req.body.company_number) , 
+        group_                     = defaultNull(req.body.group_) ,
+        company_scale              = defaultNull(req.body.company_scale) ,
+        deal_type                  = defaultNull(req.body.deal_type) ,
+        company_name               = defaultNull(req.body.company_name) ,
+        company_name_eng           = defaultNull(req.body.company_name_eng) ,
+        business_registration_code = defaultNull(req.body.business_registration_code) ,
+        establishment_date         = defaultNull(req.body.establishment_date) ,
+        closure_date               = defaultNull(req.body.closure_date) ,
+        ceo_name                   = defaultNull(req.body.ceo_name) ,
+        business_type              = defaultNull(req.body.business_type) ,
+        business_item              = defaultNull(req.body.business_item) ,
+        industry_type              = defaultNull(req.body.industry_type) ,
+        company_zip_code           = defaultNull(req.body.company_zip_code) ,
+        company_address            = defaultNull(req.body.company_address) ,
+        company_phone_number       = defaultNull(req.body.company_phone_number) ,
+        company_fax_number         = defaultNull(req.body.company_fax_number) ,
+        homepage                   = defaultNull(req.body.homepage) ,
+        memo                       = defaultNull(req.body.memo) ,
+        modify_user                = defaultNull(req.body.modify_user) ,
+        counter                    = defaultNull(req.body.counter) ,
+        account_code               = defaultNull(req.body.account_code) ,
+        bank_name                  = defaultNull(req.body.bank_name) ,
+        account_owner              = defaultNull(req.body.account_owner) ,
+        sales_resource             = defaultNull(req.body.sales_resource) ,
+        application_engineer       = defaultNull(req.body.application_engineer) ,
+        region                     = defaultNull(req.body.region)
+    } = req.body;    
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
@@ -367,32 +372,32 @@ app.post('/modifyCompany', async(req, res) => {
 //create/update lead 
 app.post('/modifyLead', async(req, res) => {
     const {
-        action_type                ,   
-        lead_code                 ,   
-        company_code                ,                                                                 
-        leads_index                 ,                                                
-        company_index               ,
-        lead_number                 ,
-        group_                      ,
-        sales_resource              ,
-        region                      ,
-        company_name                ,
-        company_zip_code            ,
-        company_address             ,
-        company_phone_number        ,
-        company_fax_number          ,
-        leads_name                  ,
-        is_keyman                   ,
-        department                  ,
-        position                    ,
-        mobile_number               ,
-        company_name_en             ,
-        email                       ,
-        homepage                    ,
-        modify_user                 ,
-        counter                     ,
-        application_engineer        ,
-        status                      
+        action_type             = defaultNull(req.body.action_type)   ,   
+        lead_code               = defaultNull(req.body.lead_code)  ,   
+        company_code            = defaultNull(req.body.company_code)    ,                                                                 
+        leads_index             = defaultNull(req.body.leads_index)    ,                                                
+        company_index           = defaultNull(req.body.company_index)    ,
+        lead_number             = defaultNull(req.body.lead_number)    ,
+        group_                  = defaultNull(req.body.group_)    ,
+        sales_resource          = defaultNull(req.body.sales_resource)    ,
+        region                  = defaultNull(req.body.region)    ,
+        company_name            = defaultNull(req.body.company_name)    ,
+        company_zip_code        = defaultNull(req.body.company_zip_code)    ,
+        company_address         = defaultNull(req.body.company_address)    ,
+        company_phone_number    = defaultNull(req.body.company_phone_number)    ,
+        company_fax_number      = defaultNull(req.body.company_fax_number)    ,
+        leads_name              = defaultNull(req.body.leads_name)    ,
+        is_keyman               = defaultNull(req.body.is_keyman)    ,
+        department              = defaultNull(req.body.department)    ,
+        position                = defaultNull(req.body.position)    ,
+        mobile_number           = defaultNull(req.body.mobile_number)    ,
+        company_name_en         = defaultNull(req.body.company_name_en)    ,
+        email                   = defaultNull(req.body.email)    ,
+        homepage                = defaultNull(req.body.homepage)    ,
+        modify_user             = defaultNull(req.body.modify_user)    ,
+        counter                 = defaultNull(req.body.counter)    ,
+        application_engineer    = defaultNull(req.body.application_engineer)    ,
+        status                  = defaultNull(req.body.status)    
                  } = req.body;
     try{
        
