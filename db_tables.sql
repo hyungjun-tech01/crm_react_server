@@ -279,6 +279,7 @@ FROM 'd:\lead_info.csv' csv;
 delete from tbl_lead_info_temp t
 where t.lead_code = '﻿거래처코드';
 
+-- temp => 본테이블로 데이터 이전 
 insert into tbl_lead_info(  lead_code           ,
 company_code        ,
 leads_index         ,
@@ -336,7 +337,8 @@ counter::integer             ,
 application_engineer,
 status              from tbl_lead_info_temp;
 
-
+-- temp table 삭제 
+drop table tbl_lead_info_temp;
 
 
 drop table invoce; 
@@ -427,14 +429,13 @@ status               varchar(50) ,
 lead_time            varchar(50) ,
 action_content       text        ,
 request_type         varchar(50) ,
-create_date          date        ,
+create_date          timestamp        ,
 creater              varchar(50) ,
 recent_user          varchar(50) ,
-modify_date          date        ,
+modify_date          timestamp        ,
 product_type         varchar(50) 
 );
 
-ALTER TABLE tbl_consulting_info ALTER COLUMN lead_code SET NOT NULL;
 
 -- 임시테이블 데이터 받기 위함 : 작업후 drop 필요 
 create table tbl_consulting_temp(
@@ -545,13 +546,18 @@ status                ,
 lead_time             ,
 action_content        ,
 request_type          ,
-substring(create_date,1,10)::date  ,
+create_date::timestamp,
 creater               ,
 recent_user           ,
-substring(modify_date,1,10)::date            ,
+modify_date::timestamp ,
 product_type          from tbl_consulting_temp;
 
+-- 데이타 확인 
+select * from tbl_consulting_info;
+
+-- temp 테이블 삭제 
 drop table tbl_consulting_temp;
+
 
 
 -- tbl_purchase_info
