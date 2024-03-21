@@ -550,7 +550,7 @@ app.post('/modifyLead', async(req, res) => {
 app.post('/modifyConsult', async(req, res) => {
     const {
         action_type                ,   
-        leads_code                 ,   
+        lead_code                 ,   
         company_code                ,                                                                 
         leads_index                 ,                                                
         company_index               ,
