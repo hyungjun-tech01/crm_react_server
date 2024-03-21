@@ -211,7 +211,7 @@ app.get('/leads', async(req, res) => {
     try{
         console.log("[Get] leads");
         const allLeadsResult = await pool.query(`
-            select * from tbl_leads_info`);
+            select * from tbl_lead_info`);
 
         if(allLeadsResult.rows.length > 0) {
             const allLeads = allLeadsResult.rows;
