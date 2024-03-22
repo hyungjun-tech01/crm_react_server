@@ -565,23 +565,48 @@ drop table tbl_consulting_temp;
 
 -- tbl_purchase_info
 create table tbl_purchase_info(
-purchase_code                 varchar(32) ,                    
-company_code                  varchar(32) ,
+purchase_code                 varchar(32) primary key,                    
+company_code                  varchar(32) not null,
 product_code                  varchar(32) ,
 product_type                  varchar(100),
 product_name                  varchar(255),
 serial_number                 varchar(50) ,
-delivery_date                 date            ,
-MA_finish_date                date            ,
-price                         float          ,
+delivery_date                 date        ,
+MA_finish_date                date        ,
+price                         numeric     ,
 register                      varchar(30) ,
-registration_date             date            ,
+registration_date             timestamp   ,
 recent_user                   varchar(30) ,
-modify_date                   date            ,
-purchase_memo                 text            ,
+modify_date                   timestamp   ,
+purchase_memo                 text        ,
 status                        varchar(50) ,
-quantity                      integer         ,
+quantity                      integer     ,
 regcode                       varchar(50) ,
-MA_contact_date               date            ,
-currency                      varchar(10)  default 'KRW'
-)
+MA_contact_date               date        ,
+currency                      varchar(10)
+);
+
+-- 임시테이블 데이터 받기 위함 . 작업 후 drop 필요 
+create table tbl_purchase_info_temp(
+purchase_code                 varchar(32) primary key,                    
+company_code                  varchar(32) not null,
+product_code                  varchar(32) ,
+product_type                  varchar(100),
+product_name                  varchar(255),
+serial_number                 varchar(50) ,
+delivery_date                 varchar(50)  ,
+MA_finish_date                varchar(50)  ,
+price                         varchar(50)  ,
+register                      varchar(30) ,
+registration_date             varchar(50)  ,
+recent_user                   varchar(30) ,
+modify_date                   varchar(50) ,
+purchase_memo                 text        ,
+status                        varchar(50) ,
+quantity                      varchar(50)  ,
+regcode                       varchar(50) ,
+MA_contact_date               varchar(50)  ,
+currency                      varchar(10)
+);
+
+
