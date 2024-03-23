@@ -497,7 +497,7 @@ app.post('/modifyLead', async(req, res) => {
                    homepage             = COALESCE($20, homepage)   ,
                    modify_date          = $21::timestamp   ,
                    recent_user          = $22   ,
-                   counter  = COALESCE($23, counter)   ,
+                   counter  = COALESCE($23::integer, counter)   ,
                    application_engineer = COALESCE($24, application_engineer)   ,
                    status               = COALESCE($25, status)    
                where lead_code = $26;
@@ -622,8 +622,8 @@ app.post('/modifyConsult', async(req, res) => {
                 product_type            
             )
              values(
-                $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,
-                $23,$24,$25);
+                $1,$2,$3::date,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21::timestamp,$22,
+                $23,$24::timestamp,$25);
             `,[ v_consulting_code,
                 lead_code               , 
                 receipt_date            , 
@@ -656,7 +656,7 @@ app.post('/modifyConsult', async(req, res) => {
             const response = await pool.query(`
             update tbl_consulting_info 
                set lead_code               = COALESCE($1, lead_code), 
-                   receipt_date            = COALESCE($2, receipt_date), 
+                   receipt_date            = COALESCE($2::date, receipt_date), 
                    receipt_time            = COALESCE($3, receipt_time), 
                    consulting_type         = COALESCE($4, consulting_type), 
                    receiver                = COALESCE($5, receiver), 
@@ -675,7 +675,7 @@ app.post('/modifyConsult', async(req, res) => {
                    action_content          = COALESCE($18, action_content), 
                    request_type            = COALESCE($19, request_type), 
                    recent_user             = COALESCE($20, recent_user),
-                   modify_date             = COALESCE($21, modify_date),
+                   modify_date             = COALESCE($21::timestamp, modify_date),
                    product_type            = COALESCE($22, product_type)
                 where consulting_code = $23;
             `,[lead_code               , 
@@ -724,6 +724,146 @@ app.post('/modifyConsult', async(req, res) => {
     }
 
 });    
+
+// create/update purchase info 
+app.post('/modifyPurchase', async(req, res) => {
+    const  {
+        action_type          = defaultNull(req.body.action_type),   
+        purchase_code       = defaultNull(req.body.purchase_code), 
+        company_code        = defaultNull(req.body.company_code),
+        product_code        = defaultNull(req.body.product_code),
+        product_type        = defaultNull(req.body.product_type),
+        product_name        = defaultNull(req.body.product_name),
+        serial_number       = defaultNull(req.body.serial_number),
+        delivery_date       = defaultNull(req.body.delivery_date),
+        MA_finish_date      = defaultNull(req.body.MA_finish_date),
+        price               = defaultNull(req.body.price),
+        modify_user         = defaultNull(req.body.modify_user),   
+        purchase_memo       = defaultNull(req.body.purchase_memo),
+        status              = defaultNull(req.body.status),
+        quantity            = defaultNull(req.body.quantity),
+        regcode             = defaultNull(req.body.regcode),
+        MA_contact_date     = defaultNull(req.body.MA_contact_date),
+        currency            = defaultNull(req.body.currency)
+    } = req.body;
+    try{
+
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currenDate = current_date.rows[0];
+        let v_purchase_code = purchase_code;
+
+        if (action_type === 'ADD') {
+            if (company_code === null || company_code === "") {
+                throw new Error('company_code는 not null입니다.');
+            }
+            if (product_code === null || product_code === "") {
+                throw new Error('product_code는 not null입니다.');
+            }
+            v_purchase_code  = pk_code();
+            const response = await pool.query(`
+                insert into tbl_purchase_info(
+                    purchase_code       , 
+                    company_code        ,
+                    product_code        ,
+                    product_type        ,
+                    product_name        ,
+                    serial_number       ,
+                    delivery_date        ,
+                    MA_finish_date       ,
+                    price                ,
+                    register            ,
+                    registration_date    ,
+                    recent_user         ,
+                    modify_date         ,
+                    purchase_memo       ,
+                    status              ,
+                    quantity             ,
+                    regcode             ,
+                    MA_contact_date      ,
+                    currency            )  
+                    values(
+                    $1,$2,$3,$4,$5,$6,$7::date,$8::date,$9::numeric,$10,$11::timestamp,$12,$13::timestamp,
+                    $14,$15,$16::integer,$17,$18::date,$19) 
+            `,[
+                v_purchase_code       , 
+                company_code        ,
+                product_code        ,
+                product_type        ,
+                product_name        ,
+                serial_number       ,
+                delivery_date       ,
+                MA_finish_date      ,
+                price               ,
+                modify_user         ,
+                currenDate.currdate ,
+                modify_user         ,
+                currenDate.currdate ,
+                purchase_memo       ,
+                status              ,
+                quantity            ,
+                regcode             ,
+                MA_contact_date     ,
+                currency           
+            ]);     
+        }
+        if (action_type === 'UPDATE') {
+            const response = await pool.query(`
+               update tbl_purchase_info 
+               set company_code      = COALESCE($1, company_code)  ,
+                   product_code      = COALESCE($2, product_code)  ,
+                   product_type      = COALESCE($3, product_type)  ,
+                   product_name      = COALESCE($4, product_name)  ,
+                   serial_number     = COALESCE($5, serial_number)  ,
+                   delivery_date     = COALESCE($6::date, delivery_date)   ,
+                   MA_finish_date    = COALESCE($7::date, MA_finish_date)   ,
+                   price             = COALESCE($8::numeric, price)   ,
+                   recent_user       = COALESCE($9, recent_user )  ,
+                   modify_date       = COALESCE($10::timestamp, modify_date)  ,
+                   purchase_memo     = COALESCE($11,purchase_memo )  ,
+                   status            = COALESCE($12, status)  ,
+                   quantity          = COALESCE($13::integer, quantity)   ,
+                   regcode           = COALESCE($14, regcode)  ,
+                   MA_contact_date   = COALESCE($15::date, MA_contact_date)   ,
+                   currency          = COALESCE($16, currency)  
+               where purchase_code = $17
+            `,[company_code,
+                product_code        ,
+                product_type        ,
+                product_name        ,
+                serial_number       ,
+                delivery_date       ,
+                MA_finish_date      ,
+                price               ,
+                modify_user         ,
+                currenDate.currdate ,
+                purchase_memo       ,
+                status              ,
+                quantity            ,
+                regcode             ,
+                MA_contact_date     ,
+                currency            ,
+                v_purchase_code
+            ]);
+        }
+        const out_purchse_code = v_purchase_code;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
+        const out_modify_date = currenDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ out_purchse_code: out_purchse_code,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_purchse_code: out_purchse_code,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+   
+        res.end();
+    }catch(err){
+        console.error(err);
+        res.json({message:err});
+        res.end();        
+    }
+});
 /////////////////////////////////////////////////////////////////////
 
 //login
