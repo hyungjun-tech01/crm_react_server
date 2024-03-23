@@ -375,7 +375,7 @@ app.post('/modifyLead', async(req, res) => {
         action_type             = defaultNull(req.body.action_type)   ,   
         lead_code               = defaultNull(req.body.lead_code)  ,   
         company_code            = defaultNull(req.body.company_code)    ,                                                                 
-        leads_index             = defaultNull(req.body.leads_index)    ,                                                
+        lead_index             = defaultNull(req.body.lead_index)    ,                                                
         company_index           = defaultNull(req.body.company_index)    ,
         lead_number             = defaultNull(req.body.lead_number)    ,
         group_                  = defaultNull(req.body.group_)    ,
@@ -386,7 +386,7 @@ app.post('/modifyLead', async(req, res) => {
         company_address         = defaultNull(req.body.company_address)    ,
         company_phone_number    = defaultNull(req.body.company_phone_number)    ,
         company_fax_number      = defaultNull(req.body.company_fax_number)    ,
-        leads_name              = defaultNull(req.body.leads_name)    ,
+        lead_name              = defaultNull(req.body.lead_name)    ,
         is_keyman               = defaultNull(req.body.is_keyman)    ,
         department              = defaultNull(req.body.department)    ,
         position                = defaultNull(req.body.position)    ,
@@ -414,7 +414,7 @@ app.post('/modifyLead', async(req, res) => {
             insert into tbl_lead_info(
                 lead_code               ,
                 company_code            ,
-                leads_index             ,
+                lead_index             ,
                 company_index           ,
                 lead_number             ,
                 group_                  ,
@@ -425,7 +425,7 @@ app.post('/modifyLead', async(req, res) => {
                 company_address         ,
                 company_phone_number    ,
                 company_fax_number      ,
-                leads_name              ,
+                lead_name              ,
                 is_keyman               ,
                 department              ,
                 position                ,
@@ -445,7 +445,7 @@ app.post('/modifyLead', async(req, res) => {
                 $23,$24,$25,$26,$27,$28 );
             `,[ v_lead_code,
                 company_code            ,
-                leads_index             ,
+                lead_index             ,
                 company_index           ,
                 lead_number             ,
                 group_                  ,
@@ -456,7 +456,7 @@ app.post('/modifyLead', async(req, res) => {
                 company_address         ,
                 company_phone_number    ,
                 company_fax_number      ,
-                leads_name              ,
+                lead_name              ,
                 is_keyman               ,
                 department              ,
                 position                ,
@@ -476,7 +476,7 @@ app.post('/modifyLead', async(req, res) => {
             const response = await pool.query(`
             update tbl_lead_info 
                set company_code   =  COALESCE($1,company_code)         ,
-                   leads_index   =  COALESCE($2,leads_index)         ,
+                   lead_index   =  COALESCE($2,lead_index)         ,
                    company_index   =  COALESCE($3,company_index)         ,
                    lead_number          = COALESCE($4, lead_number)   ,
                    group_               = COALESCE($5 , group_)   ,
@@ -487,7 +487,7 @@ app.post('/modifyLead', async(req, res) => {
                    company_address      = COALESCE($10, company_address)   ,
                    company_phone_number = COALESCE($11, company_phone_number)   ,
                    company_fax_number   = COALESCE($12, company_fax_number)   ,
-                   leads_name           = COALESCE($13, leads_name)   ,
+                   lead_name           = COALESCE($13, lead_name)   ,
                    is_keyman            = COALESCE($14, is_keyman)   ,
                    department           = COALESCE($15, department)   ,
                    position             = COALESCE($16, position)   ,
@@ -502,7 +502,7 @@ app.post('/modifyLead', async(req, res) => {
                    status               = COALESCE($25, status)    
                where lead_code = $26;
             `,[company_code            ,
-                leads_index             ,
+                lead_index             ,
                 company_index           ,
                 lead_number             ,
                 group_                  ,
@@ -513,7 +513,7 @@ app.post('/modifyLead', async(req, res) => {
                 company_address         ,
                 company_phone_number    ,
                 company_fax_number      ,
-                leads_name              ,
+                lead_name              ,
                 is_keyman               ,
                 department              ,
                 position                ,
@@ -531,16 +531,16 @@ app.post('/modifyLead', async(req, res) => {
         }      
 
 
-     const out_leads_code = v_lead_code;
+     const out_lead_code = v_lead_code;
      const out_create_user = action_type === 'ADD' ? modify_user : "";
      const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
      const out_modify_date = currenDate.currdate;
      const out_recent_user = modify_user;
      
-    res.json({ out_leads_code: out_leads_code,  out_create_user:out_create_user, 
+    res.json({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
         out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
 
-    console.log({ out_leads_code: out_leads_code,  out_create_user:out_create_user, 
+    console.log({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
             out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
 
         res.end();
