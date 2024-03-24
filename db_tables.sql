@@ -682,3 +682,138 @@ select * from tbl_purchase_info;
 
 -- temp 테이블 삭제 
 drop table tbl_purchase_info_temp;
+
+
+-- tbl_transaction_info
+drop table tbl_transaction_info;
+
+create table tbl_transaction_info(
+transaction_code             varchar(32) primary key,
+lead_code                 varchar(32) not null,
+publish_type                 varchar(10) ,
+transaction_type             varchar(10) ,
+business_registration_code   varchar(50) ,
+company_name                 varchar(50) ,
+ceo_name                     varchar(50) ,
+company_address              varchar(255),
+business_type                varchar(100),
+business_item                varchar(100),
+publish_date                 date        ,
+transaction_title            varchar(100),
+supply_price                 numeric     ,
+tax_price                    numeric     ,
+total_price                  numeric     ,
+payment_type                 varchar(20) ,
+creater                      varchar(50) ,
+modify_date                  timestamp   ,
+recent_user                  varchar(50) ,
+transaction_contents         text        ,
+currency                     varchar(10) 
+);
+
+drop table tbl_transaction_info_temp;
+
+-- 임시테이블 데이터 받기 위함 . 작업 후 drop 필요 
+create table tbl_transaction_info_temp(
+transaction_code             varchar(32) primary key,
+lead_code                 varchar(32) not null,
+publish_type                 varchar(10) ,
+transaction_type             varchar(10) ,
+business_registration_code   varchar(50) ,
+company_name                 varchar(50) ,
+ceo_name                     varchar(50) ,
+company_address              varchar(255),
+business_type                varchar(100),
+business_item                varchar(100),
+publish_date                 varchar(100),
+transaction_title            varchar(100),
+supply_price                 varchar(100),
+tax_price                    varchar(100),
+total_price                  varchar(100),
+payment_type                 varchar(20) ,
+creater                      varchar(50) ,
+modify_date                  varchar(100),
+recent_user                  varchar(50) ,
+transaction_contents         varchar(100),
+currency                     varchar(10) 
+);
+
+copy tbl_transaction_info_temp(
+  transaction_code          ,
+  lead_code                 ,
+  publish_type              ,
+  transaction_type          ,
+  business_registration_code,
+  company_name              ,
+  ceo_name                  ,
+  company_address           ,
+  business_type             ,
+  business_item             ,
+  publish_date              ,
+  transaction_title         ,
+  supply_price              ,
+  tax_price                 ,
+  total_price               ,
+  payment_type              ,
+  creater                   ,
+  modify_date               ,
+  recent_user               ,
+  transaction_contents      ,
+  currency                  
+) FROM 'd:\tbl_transaction_info.csv' csv;
+
+delete from tbl_transaction_info_temp t
+where t.transaction_code = '﻿거래코드';
+
+insert into tbl_transaction_info (
+   transaction_code          ,
+  lead_code                 ,
+  publish_type              ,
+  transaction_type          ,
+  business_registration_code,
+  company_name              ,
+  ceo_name                  ,
+  company_address           ,
+  business_type             ,
+  business_item             ,
+  publish_date              ,
+  transaction_title         ,
+  supply_price              ,
+  tax_price                 ,
+  total_price               ,
+  payment_type              ,
+  creater                   ,
+  modify_date               ,
+  recent_user               ,
+  transaction_contents      ,
+  currency                  
+) select 
+ transaction_code          ,
+  lead_code                 ,
+  publish_type              ,
+  transaction_type          ,
+  business_registration_code,
+  company_name              ,
+  ceo_name                  ,
+  company_address           ,
+  business_type             ,
+  business_item             ,
+  publish_date::date              ,
+  transaction_title         ,
+  supply_price::numeric              ,
+  tax_price::numeric                 ,
+  total_price::numeric               ,
+  payment_type              ,
+  creater                   ,
+  modify_date::timestamp               ,
+  recent_user               ,
+  transaction_contents      ,
+  currency                  from tbl_transaction_info_temp;
+
+-- 데이터 확인 
+  select * from tbl_transaction_info;
+  
+-- temp table 삭제 
+  drop table tbl_transaction_info_temp;
+
+  
