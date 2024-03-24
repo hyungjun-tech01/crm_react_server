@@ -766,7 +766,7 @@ delete from tbl_transaction_info_temp t
 where t.transaction_code = '﻿거래코드';
 
 insert into tbl_transaction_info (
-   transaction_code          ,
+  transaction_code          ,
   lead_code                 ,
   publish_type              ,
   transaction_type          ,
@@ -864,6 +864,9 @@ where t.transaction_code = '﻿거래코드';
 
 -- 프로시져 생성 p_insert_transaction_sub.sql 
 
+-- 프로시져 실행
+call p_insert_transaction_sub();
+
 -- 데이터 확인 
 select transaction_contents, * from tbl_transaction_info;
 
@@ -872,3 +875,5 @@ drop table tbl_transaction_sub_temp;
 
 -- 프로시져 drop 
 drop procedure p_insert_transaction_sub();
+
+

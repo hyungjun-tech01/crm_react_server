@@ -262,7 +262,7 @@ app.post('/modifyCompany', async(req, res) => {
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
-        const currenDate = current_date.rows[0];
+        const currentDate = current_date.rows[0];
         let v_company_code = company_code;
 
         if (action_type === 'ADD') {
@@ -306,7 +306,7 @@ app.post('/modifyCompany', async(req, res) => {
             `,[v_company_code,company_number,group_,company_scale,deal_type,company_name,company_name_eng,
                business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
-               memo,modify_user,currenDate.currdate,currenDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
+               memo,modify_user,currentDate.currdate,currentDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
                sales_resource,application_engineer,region
             ]);
         }
@@ -345,15 +345,15 @@ app.post('/modifyCompany', async(req, res) => {
             `,[company_number,group_,company_scale,deal_type,company_name,company_name_eng,
                 business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                 industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
-                memo,currenDate.currdate, modify_user,counter,account_code,bank_name,account_owner,
+                memo,currentDate.currdate, modify_user,counter,account_code,bank_name,account_owner,
                 sales_resource,application_engineer,region,v_company_code
             ]);
            // update 
         }  
         const out_company_code = v_company_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
-        const out_create_date = action_type === 'ADD' ? currenDate.currdate:"";
-        const out_modify_date = currenDate.currdate;
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate:"";
+        const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
          
         res.json({ out_company_code: out_company_code,  out_create_user:out_create_user, 
@@ -402,7 +402,7 @@ app.post('/modifyLead', async(req, res) => {
     try{
        
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
-        const currenDate = current_date.rows[0];
+        const currentDate = current_date.rows[0];
         let v_lead_code = lead_code;
 
         if (action_type === 'ADD') {
@@ -465,8 +465,8 @@ app.post('/modifyLead', async(req, res) => {
                 email                   ,
                 homepage                ,
                 modify_user             ,
-                currenDate.currdate     ,
-                currenDate.currdate    ,
+                currentDate.currdate     ,
+                currentDate.currdate    ,
                 modify_user             ,
                 counter                 ,
                 application_engineer    ,
@@ -521,7 +521,7 @@ app.post('/modifyLead', async(req, res) => {
                 company_name_en         ,
                 email                   ,
                 homepage                ,
-                currenDate.currdate     ,
+                currentDate.currdate     ,
                 modify_user             ,
                 counter,
                 application_engineer,
@@ -533,8 +533,8 @@ app.post('/modifyLead', async(req, res) => {
 
      const out_lead_code = v_lead_code;
      const out_create_user = action_type === 'ADD' ? modify_user : "";
-     const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
-     const out_modify_date = currenDate.currdate;
+     const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+     const out_modify_date = currentDate.currdate;
      const out_recent_user = modify_user;
      
     res.json({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
@@ -582,7 +582,7 @@ app.post('/modifyConsult', async(req, res) => {
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
-        const currenDate = current_date.rows[0];
+        const currentDate = current_date.rows[0];
         let v_consulting_code = consulting_code;
 
         if (action_type === 'ADD') {
@@ -644,10 +644,10 @@ app.post('/modifyConsult', async(req, res) => {
                 lead_time               , 
                 action_content          , 
                 request_type            , 
-                currenDate.currdate     ,
+                currentDate.currdate     ,
                 modify_user             ,
                 modify_user             ,
-                currenDate.currdate     ,
+                currentDate.currdate     ,
                 product_type
             ]);
         }
@@ -698,7 +698,7 @@ app.post('/modifyConsult', async(req, res) => {
                 action_content          , 
                 request_type            , 
                 modify_user             ,
-                currenDate.currdate     ,
+                currentDate.currdate     ,
                 product_type            ,
                 v_consulting_code
             ]);
@@ -706,8 +706,8 @@ app.post('/modifyConsult', async(req, res) => {
 
         const out_consulting_code = v_consulting_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
-        const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
-        const out_modify_date = currenDate.currdate;
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
         
        res.json({ out_consulting_code: out_consulting_code,  out_create_user:out_create_user, 
@@ -749,7 +749,7 @@ app.post('/modifyPurchase', async(req, res) => {
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
-        const currenDate = current_date.rows[0];
+        const currentDate = current_date.rows[0];
         let v_purchase_code = purchase_code;
 
         if (action_type === 'ADD') {
@@ -795,9 +795,9 @@ app.post('/modifyPurchase', async(req, res) => {
                 MA_finish_date      ,
                 price               ,
                 modify_user         ,
-                currenDate.currdate ,
+                currentDate.currdate ,
                 modify_user         ,
-                currenDate.currdate ,
+                currentDate.currdate ,
                 purchase_memo       ,
                 status              ,
                 quantity            ,
@@ -835,7 +835,7 @@ app.post('/modifyPurchase', async(req, res) => {
                 MA_finish_date      ,
                 price               ,
                 modify_user         ,
-                currenDate.currdate ,
+                currentDate.currdate ,
                 purchase_memo       ,
                 status              ,
                 quantity            ,
@@ -847,8 +847,8 @@ app.post('/modifyPurchase', async(req, res) => {
         }
         const out_purchse_code = v_purchase_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
-        const out_create_date = action_type === 'ADD' ? currenDate.currdate : "";
-        const out_modify_date = currenDate.currdate;
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
         
         res.json({ out_purchse_code: out_purchse_code,  out_create_user:out_create_user, 
@@ -886,25 +886,84 @@ app.post('/modifyTransaction', async(req, res) => {
         total_price                = defaultNull(req.body.total_price),
         payment_type               = defaultNull(req.body.payment_type),
         modify_user                = defaultNull(req.body.modify_user),
-        modify_date                = defaultNull(req.body.modify_date),
         transaction_contents       = defaultNull(req.body.transaction_contents),
         currency                   = defaultNull(req.body.currency)
     } = req.body;
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
-        const currenDate = current_date.rows[0];
+        const currentDate = current_date.rows[0];
         let v_transaction_code = transaction_code;
 
         if (action_type === 'ADD') {
             if (lead_code === null || lead_code === "") {
                 throw new Error('lead_code not null입니다.');
             }
-            if (product_code === null || product_code === "") {
-                throw new Error('product_code는 not null입니다.');
+            if (publish_date === null || publish_date === "") {
+                throw new Error('publish_date는 not null입니다.');
             }
-            v_purchase_code  = pk_code();
+            v_transaction_code  = pk_code();
+            const response = await pool.query(`
+                insert into tbl_transaction_info(
+                    transaction_code          ,
+                    lead_code                 ,
+                    publish_type              ,
+                    transaction_type          ,
+                    business_registration_code,
+                    company_name              ,
+                    ceo_name                  ,
+                    company_address           ,
+                    business_type             ,
+                    business_item             ,
+                    publish_date              ,
+                    transaction_title         ,
+                    supply_price              ,
+                    tax_price                 ,
+                    total_price               ,
+                    payment_type              ,
+                    creater                   ,
+                    modify_date               ,
+                    recent_user               ,
+                    transaction_contents      ,
+                    currency                          
+                ) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11::date,$12,$13::numeric,
+                    $14::numeric,$15::numeric,$16,$17,$18::timestamp,$19, $20, $21)
+            `,[
+                v_transaction_code,
+                lead_code                   ,                
+                publish_type                ,
+                transaction_type            ,
+                business_registration_code  ,
+                company_name                ,
+                ceo_name                    ,
+                company_address             ,
+                business_type             ,
+                business_item             ,
+                publish_date              ,
+                transaction_title         ,
+                supply_price              ,
+                tax_price                 ,
+                total_price               ,
+                payment_type              ,
+                modify_user               ,
+                currentDate.currdate         ,
+                modify_user               ,
+                transaction_contents      ,
+                currency                  
+            ]);
+
         }
+        const out_transaction_code = v_transaction_code;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ out_transaction_code: out_transaction_code,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_transaction_code: out_transaction_code,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
 
     }catch(err){
         console.error(err);
