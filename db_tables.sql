@@ -816,4 +816,59 @@ insert into tbl_transaction_info (
 -- temp table 삭제 
   drop table tbl_transaction_info_temp;
 
-  
+
+-- 거래명세표_sub 데이터 import 
+-- temp table 작성 
+create table tbl_transaction_sub_temp (
+    transaction_code	   varchar(100),
+    month_day	           varchar(100),
+    product_name	       varchar(100),
+    standard	           varchar(100),
+    unit	               varchar(100),
+    quantity	           varchar(100),
+    unit_price	         varchar(100),
+    supply_price	       varchar(100),
+    tax_price	           varchar(100),
+    total_price	         varchar(100),
+    memo	               varchar(100),
+    trasaction_sub_index varchar(100),
+    lead_code	           varchar(100),
+    company_name	       varchar(100),
+    statement_number	   varchar(100),
+    transaction_sub_type varchar(100),
+    modify_date          varchar(100)
+);
+
+copy tbl_transaction_sub_temp(
+    transaction_code	   ,
+    month_day	           ,
+    product_name	       ,
+    standard	           ,
+    unit	               ,
+    quantity	           ,
+    unit_price	         ,
+    supply_price	       ,
+    tax_price	           ,
+    total_price	         ,
+    memo	               ,
+    trasaction_sub_index ,
+    lead_code	           ,
+    company_name	       ,
+    statement_number	   ,
+    transaction_sub_type ,
+    modify_date          
+) from 'd:\tbl_transaction_info_sub.csv' csv;
+
+delete from tbl_transaction_sub_temp t
+where t.transaction_code = '﻿거래코드';
+
+-- 프로시져 생성 p_insert_transaction_sub.sql 
+
+-- 데이터 확인 
+select transaction_contents, * from tbl_transaction_info;
+
+-- temp table 삭제 
+drop table tbl_transaction_sub_temp;
+
+-- 프로시져 drop 
+drop procedure p_insert_transaction_sub();

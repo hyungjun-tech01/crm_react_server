@@ -864,6 +864,54 @@ app.post('/modifyPurchase', async(req, res) => {
         res.end();        
     }
 });
+
+// create/update transaction info 
+app.post('/modifyTransaction', async(req, res) => {
+    const  { 
+        action_type                = defaultNull(req.body.action_type),
+        transaction_code           = defaultNull(req.body.transaction_code),
+        lead_code                  = defaultNull(req.body.lead_code),
+        publish_type               = defaultNull(req.body.publish_type),
+        transaction_type           = defaultNull(req.body.transaction_type),
+        business_registration_code = defaultNull(req.body.business_registration_code),
+        company_name               = defaultNull(req.body.company_name),
+        ceo_name                   = defaultNull(req.body.ceo_name),
+        company_address            = defaultNull(req.body.company_address),
+        business_type              = defaultNull(req.body.business_type),
+        business_item              = defaultNull(req.body.business_item),
+        publish_date               = defaultNull(req.body.publish_date),
+        transaction_title          = defaultNull(req.body.transaction_title),
+        supply_price               = defaultNull(req.body.supply_price),
+        tax_price                  = defaultNull(req.body.tax_price),
+        total_price                = defaultNull(req.body.total_price),
+        payment_type               = defaultNull(req.body.payment_type),
+        modify_user                = defaultNull(req.body.modify_user),
+        modify_date                = defaultNull(req.body.modify_date),
+        transaction_contents       = defaultNull(req.body.transaction_contents),
+        currency                   = defaultNull(req.body.currency)
+    } = req.body;
+    try{
+
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currenDate = current_date.rows[0];
+        let v_transaction_code = transaction_code;
+
+        if (action_type === 'ADD') {
+            if (lead_code === null || lead_code === "") {
+                throw new Error('lead_code not null입니다.');
+            }
+            if (product_code === null || product_code === "") {
+                throw new Error('product_code는 not null입니다.');
+            }
+            v_purchase_code  = pk_code();
+        }
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err});
+        res.end();              
+    }
+});
 /////////////////////////////////////////////////////////////////////
 
 //login
