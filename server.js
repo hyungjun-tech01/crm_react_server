@@ -954,6 +954,51 @@ app.post('/modifyTransaction', async(req, res) => {
             ]);
 
         }
+        if (action_type === 'UPDATE') {
+            const response = await pool.query(`
+                update tbl_transaction_info 
+                  set  lead_code                  = COALESCE($1 , lead_code),
+                        publish_type               = COALESCE($2 , publish_type),
+                        transaction_type           = COALESCE($3 , transaction_type),
+                        business_registration_code = COALESCE($4 , business_registration_code),
+                        company_name               = COALESCE($5 , company_name),
+                        ceo_name                   = COALESCE($6 , ceo_name),
+                        company_address            = COALESCE($7 , company_address),
+                        business_type              = COALESCE($8 , business_type),
+                        business_item              = COALESCE($9 , business_item),
+                        publish_date               = COALESCE($10::date , publish_date),
+                        transaction_title          = COALESCE($11 , transaction_title),
+                        supply_price               = COALESCE($12::numeric , supply_price),
+                        tax_price                  = COALESCE($13::numeric , tax_price),
+                        total_price                = COALESCE($14::numeric , total_price),
+                        payment_type               = COALESCE($15 , payment_type),
+                        modify_date                = COALESCE($16::timestamp , modify_date),
+                        recent_user                = COALESCE($17 , recent_user),
+                        transaction_contents       = COALESCE($18 , transaction_contents),
+                        currency                   = COALESCE($19 , currency)    
+                where transaction_code = $20
+            `,[ lead_code                 ,         
+                publish_type              ,
+                transaction_type          ,
+                business_registration_code,
+                company_name              ,
+                ceo_name                  ,
+                company_address           ,
+                business_type             ,
+                business_item             ,
+                publish_date              ,
+                transaction_title         ,
+                supply_price              ,
+                tax_price                 ,
+                total_price               ,
+                payment_type              ,
+                currentDate.currdate      ,
+                modify_user               ,
+                transaction_contents      ,
+                currency                  ,
+                v_transaction_code
+            ]);
+        }
         const out_transaction_code = v_transaction_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
         const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
