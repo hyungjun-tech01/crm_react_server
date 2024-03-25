@@ -889,6 +889,7 @@ app.post('/modifyTransaction', async(req, res) => {
         transaction_contents       = defaultNull(req.body.transaction_contents),
         currency                   = defaultNull(req.body.currency)
     } = req.body;
+
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
