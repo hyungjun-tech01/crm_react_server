@@ -12,7 +12,7 @@ BEGIN
         select array_to_json(array(
 	        select row_to_json(tmp) 
 	        from(
-                select	견적코드,
+                select	quotation_code,
                     c_0	  ,
                     c_1	  ,
                     c_2	  ,
@@ -40,14 +40,14 @@ BEGIN
                     c_24  	,
                     c_25  	,
                     c_998   ,
-                    순번 
+                    order_number 
                 from	tbl_quotation_sub_info_temp 
 	        	where quotation_code = TARGET_CURSOR.quotation_code
 	        ) as tmp
         ) ) into v_quotation_sub;
 
-        update tbl_transaction_info 
-        set transaction_contents = v_quotation_sub
+        update tbl_quotation_info 
+        set quotation_contents = v_quotation_sub
         where quotation_code = TARGET_CURSOR.quotation_code;
     END LOOP;
 

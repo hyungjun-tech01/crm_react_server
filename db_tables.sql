@@ -879,8 +879,8 @@ drop procedure p_insert_transaction_sub();
 -- tbl_quotation_info
 
 create table tbl_quotation_info(
-quotation_code              varchar(32)   ,           
-lead_code                   varchar(32)    ,
+quotation_code              varchar(32)   primary key,           
+lead_code                   varchar(32)   not null  ,
 region                      varchar(100)   ,
 company_name                varchar(50)    ,
 lead_name                   varchar(100)  ,
@@ -1037,15 +1037,6 @@ company_code
 delete from tbl_quotation_info_temp
 where quotation_code = '﻿견적코드';
 
--- comfirm_date 오류 수정 
-update tbl_quotation_info_temp 
-set comfirm_date = null
-where comfirm_date = 'NULL';
-
--- quotation_date 오류 수정 
-update tbl_quotation_info_temp 
-set quotation_date = null
-where quotation_date = 'NULL';
 
 
 --본테이블로 데이터 insert 
@@ -1149,9 +1140,13 @@ company_code             from tbl_quotation_info_temp;
 -- 데이터 확인
 select * from tbl_quotation_info;
 
+-- temp table 삭제 
+drop table tbl_quotation_info_temp;
+
+
 -- sub temp table 생성 
 create table tbl_quotation_sub_info_temp(
-  견적코드	varchar(100),
+  quotation_code	varchar(100),
   c_0	  varchar(100),
   c_1	  varchar(100),
   c_2	  varchar(100),
@@ -1179,12 +1174,12 @@ create table tbl_quotation_sub_info_temp(
   c_24  varchar(100)	,
   c_25  varchar(100)	,
   c_998	varchar(4000),
-  순번 varchar(100)
+  order_number varchar(100)
 );
 
 
 copy tbl_quotation_sub_info_temp 
-(견적코드,
+(quotation_code,
   c_0	  ,
   c_1	  ,
   c_2	  ,
@@ -1212,9 +1207,23 @@ copy tbl_quotation_sub_info_temp
   c_24  	,
   c_25  	,
   c_998   ,
-  순번 var
+  order_number 
 ) from 'd:\tbl_quotation_sub_info.csv' csv;
 
-delete  from tbl_quotation_sub_info_temp t
-where t.견적코드 = '﻿견적코드';
+  delete  from tbl_quotation_sub_info_temp t
+  where t.quotation_code = '﻿견적코드';
+
+-- procedure 생성 , p_insert_quotation_sub.sql 실행 
+
+-- procedure 실행 
+call p_insert_quotation_sub();
+
+-- 데이터 확인 
+select * from tbl_quotation_info;
+
+-- temp table 삭제 
+drop table tbl_quotation_sub_info_temp;
+
+-- 프로시져 drop 
+drop procedure p_insert_quotation_sub();
 
