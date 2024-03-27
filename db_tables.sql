@@ -1033,8 +1033,124 @@ quotation_table          ,
 company_code             
 ) from 'd:\tbl_quotation_info.csv' csv;
 
+-- 헤더 정보 삭제 
+delete from tbl_quotation_info_temp
+where quotation_code = '﻿견적코드';
+
+-- comfirm_date 오류 수정 
+update tbl_quotation_info_temp 
+set comfirm_date = null
+where comfirm_date = 'NULL';
+
+-- quotation_date 오류 수정 
+update tbl_quotation_info_temp 
+set quotation_date = null
+where quotation_date = 'NULL';
+
+
+--본테이블로 데이터 insert 
+insert into tbl_quotation_info
+(quotation_code           ,
+lead_code                ,
+region                   ,
+company_name             ,
+lead_name                ,
+department               ,
+position                 ,
+mobile_number            ,
+phone_number             ,
+fax_number               ,
+email                    ,
+quotation_type           ,
+quotation_number         ,
+quotation_send_type      ,
+quotation_date           ,
+delivery_location        ,
+payment_type             ,
+warranty_period          ,
+delivery_period          ,
+quotation_expiration_date,
+status                   ,
+comfirm_date             ,
+quotation_manager        ,
+sales_representative     ,
+quotation_title          ,
+list_price               ,
+list_price_dc            ,
+sub_total_amount         ,
+dc_rate                  ,
+dc_amount                ,
+quotation_amount         ,
+tax_amount               ,
+total_quotation_amount   ,
+cutoff_amount            ,
+total_cost_price         ,
+profit                   ,
+profit_rate              ,
+upper_memo               ,
+lower_memo               ,
+count                    ,
+creator                  ,
+create_date              ,
+modify_date              ,
+recent_user              ,
+print_template           ,
+quotation_table          ,
+company_code             )
+select 
+quotation_code           ,
+lead_code                ,
+region                   ,
+company_name             ,
+lead_name                ,
+department               ,
+position                 ,
+mobile_number            ,
+phone_number             ,
+fax_number               ,
+email                    ,
+quotation_type           ,
+quotation_number         ,
+quotation_send_type      ,
+quotation_date::date           ,
+delivery_location        ,
+payment_type             ,
+warranty_period          ,
+delivery_period          ,
+quotation_expiration_date,
+status                   ,
+comfirm_date::date             ,
+quotation_manager        ,
+sales_representative     ,
+quotation_title          ,
+list_price::numeric               ,
+list_price_dc::numeric            ,
+sub_total_amount::numeric         ,
+dc_rate::numeric                  ,
+dc_amount::numeric                ,
+quotation_amount::numeric         ,
+tax_amount::numeric               ,
+total_quotation_amount::numeric   ,
+cutoff_amount::numeric            ,
+total_cost_price::numeric         ,
+profit::numeric                   ,
+profit_rate::numeric              ,
+upper_memo               ,
+lower_memo               ,
+count::numeric                    ,
+creator                  ,
+create_date::timestamp              ,
+modify_date::timestamp              ,
+recent_user              ,
+print_template           ,
+quotation_table          ,
+company_code             from tbl_quotation_info_temp;
+
+-- 데이터 확인
+select * from tbl_quotation_info;
+
 -- sub temp table 생성 
-create table tbl_quotation_sub_info(
+create table tbl_quotation_sub_info_temp(
   견적코드	varchar(100),
   c_0	  varchar(100),
   c_1	  varchar(100),
@@ -1062,8 +1178,43 @@ create table tbl_quotation_sub_info(
   c_23  varchar(100)	,
   c_24  varchar(100)	,
   c_25  varchar(100)	,
-  c_998	varchar(100),
+  c_998	varchar(4000),
   순번 varchar(100)
 );
 
+
+copy tbl_quotation_sub_info_temp 
+(견적코드,
+  c_0	  ,
+  c_1	  ,
+  c_2	  ,
+  c_3	  ,
+  c_4	  ,
+  c_5	  ,
+  c_6	  ,
+  c_7   ,
+  c_8	  ,
+  c_9	  ,
+  c_10  	,
+  c_11  	,
+  c_12  	,
+  c_13  	,
+  c_14  ,
+  c_15  ,
+  c_16  	,
+  c_17  	,
+  c_18  	,
+  c_19  	,
+  c_20  	,
+  c_21  	,
+  c_22  	,
+  c_23  	,
+  c_24  	,
+  c_25  	,
+  c_998   ,
+  순번 var
+) from 'd:\tbl_quotation_sub_info.csv' csv;
+
+delete  from tbl_quotation_sub_info_temp t
+where t.견적코드 = '﻿견적코드';
 

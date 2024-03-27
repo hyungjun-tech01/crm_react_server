@@ -1017,6 +1017,97 @@ app.post('/modifyTransaction', async(req, res) => {
         res.end();              
     }
 });
+
+// create/update transaction info 
+app.post('/modifyQuotation', async(req, res) => {
+    const  { 
+        action_type                = defaultNull(req.body.action_type),
+        quotation_code             = defaultNull(req.body.quotation_code)   ,           
+        lead_code                  = defaultNull(req.body.lead_code)   ,
+        region                     = defaultNull(req.body.region)   ,
+        company_name               = defaultNull(req.body.company_name)   ,
+        lead_name                  = defaultNull(req.body.lead_name)   ,
+        department                 = defaultNull(req.body.department)   ,
+        position                   = defaultNull(req.body.position)   ,
+        mobile_number              = defaultNull(req.body.mobile_number)   ,
+        phone_number               = defaultNull(req.body.phone_number)   ,
+        fax_number                 = defaultNull(req.body.fax_number)   ,
+        email                      = defaultNull(req.body.email)   ,
+        quotation_type             = defaultNull(req.body.quotation_type)   ,
+        quotation_number           = defaultNull(req.body.quotation_number)   ,
+        quotation_send_type        = defaultNull(req.body.quotation_send_type)   ,
+        quotation_date             = defaultNull(req.body.quotation_date)   ,
+        delivery_location          = defaultNull(req.body.delivery_location)   ,
+        payment_type               = defaultNull(req.body.payment_type)   ,
+        warranty_period            = defaultNull(req.body.warranty_period)   ,
+        delivery_period            = defaultNull(req.body.delivery_period)   ,
+        quotation_expiration_date  = defaultNull(req.body.quotation_expiration_date)   ,
+        status                     = defaultNull(req.body.status)   ,
+        comfirm_date               = defaultNull(req.body.comfirm_date)   ,
+        quotation_manager          = defaultNull(req.body.quotation_manager)   ,
+        sales_representative       = defaultNull(req.body.sales_representative)   ,
+        quotation_title            = defaultNull(req.body.quotation_title)   ,
+        list_price                 = defaultNull(req.body.list_price)   ,
+        list_price_dc              = defaultNull(req.body.list_price_dc)   ,
+        sub_total_amount           = defaultNull(req.body.sub_total_amount)   ,
+        dc_rate                    = defaultNull(req.body.dc_rate)   ,
+        dc_amount                  = defaultNull(req.body.dc_amount)   ,
+        quotation_amount           = defaultNull(req.body.quotation_amount)   ,
+        tax_amount                 = defaultNull(req.body.tax_amount)   ,
+        total_quotation_amount     = defaultNull(req.body.total_quotation_amount)   ,
+        cutoff_amount              = defaultNull(req.body.cutoff_amount)   ,
+        total_cost_price           = defaultNull(req.body.total_cost_price)   ,
+        profit                     = defaultNull(req.body.profit)   ,
+        profit_rate                = defaultNull(req.body.profit_rate)   ,
+        upper_memo                 = defaultNull(req.body.upper_memo)   ,
+        lower_memo                 = defaultNull(req.body.lower_memo)   ,
+        count                      = defaultNull(req.body.count)   ,
+        creator                    = defaultNull(req.body.creator)   ,
+        create_date                = defaultNull(req.body.create_date)   ,
+        modify_date                = defaultNull(req.body.modify_date)   ,
+        recent_user                = defaultNull(req.body.recent_user)   ,
+        print_template             = defaultNull(req.body.print_template)   ,
+        quotation_table            = defaultNull(req.body.quotation_table)   ,
+        company_code               = defaultNull(req.body.company_code)   ,
+        quotation_contents         = defaultNull(req.body.quotation_contents) 
+    } = req.body;
+    try{
+
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currentDate = current_date.rows[0];
+        let v_quotation_code = quotation_code;
+
+        if (action_type === 'ADD') {
+            if (lead_code === null || lead_code === "") {
+                throw new Error('lead_code not null입니다.');
+            }
+            if (quotation_date === null || quotation_date === "") {
+                throw new Error('quotation_date는 not null입니다.');
+            }
+            v_quotation_code  = pk_code();
+            const response = await pool.query(`
+            `,[]);        
+        }
+
+        const out_quotation_code = v_quotation_code;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ out_quotation_code: out_quotation_code,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_quotation_code: out_quotation_code,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err});
+        res.end();              
+    }
+
+});
 /////////////////////////////////////////////////////////////////////
 
 //login
