@@ -3,6 +3,7 @@ LANGUAGE plpgsql
 AS $$
 DECLARE
     v_quotation_sub text;
+    vv_quotation_sub text;
     TARGET_CURSOR record;   -- 커서를 선언 해 주어야 한다. 
 BEGIN
     FOR TARGET_CURSOR IN
@@ -46,8 +47,10 @@ BEGIN
 	        ) as tmp
         ) ) into v_quotation_sub;
 
+        select regexp_replace(v_quotation_sub, 'c_+', '', 'g' ) into vv_quotation_sub;
+
         update tbl_quotation_info 
-        set quotation_contents = v_quotation_sub
+        set quotation_contents = vv_quotation_sub
         where quotation_code = TARGET_CURSOR.quotation_code;
     END LOOP;
 
