@@ -926,6 +926,7 @@ recent_user                 varchar(100)   ,
 print_template              text           ,
 quotation_table             text           ,
 company_code                varchar(32),
+currency                    varchar(10),
 quotation_contents          text
 );
 
@@ -979,7 +980,8 @@ modify_date                 varchar(100)      ,
 recent_user                 varchar(100)   ,
 print_template              text           ,
 quotation_table             text           ,
-company_code                varchar(32)
+company_code                varchar(32),
+currency                    varchar(10)
 );
 
 -- temp 에 데이터 import 
@@ -1030,7 +1032,8 @@ modify_date              ,
 recent_user              ,
 print_template           ,
 quotation_table          ,
-company_code             
+company_code             ,
+currency                  
 ) from 'd:\tbl_quotation_info.csv' csv;
 
 -- 헤더 정보 삭제 
@@ -1087,7 +1090,8 @@ modify_date              ,
 recent_user              ,
 print_template           ,
 quotation_table          ,
-company_code             )
+company_code             ,
+currency)
 select 
 quotation_code           ,
 lead_code                ,
@@ -1135,7 +1139,8 @@ modify_date::timestamp              ,
 recent_user              ,
 print_template           ,
 quotation_table          ,
-company_code             from tbl_quotation_info_temp;
+company_code             ,
+currency from tbl_quotation_info_temp;
 
 -- 데이터 확인
 select * from tbl_quotation_info;
