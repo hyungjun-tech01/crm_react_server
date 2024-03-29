@@ -282,9 +282,19 @@ app.post('/modifyCompany', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_company_code = company_code;
+        let v_company_number = company_number;
 
         if (action_type === 'ADD') {
             v_company_code  = pk_code();
+
+            // 현재 db에 있는 company의 갯수 + 1을 해서 company_number 에 입력 
+            const company_number_result = await pool.query(`
+            select nextval(\'index_number_seq\') company_count ;`);
+
+            v_company_number = parseInt(company_number_result.rows[0].company_count);
+
+            console.log(v_company_number);
+
             const response = await pool.query(`
             insert into tbl_company_info(
                 company_code                   ,
@@ -321,7 +331,7 @@ app.post('/modifyCompany', async(req, res) => {
             values(
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 
                 $18, $19, $20, $21, $22::timestamp, $23::timestamp, $24, $25::integer, $26, $27, $28, $29, $30, $31);
-            `,[v_company_code,company_number,group_,company_scale,deal_type,company_name,company_name_eng,
+            `,[v_company_code,v_company_number,group_,company_scale,deal_type,company_name,company_name_eng,
                business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
                memo,modify_user,currentDate.currdate,currentDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
@@ -375,9 +385,12 @@ app.post('/modifyCompany', async(req, res) => {
         const out_recent_user = modify_user;
          
         res.json({ out_company_code: out_company_code,  out_create_user:out_create_user, 
-            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
+            out_company_number:v_company_number
+            }); // 결과 리턴을 해 줌 .  
         console.log({ out_company_code: out_company_code,  out_create_user:out_create_user, 
-                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
+                out_company_number:v_company_number });
         res.end();  
 
     }catch(err){

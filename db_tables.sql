@@ -1232,3 +1232,8 @@ drop table tbl_quotation_sub_info_temp;
 -- 프로시져 drop 
 drop procedure p_insert_quotation_sub();
 
+-- sequence 하나 생성 필요 ,  데이터에 따라 start 숫자를 변경할 필요가 있어 보임.
+drop sequence index_number_seq;
+CREATE SEQUENCE index_number_seq START 20000;
+-- 잘 나오는지 테스트 
+select nextval('index_number_seq') ;
