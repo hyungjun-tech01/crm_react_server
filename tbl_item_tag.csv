@@ -1,0 +1,28 @@
+﻿tag_code,tag_type,tag_name
+1,group,기타
+2,group,가망고객
+3,group,가망고객_F1
+4,group,가망고객_F2
+5,group,가망고객_F3
+6,group,명함
+7,group,사용고객
+8,group,사용고객_구매담당자
+9,group,사용고객_글로벌 라이센스 업체
+10,group,사용고객_EPDM 사용고객
+11,group,사용고객_Simulation 사용고객
+12,group,사용고객_SolidWorks 사용고객
+13,group,사용고객_SolidWorks Premium 사용고객
+14,group,사용고객_SWC 사용고객
+15,group,사용고객_SWE 사용고객
+16,group,영업처
+17,group,영업처_T1
+18,group,영업처_T2
+19,group,영업처_T3
+20,group,타VAR
+21,group,퇴사자
+22,group,협력사
+23,group,Cold Call 업체
+24,group,Cold Call 업체_C1
+25,group,Cold Call 업체_C2
+26,group,Cold Call 업체_C3
+27,group,SS 만료 고객

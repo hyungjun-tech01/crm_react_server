@@ -1237,3 +1237,40 @@ drop sequence index_number_seq;
 CREATE SEQUENCE index_number_seq START 20000;
 -- 잘 나오는지 테스트 
 select nextval('index_number_seq') ;
+
+
+-- tbl_item_tag 테이블 생성 
+create table tbl_item_tag(
+  tag_code      varchar(32) primary key,   -- uuid
+  tag_type      varchar(50),
+  tag_name      varchar(100)
+);
+
+-- tbl_item_tag temp 생성 
+create table tbl_item_tag_temp(
+  tag_code      varchar(32),  -- 여긴 number
+  tag_type      varchar(50),
+  tag_name      varchar(100)
+);
+
+-- tbl_item_tag_temp import 
+copy tbl_item_tag_temp(
+  tag_code,
+  tag_type, 
+  tag_name 
+) from 'd:\tbl_item_tag.csv' csv;
+
+-- header 정보 삭제 
+delete from tbl_item_tag_temp 
+where tag_code = '﻿tag_code';
+
+-- p_insert_item_tag.sql 생성 
+
+-- p_insert_item_tag 프로시저 실행 
+call p_insert_item_tag();
+
+-- temp table tbl_item_tag_temp 삭제 
+drop table tbl_item_tag_temp;
+
+-- 데이터 확인 
+select * from tbl_item_tag;
