@@ -344,10 +344,6 @@ status              from tbl_lead_info_temp;
 drop table tbl_lead_info_temp;
 
 
-drop table invoce; 
-drop table company;
-drop table lead;
-
 -- 사용자 Info Table 
 
 drop table tbl_user_info;

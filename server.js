@@ -287,13 +287,11 @@ app.post('/modifyCompany', async(req, res) => {
         if (action_type === 'ADD') {
             v_company_code  = pk_code();
 
-            // 현재 db에 있는 company의 갯수 + 1을 해서 company_number 에 입력 
+            // 현재 db에 있는 sequence에서  company_number 하나 생성해서 입력
             const company_number_result = await pool.query(`
             select nextval(\'index_number_seq\') company_count ;`);
 
             v_company_number = parseInt(company_number_result.rows[0].company_count);
-
-            console.log(v_company_number);
 
             const response = await pool.query(`
             insert into tbl_company_info(
@@ -435,12 +433,21 @@ app.post('/modifyLead', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_lead_code = lead_code;
+        let v_lead_number = lead_number;
 
         if (action_type === 'ADD') {
             if (company_code === null || company_code === "") {
                 throw new Error('company_code는 not null입니다.');
             }
             v_lead_code  = pk_code();
+
+
+            // 현재 db에 있는 sequence에서  lead_number 하나 생성해서 입력
+            const lead_number_result = await pool.query(`
+            select nextval(\'index_number_seq\') lead_count ;`);
+
+            v_lead_number = parseInt(lead_number_result.rows[0].lead_count);
+            
             const response = await pool.query(`
             insert into tbl_lead_info(
                 lead_code               ,
@@ -478,7 +485,7 @@ app.post('/modifyLead', async(req, res) => {
                 company_code            ,
                 lead_index             ,
                 company_index           ,
-                lead_number             ,
+                v_lead_number             ,
                 group_                  ,
                 sales_resource          ,
                 region                  ,
@@ -563,18 +570,21 @@ app.post('/modifyLead', async(req, res) => {
 
 
      const out_lead_code = v_lead_code;
+     const out_lead_number = v_lead_number;
      const out_create_user = action_type === 'ADD' ? modify_user : "";
      const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
      const out_modify_date = currentDate.currdate;
      const out_recent_user = modify_user;
      
     res.json({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
-        out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+        out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
+        out_lead_number:out_lead_number }); // 결과 리턴을 해 줌 .  
 
     console.log({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
-            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
+            out_lead_number:out_lead_number });
 
-        res.end();
+    res.end();
     }catch(err){
         console.error(err);
         res.json({message:err});
