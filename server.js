@@ -479,6 +479,13 @@ app.post('/modifyLead', async(req, res) => {
             if (company_code === null || company_code === "") {
                 throw new Error('company_code는 not null입니다.');
             }
+
+            const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+            if (company_code_exist.rows.length === 0 ){
+                throw new Error('존재하지 않는 company_code입니다.');
+            }
+            
             v_lead_code  = pk_code();
 
 
@@ -551,6 +558,14 @@ app.post('/modifyLead', async(req, res) => {
                 status                   ]);
         }
         if (action_type === 'UPDATE') {
+            if(company_code !== null) {
+                const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+                if (company_code_exist.rows.length === 0 ){
+                    throw new Error('존재하지 않는 company_code입니다.');
+                }
+            }
+
             const response = await pool.query(`
             update tbl_lead_info 
                set company_code   =  COALESCE($1,company_code)         ,
