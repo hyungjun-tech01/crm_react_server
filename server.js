@@ -459,6 +459,13 @@ app.post('/modifyLead', async(req, res) => {
             if (company_code === null || company_code === "") {
                 throw new Error('company_code는 not null입니다.');
             }
+
+            const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+            if (company_code_exist.rows.length === 0 ){
+                throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
+            }    
+
             v_lead_code  = pk_code();
             const response = await pool.query(`
             insert into tbl_lead_info(
