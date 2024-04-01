@@ -243,6 +243,25 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
+app.get('/quotations', async(req, res) => {
+    try{
+        console.log("[Get] quotations");
+        const allQuotationsResult = await pool.query(`
+            select * from tbl_quotation_info`);
+
+        if(allQuotationsResult.rows.length > 0) {
+            const allQuotations = allQuotationsResult.rows;
+            res.json(allQuotations);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
+
 
 //create/update company 
 app.post('/modifyCompany', async(req, res) => {
@@ -297,7 +316,7 @@ app.post('/modifyCompany', async(req, res) => {
         if (action_type === 'ADD') {
             v_company_code  = pk_code();
 
-            // 현재 db에 있는 company의 갯수 + 1을 해서 company_number 에 입력 
+            // 현재 db에 있는 sequence에서  company_number 하나 생성해서 입력
             const company_number_result = await pool.query(`
             select nextval(\'index_number_seq\') company_count ;`);
 
@@ -444,6 +463,7 @@ app.post('/modifyLead', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_lead_code = lead_code;
+        let v_lead_number = lead_number;
 
         if (modify_user === null ){
             throw new Error('modify user는 not null입니다.');
@@ -467,6 +487,14 @@ app.post('/modifyLead', async(req, res) => {
             }    
 
             v_lead_code  = pk_code();
+
+
+            // 현재 db에 있는 sequence에서  lead_number 하나 생성해서 입력
+            const lead_number_result = await pool.query(`
+            select nextval(\'index_number_seq\') lead_count ;`);
+
+            v_lead_number = parseInt(lead_number_result.rows[0].lead_count);
+            
             const response = await pool.query(`
             insert into tbl_lead_info(
                 lead_code               ,
@@ -504,7 +532,7 @@ app.post('/modifyLead', async(req, res) => {
                 company_code            ,
                 lead_index             ,
                 company_index           ,
-                lead_number             ,
+                v_lead_number             ,
                 group_                  ,
                 sales_resource          ,
                 region                  ,
@@ -530,6 +558,14 @@ app.post('/modifyLead', async(req, res) => {
                 status                   ]);
         }
         if (action_type === 'UPDATE') {
+            if(company_code !== null) {
+                const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+                if (company_code_exist.rows.length === 0 ){
+                    throw new Error('존재하지 않는 company_code입니다.');
+                }
+            }
+
             const response = await pool.query(`
             update tbl_lead_info 
                set company_code   =  COALESCE($1,company_code)         ,
@@ -589,18 +625,21 @@ app.post('/modifyLead', async(req, res) => {
 
 
      const out_lead_code = v_lead_code;
+     const out_lead_number = v_lead_number;
      const out_create_user = action_type === 'ADD' ? modify_user : "";
      const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
      const out_modify_date = currentDate.currdate;
      const out_recent_user = modify_user;
      
     res.json({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
-        out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+        out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
+        out_lead_number:out_lead_number }); // 결과 리턴을 해 줌 .  
 
     console.log({ out_lead_code: out_lead_code,  out_create_user:out_create_user, 
-            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
+            out_lead_number:out_lead_number });
 
-        res.end();
+    res.end();
     }catch(err){
         console.error(err);
         res.json({message:err});
