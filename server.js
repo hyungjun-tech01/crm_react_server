@@ -243,6 +243,25 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
+app.get('/quotations', async(req, res) => {
+    try{
+        console.log("[Get] quotations");
+        const allQuotationsResult = await pool.query(`
+            select * from tbl_quotation_info`);
+
+        if(allQuotationsResult.rows.length > 0) {
+            const allQuotations = allQuotationsResult.rows;
+            res.json(allQuotations);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
+
 
 //create/update company 
 app.post('/modifyCompany', async(req, res) => {
