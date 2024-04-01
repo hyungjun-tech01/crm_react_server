@@ -562,7 +562,7 @@ app.post('/modifyLead', async(req, res) => {
                 const company_code_exist = await pool.query(`select company_code from tbl_company_info
                                                         where company_code = $1`,[company_code]);
                 if (company_code_exist.rows.length === 0 ){
-                    throw new Error('존재하지 않는 company_code입니다.');
+                    throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
                 }
             }
 
@@ -695,9 +695,22 @@ app.post('/modifyConsult', async(req, res) => {
             if (company_code === null || company_code === "") {
                 throw new Error('company_code는 not null입니다.');
             }
+            const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+            if (company_code_exist.rows.length === 0 ){
+                throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
+            }
+
             if (lead_code === null || lead_code === "") {
                 throw new Error('lead_code는 not null입니다.');
             }
+            const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
+                                                where lead_conde = $1`,[lead_code]);
+            if (lead_code_exist.rows.length === 0 ){
+                throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
+            }
+
+
             v_consulting_code  = pk_code();
             const response = await pool.query(`
             insert into tbl_consulting_info(
