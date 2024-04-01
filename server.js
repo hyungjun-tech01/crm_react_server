@@ -243,6 +243,25 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
+app.get('/quotations', async(req, res) => {
+    try{
+        console.log("[Get] quotations");
+        const allQuotationsResult = await pool.query(`
+            select * from tbl_quotation_info`);
+
+        if(allQuotationsResult.rows.length > 0) {
+            const allQuotations = allQuotationsResult.rows;
+            res.json(allQuotations);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
+
 
 //create/update company 
 app.post('/modifyCompany', async(req, res) => {
@@ -283,6 +302,16 @@ app.post('/modifyCompany', async(req, res) => {
         const currentDate = current_date.rows[0];
         let v_company_code = company_code;
         let v_company_number = company_number;
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }
 
         if (action_type === 'ADD') {
             v_company_code  = pk_code();
@@ -381,14 +410,15 @@ app.post('/modifyCompany', async(req, res) => {
         const out_create_date = action_type === 'ADD' ? currentDate.currdate:"";
         const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
+        const out_company_number = v_company_number;
          
         res.json({ out_company_code: out_company_code,  out_create_user:out_create_user, 
             out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
-            out_company_number:v_company_number
+            out_company_number:out_company_number
             }); // 결과 리턴을 해 줌 .  
         console.log({ out_company_code: out_company_code,  out_create_user:out_create_user, 
                 out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user,
-                out_company_number:v_company_number });
+                out_company_number:out_company_number });
         res.end();  
 
     }catch(err){
@@ -434,6 +464,16 @@ app.post('/modifyLead', async(req, res) => {
         const currentDate = current_date.rows[0];
         let v_lead_code = lead_code;
         let v_lead_number = lead_number;
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
 
         if (action_type === 'ADD') {
             if (company_code === null || company_code === "") {
@@ -626,6 +666,16 @@ app.post('/modifyConsult', async(req, res) => {
         const currentDate = current_date.rows[0];
         let v_consulting_code = consulting_code;
 
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
+
         if (action_type === 'ADD') {
             if (company_code === null || company_code === "") {
                 throw new Error('company_code는 not null입니다.');
@@ -793,6 +843,16 @@ app.post('/modifyPurchase', async(req, res) => {
         const currentDate = current_date.rows[0];
         let v_purchase_code = purchase_code;
 
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }
+
         if (action_type === 'ADD') {
             if (company_code === null || company_code === "") {
                 throw new Error('company_code는 not null입니다.');
@@ -936,6 +996,16 @@ app.post('/modifyTransaction', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_transaction_code = transaction_code;
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
 
         if (action_type === 'ADD') {
             if (lead_code === null || lead_code === "") {
@@ -1115,6 +1185,16 @@ app.post('/modifyQuotation', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_quotation_code = quotation_code;
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
 
         if (action_type === 'ADD') {
             if (lead_code === null || lead_code === "") {
