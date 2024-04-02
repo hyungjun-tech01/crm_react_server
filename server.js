@@ -326,7 +326,7 @@ app.post('/modifyCompany', async(req, res) => {
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
-            throw new Error('modify user는 user_id 이어야 합니다.');
+            throw new Error(`modify user${modify_user}는 user_id 이어야 합니다.`);
         }
 
         if (action_type === 'ADD') {
@@ -488,7 +488,7 @@ app.post('/modifyLead', async(req, res) => {
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
-            throw new Error('modify user는 user_id 이어야 합니다.');
+            throw new Error(`modify user${modify_user}는 user_id 이어야 합니다.`);
         }        
 
         if (action_type === 'ADD') {
@@ -788,6 +788,22 @@ app.post('/modifyConsult', async(req, res) => {
         }
 
         if (action_type === 'UPDATE') {
+            if(company_code !== null) {
+                const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+                if (company_code_exist.rows.length === 0 ){
+                    throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
+                }
+            }
+
+            if(lead_code !== null) {
+                const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
+                                                    where lead_conde = $1`,[lead_code]);
+                if (lead_code_exist.rows.length === 0 ){
+                    throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
+                }
+            }
+
             const response = await pool.query(`
             update tbl_consulting_info 
                set lead_code               = COALESCE($1, lead_code), 
@@ -952,6 +968,14 @@ app.post('/modifyPurchase', async(req, res) => {
             ]);     
         }
         if (action_type === 'UPDATE') {
+            if(company_code !== null) {
+                const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+                if (company_code_exist.rows.length === 0 ){
+                    throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
+                }
+            }
+
             const response = await pool.query(`
                update tbl_purchase_info 
                set company_code      = COALESCE($1, company_code)  ,
@@ -1110,6 +1134,15 @@ app.post('/modifyTransaction', async(req, res) => {
 
         }
         if (action_type === 'UPDATE') {
+
+            if(company_code !== null) {
+                const company_code_exist = await pool.query(`select company_code from tbl_company_info
+                                                        where company_code = $1`,[company_code]);
+                if (company_code_exist.rows.length === 0 ){
+                    throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
+                }
+            }
+
             const response = await pool.query(`
                 update tbl_transaction_info 
                   set  lead_code                  = COALESCE($1 , lead_code),
@@ -1355,6 +1388,15 @@ app.post('/modifyQuotation', async(req, res) => {
             ]);        
         }
         if (action_type === 'UPDATE') {
+
+            if(lead_code !== null) {
+                const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
+                                                    where lead_conde = $1`,[lead_code]);
+                if (lead_code_exist.rows.length === 0 ){
+                    throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
+                }
+            }
+
             const response = await pool.query(`
                 update tbl_quotation_info 
                    set lead_code               = COALESCE($1 , lead_code) ,
