@@ -279,6 +279,24 @@ app.get('/transactions', async(req, res) => {
     }
 });
 
+app.get('/purchases', async(req, res) => {
+    try{
+        console.log("[Get] purchases");
+        const allpurchasesResult = await pool.query(`
+            select * from tbl_purchase_info`);
+
+        if(allpurchasesResult.rows.length > 0) {
+            const allpurchases = allpurchasesResult.rows;
+            res.json(allpurchases);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
 //create/update company 
 app.post('/modifyCompany', async(req, res) => {
     const {
