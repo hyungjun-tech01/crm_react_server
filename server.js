@@ -1153,14 +1153,6 @@ app.post('/modifyTransaction', async(req, res) => {
         }
         if (action_type === 'UPDATE') {
 
-            if(company_code !== null) {
-                const company_code_exist = await pool.query(`select company_code from tbl_company_info
-                                                        where company_code = $1`,[company_code]);
-                if (company_code_exist.rows.length === 0 ){
-                    throw new Error(`${company_code}는 등록되지 않은 company입니다.`);
-                }
-            }
-
             const response = await pool.query(`
                 update tbl_transaction_info 
                   set  lead_code                  = COALESCE($1 , lead_code),
