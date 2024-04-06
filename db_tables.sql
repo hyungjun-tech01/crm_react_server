@@ -381,9 +381,9 @@ delete from tbl_user_info t
 where t.user_id = '﻿user_id';
 
 -- 일단 admin user 만 password demo로 변경 
-		update tbl_user_info t 
-		set t.password = '$2b$10$p2rkmlGUUc/NvCIKeAQ7E.iQJ4gJEHelofarBvm/UROAu8lekcJUy'
-		where t.user_id = 'admin';
+		update tbl_user_info 
+		set password = '$2b$10$p2rkmlGUUc/NvCIKeAQ7E.iQJ4gJEHelofarBvm/UROAu8lekcJUy'
+		where user_id = 'admin';
 
 
 -- log table 

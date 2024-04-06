@@ -1641,7 +1641,7 @@ app.post('/modifyUser', async(req, res) => {
 //login
 app.post('/login', async(req, res) => {
 
-    const {email, password} = req.body;
+    const {userId, password} = req.body;
     try{
         const users = await pool.query(`
         SELECT t.user_id as "userId", 
@@ -1654,14 +1654,14 @@ app.post('/login', async(req, res) => {
         t.email as "email", 
         t.group_  as "group_",
         t.memo  as "memo"
-        FROM tbl_user_info t WHERE t.user_id = $1`, [email]);
+        FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length){ 
             console.log("fail");
             return res.json({message:"Invalid email or password"});
         }
 
         const success = await bcrypt.compare(password, users.rows[0].password);
-        const token = jwt.sign({email}, 'secret', {expiresIn:'1hr'});
+        const token = jwt.sign({userId}, 'secret', {expiresIn:'1hr'});
         if(success){
             res.json({userId : users.rows[0].userId,
                       userName : users.rows[0].userName, 
