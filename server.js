@@ -1526,6 +1526,116 @@ app.post('/modifyQuotation', async(req, res) => {
     }
 
 });
+
+// create/update transaction info 
+app.post('/modifyUser', async(req, res) => {
+    const  { 
+        action_type                = defaultNull(req.body.action_type),
+        userId                     = defaultNull(req.body.userId),
+        userName                   = defaultNull(req.body.userName),
+        password                   = defaultNull(req.body.password),
+        mobileNumber               = defaultNull(req.body.mobileNumber),
+        phoneNumber                = defaultNull(req.body.phoneNumber),
+        department                 = defaultNull(req.body.department),
+        position                   = defaultNull(req.body.position),
+        email                      = defaultNull(req.body.email),
+        group_                     = defaultNull(req.body.group_),
+        memo                       = defaultNull(req.body.memo),
+        modify_user                = defaultNull(req.body.modify_user),
+    } = req.body;
+
+    console.log('modifyUser', userId, action_type);
+
+    try{
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currentDate = current_date.rows[0];
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+        let hashPassword;
+
+        if (action_type === 'ADD') {
+
+            if (userId === null ){
+                throw new Error('user id는 not null입니다.');
+            }
+            if (userName === null ){
+                throw new Error('user name은 not null입니다.');
+            }
+            // user 생성시에는 password 입력되어야 함.
+            if(password !== null){
+                const salt = bcrypt.genSaltSync(10);
+                hashPassword = bcrypt.hashSync(password, salt);
+            }else{
+                throw new Error('password는 not null입니다.');
+            }
+
+            const response = await pool.query(`
+                insert into tbl_user_info (
+                    user_id,
+                    user_name,
+                    password,
+                    mobile_number,
+                    phone_number,
+                    department,
+                    position,
+                    email,
+                    group_,
+                    memo
+                )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10 )
+            `,[userId, 
+               userName,
+               hashPassword,
+               mobileNumber,
+               phoneNumber,
+               department,
+               position,
+               email,
+               group_,
+               memo
+            ]);
+        }
+        if (action_type === 'UPDATE') {
+            if(password !== null){
+                const salt = bcrypt.genSaltSync(10);
+                hashPassword = bcrypt.hashSync(password, salt);
+            }else{
+                hashPassword = null;
+            }
+
+            const response = await pool.query(`
+                update tbl_user_info 
+                   set user_name    = COALESCE( $1, user_name ),
+                   password         = COALESCE( $2, password),
+                   mobile_number    = COALESCE( $3, mobile_number),
+                   phone_number     = COALESCE( $4, phone_number),
+                   department       = COALESCE( $5, department),
+                   position         = COALESCE( $6, position),
+                   email            = COALESCE( $7, email),
+                   group_           = COALESCE( $8, group_),
+                   memo             = COALESCE( $9, memo)
+                where user_id = $10
+            `,[userName, hashPassword, mobileNumber, phoneNumber, department, position, email, group_, memo, userId]);
+        }
+
+        const out_user_id = userId;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ out_user_id: out_user_id,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_user_id: out_user_id,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });        
+    }catch(err){
+        console.error(err);
+        res.json({message:err});
+        res.end();              
+    }
+});
 /////////////////////////////////////////////////////////////////////
 
 //login
