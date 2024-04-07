@@ -1550,9 +1550,6 @@ app.post('/modifyUser', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
 
-        if (modify_user === null ){
-            throw new Error('modify user는 not null입니다.');
-        }
         let hashPassword;
 
         if (action_type === 'ADD') {
@@ -1597,6 +1594,10 @@ app.post('/modifyUser', async(req, res) => {
             ]);
         }
         if (action_type === 'UPDATE') {
+ 
+            if (modify_user === null ){
+                throw new Error('modify user는 not null입니다.');
+            }
             if(password !== null){
                 const salt = bcrypt.genSaltSync(10);
                 hashPassword = bcrypt.hashSync(password, salt);
@@ -1625,7 +1626,7 @@ app.post('/modifyUser', async(req, res) => {
         const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
         
-        res.json({ out_user_id: out_user_id,  out_create_user:out_create_user, 
+        res.json({ message:'success', out_user_id: out_user_id,  out_create_user:out_create_user, 
            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
    
         console.log({ out_user_id: out_user_id,  out_create_user:out_create_user, 
@@ -1715,60 +1716,8 @@ app.post('/getuser', async(req, res) => {
     }
 });
 
-//signup 계정 생성 
-app.post('/signup', async(req, res) => {
-    const {createrId , 
-        userActionType , 
-        userName , 
-        name , 
-        userId ,
-        email ,
-        isAdmin,
-        password , 
-        phone , 
-        organization , 
-        subscribeToOwnCards,
-        language ,
-        avatar ,
-        detail ,
-           } = req.body;    
-    const salt = bcrypt.genSaltSync(10);
-    const hashPassword = bcrypt.hashSync(password, salt);
-    try{
-        const signUp = await pool.query(`call p_modify_user($1, $2, $3, $4, 
-            $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, 
-            $19)` ,
-        [createrId , 
-            userActionType , 
-            userName , 
-            name , 
-            userId ,
-            email ,
-            isAdmin,
-            hashPassword , 
-            phone , 
-            organization , 
-            subscribeToOwnCards,
-            language ,
-            avatar ,
-            detail ,
-            null,
-            null,
-            null,
-            null,
-            null
-        ]);
-        const outUserId = signUp.rows[0].x_user_id;
-        const outCreatedAt = signUp.rows[0].x_created_at;
 
-        res.json({outUserId:outUserId, userName:userName, outCreatedAt:outCreatedAt});
-    }catch(err){
-        console.error(err);
-        if(err){
-            res.json({message:err});
-        }
-    }
-});
+
 
 // password hash처리 임시 
 app.get('/passHash', async(req, res) => {
