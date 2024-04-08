@@ -1557,6 +1557,11 @@ app.post('/modifyUser', async(req, res) => {
             if (userId === null ){
                 throw new Error('user id는 not null입니다.');
             }
+            const user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[userId]);
+            if (user_exist.rows.length !== 0 ){
+                throw new Error('user_id 중복입니다.');
+            }                  
             if (userName === null ){
                 throw new Error('user name은 not null입니다.');
             }
@@ -1633,7 +1638,7 @@ app.post('/modifyUser', async(req, res) => {
                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });        
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});   
         res.end();              
     }
 });
