@@ -1544,7 +1544,7 @@ app.post('/modifyUser', async(req, res) => {
         modify_user                = defaultNull(req.body.modify_user),
     } = req.body;
 
-    console.log('modifyUser', userId, action_type);
+    console.log('modifyUser', userId, userName, action_type);
 
     try{
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
