@@ -722,7 +722,7 @@ app.post('/modifyConsult', async(req, res) => {
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
-            throw new Error('modify user는 user_id 이어야 합니다.');
+            throw new Error(`modify user(${modify_user})는 user id  이어야 합니다.`);
         }        
 
         if (action_type === 'ADD') {
