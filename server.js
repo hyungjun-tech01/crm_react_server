@@ -243,6 +243,31 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
+app.post('/companyConsultings', async(req, res) => {
+    const { 
+        company_code               = defaultNull(req.body.company_code) 
+    } = req.body;
+
+    try{
+        console.log("[Get] consultings", company_code);
+        const companyConsultingsResult = await pool.query(`
+            select * from tbl_consulting_info
+              where company_code = $1`, [company_code]);
+
+        if(companyConsultingsResult.rows.length > 0) {
+            const companyConsultings = companyConsultingsResult.rows;
+            res.json(companyConsultings);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
+
+
 app.get('/quotations', async(req, res) => {
     try{
         console.log("[Get] quotations");
@@ -722,7 +747,7 @@ app.post('/modifyConsult', async(req, res) => {
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
-            throw new Error('modify user는 user_id 이어야 합니다.');
+            throw new Error(`modify user(${modify_user})는 user id  이어야 합니다.`);
         }        
 
         if (action_type === 'ADD') {
