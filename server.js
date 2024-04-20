@@ -343,7 +343,7 @@ app.get('/purchases', async(req, res) => {
         };
     }catch(err){
         console.log(err);
-        res.json({message:err});        
+        res.json({message:err.message});        
         res.end();
     }
 });
@@ -508,7 +508,7 @@ app.post('/modifyCompany', async(req, res) => {
 
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});
         res.end();
     }
 });
@@ -727,7 +727,7 @@ app.post('/modifyLead', async(req, res) => {
     res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});
         res.end();
     }
 });
@@ -939,7 +939,7 @@ app.post('/modifyConsult', async(req, res) => {
         res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});
         res.end();
     }
 
@@ -1098,7 +1098,7 @@ app.post('/modifyPurchase', async(req, res) => {
         res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});
         res.end();        
     }
 });
@@ -1262,7 +1262,7 @@ app.post('/modifyTransaction', async(req, res) => {
 
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});
         res.end();              
     }
 });
@@ -1572,7 +1572,7 @@ app.post('/modifyQuotation', async(req, res) => {
 
     }catch(err){
         console.error(err);
-        res.json({message:err});
+        res.json({message:err.message});
         res.end();              
     }
 
@@ -1739,7 +1739,7 @@ app.post('/login', async(req, res) => {
         res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err});        
+        res.json({message:err.message});        
         res.end();
     }
 });
