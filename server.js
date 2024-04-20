@@ -764,7 +764,7 @@ app.post('/modifyConsult', async(req, res) => {
                 throw new Error('lead_code는 not null입니다.');
             }
             const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
-                                                where lead_conde = $1`,[lead_code]);
+                                                where lead_code = $1`,[lead_code]);
             if (lead_code_exist.rows.length === 0 ){
                 throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
             }
@@ -841,7 +841,7 @@ app.post('/modifyConsult', async(req, res) => {
 
             if(lead_code !== null) {
                 const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
-                                                    where lead_conde = $1`,[lead_code]);
+                                                    where lead_code = $1`,[lead_code]);
                 if (lead_code_exist.rows.length === 0 ){
                     throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
                 }
@@ -1426,7 +1426,7 @@ app.post('/modifyQuotation', async(req, res) => {
 
             if(lead_code !== null) {
                 const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
-                                                    where lead_conde = $1`,[lead_code]);
+                                                    where lead_code = $1`,[lead_code]);
                 if (lead_code_exist.rows.length === 0 ){
                     throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
                 }
