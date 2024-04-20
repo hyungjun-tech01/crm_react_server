@@ -251,7 +251,33 @@ app.post('/companyConsultings', async(req, res) => {
     try{
         console.log("[Get] consultings", company_code);
         const companyConsultingsResult = await pool.query(`
-            select * from tbl_consulting_info
+            select  
+                consulting_code       ,
+                lead_code             ,
+                receipt_date          ,
+                receipt_time          ,
+                consulting_type       ,
+                receiver              ,
+                sales_representative  ,
+                company_name          ,
+                company_code          ,
+                lead_name             ,
+                department            ,
+                position              ,
+                phone_number          ,
+                mobile_number         ,
+                email                 ,
+                replace(request_content, chr(10), '\n') request_content,
+                status                ,
+                lead_time             ,
+                replace(action_content, chr(10), '\n')  action_content,
+                request_type          ,
+                create_date,
+                creater,
+                modify_date,
+                recent_user,
+                product_type          
+           from tbl_consulting_info
               where company_code = $1`, [company_code]);
 
         if(companyConsultingsResult.rows.length > 0) {
