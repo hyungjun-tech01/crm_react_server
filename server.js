@@ -243,6 +243,28 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
+app.post('/consultingCodeConsultings', async(req, res) => {
+    const { 
+        consulting_code               = defaultNull(req.body.consulting_code) 
+    } = req.body;
+    try{
+        console.log("[Get] consulting code consultings", consulting_code);
+        const allConsultingsResult = await pool.query(`
+            select * from tbl_consulting_info where consulting_code = $1`,[consulting_code] );
+
+        if(allConsultingsResult.rows.length > 0) {
+            const allConsultings = allConsultingsResult.rows;
+            console.log(allConsultings);
+            res.json(allConsultings[0]);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
 app.post('/companyConsultings', async(req, res) => {
     const { 
         company_code               = defaultNull(req.body.company_code) 
