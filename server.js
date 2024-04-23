@@ -243,6 +243,50 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
+app.post('/consultingCodeConsultings', async(req, res) => {
+    const { 
+        consulting_code               = defaultNull(req.body.consulting_code) 
+    } = req.body;
+    try{
+        console.log("[Get] consulting code consultings", consulting_code);
+        const allConsultingsResult = await pool.query(`
+            select * from tbl_consulting_info where consulting_code = $1`,[consulting_code] );
+
+        if(allConsultingsResult.rows.length > 0) {
+            const allConsultings = allConsultingsResult.rows;
+            console.log(allConsultings);
+            res.json(allConsultings[0]);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
+app.post('/consultingCodeConsultings', async(req, res) => {
+    const { 
+        consulting_code               = defaultNull(req.body.consulting_code) 
+    } = req.body;
+    try{
+        console.log("[Get] consulting code consultings", consulting_code);
+        const allConsultingsResult = await pool.query(`
+            select * from tbl_consulting_info where consulting_code = $1`,[consulting_code] );
+
+        if(allConsultingsResult.rows.length > 0) {
+            const allConsultings = allConsultingsResult.rows;
+            console.log(allConsultings);
+            res.json(allConsultings[0]);
+            res.end();
+        };
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
 app.post('/companyConsultings', async(req, res) => {
     const { 
         company_code               = defaultNull(req.body.company_code) 
@@ -251,7 +295,33 @@ app.post('/companyConsultings', async(req, res) => {
     try{
         console.log("[Get] consultings", company_code);
         const companyConsultingsResult = await pool.query(`
-            select * from tbl_consulting_info
+            select  
+                consulting_code       ,
+                lead_code             ,
+                receipt_date          ,
+                receipt_time          ,
+                consulting_type       ,
+                receiver              ,
+                sales_representative  ,
+                company_name          ,
+                company_code          ,
+                lead_name             ,
+                department            ,
+                position              ,
+                phone_number          ,
+                mobile_number         ,
+                email                 ,
+                replace(request_content, chr(10), '\n') request_content,
+                status                ,
+                lead_time             ,
+                replace(action_content, chr(10), '\n')  action_content,
+                request_type          ,
+                create_date,
+                creater,
+                modify_date,
+                recent_user,
+                product_type          
+           from tbl_consulting_info
               where company_code = $1`, [company_code]);
 
         if(companyConsultingsResult.rows.length > 0) {
@@ -482,7 +552,7 @@ app.post('/modifyCompany', async(req, res) => {
 
     }catch(err){
         console.error(err);
-        res.json({message:err.message});  
+        res.json({message:err.message});
         res.end();
     }
 });
@@ -701,7 +771,7 @@ app.post('/modifyLead', async(req, res) => {
     res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err.message});  
+        res.json({message:err.message});
         res.end();
     }
 });
@@ -764,7 +834,7 @@ app.post('/modifyConsult', async(req, res) => {
                 throw new Error('lead_code는 not null입니다.');
             }
             const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
-                                                where lead_conde = $1`,[lead_code]);
+                                                where lead_code = $1`,[lead_code]);
             if (lead_code_exist.rows.length === 0 ){
                 throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
             }
@@ -841,7 +911,7 @@ app.post('/modifyConsult', async(req, res) => {
 
             if(lead_code !== null) {
                 const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
-                                                    where lead_conde = $1`,[lead_code]);
+                                                    where lead_code = $1`,[lead_code]);
                 if (lead_code_exist.rows.length === 0 ){
                     throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
                 }
@@ -913,7 +983,7 @@ app.post('/modifyConsult', async(req, res) => {
         res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err.message});  
+        res.json({message:err.message});
         res.end();
     }
 
@@ -1072,7 +1142,7 @@ app.post('/modifyPurchase', async(req, res) => {
         res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err.message});  
+        res.json({message:err.message});
         res.end();        
     }
 });
@@ -1236,7 +1306,7 @@ app.post('/modifyTransaction', async(req, res) => {
 
     }catch(err){
         console.error(err);
-        res.json({message:err.message});  
+        res.json({message:err.message});
         res.end();              
     }
 });
@@ -1426,7 +1496,7 @@ app.post('/modifyQuotation', async(req, res) => {
 
             if(lead_code !== null) {
                 const lead_code_exist = await pool.query(`select lead_code from tbl_lead_info
-                                                    where lead_conde = $1`,[lead_code]);
+                                                    where lead_code = $1`,[lead_code]);
                 if (lead_code_exist.rows.length === 0 ){
                     throw new Error(`${lead_code}는 등록되지 않은 lead 입니다.`);
                 }
@@ -1546,7 +1616,7 @@ app.post('/modifyQuotation', async(req, res) => {
 
     }catch(err){
         console.error(err);
-        res.json({message:err.message});  
+        res.json({message:err.message});
         res.end();              
     }
 
@@ -1713,7 +1783,7 @@ app.post('/login', async(req, res) => {
         res.end();
     }catch(err){
         console.error(err);
-        res.json({message:err});        
+        res.json({message:err.message});        
         res.end();
     }
 });
