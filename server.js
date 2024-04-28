@@ -392,6 +392,34 @@ app.get('/purchases', async(req, res) => {
     }
 });
 
+
+app.get('/getallusers', async(req, res) => {
+    console.log("[Get] all users");
+    try{
+        const users = await pool.query(`
+        SELECT t.user_id as "userId", 
+        t.user_name as "userName", 
+		t.mobile_number as "mobileNumber",
+        t.phone_number as "phoneNumber",
+        t.department as "department", 
+        t.position as "position", 
+        t.email as "email", 
+        t.group_  as "group_",
+        t.memo  as "memo"
+        FROM tbl_user_info t`);
+        if(users.rows.length >0) {
+            const allusers = users.rows;
+            res.json(allusers);
+            res.end();
+        }
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});        
+        res.end();
+    }
+});
+
 //create/update company 
 app.post('/modifyCompany', async(req, res) => {
     const {
@@ -1815,7 +1843,6 @@ app.post('/getuser', async(req, res) => {
         res.end();
     }
 });
-
 
 
 
