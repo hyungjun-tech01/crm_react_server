@@ -453,6 +453,7 @@ app.post('/modifyCompany', async(req, res) => {
         application_engineer       = defaultNull(req.body.application_engineer) ,
         region                     = defaultNull(req.body.region)
     } = req.body;    
+
     try{
 
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
