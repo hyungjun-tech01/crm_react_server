@@ -199,7 +199,7 @@ app.get('/companies', async(req, res) => {
             const allCompanies = allCompaniesResult.rows;
             res.json(allCompanies);
             res.end();
-        };
+        }
     }catch(err){
         console.log(err);
         res.json({message:err.message});        
@@ -328,7 +328,10 @@ app.post('/companyConsultings', async(req, res) => {
             const companyConsultings = companyConsultingsResult.rows;
             res.json(companyConsultings);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err});        
@@ -336,6 +339,81 @@ app.post('/companyConsultings', async(req, res) => {
     }
 });
 
+
+app.post('/companyQuotations', async(req, res) => {
+    console.log("[Get] company quotations", req.body.company_code);
+    const { 
+        company_code               = defaultNull(req.body.company_code) 
+    } = req.body;
+
+    try{
+        const companyQuotationsResult = await pool.query(`
+            select  
+            quotation_code,
+            quotation_title,
+            quotation_number,
+            quotation_type,
+            quotation_manager,
+            quotation_send_type,
+            quotation_date,
+            quotation_expiration_date,
+            comfirm_date,
+            delivery_location,
+            delivery_period,
+            warranty_period,
+            sales_representative,
+            payment_type,
+            list_price,
+            list_price_dc,
+            sub_total_amount,
+            dc_rate,
+            dc_amount,
+            quotation_amount,
+            tax_amount,
+            cutoff_amount,
+            total_quotation_amount,
+            total_cost_price,
+            profit,
+            profit_rate,
+            quotation_table,
+            quotation_contents,
+            print_template,
+            upper_memo,
+            lower_memo,
+            lead_code,
+            lead_name,
+            department,
+            position,
+            mobile_number,
+            phone_number,
+            fax_number,
+            email,
+            company_code,
+            region,
+            company_name,
+            status,
+            count,
+            creator,
+            create_date,
+            modify_date,
+            recent_user
+           from tbl_quotation_info
+              where company_code = $1`, [company_code]);  
+
+        if(companyQuotationsResult.rows.length > 0) {
+            const companyQuotations = companyQuotationsResult.rows;
+            res.json(companyQuotations);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
 
 
 app.get('/quotations', async(req, res) => {
