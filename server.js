@@ -199,6 +199,9 @@ app.get('/companies', async(req, res) => {
             const allCompanies = allCompaniesResult.rows;
             res.json(allCompanies);
             res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
         }
     }catch(err){
         console.log(err);
@@ -217,7 +220,10 @@ app.get('/leads', async(req, res) => {
             const allLeads = allLeadsResult.rows;
             res.json(allLeads);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err.message});         
@@ -235,7 +241,10 @@ app.get('/consultings', async(req, res) => {
             const allConsultings = allConsultingsResult.rows;
             res.json(allConsultings);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err.message});    
@@ -243,27 +252,6 @@ app.get('/consultings', async(req, res) => {
     }
 });
 
-app.post('/consultingCodeConsultings', async(req, res) => {
-    const { 
-        consulting_code               = defaultNull(req.body.consulting_code) 
-    } = req.body;
-    try{
-        console.log("[Get] consulting code consultings", consulting_code);
-        const allConsultingsResult = await pool.query(`
-            select * from tbl_consulting_info where consulting_code = $1`,[consulting_code] );
-
-        if(allConsultingsResult.rows.length > 0) {
-            const allConsultings = allConsultingsResult.rows;
-            console.log(allConsultings);
-            res.json(allConsultings[0]);
-            res.end();
-        };
-    }catch(err){
-        console.log(err);
-        res.json({message:err});        
-        res.end();
-    }
-});
 
 app.post('/consultingCodeConsultings', async(req, res) => {
     const { 
@@ -279,7 +267,10 @@ app.post('/consultingCodeConsultings', async(req, res) => {
             console.log(allConsultings);
             res.json(allConsultings[0]);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err});        
@@ -348,55 +339,7 @@ app.post('/companyQuotations', async(req, res) => {
 
     try{
         const companyQuotationsResult = await pool.query(`
-            select  
-            quotation_code,
-            quotation_title,
-            quotation_number,
-            quotation_type,
-            quotation_manager,
-            quotation_send_type,
-            quotation_date,
-            quotation_expiration_date,
-            comfirm_date,
-            delivery_location,
-            delivery_period,
-            warranty_period,
-            sales_representative,
-            payment_type,
-            list_price,
-            list_price_dc,
-            sub_total_amount,
-            dc_rate,
-            dc_amount,
-            quotation_amount,
-            tax_amount,
-            cutoff_amount,
-            total_quotation_amount,
-            total_cost_price,
-            profit,
-            profit_rate,
-            quotation_table,
-            quotation_contents,
-            print_template,
-            upper_memo,
-            lower_memo,
-            lead_code,
-            lead_name,
-            department,
-            position,
-            mobile_number,
-            phone_number,
-            fax_number,
-            email,
-            company_code,
-            region,
-            company_name,
-            status,
-            count,
-            creator,
-            create_date,
-            modify_date,
-            recent_user
+            select  *
            from tbl_quotation_info
               where company_code = $1`, [company_code]);  
 
@@ -426,7 +369,10 @@ app.get('/quotations', async(req, res) => {
             const allQuotations = allQuotationsResult.rows;
             res.json(allQuotations);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err.message});       
@@ -444,7 +390,10 @@ app.get('/transactions', async(req, res) => {
             const allTransactions = allTransactionsResult.rows;
             res.json(allTransactions);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err});        
@@ -462,10 +411,41 @@ app.get('/purchases', async(req, res) => {
             const allpurchases = allpurchasesResult.rows;
             res.json(allpurchases);
             res.end();
-        };
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
     }catch(err){
         console.log(err);
         res.json({message:err.message});        
+        res.end();
+    }
+});
+
+
+app.post('/companyPurchases', async(req, res) => {
+    console.log("[Get] company purchase", req.body.company_code);
+    const { 
+        company_code               = defaultNull(req.body.company_code) 
+    } = req.body;
+
+    try{
+        const companyPurchaseResult = await pool.query(`
+            select  *
+           from tbl_purchase_info
+              where company_code = $1`, [company_code]);  
+
+        if(companyPurchaseResult.rows.length > 0) {
+            const companyPurchase = companyPurchaseResult.rows;
+            res.json(companyPurchase);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
         res.end();
     }
 });
@@ -488,6 +468,9 @@ app.get('/getallusers', async(req, res) => {
         if(users.rows.length >0) {
             const allusers = users.rows;
             res.json(allusers);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
             res.end();
         }
 
