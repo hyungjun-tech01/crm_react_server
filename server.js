@@ -313,7 +313,8 @@ app.post('/companyConsultings', async(req, res) => {
                 recent_user,
                 product_type          
            from tbl_consulting_info
-              where company_code = $1`, [company_code]);
+              where company_code = $1
+              order by modify_date desc`, [company_code]);
 
         if(companyConsultingsResult.rows.length > 0) {
             const companyConsultings = companyConsultingsResult.rows;
@@ -341,7 +342,8 @@ app.post('/companyQuotations', async(req, res) => {
         const companyQuotationsResult = await pool.query(`
             select  *
            from tbl_quotation_info
-              where company_code = $1`, [company_code]);  
+              where company_code = $1
+              order by modify_date desc`, [company_code]);  
 
         if(companyQuotationsResult.rows.length > 0) {
             const companyQuotations = companyQuotationsResult.rows;
@@ -405,7 +407,10 @@ app.get('/purchases', async(req, res) => {
     try{
         console.log("[Get] purchases");
         const allpurchasesResult = await pool.query(`
-            select * from tbl_purchase_info`);
+        select tci.company_name, tpi.* 
+            from tbl_purchase_info tpi, tbl_company_info tci
+            where tpi.company_code = tci.company_code
+            order by tpi.modify_date desc`);
 
         if(allpurchasesResult.rows.length > 0) {
             const allpurchases = allpurchasesResult.rows;
@@ -433,7 +438,8 @@ app.post('/companyPurchases', async(req, res) => {
         const companyPurchaseResult = await pool.query(`
             select  *
            from tbl_purchase_info
-              where company_code = $1`, [company_code]);  
+              where company_code = $1
+              order by modify_date desc`, [company_code]);  
 
         if(companyPurchaseResult.rows.length > 0) {
             const companyPurchase = companyPurchaseResult.rows;
