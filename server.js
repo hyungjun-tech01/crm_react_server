@@ -193,7 +193,8 @@ app.get('/companies', async(req, res) => {
     try{
         console.log("[Get] Companies");
         const allCompaniesResult = await pool.query(`
-            select * from tbl_company_info`);
+            select * from tbl_company_info
+            order by modify_date desc`);
 
         if(allCompaniesResult.rows.length > 0) {
             const allCompanies = allCompaniesResult.rows;
@@ -214,7 +215,8 @@ app.get('/leads', async(req, res) => {
     try{
         console.log("[Get] leads");
         const allLeadsResult = await pool.query(`
-            select * from tbl_lead_info`);
+            select * from tbl_lead_info
+            order by modify_date desc`);
 
         if(allLeadsResult.rows.length > 0) {
             const allLeads = allLeadsResult.rows;
@@ -235,7 +237,8 @@ app.get('/consultings', async(req, res) => {
     try{
         console.log("[Get] consultings");
         const allConsultingsResult = await pool.query(`
-            select * from tbl_consulting_info`);
+            select * from tbl_consulting_info
+            order by modify_date desc`);
 
         if(allConsultingsResult.rows.length > 0) {
             const allConsultings = allConsultingsResult.rows;
@@ -260,7 +263,9 @@ app.post('/consultingCodeConsultings', async(req, res) => {
     try{
         console.log("[Get] consulting code consultings", consulting_code);
         const allConsultingsResult = await pool.query(`
-            select * from tbl_consulting_info where consulting_code = $1`,[consulting_code] );
+            select * from tbl_consulting_info 
+            where consulting_code = $1
+            order by modify_date desc`,[consulting_code] );
 
         if(allConsultingsResult.rows.length > 0) {
             const allConsultings = allConsultingsResult.rows;
@@ -365,7 +370,8 @@ app.get('/quotations', async(req, res) => {
     try{
         console.log("[Get] quotations");
         const allQuotationsResult = await pool.query(`
-            select * from tbl_quotation_info`);
+            select * from tbl_quotation_info
+            order by modify_date desc`);
 
         if(allQuotationsResult.rows.length > 0) {
             const allQuotations = allQuotationsResult.rows;
@@ -386,7 +392,8 @@ app.get('/transactions', async(req, res) => {
     try{
         console.log("[Get] transactions");
         const allTransactionsResult = await pool.query(`
-            select * from tbl_transaction_info`);
+            select * from tbl_transaction_info
+            order by modify_date desc`);
 
         if(allTransactionsResult.rows.length > 0) {
             const allTransactions = allTransactionsResult.rows;
