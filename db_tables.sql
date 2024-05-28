@@ -1420,4 +1420,38 @@ insert into tbl_purchase_info (
   regcode , 
   MA_contact_date::timestamp  from tbl_purchase_info_temp;
 
+drop table tbl_purchase_info_temp;
+
 select * from tbl_purchase_info ;
+
+-- 5월 28일 tbl_MA_contract 
+
+drop table tbl_MA_contract;
+
+CREATE TABLE tbl_MA_contract (
+	guid varchar(32) not null PRIMARY KEY,
+	purchase_code varchar(32) not null,
+	MA_company_code varchar(32),
+	MA_contract_date date,
+	MA_finish_date date,
+	MA_price numeric,
+	MA_memo text,
+	MA_register varchar(30),
+	MA_registration_date date,
+	MA_recent_user varchar(30),
+	MA_modify_date date
+);
+
+create table tbl_MA_contract_temp (
+	guid varchar(32) ,
+	purchase_code varchar(32) ,
+	MA_company_code varchar(32),
+	MA_contract_date varchar(32),
+	MA_finish_date varchar(32),
+	MA_price varchar(32),
+	MA_memo text,
+	MA_register varchar(30),
+	MA_registration_date varchar(32),
+	MA_recent_user varchar(30),
+	MA_modify_date varchar(32)
+);
