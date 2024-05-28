@@ -1270,3 +1270,154 @@ drop table tbl_item_tag_temp;
 
 -- 데이터 확인 
 select * from tbl_item_tag;
+
+-- purchase 테이블  2024.05.27
+
+drop table tbl_purchase_info;
+
+CREATE TABLE tbl_purchase_info (
+  purchase_code varchar(32) PRIMARY KEY , 
+  company_code varchar(32), 
+  product_code varchar(32), 
+  product_class varchar(100), 
+  product_name varchar(255), 
+  serial_number varchar(50), 
+  licence_Info varchar(50), 
+  po_number varchar(50), 
+  product_type varchar(50), 
+  module varchar(50), 
+  receipt_date timestamp, 
+  delivery_date timestamp, 
+  MA_finish_date timestamp, 
+  InvoiceNo varchar(50), 
+  price numeric NULL, 
+  register varchar(30),
+  registration_date timestamp, 
+  recent_user varchar(30), 
+  modify_date timestamp, 
+  purchase_memo text, 
+  status varchar(50), 
+  hq_finish_date timestamp, 
+  quantity integer, 
+  regcode varchar(50), 
+  MA_contact_date timestamp);
+  
+  CREATE TABLE tbl_purchase_info_temp (
+  purchase_code varchar(32), 
+  company_code varchar(32), 
+  product_code varchar(32), 
+  product_class varchar(100), 
+  product_name varchar(255), 
+  serial_number varchar(50), 
+  licence_Info varchar(50), 
+  po_number varchar(50), 
+  product_type varchar(50), 
+  module varchar(50), 
+  receipt_date varchar(50),  
+  delivery_date varchar(50), 
+  MA_finish_date varchar(50), 
+  InvoiceNo varchar(50), 
+  price varchar(50), 
+  register varchar(30),
+  registration_date varchar(50),  
+  recent_user varchar(30), 
+  modify_date varchar(50), 
+  purchase_memo text, 
+  status varchar(50), 
+  hq_finish_date varchar(50), 
+  quantity varchar(50), 
+  regcode varchar(50), 
+  MA_contact_date varchar(50)
+);
+
+
+copy tbl_purchase_info_temp
+( purchase_code , 
+  company_code , 
+  product_code , 
+  product_class, 
+  product_name , 
+  serial_number, 
+  licence_Info , 
+  po_number , 
+  product_type , 
+  module , 
+  receipt_date ,  
+  delivery_date , 
+  MA_finish_date , 
+  InvoiceNo , 
+  price , 
+  register ,
+  registration_date ,  
+  recent_user , 
+  modify_date , 
+  purchase_memo , 
+  status , 
+  hq_finish_date , 
+  quantity , 
+  regcode , 
+  MA_contact_date )
+from 'd:\tbl_purchase_info20240527.csv' csv;
+
+-- 데이터 확인
+select * from tbl_purchase_info_temp;
+
+-- 헤더 삭제 
+delete from tbl_purchase_info_temp 
+where purchase_code = 'purchase_code';
+
+
+insert into tbl_purchase_info (
+  purchase_code , 
+  company_code , 
+  product_code , 
+  product_class, 
+  product_name , 
+  serial_number, 
+  licence_Info , 
+  po_number , 
+  product_type , 
+  module , 
+  receipt_date ,  
+  delivery_date , 
+  MA_finish_date , 
+  InvoiceNo , 
+  price , 
+  register ,
+  registration_date ,  
+  recent_user , 
+  modify_date , 
+  purchase_memo, 
+  status , 
+  hq_finish_date , 
+  quantity , 
+  regcode , 
+  MA_contact_date 
+) select 
+ purchase_code , 
+  company_code , 
+  product_code , 
+  product_class, 
+  product_name , 
+  serial_number, 
+  licence_Info , 
+  po_number , 
+  product_type , 
+  module , 
+  receipt_date::timestamp ,  
+  delivery_date::timestamp , 
+  MA_finish_date::timestamp , 
+  InvoiceNo , 
+  price ::numeric, 
+  register ,
+  registration_date::timestamp ,  
+  recent_user , 
+  modify_date::timestamp , 
+  purchase_memo, 
+  status , 
+  hq_finish_date::timestamp , 
+  quantity::integer , 
+  regcode , 
+  MA_contact_date::timestamp  from tbl_purchase_info_temp;
+
+select * from tbl_purchase_info ;

@@ -1099,15 +1099,24 @@ app.post('/modifyPurchase', async(req, res) => {
         purchase_code       = defaultNull(req.body.purchase_code), 
         company_code        = defaultNull(req.body.company_code),
         product_code        = defaultNull(req.body.product_code),
-        product_type        = defaultNull(req.body.product_type),
+        product_class       = defaultNull(req.body.product_class),
         product_name        = defaultNull(req.body.product_name),
         serial_number       = defaultNull(req.body.serial_number),
+        licence_info        = defaultNull(req.body.licence_info),
+        po_number           = defaultNull(req.body.po_number),
+        product_type        = defaultNull(req.body.product_type),
+        module              = defaultNull(req.body.module),
+        receipt_date        = defaultNull(req.body.receipt_date),
         delivery_date       = defaultNull(req.body.delivery_date),
         MA_finish_date      = defaultNull(req.body.MA_finish_date),
+        invoiceno           = defaultNull(req.body.invoiceno),
         price               = defaultNull(req.body.price),
+        registration_date   = defaultNull(req.body.registration_date),
         modify_user         = defaultNull(req.body.modify_user),   
+        modify_date         = defaultNull(req.body.modify_date),  
         purchase_memo       = defaultNull(req.body.purchase_memo),
         status              = defaultNull(req.body.status),
+        hq_finish_date      = defaultNull(req.body.hq_finish_date),
         quantity            = defaultNull(req.body.quantity),
         regcode             = defaultNull(req.body.regcode),
         MA_contact_date     = defaultNull(req.body.MA_contact_date),
@@ -1119,14 +1128,14 @@ app.post('/modifyPurchase', async(req, res) => {
         const currentDate = current_date.rows[0];
         let v_purchase_code = purchase_code;
 
-        if (modify_user === null ){
-            throw new Error('modify user는 not null입니다.');
+        if (recent_user === null ){
+            throw new Error('recent_user는 not null입니다.');
         }
 
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
-            throw new Error('modify user는 user_id 이어야 합니다.');
+            throw new Error('recent_user는 user_id 이어야 합니다.');
         }
 
         if (action_type === 'ADD') {
@@ -1139,48 +1148,59 @@ app.post('/modifyPurchase', async(req, res) => {
             v_purchase_code  = pk_code();
             const response = await pool.query(`
                 insert into tbl_purchase_info(
-                    purchase_code       , 
-                    company_code        ,
-                    product_code        ,
-                    product_type        ,
-                    product_name        ,
-                    serial_number       ,
-                    delivery_date        ,
-                    MA_finish_date       ,
-                    price                ,
-                    register            ,
-                    registration_date    ,
-                    recent_user         ,
-                    modify_date         ,
-                    purchase_memo       ,
-                    status              ,
-                    quantity             ,
-                    regcode             ,
-                    MA_contact_date      ,
-                    currency            )  
+                    purchase_code  ,     
+                    company_code   ,    
+                    product_code   ,      
+                    product_class  ,     
+                    product_name   ,    
+                    serial_number  ,     
+                    licence_info   ,      
+                    po_number      ,         
+                    product_type   ,      
+                    module         ,      
+                    receipt_date   ,      
+                    delivery_date  ,     
+                    MA_finish_date ,    
+                    invoiceno      ,    
+                    price          ,    
+                    registration_date, 
+                    recent_user    ,    
+                    modify_date    ,    
+                    purchase_memo  ,    
+                    status         ,   
+                    hq_finish_date ,    
+                    quantity       ,   
+                    regcode        ,   
+                    MA_contact_date    )  
                     values(
-                    $1,$2,$3,$4,$5,$6,$7::date,$8::date,$9::numeric,$10,$11::timestamp,$12,$13::timestamp,
-                    $14,$15,$16::integer,$17,$18::date,$19) 
+                    $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11::timestamp,$12::timestamp,$13::timestamp,
+                    $14,$15::numeric,$16::timestamp,$17,$18::timestamp,$19, $20, $21::timestamp, $22, 
+                    $23::integer, $24::timestamp)
             `,[
-                v_purchase_code       , 
-                company_code        ,
-                product_code        ,
-                product_type        ,
-                product_name        ,
-                serial_number       ,
-                delivery_date       ,
-                MA_finish_date      ,
-                price               ,
-                modify_user         ,
-                currentDate.currdate ,
-                modify_user         ,
-                currentDate.currdate ,
-                purchase_memo       ,
-                status              ,
-                quantity            ,
-                regcode             ,
-                MA_contact_date     ,
-                currency           
+                v_purchase_code, 
+                company_code   ,  
+                product_code   ,  
+                product_class  ,  
+                product_name   ,  
+                serial_number  ,  
+                licence_info   ,  
+                po_number      ,  
+                product_type   ,  
+                module         ,  
+                receipt_date   ,  
+                delivery_date  ,  
+                MA_finish_date ,  
+                invoiceno      ,  
+                price          ,  
+                registration_date,
+                modify_user    ,  
+                currentDate.currdate ,  
+                purchase_memo  ,  
+                status         ,  
+                hq_finish_date ,  
+                quantity       ,  
+                regcode        ,  
+                MA_contact_date   
             ]);     
         }
         if (action_type === 'UPDATE') {
@@ -1194,40 +1214,54 @@ app.post('/modifyPurchase', async(req, res) => {
 
             const response = await pool.query(`
                update tbl_purchase_info 
-               set company_code      = COALESCE($1, company_code)  ,
-                   product_code      = COALESCE($2, product_code)  ,
-                   product_type      = COALESCE($3, product_type)  ,
-                   product_name      = COALESCE($4, product_name)  ,
-                   serial_number     = COALESCE($5, serial_number)  ,
-                   delivery_date     = COALESCE($6::date, delivery_date)   ,
-                   MA_finish_date    = COALESCE($7::date, MA_finish_date)   ,
-                   price             = COALESCE($8::numeric, price)   ,
-                   recent_user       = COALESCE($9, recent_user )  ,
-                   modify_date       = COALESCE($10::timestamp, modify_date)  ,
-                   purchase_memo     = COALESCE($11,purchase_memo )  ,
-                   status            = COALESCE($12, status)  ,
-                   quantity          = COALESCE($13::integer, quantity)   ,
-                   regcode           = COALESCE($14, regcode)  ,
-                   MA_contact_date   = COALESCE($15::date, MA_contact_date)   ,
-                   currency          = COALESCE($16, currency)  
-               where purchase_code = $17
-            `,[company_code,
-                product_code        ,
-                product_type        ,
-                product_name        ,
-                serial_number       ,
-                delivery_date       ,
-                MA_finish_date      ,
-                price               ,
-                modify_user         ,
-                currentDate.currdate ,
-                purchase_memo       ,
-                status              ,
-                quantity            ,
-                regcode             ,
-                MA_contact_date     ,
-                currency            ,
-                v_purchase_code
+               set  company_code      = COALESCE($1, company_code ),  
+                    product_code      = COALESCE($2, product_code),  
+                    product_class     = COALESCE($3, product_class),  
+                    product_name      = COALESCE($4, product_name),  
+                    serial_number     = COALESCE($5, serial_number),  
+                    licence_info      = COALESCE($6, licence_info),  
+                    po_number         = COALESCE($7, po_number),  
+                    product_type      = COALESCE($8, product_type),  
+                    module            = COALESCE($9, module),  
+                    receipt_date      = COALESCE($10, receipt_date),  
+                    delivery_date     = COALESCE($11, delivery_date),  
+                    MA_finish_date    = COALESCE($12, MA_finish_date),  
+                    invoiceno         = COALESCE($13, invoiceno ),  
+                    price             = COALESCE($14, price),  
+                    registration_date = COALESCE($15, registration_date),
+                    recent_user       = COALESCE($16, recent_user), 
+                    modify_date       = COALESCE($17, modify_date),  
+                    purchase_memo     = COALESCE($18, purchase_memo),  
+                    status            = COALESCE($19, status),  
+                    hq_finish_date    = COALESCE($20, hq_finish_date),  
+                    quantity          = COALESCE($21, quantity),  
+                    regcode           = COALESCE($22, regcode),  
+                    MA_contact_date   = COALESCE($23, MA_contact_date)
+                where purchase_code = $24
+            `,[company_code   ,  
+                product_code   ,  
+                product_class  ,  
+                product_name   ,  
+                serial_number  ,  
+                licence_info   ,  
+                po_number      ,  
+                product_type   ,  
+                module         ,  
+                receipt_date   ,  
+                delivery_date  ,  
+                MA_finish_date ,  
+                invoiceno      ,  
+                price          ,  
+                registration_date,
+                modify_user      ,
+                modify_date      ,
+                purchase_memo    ,
+                status           ,
+                hq_finish_date   ,
+                quantity         ,
+                regcode          ,
+                MA_contact_date  ,
+                v_purchase_code  
             ]);
         }
         const out_purchse_code = v_purchase_code;
