@@ -1288,7 +1288,7 @@ CREATE TABLE tbl_purchase_info (
   module varchar(50), 
   receipt_date timestamp, 
   delivery_date timestamp, 
-  MA_finish_date timestamp, 
+  MA_finish_date date, 
   InvoiceNo varchar(50), 
   price numeric NULL, 
   register varchar(30),
@@ -1297,10 +1297,10 @@ CREATE TABLE tbl_purchase_info (
   modify_date timestamp, 
   purchase_memo text, 
   status varchar(50), 
-  hq_finish_date timestamp, 
+  hq_finish_date date, 
   quantity integer, 
   regcode varchar(50), 
-  MA_contact_date timestamp);
+  MA_contact_date date);
   
   CREATE TABLE tbl_purchase_info_temp (
   purchase_code varchar(32), 
@@ -1406,7 +1406,7 @@ insert into tbl_purchase_info (
   module , 
   receipt_date::timestamp ,  
   delivery_date::timestamp , 
-  MA_finish_date::timestamp , 
+  MA_finish_date::date , 
   InvoiceNo , 
   price ::numeric, 
   register ,
@@ -1415,10 +1415,10 @@ insert into tbl_purchase_info (
   modify_date::timestamp , 
   purchase_memo, 
   status , 
-  hq_finish_date::timestamp , 
+  hq_finish_date::date , 
   quantity::integer , 
   regcode , 
-  MA_contact_date::timestamp  from tbl_purchase_info_temp;
+  MA_contact_date::date  from tbl_purchase_info_temp;
 
 drop table tbl_purchase_info_temp;
 
@@ -1437,9 +1437,9 @@ CREATE TABLE tbl_MA_contract (
 	MA_price numeric,
 	MA_memo text,
 	MA_register varchar(30),
-	MA_registration_date date,
+	MA_registration_date timestamp,
 	MA_recent_user varchar(30),
-	MA_modify_date date
+	MA_modify_date timestamp
 );
 
 create table tbl_MA_contract_temp (
@@ -1455,3 +1455,43 @@ create table tbl_MA_contract_temp (
 	MA_recent_user varchar(30),
 	MA_modify_date varchar(32)
 );
+
+copy tbl_MA_contract_temp
+( guid  ,
+	purchase_code  ,
+	MA_company_code ,
+	MA_contract_date ,
+	MA_finish_date ,
+	MA_price ,
+	MA_memo ,
+	MA_register,
+	MA_registration_date,
+	MA_recent_user ,
+	MA_modify_date )
+from 'd:\tbl_MA_contract20240527.csv' csv;
+
+insert into tbl_MA_contract(
+  guid  ,
+	purchase_code  ,
+	MA_company_code ,
+	MA_contract_date ,
+	MA_finish_date ,
+	MA_price ,
+	MA_memo ,
+	MA_register,
+	MA_registration_date,
+	MA_recent_user ,
+	MA_modify_date
+)
+select guid  ,
+	purchase_code  ,
+	MA_company_code ,
+	MA_contract_date::date ,
+	MA_finish_date::date ,
+	MA_price::numeric ,
+	MA_memo ,
+	MA_register,
+	MA_registration_date::timestamp,
+	MA_recent_user ,
+	MA_modify_date::timestamp 
+  from tbl_MA_contract_temp;

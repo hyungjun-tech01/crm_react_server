@@ -1111,9 +1111,7 @@ app.post('/modifyPurchase', async(req, res) => {
         MA_finish_date      = defaultNull(req.body.MA_finish_date),
         invoiceno           = defaultNull(req.body.invoiceno),
         price               = defaultNull(req.body.price),
-        registration_date   = defaultNull(req.body.registration_date),
         modify_user         = defaultNull(req.body.modify_user),   
-        modify_date         = defaultNull(req.body.modify_date),  
         purchase_memo       = defaultNull(req.body.purchase_memo),
         status              = defaultNull(req.body.status),
         hq_finish_date      = defaultNull(req.body.hq_finish_date),
@@ -1173,9 +1171,9 @@ app.post('/modifyPurchase', async(req, res) => {
                     regcode        ,   
                     MA_contact_date    )  
                     values(
-                    $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11::timestamp,$12::timestamp,$13::timestamp,
-                    $14,$15::numeric,$16::timestamp,$17,$18::timestamp,$19, $20, $21::timestamp, $22, 
-                    $23::integer, $24::timestamp)
+                    $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11::timestamp,$12::timestamp,$13::date,
+                    $14,$15::numeric,$16::timestamp,$17,$18::timestamp,$19, $20, $21::date, $22, 
+                    $23::integer, $24::date)
             `,[
                 v_purchase_code, 
                 company_code   ,  
@@ -1192,7 +1190,7 @@ app.post('/modifyPurchase', async(req, res) => {
                 MA_finish_date ,  
                 invoiceno      ,  
                 price          ,  
-                registration_date,
+                currentDate.currdate ,  
                 modify_user    ,  
                 currentDate.currdate ,  
                 purchase_memo  ,  
@@ -1223,20 +1221,20 @@ app.post('/modifyPurchase', async(req, res) => {
                     po_number         = COALESCE($7, po_number),  
                     product_type      = COALESCE($8, product_type),  
                     module            = COALESCE($9, module),  
-                    receipt_date      = COALESCE($10, receipt_date),  
-                    delivery_date     = COALESCE($11, delivery_date),  
-                    MA_finish_date    = COALESCE($12, MA_finish_date),  
+                    receipt_date      = COALESCE($10::timestamp, receipt_date),  
+                    delivery_date     = COALESCE($11::timestamp, delivery_date),  
+                    MA_finish_date    = COALESCE($12::date, MA_finish_date),  
                     invoiceno         = COALESCE($13, invoiceno ),  
-                    price             = COALESCE($14, price),  
-                    registration_date = COALESCE($15, registration_date),
+                    price             = COALESCE($14::numeric, price),  
+                    registration_date = COALESCE($15::timestamp, registration_date),
                     recent_user       = COALESCE($16, recent_user), 
-                    modify_date       = COALESCE($17, modify_date),  
+                    modify_date       = COALESCE($17::timestamp, modify_date),  
                     purchase_memo     = COALESCE($18, purchase_memo),  
                     status            = COALESCE($19, status),  
-                    hq_finish_date    = COALESCE($20, hq_finish_date),  
+                    hq_finish_date    = COALESCE($20::date, hq_finish_date),  
                     quantity          = COALESCE($21, quantity),  
                     regcode           = COALESCE($22, regcode),  
-                    MA_contact_date   = COALESCE($23, MA_contact_date)
+                    MA_contact_date   = COALESCE($23::date, MA_contact_date)
                 where purchase_code = $24
             `,[company_code   ,  
                 product_code   ,  
