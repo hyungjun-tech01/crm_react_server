@@ -1470,6 +1470,10 @@ copy tbl_MA_contract_temp
 	MA_modify_date )
 from 'd:\tbl_MA_contract20240527.csv' csv;
 
+-- 헤더 삭제 
+delete from tbl_MA_contract_temp 
+where guid = 'guid';
+
 insert into tbl_MA_contract(
   guid  ,
 	purchase_code  ,
@@ -1495,3 +1499,7 @@ select guid  ,
 	MA_recent_user ,
 	MA_modify_date::timestamp 
   from tbl_MA_contract_temp;
+
+  select * from tbl_MA_contract;
+
+  drop table tbl_MA_contract_temp;
