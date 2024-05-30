@@ -434,6 +434,39 @@ app.get('/purchases', async(req, res) => {
     }
 });
 
+app.get('/companyMaContract', async(req, res) => {
+    console.log("[Get] comapany ma contract", req.body.company_code);
+    const { 
+        company_code               = defaultNull(req.body.company_code) 
+    } = req.body;
+
+    try{
+        const companyMaContractResult = await pool.query(`
+            select tpi.product_code, 
+                tpi.product_name, 
+                tpi.serial_number, 
+                tci.company_name, 
+                tmc.* 
+                from tbl_ma_contract tmc , tbl_purchase_info tpi, tbl_company_info tci
+                where tmc.purchase_code = tpi.purchase_code
+                and tmc.ma_company_code = tci.company_code
+                and tmc.ma_company_code = $1
+                order by tmc.ma_modify_date desc`, [company_code]);  
+
+        if(companyMaContractResult.rows.length > 0) {
+            const companyMaContract = companyMaContractResult.rows;
+            res.json(companyMaContract);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
 
 app.post('/companyPurchases', async(req, res) => {
     console.log("[Get] company purchase", req.body.company_code);
@@ -1133,7 +1166,7 @@ app.post('/modifyPurchase', async(req, res) => {
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
-            throw new Error('recent_user는 user_id 이어야 합니다.');
+            throw new Error('modify_user는 user_id 이어야 합니다.');
         }
 
         if (action_type === 'ADD') {
