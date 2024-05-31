@@ -1479,7 +1479,7 @@ app.post('/modifyTransaction', async(req, res) => {
     }
 });
 
-// create/update transaction info 
+// create/update quotation info 
 app.post('/modifyQuotation', async(req, res) => {
     const  { 
         action_type                = defaultNull(req.body.action_type),
@@ -1790,7 +1790,118 @@ app.post('/modifyQuotation', async(req, res) => {
 
 });
 
-// create/update transaction info 
+// create/update ma contract info 
+app.post('/modifyMaContract', async(req, res) => {
+    const  { 
+        action_type                = defaultNull(req.body.action_type),
+        guid                       = defaultNull(req.body.guid),
+        purchase_code              = defaultNull(req.body.purchase_code),
+        ma_company_code            = defaultNull(req.body.ma_company_code),
+        ma_contract_date           = defaultNull(req.body.ma_contract_date),
+        ma_finish_date             = defaultNull(req.body.ma_finish_date),
+        ma_price                   = defaultNull(req.body.ma_price),
+        ma_memo                    = defaultNull(req.body.ma_memo),
+        modify_user                = defaultNull(req.body.modify_user)
+    } = req.body;
+
+    try{
+
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currentDate = current_date.rows[0];
+        let v_guid = guid;
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
+
+        if (action_type === 'ADD') {
+            if (purchase_code === null || purchase_code === "") {
+                throw new Error('purchase_code는 not null입니다.');
+            }
+            if (ma_company_code === null || ma_company_code === "") {
+                throw new Error('ma_company_code는 not null입니다.');
+            }
+            v_guid  = pk_code();
+            const response = await pool.query(`insert into tbl_MA_contract(
+                guid                      ,
+                purchase_code             ,
+                ma_company_code           ,
+                ma_contract_date          ,
+                ma_finish_date            ,
+                ma_price                  ,
+                ma_memo                   ,
+                ma_register               ,
+                ma_registration_date      ,
+                ma_recent_user            ,
+                ma_modify_date            )
+                values($1,$2,$3,$4::date,$5::date,$6::numeric,$7,$8,$9::timestamp,$10,$11::timestamp)`,
+                [
+                    v_guid                ,
+                    purchase_code         ,
+                    ma_company_code       ,
+                    ma_contract_date      ,
+                    ma_finish_date        ,
+                    ma_price              ,
+                    ma_memo               ,
+                    modify_user           ,
+                    currentDate.currdate  ,
+                    modify_user           ,
+                    currentDate.currdate 
+            ]);       
+
+        }
+        if (action_type === 'UPDATE') {
+
+            const response = await pool.query(`
+                update tbl_MA_contract 
+                    purchase_code            = COALESCE($1, purchase_code) ,
+                    ma_company_code          = COALESCE($2, ma_company_code) ,
+                    ma_contract_date         = COALESCE($3::date, ma_contract_date) ,
+                    ma_finish_date           = COALESCE($4::date, ma_finish_date) ,
+                    ma_price                 = COALESCE($5::numeric, ma_price) ,
+                    ma_memo                  = COALESCE($6, ma_memo) ,
+                    ma_recent_user           = COALESCE($7, ma_recent_user) ,
+                    ma_modify_date           = COALESCE($8::timestamp, ma_modify_date) 
+                where guid = $9
+            `,[
+                purchase_code                ,
+                ma_company_code              ,
+                ma_contract_date             ,
+                ma_finish_date               ,
+                ma_price                     ,
+                ma_memo                      ,
+                modify_user                  ,
+                currentDate.currdate         ,
+                v_guid
+            ]);            
+        }
+
+        const out_guid = v_guid;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ out_guid: out_guid,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_guid: out_guid,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});
+        res.end();              
+    }
+});
+
+// create/update user info 
 app.post('/modifyUser', async(req, res) => {
     const  { 
         action_type                = defaultNull(req.body.action_type),
