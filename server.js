@@ -1159,8 +1159,8 @@ app.post('/modifyPurchase', async(req, res) => {
         const currentDate = current_date.rows[0];
         let v_purchase_code = purchase_code;
 
-        if (recent_user === null ){
-            throw new Error('recent_user는 not null입니다.');
+        if (modify_user === null ){
+            throw new Error('modify_user는 not null입니다.');
         }
 
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
