@@ -1,6 +1,6 @@
 -- 기업관리 테이블 
 
-drop table tbl_company_info;
+drop table if exists tbl_company_info;
 
 create table tbl_company_info
 (company_code                 varchar	(32)   PRIMARY KEY,
@@ -179,11 +179,11 @@ from tbl_company_info_temp;
 select * from tbl_company_info;
 
 -- temp table  삭제 
-drop table tbl_company_info_temp;
+drop table if exists tbl_company_info_temp;
 
 -- tbl_leads_info 
-drop table tbl_leads_info;
-drop table tbl_lead_info;
+drop table if exists tbl_leads_info;
+drop table if exists tbl_lead_info;
 
 CREATE TABLE tbl_lead_info(                                             
 lead_code              varchar(32)   PRIMARY KEY,
@@ -341,12 +341,12 @@ application_engineer,
 status              from tbl_lead_info_temp;
 
 -- temp table 삭제 
-drop table tbl_lead_info_temp;
+drop table if exists tbl_lead_info_temp;
 
 
 -- 사용자 Info Table 
 
-drop table tbl_user_info;
+drop table if exists tbl_user_info;
 
 CREATE TABLE tbl_user_info (
   user_id varchar(50) PRIMARY KEY, 
@@ -387,7 +387,7 @@ where t.user_id = '﻿user_id';
 
 
 -- log table 
-drop table tbl_logs; 
+drop table if exists tbl_logs; 
 
 CREATE TABLE tbl_logs (
   log_id serial PRIMARY KEY,
@@ -405,7 +405,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 
 -- tbl_consulting_info 
-drop table tbl_consulting_info;
+drop table if exists tbl_consulting_info;
 
 create table tbl_consulting_info(
 consulting_code      varchar(32) PRIMARY KEY, 
@@ -555,7 +555,7 @@ product_type          from tbl_consulting_temp;
 select * from tbl_consulting_info;
 
 -- temp 테이블 삭제 
-drop table tbl_consulting_temp;
+drop table if exists tbl_consulting_temp;
 
 
 
@@ -677,11 +677,11 @@ currency       from  tbl_purchase_info_temp;
 select * from tbl_purchase_info;
 
 -- temp 테이블 삭제 
-drop table tbl_purchase_info_temp;
+drop table if exists tbl_purchase_info_temp;
 
 
 -- tbl_transaction_info
-drop table tbl_transaction_info;
+drop table if exists tbl_transaction_info;
 
 create table tbl_transaction_info(
 transaction_code             varchar(32) primary key,
@@ -707,7 +707,7 @@ transaction_contents         text        ,
 currency                     varchar(10) 
 );
 
-drop table tbl_transaction_info_temp;
+drop table if exists tbl_transaction_info_temp;
 
 -- 임시테이블 데이터 받기 위함 . 작업 후 drop 필요 
 create table tbl_transaction_info_temp(
@@ -810,7 +810,7 @@ insert into tbl_transaction_info (
   select * from tbl_transaction_info;
   
 -- temp table 삭제 
-  drop table tbl_transaction_info_temp;
+  drop table if exists tbl_transaction_info_temp;
 
 
 -- 거래명세표_sub 데이터 import 
@@ -867,7 +867,7 @@ call p_insert_transaction_sub();
 select transaction_contents, * from tbl_transaction_info;
 
 -- temp table 삭제 
-drop table tbl_transaction_sub_temp;
+drop table if exists tbl_transaction_sub_temp;
 
 -- 프로시져 drop 
 drop procedure p_insert_transaction_sub();
@@ -927,7 +927,7 @@ quotation_contents          text
 );
 
 -- temp table 생성
-drop table tbl_quotation_info_temp;
+drop table if exists tbl_quotation_info_temp;
 
 create table tbl_quotation_info_temp(
 quotation_code              varchar(32)   ,           
@@ -1142,7 +1142,7 @@ currency from tbl_quotation_info_temp;
 select * from tbl_quotation_info;
 
 -- temp table 삭제 
-drop table tbl_quotation_info_temp;
+drop table if exists tbl_quotation_info_temp;
 
 
 -- sub temp table 생성 
@@ -1223,7 +1223,7 @@ call p_insert_quotation_sub();
 select * from tbl_quotation_info;
 
 -- temp table 삭제 
-drop table tbl_quotation_sub_info_temp;
+drop table if exists tbl_quotation_sub_info_temp;
 
 -- 프로시져 drop 
 drop procedure p_insert_quotation_sub();
@@ -1266,14 +1266,14 @@ where tag_code = '﻿tag_code';
 call p_insert_item_tag();
 
 -- temp table tbl_item_tag_temp 삭제 
-drop table tbl_item_tag_temp;
+drop table if exists tbl_item_tag_temp;
 
 -- 데이터 확인 
 select * from tbl_item_tag;
 
 -- purchase 테이블  2024.05.27
 
-drop table tbl_purchase_info;
+drop table if exists tbl_purchase_info;
 
 CREATE TABLE tbl_purchase_info (
   purchase_code varchar(32) PRIMARY KEY , 
@@ -1420,13 +1420,13 @@ insert into tbl_purchase_info (
   regcode , 
   MA_contact_date::date  from tbl_purchase_info_temp;
 
-drop table tbl_purchase_info_temp;
+drop table if exists tbl_purchase_info_temp;
 
 select * from tbl_purchase_info ;
 
 -- 5월 28일 tbl_MA_contract 
 
-drop table tbl_MA_contract;
+drop table if exists tbl_MA_contract;
 
 CREATE TABLE tbl_MA_contract (
 	guid varchar(32) not null PRIMARY KEY,
@@ -1502,4 +1502,4 @@ select guid  ,
 
   select * from tbl_MA_contract;
 
-  drop table tbl_MA_contract_temp;
+  drop table if exists tbl_MA_contract_temp;
