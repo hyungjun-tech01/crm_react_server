@@ -1504,7 +1504,7 @@ select guid  ,
 
   drop table if exists tbl_MA_contract_temp;
 
-  --품목관리 table : tbl_product_info 
+  --품목관리 table : tbl_product_info : 2024.06.02 
  drop table  tbl_product_info;
 
  create table tbl_product_info
@@ -1518,7 +1518,7 @@ creater        varchar(100),
 create_date    timestamp, 
 modify_date    timestamp, 
 recent_user    varchar(100)
-)
+);
 
 create table tbl_product_info_temp
 (product_code  varchar(32) ,
@@ -1534,7 +1534,7 @@ recent_user    varchar(100)
 )
 
 copy tbl_product_info_temp(
-  (product_code,
+product_code,
 product_class,
 model_name   ,
 product_name ,
@@ -1543,5 +1543,38 @@ memo         ,
 creater      ,
 create_date  ,
 modify_date  ,
-recent_user  ,
-)
+recent_user  
+) from 'd:\tbl_product_info_202406020841.csv' csv;
+
+-- 확인 
+select * from tbl_product_info_temp;
+
+-- 헤더 삭제 
+delete from tbl_product_info_temp 
+where product_code = '품목코드';
+
+insert into tbl_product_info
+(product_code,
+product_class,
+model_name   ,
+product_name ,
+detail_desc  ,
+memo         ,
+creater      ,
+create_date  ,
+modify_date  ,
+recent_user  )
+select product_code,
+product_class,
+model_name   ,
+product_name ,
+detail_desc  ,
+memo         ,
+creater      ,
+create_date::timestamp  ,
+modify_date::timestamp  ,
+recent_user  from tbl_product_info_temp;
+
+select * from tbl_product_info;
+
+drop table tbl_product_info_temp;
