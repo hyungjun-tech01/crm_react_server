@@ -1,0 +1,3470 @@
+"품목코드","품목분류","모델명","정식품목","세부사양","메모","작성자","작성일자","수정일자","최근사용자"
+"000613A014469F41B5D6464F65AE8583","13. 3DEXPERIENCE Platform",NBAP,Social Business Analyst & Project Planner Offer,"- Social Business Analyst
+   Library
+     뉴스, 웹 사이트 등에서 키워드 검색
+   Feed Reader
+     최신 컨텐츠 확인
+  Social Analytics
+     Insight 확보를 위해 정해진 영역에 대한 분석 및 비교
+     주제, 언급되는 web상의 위치, 인물 등으로 Topic 분석
+     데이터의 그래프화
+  Metrics Reader
+     그래프 비교
+  Potion
+     Dashboard를 수시 모니터링하지 않고 상황에 대한 능동적 대처
+    트리거 조건 충족 시 자동 상호 작용
+
+- Project Planning
+   Project 생성 및 정의
+   Project 진행 상황 실시간 Update
+   Project Resource 및 업무 Drill-Down 보기
+   업무 생성 및 기간 설정
+   업무 담당자 지정
+   마일 스톤(중요 시점) 및 작업 간 관계 정의
+   Key 마일 스톤에 따른 일정 최적화
+   프로젝트 별 멤버 지정
+   프로젝트 산출물 및 참고 자료 관리
+   업무 별 산출물 연결
+
+- Collaborative Industry Innovator
+   3D Markup
+     언제든 어떤 장비로든 사용 가능한 웹 기반의 2D 및 3D 마크업
+   Bookmark Editor
+     컨텐츠와 문서 협업을 위한 북마크 생성 및 관리
+   Chage Action
+     변경 조치 생성, 할당, 관리를 통한 모든 관련 영역을 아우르는
+     명확한 변경 결정 커뮤니케이션
+   Collaborative Lifecycle
+     제품 컨텐츠의 생성, 검토, 출도, 폐기 단계를 관리 및 캡처
+   Compare
+     두 모델을 비교하여  차이점을 찾기 위한 손쉬운 비교
+   3D Space
+     협업 공간 생성, 관리, 멤버 추가 및 저장된 컨텐츠에 바로 접근
+   Issue 3D Review
+     3D 모델의 맥락에서 제품의 문제 식별 및 분석
+   Issue Management
+     제품의 문제를 팀 구성원들 간 생성, 구성 및 전달
+   Product Explorer
+     3D 시각화 및 트리 구조화를 통한 컨텐츠 탐색
+   Route Management
+     3D Dashboard 내 승인 경로 생성 및 관리
+
+- Collaborative Business Innovator
+  3D Dashboard
+    업무 최적화를 위해 필요한 기능(app) 구성 가능
+    실시간으로 다른 팀원들 진행 상황 모니터링
+  3D Swym
+    공지사항 포스팅
+    작업 지시
+    기술 문서 공유 및 관리
+  3D Drive
+    안전한 데이터 공유 가능
+    링크 통해 외부 인원과 공유
+    SOLIDWORKS 데이터를 통합하여 다이렉트로 오픈 가능
+  3D Play
+    3D 모델 데이터 뷰어
+    CAD 없이 웹 브라우저를 통하여 언제든지 접근 가능
+    측정, 주석, 마크업 추가하여 상세한 리뷰 가능
+  3D Search and 6WTags
+    데이터 특성에 따라 원하는 데이터를 쉽게 검색","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"004ED42881368A4C89D211350C3BCDEF","00.Subscription Service",Flow Simulation Electronic Module Subscription Ser,SOLIDWORKS Flow Simulation Electronic Module Subsc,"","",ksehee,2015-02-10 00:00:00.000,2015-02-10 00:00:00.000,ksehee
+"00C4254E43FFFE41A631CB28073453AC","12.전략제품(보안)",Eon NAS 1000 Series,Eon NAS 1012 Model," Processor : One (1) Intel Core i3 Dual-Core 3.3GHz CPU 
+ Disk Bay : 12Bay  
+ HDD : 8ea ( 2TB SATA * 8 ) 
+ Capacity : Usable 10TB 
+ Memory : 4GB 
+ Interface : 1GbE * 2ea 
+ Power Supply : Two Redundant 330W 
+ Form factor : 2U , 19inch 
+ RAID Level : 0,1,5 
+ Protocol Support :  CIFS/ SMB, AFP, NFS, HTTP, 
+                            HTTPS,  FTP,NDMP
+ OS Support : Windows Server 2003,
+                    Windows Server 2008 R2 (Including Hyper-V)
+                    Red Hat, SUSE, Sun Solaris, VMware,
+                    Citrix XenDesktop / XenServer
+
+                    Mac OS X
+","",ktkim,2014-05-12 00:00:00.000,2014-05-12 00:00:00.000,ktkim
+"0155552EDE3FC74FA0F3C6D29DF2D76A","05.PDMWorks Enterprise 관련",Enterprise PDM,SolidWorks Enterprise PDM 2014 Process for 25 User,"","",ksllkd,2014-04-25 00:00:00.000,2014-04-25 00:00:00.000,ksllkd
+"01BFF1ABCAB2504AADB53C6E7A95ACFB","08.기타",SolidWorks Disable,SolidWorks Subscription Service 이후 Disable,SolidWorks Maintenance 계약 종료 이후 고객의 사용권 활성화 서비스 비용,"",suuk,2011-02-09 00:00:00.000,2012-07-18 00:00:00.000,ckjung
+"021FC10DA24358468AD0FBF2A0C8DCCF","13. 3DEXPERIENCE Platform",XWCO,"3DEXPERIENCE SOLIDWORKS Premium Offer","- 3D Sculptor
+   xShape
+    서브디비전 모델링 기법
+    복잡한 곡면 설계 가능
+    산업 디자인용 색상표 이용하여 다양한 색상 정의
+
+- 3D Creator
+  xDesign
+    Web상 3D Modeling Tool
+    파라메트릭 모델링 기법
+
+- 3DEXPERIENCE SOLIDWORKS Premium
+    Proffesional기능 + 추가 기능
+    곡면 전개, 배관 및 배선 (Routing)
+
+
+- SOLIDWORKS Visualize Connected
+   고급 실사적 렌더링
+
+
+- 3DEXPERIENCE SOLIDWORKS Simulation Designer
+    시간 기반 모션 해석 (with SOLIDWORKS Motion App)
+    선형 정적 해석 (with SOLIDWORKS Simulation App)_Solid, Shell, Beam 및 Truss Mesh
+    Part, Assembly 시뮬레이션
+    분산 및 집중 질량
+    합력 및 부품 변위 플롯
+    Von-Mises 응력, 주응력, 부품 응력 플롯
+    주요 변형, 부품 변형, 변형 에너지 밀도 플롯
+    다축 응력 하중 기반 볼트 및 핀 하중 계산
+    모션해석결과 산출
+
+- Collaborative Industry Innovator
+   3D Markup
+     언제든 어떤 장비로든 사용 가능한 웹 기반의 2D 및 3D 마크업
+   Bookmark Editor
+     컨텐츠와 문서 협업을 위한 북마크 생성 및 관리
+   Chage Action
+     변경 조치 생성, 할당, 관리를 통한 모든 관련 영역을 아우르는
+     명확한 변경 결정 커뮤니케이션
+   Collaborative Lifecycle
+     제품 컨텐츠의 생성, 검토, 출도, 폐기 단계를 관리 및 캡처
+   Compare
+     두 모델을 비교하여  차이점을 찾기 위한 손쉬운 비교
+   3D Space
+     협업 공간 생성, 관리, 멤버 추가 및 저장된 컨텐츠에 바로 접근
+   Issue 3D Review
+     3D 모델의 맥락에서 제품의 문제 식별 및 분석
+   Issue Management
+     제품의 문제를 팀 구성원들 간 생성, 구성 및 전달
+   Product Explorer
+     3D 시각화 및 트리 구조화를 통한 컨텐츠 탐색
+   Route Management
+     3D Dashboard 내 승인 경로 생성 및 관리
+
+- Collaborative Business Innovator
+  3D Dashboard
+    업무 최적화를 위해 필요한 기능(app) 구성 가능
+    실시간으로 다른 팀원들 진행 상황 모니터링
+  3D Swym
+    공지사항 포스팅
+    작업 지시
+    기술 문서 공유 및 관리
+  3D Drive
+    안전한 데이터 공유 가능
+    링크 통해 외부 인원과 공유
+    SOLIDWORKS 데이터를 통합하여 다이렉트로 오픈 가능
+  3D Play
+    3D 모델 데이터 뷰어
+    CAD 없이 웹 브라우저를 통하여 언제든지 접근 가능
+    측정, 주석, 마크업 추가하여 상세한 리뷰 가능
+  3D Search and 6WTags
+    데이터 특성에 따라 원하는 데이터를 쉽게 검색","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,admin
+"02402B0C86AC8B4FA57B923C26664685","12.전략제품(보안)",시큐어디스크,시큐어디스크 기업용 솔루션 (100 User license),"  - 데몬
+    - 인증 및 운영용 데몬
+    - 파일 서버 제어용 데몬
+  - 문서
+    - Database Layout
+    - 관리자용 매뉴얼","",sjh,2014-08-13 00:00:00.000,2014-08-13 00:00:00.000,sjh
+"02A1C57E8B684B49967A492CD85C05DB","12.전략제품(보안)",시큐어디스크,시큐어디스크 엔지니어 현장 구축 지원 (5 days),"정책설정 지원
+관리자, 사용자 교육","",sjh,2014-08-06 00:00:00.000,2014-08-06 00:00:00.000,sjh
+"0313BA36ABB3094FBC73B4EA5F0859AC","01.SolidWorks 관련","",SOLIDWORKS Composer Player Pro2014,"","",ksllkd,2014-05-15 00:00:00.000,2014-05-15 00:00:00.000,ksllkd
+"03CC0882B3F67B4B912505761E27B49C","02.해석 제품",SolidWorks Simulation Professional 교재 (영문),SolidWorks Simulation Professional 교재 (영문)," Introduction, Lesson 1. Frequency Analysis of Parts, Lesson 2. Frequency Analysis of Assemblies, Lesson 3. Buckling Analysis, Lesson 4. Thermal Analysis, Lesson 5. Thermal Analysis with Radiation, Lesson 6. Advanced Thermal Stress Analysis, Lesson 7. Fatigue Analysis, Lesson 8. Advanced Fatigue Analysis, Lesson 9. Drop Test Analysis, Lesson 10. Optimization Analysis, Lesson 11. Pressure Vessel Analysis","",shpark,2010-12-09 00:00:00.000,2015-02-05 00:00:00.000,admin
+"03DDA7DCEBB1A3429C67A4A48FBCE773","11.기타Software",ADAMS,"Adams Studio Package(Adams View, Adams Exchange, a","","Adams Studio Package(Adams View, Adams Exchange, and Adams Solver)
+Paid-up 28,400,000
+E&S        5,680,000",ktkim,2014-03-03 00:00:00.000,2014-03-03 00:00:00.000,ktkim
+"0613C6D008DC75458BBB7E361D7201E0","09.제품관리","",SolidWorks Enterprise PDM,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+"06B347A09D7F36459BFF6426A3BF2F50","08.기타",Liebert Line-Interactive UPS,Liebert PSI 3000VA/2700W 230V 2U PF 0.9 Rack/Tower,"","",ktkim,2014-04-10 00:00:00.000,2014-04-10 00:00:00.000,ktkim
+"06BCD0510F8002428B70CB37BB59E9FD","01.SolidWorks 관련",elecworks for SolidWorks,elecworks for SolidWorks," - elecworks 데이터 import
+ - 2D 배선도 3D자동 구성 및 확인
+ - elecworks 와 SolidWorks 양방향 Update
+ - 케비넷, 덕트, 레일 등 3D 라이브러리 제공
+ - 전장 부품 자동 조립, 자동 구성
+ - SolidWorks 도면 elecworks에서 확인
+ - 부품 리스트 (BOM) 양방향 Update","",chuls,2012-01-05 00:00:00.000,2012-01-05 00:00:00.000,chuls
+"074A3B3B1B9E59488D47AB1004DF81C3","04.HW 관련",HP SERVER,DL360G5,"HP DL360R05 Quad-Core 2.66GHz, 2X1GB SFF SATA/SAS  P400i/256MB (재고소진시 까지)
+Cpu        : Quad-Core Intel® Xeon® processor 5400/5300 sequence [Max : 2ea]
+Cache   : 12MB (2 x 6MB) Level 2 cache (5400 sequence)
+Memory :  PC2-5300 DDR2 667 (8DIMMs Max:32GB)
+NIC        : Dual NC373i Multifunction Gigabit Network Adapters
+PCI Slot(2PCI) : 1 full-length x8 PCI-Express slot
+                             1 low-profile x8 PCI-Express slot
+Controller : Smart Array P400i Controller with 256MB cache (RAID 0/1/5)
+HDD Bay  : 4 x SAS/SATA hot plug drive bays standard(2bays Optional)
+USB : 4*USB Ports [1 x front, 2 x rear, 1 x internal]
+Optional CD, DVD, DVD/CD-RW, or Floppy/1U
+700W power supply, redundant optional
+ATI ES1000 1280 x 1024 x 16M color (32MB video standard)
+146GB 10k SAS 2.5 HP HDD ALL
+Slim Line CD-RW/DVD-ROM 24X Combo Drive Option Kit
+PS Assy  DL360 HT PLG PFC Kit( 리던던트파워)
+Windows Svr Std 2008 R2 Korean OLP NL(32Bit, 64Bit) 
+Windows Server 2008 Korean OLP NL User CAL x 5
+Windows Svr Std 2008 R2 Korean 설치 Media CD x 1
+OfficeScan Server 8.0(NT용)
+","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+"0822FC6EC64F7848A5936B98711E7C20","04.HW 관련",서버용S/W,window server 2008 korean,"","",misjid,2009-05-18 00:00:00.000,2009-05-18 00:00:00.000,misjid
+"08EE337DFA0C9F48A9C58F3B9119932A","00.Subscription Service",SOLIDWORKS Plastics Standard,SOLIDWORKS Plastics Standard Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",ksehee,2015-02-26 00:00:00.000,2018-11-30 00:00:00.000,intia
+"08F2443F0DA04640B791FEE64F9D606A","01.SolidWorks 관련",SOLIDWORKS Electrical Professional,SOLIDWORKS Electrical Professional,"- SOLIDWORKS Electrical 2D 포함
+   - 직관적인 전기 회로설계 Software
+   - 전기, PLC 회로설계 자동화
+   - 회로설계 프로젝트 관리
+   - 연관 회로도 양방향 업데이트
+   - 전기, PLC 라이브러리 제공
+   - single line diagram 작성
+   - cable 구성 및 간편한 wire 속성확인 및 선택
+   - cable 연결정보 생성, 변경정보 자동 Update
+   - 구성 부품 BOM 생성
+
+ - SOLIDWORKS Electrical 3D 포함
+   - SOLIDWORKS Electrical 2D 데이터 import
+   - 2D 설계회로 3D자동 구성 및 확인
+   - SOLIDWORKS Electrical 2D 와 SOLIDWORKS 양방향 Update
+   - 케비넷, 덕트, 레일 등 3D 라이브러리 제공
+   - 전장 부품 자동 조립, 자동 구성
+   - SOLIDWORKS 도면 SOLIDWORKS Electrical 2D에서 확인
+   - 부품 리스트 (BOM) 양방향 Update
+   - 3D 전기배선 자동 작성 및 최적화
+   - 전기배선길이 자동계산
+   - 케이블 길이 및 속성 BOM작성
+- 교육 2일 포함
+- 라이브러리 구축 시 DATA Sheet 필요(고객이 제공 해 주어야 함) : 100개의 부품 무상 구축","",jmlee,2012-12-28 00:00:00.000,2015-02-02 00:00:00.000,ksehee
+"095B0526C18E2C408EB39BAA2739131A","05.PDMWorks Enterprise 관련",SOLIDWORKS Manage PDM Professional CAD Editor,SOLIDWORKS Manage PDM Professional CAD Editor,"- 관리자 & 설계자용 (PMS) 
+- 문서및 record의 검색, 미리보기,출력 
+- CAD Data 미리보기 (eDrawings 활용) 
+- CAD 데이터의 생성 및 편집 (SOLIDWORKS Add-in) 
+- non-CAD 데이터 미리 보기/생성 및 편집 
+- Project 진척 및 Timesheets 확인 및 수정 
+- Dashboards 확인 및 보고서 작성 및 문서 생성 
+- Process 및 기록 확인/ Process 시작 및 진행 
+- PDM Workflow에 의한 Rrocess 실행 
+- BOM 생성 및 수정 - Task 지정 및 수정 
+- PDM workflows 에 포함","",kimhj,2019-07-05 00:00:00.000,2019-07-05 00:00:00.000,kimhj
+"0992E3BC2312394B81CB0DFE1B82C1EC","06.AutoCAD 관련",AutoCAD 2011 EKTS DVD - Sub미포함,AutoCAD 2011 EKTS DVD - Sub미포함," - 능률화된 표준 관리 및 데이터 교환 무결성
+ - 향상된 팀 공동 작업
+ - 간편한 통합 및 고급 라이센스 관리
+ - 강력한 CAD 플랫폼
+ * 협력적인 설계 환경
+    - 향상된 웹으로 출판
+    - i-drop™ 기술
+    - eTransmit
+    - DWG 파일을 읽기 전용 DWF 파일로 변환하는 ePlot
+    - 향상된 속성 추출
+    - 쉽게 최근에 사용한 파일 미리보기 및 열기
+    - 팀 공동 작업을 위한 회의 시작","",shpark,2010-09-07 00:00:00.000,2010-09-07 00:00:00.000,shpark
+"09C6AFBD1AA28344AC6FAE739B434612","12.전략제품(보안)",SecureDISK,SecureDISK CAD(30 user),-10user와 동일,"",sjh,2014-07-14 00:00:00.000,2014-07-14 00:00:00.000,sjh
+"0B85D5C816EEA846A2A0C98E6230A407","09.제품관리","",SolidWorks Simulation Professional + SolidWorks FlowSimulation,"","",nana,2008-02-25 00:00:00.000,2011-12-15 00:00:00.000,admin
+"0E1F2B9AAF0C634ABDA0E9C66D3B791F","12.전략제품(보안)",시큐어디스크,[알약] 무상제공,"백신 알약 기업용 라이센스 (XXX user) 1년 무료사용권
+백신 알약 server for linux 1년 무료사용권","",sjh,2014-08-06 00:00:00.000,2014-08-06 00:00:00.000,sjh
+"0E644EB34F0CB34B8BDF2ABF35487852","07.SolidWorks 교육관련",제품설계컨설팅,제품설계컨설팅,"","",admin,2008-01-08 00:00:00.000,2008-01-08 00:00:00.000,admin
+"117AF5B228C9574BB3B500950006A35B","00.Subscription Service","",SOLIDWORKS 인증시험," - Certification SOLIDWORKS Professional (년/4회)
+ - nodeDATA 정기 시험 일정에 한 함","",admin,2015-01-28 00:00:00.000,2015-01-29 00:00:00.000,ksehee
+"1584D4B0511C4543AA5B9DF5AC77AAED","01.SolidWorks 관련","",SOLIDWORKS Network Installation Fee,"",seat 수에 상관없이 시리얼번호당 1번만 붙음,nana,2009-02-17 00:00:00.000,2014-04-23 00:00:00.000,ksehee
+"167AB7022AAE4A4DB00694C5B77FB566","12.전략제품(보안)",Mirageworks,Mirageworks Online Storage(MOS),"","",ktkim,2014-02-06 00:00:00.000,2014-02-06 00:00:00.000,ktkim
+"16FDC3CDB45B2F4C90986F5F692C3854","04.HW 관련",Switch(L2),Summit X250e-24t,"24 10/100BASE-TX, 2 gigabit combo ports (2 			
+unpopulated gigabit SFP and 10/100/1000BASE-T), 		2 SummitStack™ Stacking ports, ExtremeXOS™ Edge 		license, 1 AC PSU, connector for EPS-160 external		redundant PSU													
+","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+"173D818AEAF77F4BBE314177C032757E","01.SolidWorks 관련",PCB,SOLIDWORKS PCB,"1. Schematic 설계
+ - 효율적인 인터페이스,계층 구조 설계
+ - 심볼, FootPrint, 3D Body, Simulation 설정이 통합된 
+    라이브러리를 제공
+ - 설계 규칙 검토
+2. PCB Layout 설계
+ - 지능형 Routing( Interactivei Routing 기능)
+ - Differential Pair Routing(Net의 전기적인 특성 오차 줄임)
+ - Cross Probe(회로도와 PCB Layout의 배선 상태를 실시간으로
+    확인)
+ - 중복 배선 제거  
+3. 3D 설계
+ - 3D Modification  
+ - 내층 Layer 확인 
+ - 기구 파트 형합성 검사
+ - Animation 생성","",ksllkd,2018-07-09 00:00:00.000,2019-07-04 00:00:00.000,kimhj
+"1745962445E84D45B2D674687B791963","11.기타Software",S/W,Acrobat XI Win Kor AOO License,"
+
+","",misjid,2009-05-27 00:00:00.000,2014-04-08 00:00:00.000,ktkim
+"179A8CBEED0D5447827BA4AA4437C161","13. 3DEXPERIENCE Platform",UDR,Collaborative Designer for DraftSight,"- Derived Format Converter
+  3DEXPERIENCE파일 형식으로 변환
+- 3DEXPERIENCE Connector for DraftSight
+  DraftSight 데이터를 3DEXPERIENCE platform에서 활용
+  통합 된 제품 라이프 사이클 관리로 도면 데이터 관리
+","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"17D61ECB7487D84892B5885056CE5BC4","01.SolidWorks 관련",SolidWorks Education Edition,Edu. Edition Reinstallation Fee,per school / per order,"",shpark,2009-11-25 00:00:00.000,2009-11-25 00:00:00.000,shpark
+"1946BD8B9AC60941B1F5D9225F17C571","13. 3DEXPERIENCE Platform",XWBO,"3DEXPERIENCE SOLIDWORKS Professional Offer","- 3D Sculptor
+   xShape
+    서브디비전 모델링 기법
+    복잡한 곡면 설계 가능
+    산업 디자인용 색상표 이용하여 다양한 색상 정의
+
+- 3D Creator
+  xDesign
+    Web상 3D Modeling Tool
+    파라메트릭 모델링 기법
+
+- 3DEXPERIENCE SOLIDWORKS Professional 
+    Standard 기능 + 추가 기능
+    Xtended Reality (XR) Exporter
+    공차 누적 해석 (TolAnalyst)
+    비용 고려 설계 (Consting)
+    리버스 엔지니어링 (Scan To 3D)
+    Sub-D modeling (with xShape App)기
+
+- Collaborative Industry Innovator
+   3D Markup
+     언제든 어떤 장비로든 사용 가능한 웹 기반의 2D 및 3D 마크업
+   Bookmark Editor
+     컨텐츠와 문서 협업을 위한 북마크 생성 및 관리
+   Chage Action
+     변경 조치 생성, 할당, 관리를 통한 모든 관련 영역을 아우르는
+     명확한 변경 결정 커뮤니케이션
+   Collaborative Lifecycle
+     제품 컨텐츠의 생성, 검토, 출도, 폐기 단계를 관리 및 캡처
+   Compare
+     두 모델을 비교하여  차이점을 찾기 위한 손쉬운 비교
+   3D Space
+     협업 공간 생성, 관리, 멤버 추가 및 저장된 컨텐츠에 바로 접근
+   Issue 3D Review
+     3D 모델의 맥락에서 제품의 문제 식별 및 분석
+   Issue Management
+     제품의 문제를 팀 구성원들 간 생성, 구성 및 전달
+   Product Explorer
+     3D 시각화 및 트리 구조화를 통한 컨텐츠 탐색
+   Route Management
+     3D Dashboard 내 승인 경로 생성 및 관리
+
+- Collaborative Business Innovator
+  3D Dashboard
+    업무 최적화를 위해 필요한 기능(app) 구성 가능
+    실시간으로 다른 팀원들 진행 상황 모니터링
+  3D Swym
+    공지사항 포스팅
+    작업 지시
+    기술 문서 공유 및 관리
+  3D Drive
+    안전한 데이터 공유 가능
+    링크 통해 외부 인원과 공유
+    SOLIDWORKS 데이터를 통합하여 다이렉트로 오픈 가능
+  3D Play
+    3D 모델 데이터 뷰어
+    CAD 없이 웹 브라우저를 통하여 언제든지 접근 가능
+    측정, 주석, 마크업 추가하여 상세한 리뷰 가능
+  3D Search and 6WTags
+    데이터 특성에 따라 원하는 데이터를 쉽게 검색","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"1A8E04045EE76A4E9980474938BF85A9","02.해석 제품",SolidWorks Flow Simulation 교재 (영문),SolidWorks Flow Simulation 교재 (영문)," Introduction, Lesson1. Creating a SolidWorks Flow Simulation Project, Lesson2. Meshing, Lesson3. Thermal Analysis, Lesson4. External Transient Analysis, Lesson5. Conjugate Heat Transfer, Lesson6. EFD Zooming, Lesson7. Porous Media, Lesson8. Rotating Reference Frames, Lesson9. Parametric Analysis, Lesson10. Cavitation, Lesson11. Relative Humidity, Lesson12. Particle Trajectory, Lesson13. Supersonic Flow, Lesson14. FEA Load Transfer","",shpark,2010-12-09 00:00:00.000,2015-02-05 00:00:00.000,admin
+"1AD10604066E0B429FBCA146D1E6C9C5","01.SolidWorks 관련",Reversion Fee SOLIDWORKS,Reversion Fee SOLIDWORKS,"","",suuk,2011-01-20 00:00:00.000,2014-04-23 00:00:00.000,ksehee
+"1B5DB531250F5148ABE227BF83769D1E","00.Subscription Service","",*** SS 세부사항 ***,"■ 솔리드웍스 유지보수 서비스 : 12개월
+ #. DX TOOL 제공 : 노드데이타 개발 솔리드웍스 속성편집기(\2,000,000)
+ - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 : On/Off Line 참여
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여(기술 문서 및 동영상 열람)
+ - 최신 뉴스레터 제공
+ - Disable Request Service 제공 (라이선스 재 활성)
+
+ ■ 계약기간 : 1년간 (2023.01.01 ~ 2023.12.31)
+ - 대상 License S/N :","",admin,2023-01-16 00:00:00.000,2023-01-16 00:00:00.000,admin
+"1C24E23E2AEC134A9D64087ECF8F04AA","08.기타","3DVIA Composer 용역","3DVIA Composer 용역","1) 라이센스 대여비 150만원
+2) 교수설계 비용 10 만원
+2) 작업 비용 350만원 
+    (1Day 기준 100만원 + 특근 50만원)
+3) 출장 지원 90만원
+    (1Day 기준 30만원)
+4) 수정사항 별도 협의
+
+작업 일
+2010년 3월 13일, 15일, 16일
+
+작업 시간
+10:00 ~ 18:00
+
+","",chuls,2010-03-12 00:00:00.000,2010-03-12 00:00:00.000,chuls
+"1C75DB5652785840BFAA1618DF9816E4","11.기타Software",CATIA,MCE(Mechanical Product Creation) 연간사용료,"CATIA 고급 사양
+- 고급 Solid 기능","",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+"1C7D15F68EE21549B46D782CB8F39DC4","08.기타","",KeyShot 4 Pro NL,"","",sjh,2014-01-14 00:00:00.000,2014-01-14 00:00:00.000,sjh
+"1CBA6CB8DEDD8641A705331D2152E51B","00.Subscription Service",SOLIDWORKS Electrical,SOLIDWORKS Electrical Professional Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2013-10-02 00:00:00.000,2018-11-30 00:00:00.000,intia
+"1E5C5D995EE92B48A59978DD23846748","08.기타",L3 Switch,WS-C3560G-24TS-S,"Catalyst 3560 24 10/100/1000 + 4 SFP + IPB Image
+무상유지보수1년","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"20010402121010","04.HW 관련",삼성 - S750PT,삼성 - 모니터 SyncMaster 750P(T),"  -. 화면크기 17인치  
+  -. 도트(픽셀)피치 0.26mm  
+  -. 최대 해상도 1600×1200/76Hz  
+  -. 모니터형태 CRT  
+  -. 수평주파수 30~96KHz  
+  -. 수직주파수 50~160Hz  
+","",admin,2001-04-02 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040215170522","03.ND 관련",SolidWorks,nodeWorks - Include Solidworks," - Include SolidWorks
+ - include nodeManager
+ - Data Management System
+ - Single Window Integration in SolidWorks
+ - Automated Revision Control
+ - Project 기종별 관리
+ - Auto BOM list
+ - 전자결재
+ - SolidWorks Explorer, eDrawing Viewer
+ - Work Group Data Management
+ - Automated Revision Control
+","",admin,2004-02-15 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040219182534","00.Subscription Service",SOLIDWORKS Subscription Service,SOLIDWORKS Standard Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2018.mm.dd ~ 2019.mm.dd)
+ - 대상 S/N :","",shinil,2004-02-19 00:00:00.000,2021-01-19 00:00:00.000,ksd2046
+"20040220095407","00.Subscription Service",SOLIDWORKS Professional Subscription Service,SOLIDWORKS Professional Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2018.mm.dd ~ 2019.mm.dd)
+ - 대상 S/N :","",shinil,2004-02-20 00:00:00.000,2021-01-19 00:00:00.000,ksd2046
+"20040220095827","00.Subscription Service",SOLIDWORKS Subscription Service,SOLIDWORKS Premium Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2018.mm.dd ~ 2019.mm.dd)
+ - 대상 S/N :","",shinil,2004-02-20 00:00:00.000,2021-01-19 00:00:00.000,ksd2046
+"20040220100217","02.해석 제품",SOLIDWORKS Simulation,SOLIDWORKS Simulation Professional,"[Simulation Capability]
+ - Linear Static Analysis
+ - Thermal Analysis
+ - Frequency Analysis
+ - Buckling Analysis
+ - Drop Test Analysis
+ - Fatigue Analysis
+ - Pressure Vessel Design Analysis
+ - Design Study Analysis
+ - Time / Event Based Motion Simulation
+[Geometry]
+ - Part, Assembly 시뮬레이션
+ - Solid, Shell, Beam 및 Truss 모델
+[결과 도구]
+ - 변형된 형상을 SolidWorks 파트로 저장 
+ - 모션 해석의 결과를 정적 해석 스터디에서 불러오기
+ - 열전달 해석 스터디에서 정적 해석 스터디 온도 불러오기
+[결과 공통]
+ - HTML 및 DOC 보고서 형식
+ - 시뮬레이션 결과의 eDrawings 게시
+ - BMP, JPEG, VRML, XGL 또는 AVI 파일로 플롯 저장 
+ - 시뮬레이션 라이브러리 파일/템플릿
+ - 다른 FEA 시스템으로 내보내기","",shinil,2004-02-20 00:00:00.000,2015-02-13 00:00:00.000,jekim
+"20040220100234","02.해석 제품",SOLIDWORKS Simulation,SOLIDWORKS Simulation Premium,"[Simulation Capability]
+ - Linear Static Analysis
+ - Thermal Analysis
+ - Frequency Analysis
+ - Buckling Analysis
+ - Drop Test Analysis
+ - Fatigue Analysis
+ - Pressure Vessel Design Analysis
+ - Design Study Analysis
+ - Time / Event Based Motion Simulation
+ - Modal Time Hiatory Analysis
+ - Harmonic Analysis
+ - Random Vibration Analysis
+ _ Response Spectrum Analysis
+ - Nonlinear Static Analysis
+ - Nonlinear Dynamic Analysis
+[Geometry]
+ - Part, Assembly 시뮬레이션
+ - Solid, Shell, Beam 및 Truss 모델
+[결과 도구]
+ - 변형된 형상을 SolidWorks 파트로 저장 
+ - 모션 해석의 결과를 정적 해석 스터디에서 불러오기
+ - 열전달 해석 스터디에서 정적 해석 스터디 온도 불러오기
+ - PSD 출력을 이용한 동적 해석 스터디를 위한 응답 대 시간 또는 진동수 플롯 
+[결과 공통]
+ - HTML 및 DOC 보고서 형식
+ - 시뮬레이션 결과의 eDrawings 게시
+ - BMP, JPEG, VRML, XGL 또는 AVI 파일로 플롯 저장 
+ - 시뮬레이션 라이브러리 파일/템플릿
+ - 다른 FEA 시스템으로 내보내기","",shinil,2004-02-20 00:00:00.000,2016-03-16 00:00:00.000,jekim
+"20040220100614","02.해석 제품",SOLIDWORKS Flow Simulation,SOLIDWORKS Flow Simulation,"[Analysis Capabilities]
+ - Two and three dimensional analyses
+ - Symmetry planes
+ - Time-dependent flow
+ - Subsonic, transonic, and supersonic regimes
+ - Calculation of relative humidity in gas flows
+ - Gas mixture, liquid mixture
+ - Conjugate heat transfer
+ - Cavitation
+[Fluid and Solid Properties]
+ - Incompressible and compressible liquid
+ - Compressible gas
+ - Real gases
+ - Water vapor (steam)
+ - Non-Newtonian liquids (to simulate blood, molten plastics)
+[Results Tools]
+ - Microsoft Word report format
+ - Publish eDrawings® of flow simulation results
+ - Save plots as BMP, JPEG, PNG, VRML, or AVI files
+ - Save results in Excel
+ - Export results (pressure, temperature, and convective coefficients) to SolidWorks Simulation","",shinil,2004-02-20 00:00:00.000,2015-02-12 00:00:00.000,admin
+"20040220142542","00.Subscription Service",SOLIDWORKS Flow Simulation - Subscription Service,SOLIDWORKS Flow Simulation Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :",모듈 제외,shinil,2004-02-20 00:00:00.000,2018-11-30 00:00:00.000,intia
+"20040220150539","00.Subscription Service",SOLIDWORKS Simulation Subscription Service,SOLIDWORKS Simulation Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",shinil,2004-02-20 00:00:00.000,2018-11-30 00:00:00.000,intia
+"20040223170747","06.AutoCAD 관련",AutoCAD,AutoCAD," - 능률화된 표준 관리 및 데이터 교환 무결성
+ - 향상된 팀 공동 작업
+ - 간편한 통합 및 고급 라이센스 관리
+ - 강력한 CAD 플랫폼
+ * 협력적인 설계 환경
+    - 향상된 웹으로 출판
+    - i-drop™ 기술
+    - eTransmit
+    - DWG 파일을 읽기 전용 DWF 파일로 변환하는 ePlot
+    - 향상된 속성 추출
+    - 쉽게 최근에 사용한 파일 미리보기 및 열기
+    - 팀 공동 작업을 위한 회의 시작
+","",jmlee,2004-02-23 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040223170954","06.AutoCAD 관련",AutoCAD LT,AutoCAD LT," - 기존 제품의 도면과 100% DWG 호환
+ - 연관 치수 기입
+ - 전환공간 연관 치수 기입
+ - 블록 속성 편집기
+ - 도면층 변환기
+ - 문자 측정
+","",jmlee,2004-02-23 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040223172453","04.HW 관련",IBM - Z Pro,IBM - IBM IntelliStation Z Pro,"CPU : Xeon 3.06GHz (512KB / 533Mhz FSB/2 Way SMP Support)
+Memory : 1GB ECC DDR SDRAM UDIMM
+HDD : 36.4GB SCSI (10K RPM)
+Graphic : nVidia Quadro4  Fx2000 (128MB)
+Graphic : Wildcat 7110 (256MB)
+ODD : CD-RW  Drive 
+Dual Channel Ultra 320 SCSI Controller 
+1 Gigabit Ethernet Adapter
+6 Bays / 6 Slots  / 1394
+4 USB 2.0 ( Rear 2 / Front 2)
+Power : 425 Watt Power Supply
+OS : 한글 Widows XP Professional Preload","",jmlee,2004-02-23 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040223173916","04.HW 관련",IBM - Memory,IBM - 512MB Memory,"","",jmlee,2004-02-23 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040223180141","04.HW 관련",모니터,"IBM - 19"" TFT LCD Monitor","","",jmlee,2004-02-23 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040223182026","04.HW 관련",IBM - HDD,IBM - 73.4 GB SCSI HDD,"",AS,jmlee,2004-02-23 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040308161119","08.기타",I-Mold,I-Mold 1 Year Subscription Service,"교육 및 지원사항
+ - 업그레이드 교육 (1seat당 1명 기준)
+ - On-Line Support
+ - 차기버젼 무상 Upgrade
+","",admin,2004-03-08 00:00:00.000,2012-07-18 00:00:00.000,ckjung
+"20040311201628","04.HW 관련","",INTEL - PIV 3.06Ghz," - INTEL PⅣ 3.06GHz CPU 
+ - INTEL 865 M/B (ASUS-P4P800)
+ - 1GB RAM (삼성 DDR-3200)
+ - 120G HDD (W.D.-7200RPM)
+ - FIRE GL T2 128M (ELSA) 
+ - AC97 SOUND (내장)
+ - 10/100MB LAN (내장)
+ - 52 * 24 * 52 CDRW (LG)
+ - OPTICAL WHEEL MOUSE (삼성)
+ - 3.5"" FDD (삼성)
+ - 106 KEY (삼성)
+ - DEBUT ATX
+ - 300W SPEAKER
+","",jmlee,2004-03-11 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040311202400","04.HW 관련","","삼성 - 싱크마스터 19"" LCD (197T)","","",jmlee,2004-03-11 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040311202544","04.HW 관련","","IBM - 22"" Thankvision C220P","","",jmlee,2004-03-11 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040312134607","00.Subscription Service",SOLIDWORKS Simulation Subscription Service,SOLIDWORKS Simulation Premium Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2004-03-12 00:00:00.000,2021-01-21 00:00:00.000,jejung
+"20040317093723","04.HW 관련",IBM - M Pro,IBM - IBM IntelliStation M Pro,"CPU : P4-3.0GHz (512KB / 800 FSB)
+Memory : 512MB ECC DDR SDRAM UDIMM
+HDD : 73.4GB SCSI (Ultra320 , 10K RPM)
+Graphic : nVidia Quadro4 980XGL(128MB)
+ODD : CD-RW  Drive 
+Dual Channel Ultra 320 SCSI Controller 
+1 Gigabit Ethernet Adapter
+6 Bays / 6 Slots  / 1394
+4 USB 2.0 ( Rear 2 / Front 2)
+Power : 425 Watt Power Supply
+OS : 한글 Widows XP Professional Preload
+Include 3 year Maintanance","",shinil,2004-03-17 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040322130402","04.HW 관련",IBM - M Pro,IBM - IBM IntelliStation M Pro DeskTOP(6230IJK),"CPU : P4-3.2GHz (1M / 800FSB)
+Memory : 1GB PC3200 DDR SDRAM 
+HDD : 80GB (SATA 7,2k rpm)
+Graphic : nVidia Quadro FX500 (128MB)
+NIC: 10/100/1000 Ethernet controiier
+ODD : DVD-Rom Drive
+OS : 한글 Widows XP Professlonal
+Include 3 year Maintanance
+","본체 3969000
+메모리 256추가  390,000
+CD- COMBO  560,000",dwkang,2004-03-22 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040322174212","04.HW 관련","","IBM - 19"" Thankvision C190","","",shinil,2004-03-22 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040322181645","04.HW 관련",IBM - M Pro,IBM - IBM IntelliStation M Pro(623027K),"CPU : P4-2.8GHz (512KB / 800 FSB)
+Memory : 512MB ECC DDR SDRAM UDIMM
+HDD : 40GB (EIDE 7,200RPM)
+Graphic : nVidia Quadro4 980XGL(128MB)
+ODD : CD-RW  Drive 
+1 Gigabit Ethernet Adapter
+6 Bays / 6 Slots  / 1394
+4 USB 2.0 ( Rear 2 / Front 2)
+Power : 425 Watt Power Supply
+OS : 한글 Widows XP Professional Preload
+Include 3 year Maintanance","",shinil,2004-03-22 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040322181847","04.HW 관련",IBM - Z Pro,IBM - IBM IntelliStation Z Pro(6221i7K),"CPU : Xeon 3.06GHz (512KB / 533Mhz FSB/2 Way SMP Support)
+Memory : 1GB ECC DDR SDRAM UDIMM
+HDD : 36.4GB SCSI (10K RPM)
+Graphic : nVidia Quadro4  Fx2000 (128MB)
+ODD : CD-RW  Drive 
+Dual Channel Ultra 320 SCSI Controller 
+1 Gigabit Ethernet Adapter
+6 Bays / 6 Slots  / 1394
+4 USB 2.0 ( Rear 2 / Front 2)
+Power : 425 Watt Power Supply
+OS : 한글 Widows XP Professional Preload","",shinil,2004-03-22 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040325134348","04.HW 관련",INTEL - ThinkPad 268LK5,INTEL - ThinkPad 268LK5," - Intel Mobile P 4 2.4GHz-M	
+ - 15"" TFT SXGA	
+ - 1GB DDR SDRAM 	
+ - 60GB HDD / DVD+CD-RW Combo	
+ - 32MB Video Memory (ATI Mobility Radeon 7500)	
+ - Lan : Combo + Wireless	
+ - OS : Windows XP Professioanl / 가방 포함	
+","",jmlee,2004-03-25 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040410110910","04.HW 관련","",IBM - IBM  Intellistation Mpro (621948K),"LGIBM  Intellistation Mpro
+Intel Pentium4  3.06GHz
+512KB L2 Cache Memory
+512MB  ECC DDR SDRAM Memory
+ - Graphic : nVidia Quadro4 980XGL(128MB)
+ - 36.4GB Ultra320 10Krpm Hard Disk Drive
+ - 48배속 CD-RW DRIVE 
+ - Network : Integrated Ethernet 
+ - Slots : 6 (5PCI, 1AGP)
+ - 오디오 : 3D Stereo
+ - USB 2.0, IEEE1394 지원
+ - 3 Button Mouse, Keyboard 기본제공
+ - OS : 한글 Windows XP Professional Preload
+ - 3년간 무상 방문지원
+
+","",jmlee,2004-04-10 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040607102009","04.HW 관련",삼성 - S750PT,삼성 - 모니터 SyncMaster 2100DF,"  -. 화면크기 21인치  
+  -. 도트(픽셀)피치 0.26mm  
+  -. 최대 해상도 1600×1200/76Hz  
+  -. 모니터형태 CRT  
+  -. 수평주파수 30~96KHz  
+  -. 수직주파수 50~160Hz  
+","",shinil,2004-06-07 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040702120025","08.기타","",MODView-Plus  V3.0 Package,"*.CATIA 2D/3D Direct Viewing
+- 여러 개의 파일을 한번에 읽어서 Assembly 가능
+- Dimension기능(홀중심, 거리, 각도, 반경… & 주석기능)
+- 쉽고 강력한 Section기능 (1D/2D/3D, Plane , Axis)
+- 문서에 활용 (원하는 부분만을 이미지/벡터 형식으로 복사)
+- 스케일로 Printer/Plotter 출력 지원 
+- 단면 및 3D 뷰를 2D로 투영하여 자동으로 카라인 생성
+- CATIA Layer/Layer Filter/Set/Ditto의 특성 지원
+- 3D의 외곽크기/단면길이/면적/무게등 자동 계산 
+* File Import : CATIA 2D / CATIA 3D / HPGL2 /Image
+*.File Export : JPG, BMP, EMF / HPGL,HPGL2 Export
+*.2D Advanced 옵션 포함
+.2D 그리기 기능(자동 카라인, Point, Line, Arc, text…)
+.2D 수정 기능(Trim, Extend, Offset, Scale,move…)
+","",jmlee,2004-07-02 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040702120201","08.기타","","3D Advanced Option","3D 그리기 & 수정기능(Setup기능)
+.다양한 3D 변환기능(이동/복사/미러) 및 면 옵셋기능 / Wire 추출 기능 제공)
+","",jmlee,2004-07-02 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20040702120243","08.기타","","2D DWG Export Option","- CATIA 2D Data & 2D로 투영한 형상뷰를 DWG로 저장
+- 단면를 자동으로 카라인 작성하여 DWG파일로 일괄 저장
+","",jmlee,2004-07-02 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20041109150250","01.SolidWorks 관련",SOLIDWORKS Subscription Service,SOLIDWORKS Standard Subscription Service & penalty," - 홈페이지 ID 발급/ 기술자료 지원
+ - 방문 지원
+ - On-Line Support
+ - 차기 버전 무상 Upgrade
+ - 업그레이드 교육 (1seat당 1명 기준)
+ - 본사 라이브러리 및 기술자료 다운로드
+ - 유지보수계약 중단에따른 추가 비용 
+ - 계약기간 2005.00.00 ~ 2006.00.00","",admin,2004-11-09 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"20041126114953","02.해석 제품",CW Adv+AdvDyn+Utlity/MA(Network),CW Adv+Utlity/Motion/MA(Network) 옵션포함," - CosmosWorks Adv.Prof
+ - CosmosMotion
+ - Optomization","",admin,2004-11-26 00:00:00.000,2015-02-05 00:00:00.000,admin
+"20041231093411","04.HW 관련","",IBM - IBM  Intellistation M Pro(6225) / EM64T /1 Way," - Intel Pentium4 3.2GHz(800MHz FSB) Processor / 1MB L2
+ - 1GB PC3200 ECC DDR2 SDRAM Memory
+ - Graphic : ATI FireGL V3100 (128MB Video Memory)
+ - Single Channel U320 SCSI controller
+ - 73.4GB SCSI HDD U320
+ - Intel 925X Chipset
+ - 8X DVD-RW / None Diskette  (No FDD)
+ - One Gigabit 10/100/1000 Ethernet Controller(BCM5721)
+ - AC-97 Audio, ADI1981B via ICH6r, internal speaker
+ - IEEE1394 & USB 2.0 Support
+ - Slots : 4 Slot( 1* PCI-E x1, 1* PCI-E x16, 2* 32bit PCI)
+ - Bays : 5 Bay( 2*5.25"", 3*3.5"" )
+ - Ports : Front - 2*USB(2.0), audio in out, mic in / 4-pin 1394
+             Rear - 6*USB(2.0), 2*9pin Serial, Parallel, Ethernet, audio, 6-pin 1394
+ - 400W auto sensing Power Supply/Two variable speed fans
+ - IBM 104 keyboard, IBM three button mouse
+ - OS : 한글 Windows XP Professional Preload
+ - 3년간 무상 방문지원","",jmlee,2004-12-31 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050113154859","04.HW 관련",IBM - 884121K(TOWER),IBM - IBM SERVER 884121K,"IBM  SERVER
+ x236, 3.2GHz 800MHz, EM64T, 1GB, U320, Open
+ CPU : Xeon 3.2GHz / 1M  L2 CACHE / 800MHz FSB
+ 2Way SMP 지원, Hyper-Threading, EM64T
+ Memory : 1GB DDR-2 SDRAM / Max.16GB
+ Dual Channel Ultra 320 SCSI 컨트롤러 
+ Six Hot Swap Disk Bay(Max. 9Bays/Three Bays Option)
+ 3.5"" FDD 1개, 48-20X CD-ROM Drive
+ 6 PCI ( 2x PCI-Express, 3x 64bit, 1x 32bit )  SLOT
+ ATI RAGE  Graphics Adapter
+ Dual 10/100/1000 Gigabit/ Broadcom BCM 5721 / On Planar
+ 1 X 670W Power Supply(Max. Two Power)
+ 보증기간 : 년","",admin,2005-01-13 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050113160613","04.HW 관련",IBM - Memory,IBM - 1GB Memory,"","",admin,2005-01-13 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050113160811","04.HW 관련",IBM - 63324HN,IBM - IBM 평면 17인,"  -. 화면크기 17인치  
+  -. 도트(픽셀)피치 0.26mm  
+  -. 최대 해상도 1024×768/76Hz  
+  -. 모니터형태 CRT  
+  -. 수평주파수 30~96KHz  
+  -. 수직주파수 50~160Hz  
+","",admin,2005-01-13 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050113165116","04.HW 관련",IBM - 884121K(TOWER),IBM - eServer xSeries 225,"eServer xSeries 225 / Xeon 3.0GHz / 1GB DDR/  U320
+프로세서Intel® Xeon™ 3.0GHz / 533MHz FSB 
+프로세서수1개 /캐시 메모 512KB L2
+1GB ECC(PC 2100 DDR SDRAM) / 최대16GB까지 확장
+확장슬롯 4PCI-64Bit 100Mhz,  1 PCI-32Bit 33Mhz
+디스크 베이 9개  / 73GB U320 SCSI HDD(10Krpm)
+CD-ROM48x-20x
+내장 디스크 용량최대 876GB
+디스크 컨트롤러Ultra320SCSI,  RAID-1 지원
+네트워크통합 10/100/1000 Ethernet
+시스템 관리IBM Director 포함.
+전원 공급 장치530W
+폼팩터/높이타워형 / 4U
+보증기간 : 3년","",admin,2005-01-13 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050203104721","04.HW 관련",IBM - Z Pro,IBM - IBM IntelliStation Z Pro(6221),"IBM  Intellistation Zpro / 2-Way SMP Support / EM64T
+Intel Xeon  3.06GHz, 533FSB, L2 Cache : 512KB 	
+2GB(2*1GB) PC2100 ECC DDR SDRAM/Max. 16GB	
+HDD : U320 36.4GB x 2 (10Krpm) SCSI HDD	
+Graphic : nVidia Quadro FX 2000(128MB)	
+CD-ROM Drive	
+Network : Integrated Gigabit Ethernet 	
+USB 2.0, IEEE 1394  인터페이스포트	
+Slots : 7 ( 5PCI, 1AGP, 1Mini PCI Type III)	
+오디오 : 3D Stereo, Speaker 내장	
+3 Button Mouse, Keyboard 기본제공	
+OS : 한글 Windows XP Professional Preload	
+","",shinil,2005-02-03 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050203105338","04.HW 관련",IBM - 8648I1K,IBM - eServer xSeries 226,"eServer xSeries 226 / Xeon 3.0GHz EM64T/ 512MB DDR2/ U320 73GB / Fixed PSU	
+Intel® Xeon™ 3.0GHz Processor / 800MHz FSB / 2-Way Support	
+1MB L2 Cache	
+512MB PC2-3200 ECC DDR2-SDRAM  Non Chip Kill Memory 	
+Non Chip Kill  사용시 최대 3GB	
+Solts : 1 * PCI-E 16x(3.3v)	
+          2 * 32bit/33MHz PCI(5v)	
+          1 * 64bit/133MHz PCI-X(3.3v), 2 * 64bit/100MHz PCI-X	
+6 * Hot-swap Disk Bays	
+48X-20X CD-ROM Drive	
+Dual Channel U320 SCSI Controller	
+73GB U320 SCSI Hard Disk Drive	
+네트워크통합 10/100/1000 Ethernet	
+530W Power Supply	
+	
+1GB(2*512MB) PC2-3200 DDR2 SDRAM non-chipkill	
+146GB 10K U320 SCSI HS	
+ServeRAID 6i + Controller, Cache 128M, U320	
+17"" 일반 평면 모니터 (1024*768)	
+x226 A/S ,3년 근무시간 서비스, 익일 응답	
+","",shinil,2005-02-03 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050330165905","04.HW 관련",DELL - Dell Precision 370,DELL - PRECISION 370MT - Dell Precision 370,"Precision(TM)370MT Intel(R)Pentium(R)4
+Processor 3.6F GHz/800MHz/1MB,Intel..EM64T
+Integrated 1MB ON-DIE L2 Cache
+Integrated Sound Blaster Compatible Audio Controller 16-BIT
+2GB (4X512MB) ECC Dual Channel DDR2 533 MHz SDRAM Memory
+128MB PCIe x16 nVidia Quadro FX1400, 
+Ultra320 SCSI Controller Card
+73GB Ultra320 SCSI (10,000RPM) Hard Disk Drive
+Microsoft(R) Windows(R) XP Professional SP2 (Korean)
+48X/32X/48X CD-RW Drive
+3 Years Same Business Day (8x5) Onsite R esponse (Parts & Labour )","",admin,2005-03-30 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050330180235","04.HW 관련",DELL - Dell Precision 470,DELL - Dell Precision 470 PCI,"Precision(TM)470MT Intel Xeon(R)
+Processor 3.6F GHz/800MHz/1MB,Intel..EM64T
+Integrated 1MB ON-DIE L2 Cache
+Integrated Sound Blaster Compatible Audio Controller 16-BIT
+2GB (4X512MB) ECC Dual Channel DDR2 533 MHz SDRAM Memory
+128MB PCIe x16 nVidia Quadro FX1400, 
+Ultra320 SCSI Controller Card
+73GB Ultra320 SCSI (10,000RPM) Hard Disk Drive
+Microsoft(R) Windows(R) XP Professional SP2 (Korean)
+48X/32X/48X CD-RW Drive
+3 Years Same Business Day (8x5) Onsite R esponse (Parts & Labour )","",admin,2005-03-30 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050418110228","01.SolidWorks 관련",SolidWorks Edu. Edition Stand-alone,SolidWorks Edu. Edition Stand-alone," - SolidWorks
+ - SolidWorks eDrawings Professional
+ - 3D Instant Website
+ - FeatureWorks
+ - SolidWorks Animator
+ - SolidWorks PhotoWorks
+ - SolidWorks Toolbox
+ - SolidWorks Utilities
+ - Task Scheduler
+ - SolidWorks ScadTo3D
+ - SolidWorks Workgroup PDM
+ - SolidWorks Routing
+ - CircuitWorks
+ - SolidWorks Simulation
+ - SolidWorks Motion
+ - TolAnalyst
+ - Sub Service 1 Year","1. SolidWorks의 기본 Bundle 및 공급가격은 본사(SolidWorks Corp.) 가격정책 및 신버전 출시에 의해 변경 될 수 있습니다.
+2. 교육기관용 라이센스(Edu. License)는 교육 및 연구활동의 목적 이외의 일반 기업체에서는 사용할 수 없습니다.",dwkang,2005-04-18 00:00:00.000,2014-12-11 00:00:00.000,shpark
+"20050621115241","00.Subscription Service",Reinstallation Fee,Reinstallation Fee (Without Backdating per seat)," - SS 만료 후, 재 계약 시 발생되는 추가 비용
+ - SS 계약일로 부터 1년간","",hsjo,2005-06-21 00:00:00.000,2015-01-28 00:00:00.000,admin
+"20050621134253","08.기타",Steelhead 2010,Steelhead 2010 (2U type)," - SHA-02010-010
+ - 150G Storage
+ - 4Mbps WAN
+ - 1300 TCP Connections","",hsjo,2005-06-21 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050621134433","08.기타",Steelhead 3010,Steelhead 3010-010 (3U type)," - SHA-03010-010
+ - 250G Storage
+ - 10Mbps WAN
+ - 2400 TCP Connections","",hsjo,2005-06-21 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050623154724","01.SolidWorks 관련",SOLIDWORKS Subscription Service,SOLIDWORKS Standard Subscription Service 3 years," - 홈페이지 ID 발급/ 기술자료 지원
+ - 방문 지원
+ - On-Line Support
+ - 차기 버전 무상 Upgrade
+ - 업그레이드 교육 (1seat당 1명 기준)
+ - 본사 라이브러리 및 기술자료 다운로드 
+ - 계약기간 : 3년간","",admin,2005-06-23 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"20050726151940","06.AutoCAD 관련",AutoCAD,AutoCAD Mechanical 2007,"  - 원시DWG를 제공하여 AutoCAD 사용자와 쉽게 설계 및 데이터를 교환         
+  - 사용자 표준 라이브러리 구축 기능 
+  - 국제 표준에 따른 80만개의 표준 기계 부품
+  - 공학 계산 기능 : 축, 베어링, FEM 해석
+  - 다중 도면 작업
+","",jmlee,2005-07-26 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20050726151951","06.AutoCAD 관련",AutoCAD,AutoCAD LT 2011 EKTS DVD - Sub 포함,"- 기존 제품의 도면과 100% DWG 호환
+- 연관 치수 기입
+- 전환공간 연관 치수 기입
+- 블록 속성 편집기
+- 도면층 변환기
+- 문자 측정
+- AUTO LISP 지원 안됨
+- NetWork 지원 안됨, iges 파일 지원 안됨
+- 1year Sub-Scription Service 제공","",jmlee,2005-07-26 00:00:00.000,2014-04-08 00:00:00.000,ktkim
+"20050906195901","03.ND 관련",nodeDATA,nodeDESK," - 서버 설정 및 폴더 관리
+ - 프로젝트 생성 및 관리
+ - 리비전 관리
+ - 데이타 조회
+ - 결재선 지정 및 도면 결재
+ - BOM 관리 및 아이템 등록
+","",hsjo,2005-09-06 00:00:00.000,2011-09-15 00:00:00.000,ksehee
+"20050906200016","03.ND 관련",nodeDATA,nodeMANAGER," - 조직 추가 및 변경
+ - 사용자 추가 및 변경
+ - 조직 및 사용자별 권한 부여 
+ - 문서 속성 추가
+ - 프로젝트 및 카타고리 생성
+ - 로그파일 저장
+","",hsjo,2005-09-06 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20051118101142","06.AutoCAD 관련",AutoCAD,AutoCAD 한글판 network," - 능률화된 표준 관리 및 데이터 교환 무결성
+ - 향상된 팀 공동 작업
+ - 간편한 통합 및 고급 라이센스 관리
+ - 강력한 CAD 플랫폼
+ * 협력적인 설계 환경
+    - 향상된 웹으로 출판
+    - i-drop™ 기술
+    - eTransmit
+    - DWG 파일을 읽기 전용 DWF 파일로 변환하는 ePlot
+    - 향상된 속성 추출
+    - 쉽게 최근에 사용한 파일 미리보기 및 열기
+    - 팀 공동 작업을 위한 회의 시작
+","",jmlee,2005-11-18 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20060508160108","07.SolidWorks 교육관련",SolidWorks Basic 교육,SolidWorks Basic 교육 패키지,"1.SolidWorks Basic 교육 (4일 교육)
+2.세부 항목
+    1일차
+       개요
+       스케치
+       기초파트 모델링
+       주조 모델링
+    2일차
+       회전피처
+       패턴
+       편집 & 수정
+       설계변경
+       쉘 및 보강대
+    3일차
+       파트의 설정
+       설계변수 테이블 및 수식
+       바텀업 방식 어셈블리
+       어셈블리 사용
+       eDrawing
+    4일차
+      도면화 준비
+      도면시트 및 도면뷰
+      중심표시, 중심선, 치수
+      주석추가
+      도면시트와 템플릿
+      설정 과 어셈블리 도면뷰
+      BOM 테이블
+      실행성능 및 표시문제
+      도면참조 및 비교 
+
+3.교재 및 점심 식사 제공 포함","
+",admin,2006-05-08 00:00:00.000,2016-06-20 00:00:00.000,kylee
+"20060508160355","07.SolidWorks 교육관련",SolidWorks Office 교육,SolidWorks Office 교육 패키지,"1.SolidWorks Office 교육
+2.세부 교육내용
+   1일차
+     PhotoWorks
+     FeatureWorks
+   2일차
+     Animator
+     Utility
+     Toolbox
+3.교재 및 점심식사 제공 포함","",admin,2006-05-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20060508160730","07.SolidWorks 교육관련",SolidWorks Advanced  파트 교육,SolidWorks Advanced  파트 교육 패키지,"1. SolidWorks Advanced  '파트' 교육
+2. 교육 요약 : 기본교육에서 다루지 않은 고급기능 및 사용하면서 나왔던 문제점 해결
+3. 세부 교육내용
+       Advanced Modeling 
+       Sweep & Loft
+       라이브러리
+       디자인 기능
+4. 본사 교재 및 점심식사 제공 포함
+","",admin,2006-05-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20060508160748","07.SolidWorks 교육관련",SolidWorks Advanced  어셈블리 교육,SolidWorks Advanced  어셈블리 교육 패키지,"1. SolidWorks Advanced  '어셈블리' 교육
+2. 교육 요약 : 기본교육에서 다루지 않은 고급기능 및 사용하면서 나왔던 문제점 해결
+3. 세부 교육내용
+       Advanced Assembly
+       Top-Down 방식 
+       Configuration
+
+4. 본사 교재 및 점심식사 제공 포함
+","",admin,2006-05-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20060508161302","07.SolidWorks 교육관련",판금 및 용접 교육,판금 및 용접 교육 패키지,"1. 판금 및 용접 교육
+    교육기간 : 2일
+2. 교육 요약 : 판금 및 용접구조물을 사용하기 위한 기능 교육
+3. 세부교육내용
+      판금파트 모델링
+      파트를 판금으로 변환
+      어셈블리 상황에서 판금 모델링
+      용접구조물
+4. 본사 교재 및 점심식사 제공 포함
+","",admin,2006-05-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20060508161939","07.SolidWorks 교육관련",COSMOS Designer 교육,COSMOS Designer 교육 패키지,"1. COSMOS Designer교육 (Office Premium)
+    교육기간 : 1 일
+2. 교육 요약 : 정적해석 방법 프로그램 교육
+3. 상세 항목
+     구조해석
+     어셈블리의 구조해석
+        경계 조건
+        메쉬
+        결과
+4. 교재 및 점심식사 제공 포함
+
+","",admin,2006-05-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20060508162116","07.SolidWorks 교육관련",COSMOSMotion 교육 (Office Premium),COSMOSMotion 교육 패키지,"1. COSMOSMotion교육 (Office Premium)
+    교육기간 : 1 일
+2. 교육 요약 : 동적해석 프로그램 교육
+3. 상세 항목
+     어셈블리의 구동해석
+        경계 조건
+        메쉬
+        결과
+4. 교재 및 점심식사 제공 포함","",admin,2006-05-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20070108154942","05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Professional,SOLIDWORKS PDM Professional Contributor," - 데이터 관리 목적으로 독립적인 실행 (Ex 구매부, 관리부)
+ - 설계 데이터 관리 
+ - 데이터 통합 환경 제공
+ - 다양한 권한 부여 설정 
+ - Automated revision control
+ - BOM 데이터 관리 
+ - 파일 & 폴더 템플릿 기능
+ - 기존 프로젝트 재활용 
+ - Automated process control(ECO/ECN)","",jihong,2007-01-08 00:00:00.000,2018-12-27 00:00:00.000,ksllkd
+"20070108155242","05.PDMWorks Enterprise 관련",PDMWorks Enterprise Contributor Web 2007,PDMWorks Enterprise Contributor Web 2007," - Basic file management for individuals
+ - Secure access to engineering data
+ - Automated revision control
+ - Greater design re-use
+ - Automated process control (ECO/ECN)
+ - Web Access","",jihong,2007-01-08 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20070108160826","05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Professional,SOLIDWORKS PDM Professional Viewer," - 데이터 서버에 있는 파일에 대한 뷰어
+ - 파일 데이터 속성 정보 확인
+ - 워크플로우 전자 결재 가능
+ - 1 Seat 구입이 5 User 사용가능","",jihong,2007-01-08 00:00:00.000,2018-12-27 00:00:00.000,ksllkd
+"20070109204403","05.PDMWorks Enterprise 관련",PDMWorks Enterprise For AutoCAD,PDMWorks Enterprise For AutoCAD," - Basic file management for individuals
+ - Secure access to engineering data
+ - Automated revision control
+ - Greater design re-use
+ - Automated process control(ECO/ECN)
+ - AutoCAD DWG Files Check in/out
+ - AutoCAD Add-ins(2004 Version and Up)
+","",jihong,2007-01-09 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20070110191818","06.AutoCAD 관련","",Upgrade AutoCAD 2002 to AutoCAD 2007, - Include Subscription Service - 1Year,"",jihong,2007-01-10 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20070222103434","01.SolidWorks 관련",Upgrade SOLIDWORKS to SOLIDWORKS Office Profession,Upgrade SOLIDWORKS Standard to SOLIDWORKS Professional,"","",jihong,2007-02-22 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"20070222103559","01.SolidWorks 관련",Upgrade SOLIDWORKS to SOLIDWORKS Office Premium,Upgrade SOLIDWORKS Standard to SOLIDWORKS Premium," - Part Design Module
+ - Assembly Design Module
+ - Drawing Module
+ - Sheetmetal Design Module
+ - Surface Design Module
+ - SolidWorks Explorer
+ - DWG Editor (2D CAD용 : 별도로 실행 가능)
+ - Simulation X Press (단품 구조해석)
+ - Flow X Press (유동의 흐름 Viewing)
+ - DFM XPress (가공 시 에러 발생 부분 분석)
+ - DriveWorks XPress (유사한 제품 시리즈 생성)
+ - SolidWorks eDrawings Professional
+ - SolidWorks Utilities(데이타 비교)
+ - SolidWorks Toolbox (라이브러리)
+ - FeatureWorks (작업 이력 생성)
+ - PhotoWorks (실사 이미지 제작)
+ - 3D Instant Website(웹게시판)
+ - Task Scheduler(작업 스케줄러)
+ - Design Checker(도면 비교 분석)
+ - SolidWorks Workgroup PDM(이력관리 프로그램)
+ - SolidWorks Motion(구동 해석)
+ - SolidWorks Simulation (설계자용 구조해석)
+ - SolidWorks Routing (파이프와 배선, 하네스 설계)
+ - CircuitWorks(ECAD 데이타 호환)
+ - TolAnalyst(공차해석)
+ - SolidWorks ScadTo3D(3D 스캔data를 3D 파일로 변환)
+ - 해석 교육 (2일) : 무상
+ - 1년간 유지보수 무상 : On/Off-Line 기술 지원 및 업그레이드",SWPr Subs. Service 1 Year 포함,jihong,2007-02-22 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"20070502180728","08.기타",Partsolution Professional,Partsolution Professional,"- Part Connection
+- Shaft Generator
+- Traverse Path & Kinematics
+- PartFEM Display
+- PartBOM
+- Part Data Management
+- Similar geometric search","",chulmin,2007-05-02 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20070525105334","04.HW 관련",HP - xw4400,HP - xw4400,"-  ET115AV  HP xw4400 Workstation 
+-  AH004AV#AB1  Microsoft Windows XP Pro 32-bit OS
+-  RB192AV  Intel Core 2 Duo E6600 2.40 4MB/1066 CPU
+-  AH013AV#AB1  HP xw4400 Workstation Localization Kit
+-  AG946AV  NVIDIA Quadro FX1500 256MB PCIe Graphics
+-  AG992AV  HP 2GB (2x1GB) DDR2-667 ECC RAM
+-  AG953AV  HP 160GB SATA 3Gb/s NCQ 7200 1st HDD
+-  AG984AV  HP 16X DVD+/-RW DL LightScribe 1st Drive
+-  AG938AV  HP 1.44MB Floppy Disk Drive
+-  AH038AV  HP USB Optical Scroll Mouse
+-  EZ390AV#AB1  HP USB Standard Keyboard
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+  
+","",chulmin,2007-05-25 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"20C82ABF85296F488C744A37F9F5B171","","",- GRADIUS Client License (200 User Lience),"(1) 차단 - 업무 이외의 프로그램 및 인터넷 사이트 접속 차단
+(2) 감시 - 업무 이외의 프로그램 및 인터넷 사이트 접속 기록 보기
+(3) 녹화 - 정보유출 시점 동영상 녹화 및 재현
+(4) 보고 - 유출 또는 유사 시도 관련 보고 및 통계 보고
+(5) 정책 - 보안규정의 설정과 수정 및 지속적인 보안 운영","",sjh,2014-12-26 00:00:00.000,2014-12-26 00:00:00.000,sjh
+"20D0F75E54035C47A257B5FDB4281B51","11.기타Software",백신,AhnLap V3 IS 8.0 Platinum,단가조정예정임,"",misjid,2009-07-06 00:00:00.000,2009-08-20 00:00:00.000,misjid
+"20EEA1076E59E6489E9E03CB71DD4F55","11.기타Software",RedHat Enterprise Linux Server 6,"RedHat Enterprise Linux Server 6, Standard","보안서버용 OS-RedHat
+Standard 1~2 Socket
+Standard는 하루 8시간 기준 AS 적용입니다.
+주의
+ - 24시간을 위해서는 Premiunm 급을 구매하셔야 합니다.
+ - 만약, server에 CPU Socket이 4개인데 1~2 soecket용으로 구매를 하시면 불법 S/W 대상입니다. cpu 개수와는 무관한 O/S 제품입니다.","Server의 Socket 개수와 구매한 RedHat 소켓 개수가 틀리면 불법 소프트웨어로 분류될 수 있다.
+
+예: 구매 소켓 1~2인데 서버 소켓은 4개면 불법임.
+
+제안시 주의하세요.",ktkim,2013-11-27 00:00:00.000,2014-02-05 00:00:00.000,ktkim
+"21ED7108F97B464B95CC3A97786B74C9","02.해석 제품",SOLIDWORKS Flow Simulation HVAC Module,SOLIDWORKS Flow Simulation HVAC Module,"[Fluid and Solid Properties]
+ - Library of building materials
+ - Additional database of solids
+[Environment]
+ - Radiation: spectrum and absorption in solids
+ - Comfort parameters 
+  (MRT, operative temp, PMV, PPD, ADPI, draft temp, CRE, and LAQI)","",admin,2015-02-05 00:00:00.000,2015-02-12 00:00:00.000,jekim
+"24164F743AD13B43BEB14281E54D18D1","09.제품관리","",DesignSTAR Professional,"","",admin,2007-08-29 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"24F48701716BDC4D8613DEEDB5111FE5","11.기타Software",ADASMS,Adams Flex,"","Adams Flex
+Paid-up  11,800,000
+E&S         2,360,000",ktkim,2014-03-03 00:00:00.000,2014-03-03 00:00:00.000,ktkim
+"2751302193FC634FAB8F119D933938F8","06.AutoCAD 관련",Autocad Inventor,Autocad Inventor,"","",ktkim,2013-11-22 00:00:00.000,2013-11-22 00:00:00.000,ktkim
+"27AA5D0FFD2B6C4B9EBB9CE185907A40","09.제품관리","",SolidWorks Simulation Software,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+"27B49703D495D340997ABBA0E4FB59F5","13. 3DEXPERIENCE Platform",EMC,Electromagnetics Engineer,"","",ksehee,2022-01-18 00:00:00.000,2022-02-28 00:00:00.000,kimhj
+"281E443B9B3E4844BAFEE108406573B1","01.SolidWorks 관련",SolidWorks Drawings 교재,SolidWorks Drawings 교재," 1장. 도면 시트 및 도면뷰, 2장. 치수, 3장. 주석, 4장. 시트 형식과 템플릿, 5장. 어셈블리 도면뷰, 6장. BOM 및 테이블, 7장. 실행 성능 및 표시 문제, 8장. 도면 참조 및 비교, 부록A: 도면화 준비, 부록B: 도면 시트 및 도면뷰, 부록C: 중심 표시 및 중심선, 부록D: 치수, 부록E: 주석, 부록F: 시트 형식과 템플릿, 부록G: 어셈블리 도면뷰, 부록H: BOM 및 테이블, 부록I: 설정","",shpark,2010-05-19 00:00:00.000,2010-05-19 00:00:00.000,shpark
+"291AA102492B0F4E9DA66F1EC14FC87F","02.해석 제품",SolidWorks Simulation,Upgrade SOLIDWORKS Premium to SOLIDWORKS Simulation Professional,"*SOLIDWORKS Premium의 Linear Static Analysis 포함
+[Simulation Capability]
+ - Thermal Analysis
+ - Frequency Analysis
+ - Buckling Analysis
+ - Drop Test Analysis
+ - Fatigue Analysis
+ - Pressure Vessel Design Analysis
+ - Design Study Analysis
+ - Time / Event Based Motion Simulation
+[결과 도구]
+ - 변형된 형상을 SolidWorks 파트로 저장 
+ - 모션 해석의 결과를 정적 해석 스터디에서 불러오기
+ - 열전달 해석 스터디에서 정적 해석 스터디 온도 불러오기
+[결과 공통]
+ - HTML 및 DOC 보고서 형식
+ - 시뮬레이션 결과의 eDrawings 게시
+ - BMP, JPEG, VRML, XGL 또는 AVI 파일로 플롯 저장 
+ - 시뮬레이션 라이브러리 파일/템플릿
+ - 다른 FEA 시스템으로 내보내기",SWPr with SWSimP Subs. Service 1 Year 포함,shpark,2010-02-22 00:00:00.000,2015-02-13 00:00:00.000,jekim
+"2965995AE2C72745A9F26D50FAEACF49","01.SolidWorks 관련",SOLIDWORKS MBD Standard,SOLIDWORKS MBD Standard,"","",ckjung,2016-12-28 00:00:00.000,2016-12-28 00:00:00.000,ckjung
+"29A564706879EF4A951030B05C46AF59","00.Subscription Service","",nodeDATA Technical Support Ⅱ," - nodeDATA Technical SupportⅠ포함
+ - 기본 라이브러리 구축 (협의 필요)
+     - ToolBox
+     - 구멍 가공 마법사
+     - 재질 라이브러리 
+ - 그 외 라이브러리 구축 시 별도 협의","",admin,2015-01-28 00:00:00.000,2015-01-29 00:00:00.000,ksehee
+"2A42A275E1BC9045AE618FEF79E1C9E2","07.SolidWorks 교육관련",기계장비설계컨설팅,기계장비설계컨설팅,"","",admin,2008-01-08 00:00:00.000,2008-01-08 00:00:00.000,admin
+"2C67FC79B4714B4D954AE0237DCF43A8","06.AutoCAD 관련",AutoCAD Mechanical 2014 - Sub 포함,AutoCAD Mechanical 2014 - Sub 포함,"- AutoCAD 2014
+- 700,000개의 표준 부품과 피처
+- 제조용으로 확장된 도구 모음
+- 국제 제도 표준의 지원
+- 연관된 품번기호 및 재료명세서(BOM)
+- 1year Sub-Scription Service 제공
+
+* Subscription
+- 최신 기술지원
+- 공인 기술지원 (오토데스크 엔지니어)/교육
+- 법적 이전버전 사용권한 부여
+- 전용 웹사이트에서 License 사용 현황 확인가능
+- Community 서비스 제공
+- 원격지원
+- 3단계 하위버전 사용가능 ( Sub. 종료후 최종 구매 버전만 사용, 단속 되었을경우 최종 버전 이외에는 불법으로 간주 됨)","",shpark,2010-10-27 00:00:00.000,2014-03-13 00:00:00.000,ktkim
+"2CBDBABCC36CB24FBA758C329482B007","09.제품관리","",SolidWorks Flow Simulation on Electronics Module," - Joule Heating
+ - Two-Resistor Components (2R-Model)
+ - Heat Pipes
+ - Printed Circuit Boards (PCB)
+ - Extended Library Features
+ - Improved Fan Functionality
+
+","",jekim,2010-12-28 00:00:00.000,2011-02-22 00:00:00.000,jekim
+"2D9E119C24A83A4986F6A92489E69B86","13. 3DEXPERIENCE Platform",FGM,Durability and Mechanics Engineer,"","",ksehee,2022-01-18 00:00:00.000,2022-02-28 00:00:00.000,kimhj
+"2DF614B083D12E4980CCBC6038B309CC","12.전략제품(보안)",SecureDISK,SecureDISK CAD(10user),"  - 데몬		
+    - 인증 및 운영용 데몬		
+    - 파일 서버 제어용 데몬		
+  - 문서		
+    - Database Layout		
+    - 관리자용 매뉴얼		
+    - 설치 및 Setting","",sjh,2014-07-14 00:00:00.000,2014-07-14 00:00:00.000,sjh
+"2E372677301C2A4AA0EA29E4F52BDE1D","12.전략제품(보안)",MirageWorks,MirageWorks Control Center(MCC),"- 1 Server License
+- 유지보수 금액은 도입가의 15%","",admin,2014-02-05 00:00:00.000,2014-02-06 00:00:00.000,ktkim
+"2E4A5064FB618248AAFA6D8AFC90314D","01.SolidWorks 관련","",SOLIDWORKS Premium Term 1year,"","",dnlee,2023-01-18 00:00:00.000,2023-01-18 00:00:00.000,dnlee
+"2E892D7B03A13F44A461A9A0618F1E46","00.Subscription Service",SOLIDWORKS PDM Standard Viewer Subscription,SOLIDWORKS PDM Standard Viewer Subscription,"","",intia,2016-03-25 00:00:00.000,2016-03-25 00:00:00.000,intia
+"2E8998478DEC38439F50202D5B377519","12.전략제품(보안)",ESDS S12F,ESDS S12F DAS," Controller : Single Controller 
+ Disk Bay : 12Bay ( MAX : 84Bay ) 
+ HDD : 8ea ( 2TB SATA * 8 ) 
+ Memory : 4GB 
+ Interface : 8Gb FC * 4ea 
+ Power Supply : Two Redundant  
+ Form factor : 2U , 19inch 
+ RAID Level : 0,1,3,5,6,10,30,50,60 
+ Local Replication : SnapShot , Volum Mirror / Copy 
+ Management : Embedded RAID Watch 
+ Notification : Mail , Fax , LAN Broadcast  
+OS Support : Windows Server 2003/2008/2008 R2
+                   2012/ 2012 R2/ Hyper-V /Rad Hat
+                   SUSE / AIX / Vmware /Citrix
+",Direct Attach Storage - DAS,ktkim,2014-05-09 00:00:00.000,2014-05-09 00:00:00.000,ktkim
+"2EED5BBEBBA5B143A41505E9A6FBB089","12.전략제품(보안)",인건비,개발,- 구축 범위 및 고객 요청에 의해 결정,"",ktkim,2014-03-18 00:00:00.000,2014-03-18 00:00:00.000,ktkim
+"3116F82FC4071F4F898B69245494EABD","13. 3DEXPERIENCE Platform",SEI,Simulation Collaborator,- 해석 결과 공유,"",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+"314443004EF76E458A4655352D7731A9","01.SolidWorks 관련",SOLIDWORKS,SOLIDWORKS Premium," - SOLIDWORKS Design Software (Part, Assembly, Drawing)
+ - Sheetmetal Design Module (판금)
+ - Surface Design Module (곡면 모델링)
+ - SOLIDWORKSs Explorer
+ - Flow XPress (유동의 흐름 Viewing)
+ - DFM XPress (가공 시 에러 발생 부분 분석)
+ - DriveWorks XPress (유사한 제품 시리즈 생성)
+ - Physical Simulation and Animation (동영상 제작)
+ - SOLIDWORKS eDrawings
+ - SOLIDWORKS Utilities (데이타 비교)
+ - FeatureWorks (작업 이력 생성)
+ - 3D 파단도
+ - 3D Instant Website (웹게시판)
+ - SOLIDWORKS eDrawings Professional
+ - SOLIDWORKS Toolbox (라이브러리)
+ - PhotoView360 (실사 이미지 제작)
+ - Task Scheduler (작업 스케줄러)
+ - Design Checker (도면 비교 분석)
+ - SOLIDWORKS PDM Standard (설계 데이터 관리 프로그램)
+ - TolAnalyst (공차해석)
+ - SOLIDWORKS ScadTo3D (3D 스캔data를 3D 파일로 변환)
+ - SOLIDWORKS Visualize Standard (Rendering_이미지)
+ - CircuitWorks (ECAD 데이타 호환)
+ - Costing (제품 원가 계산)
+ - SOLIDWORKS Motion (구동 해석)
+ - SOLIDWORKS Simulation (설계자용 구조해석)
+ - SOLIDWORKS Routing (파이프와 배선, 하네스 설계)
+ - Sustainability
+ - Assembly Costing (제품 원가 계산)
+ - Surface 전개","",jhkim,2008-09-24 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"31665ECA155873439CBB2D5464FB957B","04.HW 관련",Interface,SX mini-GBIC,"Mini-GBIC, SFP, 1000BaseSX, LC Connector, 550m 		transmission with 50/125 μm MMF and 275m 			transmission with 62.5/125 μm MMF													
+","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+"325582CE11612946B79618E5C51235C6","00.Subscription Service",SOLIDWORKS PDM,SOLIDWORKS PDM Professional CAD Editor Subscription Service," - EPDM 제품은 SS 만료 시, 신규 구매를 해야 함.
+ - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2011-06-09 00:00:00.000,2018-11-30 00:00:00.000,intia
+"32EFCD438A0B564C8EF8A85E6FED0279","13. 3DEXPERIENCE Platform",SSU,Structural Mechanics Engineer,"- Advanced Linear 해석
+- 고유 진동 해석
+- 정상 상태 열해석
+- 선형 좌굴 해석
+- 하모닉 해석
+- 모달 동적 해석
+- 비선형 정적 해석
+- 비선형 동적 해석(Implicit)
+- 비정상상태 열해석
+- General Contact
+- 비선형 동적 해석(Explicit)
+- 비선형 좌굴 해석
+- 임의 진동 해석
+- Complex Frequency
+- Sub-modeling","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+"33B5090F8DC8714B9A262F45E2921EAB","02.해석 제품",SolidWorks Plastics,Upgrade SOLIDWORKS Plastics Standard to SOLIDWORKS Plastics Premium,"*SOLIDWORKS Plastics Standard 기능 포함
+[Simulation Capabilities]
+ - 보압단계(두 번째 단계 사출)
+ - 러너 균형 맞춤, 다중 게이트
+ - 코인젝션, 다중샷
+ - 인서트 오버몰딩
+ - 보조가스, 섬유해석
+ - 반응 사출 금형(RIM; 열경화성 수지)
+ - 복굴절, 밸브 게이트 (순차 사출)
+ - 냉각 라인 해석
+ - 변형 해석
+[Model Geometry]
+ - 러너 설계 마법사, 핫 & 콜드 러너
+ - 다중 캐비티 금형, 패밀리 금형
+ - 냉각 라인, 배플 & 버블러,  형상 적응형 냉각 수로
+ - 금형 인서트
+[Results]
+ - 싱크 마크 프로파일
+ - 체적 추축
+ - 파트 냉각 시간
+ - 냉각 완료시 파트 온도
+ - 냉각 완료시 금형 온도
+ - 잔류 응력에 의한 변형
+ - 자동 보고서 : MS office word, powerpoint, HTML
+ - SOLIDWORKS SIMULATION Premium과 결과 호환","",jekim,2015-02-13 00:00:00.000,2015-02-13 00:00:00.000,jekim
+"33B69AF2D7E5C44783D1782B007C78A7","04.HW 관련",Interface,LX mini-GBIC,"Mini-GBIC, SFP, 1000BaseLX, LC connector, 			10km~20km transmission with SMF and 550m 			transmission with MMF													
+","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+"3431D9B3110BC043B420DD79E3133A51","00.Subscription Service",SOLIDWORKS Simulation Standard Subscription Servic,SOLIDWORKS Simulation Standard Subscription Servic," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",kylee,2015-10-27 00:00:00.000,2021-01-19 00:00:00.000,ksd2046
+"350071B60FE76944A87496D5420E6D01","01.SolidWorks 관련",elecworks core,elecworks core," - 직관적인 전기 배선도 Software
+ - 전기, PLC 배선도 자동화
+ - 배선도 프로젝트 관리
+ - 연관 배선도 양방향 업데이트
+ - 전기, PLC 배선도 라이브러리 제공
+ - single line 구성, diagram 작성
+ - cable 구성 및 간편한 wire 속성확인 및 선택
+ - cable 연결정보 확인, 변경정보 자동 Update
+ - 구성 부품 BOM확인
+","",chuls,2012-01-05 00:00:00.000,2012-01-05 00:00:00.000,chuls
+"35506D434A902F4B8565A92AFEE5DBA6","09.제품관리","",SolidWorks,"","",admin,2007-08-29 00:00:00.000,2007-09-03 00:00:00.000,jhkim
+"3593F00C292C74409F73177B47E4A815","04.HW 관련",H-700,"3DISON H-700","","",sjh,2014-12-04 00:00:00.000,2014-12-04 00:00:00.000,sjh
+"3725C4DA703D6D41B46DDB14364789E4","13. 3DEXPERIENCE Platform",WXD,"3D Creator","- 3D Creator
+  xDesign
+    Web상 3D Modeling Tool
+    파라메트릭 모델링 기법","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,admin
+"3769B0616CED2D4BB04E9897D5D2DCE1","08.기타",L2 Switch,WS-C2960-48TC-L,"Catalyst 2960 48 10/100 + 2 T/SFP LAN Base Image
+무상유지보수1년","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"378D7CC385D5BC46A68B976C15ACDEC2","08.기타",UPS 장비,HITECH 1000 30K,"HITECH 1000 UPS
+ 30KVA 용량 
+ 입력 전압 : 단상 220V 
+ 출력 전압 : 단상 220V 
+ On-Line Type 
+ 완전정형파 SINE WAVE 
+ 냉각 방식 : 강제 풍냉식 
+ 사용정격 : 100% 연속 사용 
+ 정류제어방식 : 고속 스위칭 방식 
+ 인버터 제어방식 : IGBT 고주파(20HZ)순시제어형  PWM 방식 
+ ST/SW 절체방식 : 반도체에 의한 무순단 동기절체 방식 
+ 변압기 절연계급 : H종(복권 변압기) 
+ 입.출력 주파수 : 60Hz (0.5Hz 오차범위) 
+ 과전류과부하 보호기능 
+ 노이즈필터 써지 보호기능 내장 
+ RUN TIME : 30분 
+
+ MF 12V 100AH 16CELL(무보수밀폐형축전지) 
+
+ 설치 및 시운전(전기공사등 부대공사제외) 
+","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"38F93398BD44704598C2D168EC1005E8","01.SolidWorks 관련",SOLIDWORKS Professional - 1year,SOLIDWORKS Professional - 1year,"","",kylee,2017-02-23 00:00:00.000,2017-02-23 00:00:00.000,kylee
+"3B66D7F737A3B34297B4D877FE4905F9","09.제품관리","",SolidWorks Premium,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+"3BB70E6548CA9B45A03DE5680AA85381","11.기타Software",CATIA,CAT(CATIA Team PLM),"CATIA 기본사양
+- 기본 Surface 기능
+- 기본 Solid 기능
+- 도면작성 기능
+- IGES 모듈 포함
+- STEP 모듈 포함","",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+"3CAA48D70994B34DB4A92639E140735A","13. 3DEXPERIENCE Platform",DRAA,"3DEXPERIENCE DraftSight Offer","- Collaborative Industry Innovator
+   3D Markup
+   Bookmark Editor
+   Chage Action
+   Collaborative Lifecycle
+   Compare
+   3D Space
+   Issue 3D Review
+   Issue Management
+   Product Explorer
+   Route Management
+  
+- Collaborative Business Innovator
+   3D Dashboard
+   3D Swym
+   3D Drive
+   3D Play
+   3D Search and 6WTags
+
+- Collaborative Designer for DraftSight
+   Derived Format Converter
+   3DEXPERIENCE Connector for DraftSight 
+
+- 3DEXPERIENCE Draftsight
+   도면 작업 및 수정
+   DWG 설계 파일 보기, 공유, 마크업
+   Revision 관리
+   3DEXPERIENCE platform에서 최신 도면 액세스 및 공유
+   단편적이고 반복적인 배포 감소","",admin,2020-10-13 00:00:00.000,2022-01-18 00:00:00.000,admin
+"3CB2EEF4BDC65940BF3CDB727D2F883A","10.MS계열 제품군",SOLID CAM (5축),SOLID CAM (5축),"","",hm.kim,2016-10-21 00:00:00.000,2016-10-21 00:00:00.000,hm.kim
+"3DF6B27A224350408037048365351196","01.SolidWorks 관련",SolidWorks Assembly Modeling 교재(영문),SolidWorks Assembly Modeling 교재(영문),"","",mchjung,2012-10-22 00:00:00.000,2012-10-22 00:00:00.000,mchjung
+"3ED434AE1590CD40B0E2A904E359A61D","13. 3DEXPERIENCE Platform",IFW,Collaborative Business Innovator,"- 3D Dashboard
+  업무 최적화를 위해 필요한 기능(app) 구성 가능
+  실시간으로 다른 팀원들 진행 상황 모니터링
+- 3D Swym
+  공지사항 포스팅
+  작업 지시
+  기술 문서 공유 및 관리
+- 3D Drive
+  안전한 데이터 공유 가능
+  링크 통해 외부 인원과 공유
+  SOLIDWORKS 데이터를 통합하여 다이렉트로 오픈 가능
+- 3D Play
+  3D 모델 데이터 뷰어
+  CAD 없이 웹 브라우저를 통하여 언제든지 접근 가능
+  측정, 주석, 마크업 추가하여 상세한 리뷰 가능
+- 3D Search and 6WTags
+  데이터 특성에 따라 원하는 데이터를 쉽게 검색
+",IFW,admin,2020-10-07 00:00:00.000,2020-10-13 00:00:00.000,admin
+"3FECBC57B837FA43A67CF3D4E1B13B37","13. 3DEXPERIENCE Platform",FMK,Fluid Dynamics Engineer,"- CAD-PLM Embedded CFD
+- 내/외부 유동 해석 지원
+- CFD 비전문가도 쉽게 활용(Guided User Interface)
+- 정상상태 및 비정상 상태 유동
+- 복합 열전달
+- 벽 주변 층류 및 난류 해석
+- 다공성 매체
+- VOF를 적용한 자유 수면
+- Fan을 이용한 강제 대류 
+- Cloud 기반 데이터 운용
+- HPC(Cloud computing)
+- 10여개의 관련 앱 제공
+- Surface triangle mesh, Surface quad mesh, Sweep 3D mehs, Hex-Mesh, Tetra-Mesh
+- Local computing (8 core)
+- Credit을 통한 Cloud computing 기능(별도 구매)
+- 원격 컴퓨터 리소스를 통한 visualization
+- 결과 리뷰를 위한 센서
+- 등고선, 벡터, Iso surface polt등을 통한 결과 분석
+- 해석 결과 그래프로 표시
+- Envelop plot
+- 결과 데이터 Excel로 내보기
+- 요소 선택 기능
+- 결과 조합기능
+- 안전계수
+- 동영상 내보내기
+- 경로에 따른 결과 리뷰 및 Cut view
+- 보고서 작성
+- 결과 Display group 생성 및 관리
+- 결과 비교 기능
+- 3Dplay등 web 결과 리뷰","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"404809C074FFE545AC6038B4F23189B0","08.기타",Rack,디포그통신랙1000,"19"" H 1000","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"407942F0011CA1418F319BC32E1B39AE","04.HW 관련","HP 22"" Widescreen LCD Monitor",HP L2245wg 22-inch Widescreen LCD Monitor,"","",shpark,2009-11-03 00:00:00.000,2009-11-03 00:00:00.000,shpark
+"4328CAE413871E45894E24E5F2009363","00.Subscription Service","",+++ SS 고객 선택 사항 별첨 +++,"","",ksehee,2015-02-24 00:00:00.000,2015-02-24 00:00:00.000,ksehee
+"435803382178314CBA6FE43CA302A7AB","04.HW 관련","HP 19"" LCD Monitor","HP L1950 19"" LCD Monitor","","",shpark,2009-11-03 00:00:00.000,2009-11-03 00:00:00.000,shpark
+"43A1FB9ACE41A44CA98E9D974DFAD47D","05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Standard Contributor,SOLIDWORKS PDM Standard Contributor,"","",intia,2016-03-25 00:00:00.000,2016-03-25 00:00:00.000,intia
+"43E0D56A07FF844ABD288EB1DE2F8B84","10.MS계열 제품군",MS Office,Office Home and Business 2013 32-bit/x64 Korean Ko,"","",ktkim,2013-10-07 00:00:00.000,2013-10-07 00:00:00.000,ktkim
+"4414D4CDAAF31F48BF19DAD560AB6E2B","00.Subscription Service",SOLIDWORKS Pre With Simulation Pro Subscription,SOLIDWORKS Premium With Simulation Professional Su," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",chuls,2012-11-23 00:00:00.000,2018-11-30 00:00:00.000,intia
+"44C2C6BCCE56414E8B373BA6D5583B36","01.SolidWorks 관련","","3DVIA Composer V6R2013"," - 기술 도해
+ - 분해도
+ - 조립 지침서
+ - 제조,공정 지침서
+ - 현장 서비스 메뉴얼
+ - 현장 서비스 가이드 
+ - 제품 및 웹 카달로그
+ - 마케팅 자료
+
+ - 교육 1일 포함","",misjid,2010-05-19 00:00:00.000,2013-03-18 00:00:00.000,ksllkd
+"45ED53F82F89FC47B67FAEF92C6B9FE8","02.해석 제품",SolidWorks Simulation Premium: Nonlinear 교재 (영,SolidWorks Simulation Premium: Nonlinear 교재 (영문)," Introduction, Lesson1. Large Displacement Analysis, Lesson2. Incremental Control Techniques, Lesson3. Nonlinear Static Buckling Analysis, Lesson4. Plastic Deformation, Lesson5. Harening Rules, Lesson6. Analysis of Elastomers, Lesson7. Nonlinear Contact Analysis, Lesson8. Metal Forming, Appendix A. True and Engineering Stress and Strain","",shpark,2010-12-09 00:00:00.000,2015-02-05 00:00:00.000,admin
+"4608D992165B914D9206D639FE72C0AB","09.제품관리",Flow Simulation,SOLIDWORKS Flow Simulation 2016 Standalone,"","",ksllkd,2015-10-13 00:00:00.000,2016-04-27 00:00:00.000,ksllkd
+"47C045A347C2F54B8E17735282BE0920","01.SolidWorks 관련",SOLIDWORKS Standard Term License,SOLIDWORKS Standard Term License-1 year,"","",ksllkd,2018-07-13 00:00:00.000,2024-02-06 00:00:00.000,kimhj
+"4A45A9F10BA4B64AA4891BA75D3320AF","04.HW 관련",HP 8600,HP xw8600,"RV726AV HPxw8600 Workstation
+GL535AV HPxw8600 800W 80 Efficient Chassis(필수)
+GR532AV#AB1 Microsoft Vista 32B Downrade to XP32B OS
+GW521AV Intel Xeon 5450 3.00 12M/1333 QC 1st CPU
+GL537AV#AB1 HP xw8600 Localization Kit
+Gl657AV NVIDIA Quadro FX4600 768MB PCle Graphics
+GL641AV HP 4GB(2*2GB) DDR2-667 ECC FBD RAM
+GL614AV HP 146GB SAS 3Gb/s 15K HDD 1st
+GL653AV HP 16X DVD -RW SuperMulti SATA 1st Drive
+GL648AV Floppy Dick Drive
+GL676AV HP USB Optical Scroll Mouse
+GL689AV#AB1 HP USB Standard Keyboard","",misjid,2008-03-24 00:00:00.000,2008-03-24 00:00:00.000,misjid
+"4A6BEB330108D64899FE288E334E7208","08.기타",ND-300S,CD영상등록기(ND-300S),"","",wsshin,2017-11-27 00:00:00.000,2017-11-27 00:00:00.000,wsshin
+"4AE2C6F8021906488413221722113A3A","04.HW 관련",UTM,Juniper FireWall SSG-550M-SH,"SSG 550M System, 1GB DRAM,(4Port 10/100M)","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+"4B96240224E2A34DAA55A97608C4AF0E","12.전략제품(보안)",NETHELPER_SEPACK,NETHELPER 보안관리 PACK,"보안관리 (매체보안, 시스템보안, 네트워크보안, 문서보안 )
+패치관리 (Windows패치,Office패치)
+프린트관리 (토너절약, 워터마크)
+장애관리 (원격관리, 장애관리)
+설치유도관리 (AIMS)
+IP관리, Agent관리, 환경관","",admin,2014-02-05 00:00:00.000,2014-03-11 00:00:00.000,ktkim
+"4BA4402ED86CB34DBE332F22EAEA645E","08.기타",L3 Switch,CON-SNT-3560GTS,무상유지보수1년,"",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"4C5F33BA971AD44F83E8E78E71275F7C","07.SolidWorks 교육관련",SOLIDWORKS Electrical Consulting,SOLIDWORKS Electrical Consulting,"","",kwlee,2014-07-10 00:00:00.000,2014-07-10 00:00:00.000,kwlee
+"4C65FD4B8ED82F4CB6499BA183D543A2","08.기타","",GearTeq,"","",ckjung,2017-11-10 00:00:00.000,2017-11-10 00:00:00.000,ckjung
+"4CB372DE00703949A085BB9368F8D318","10.MS계열 제품군",Office,Office Standard Single OLV,"3년간 납부
+3년 완납후 MA 비용 : 119,300원/년간","",misjid,2009-07-06 00:00:00.000,2009-07-06 00:00:00.000,misjid
+"4D28CF8B1501654D9F9F6C5A246740B2","09.제품관리","",SolidWorks Flow Simulation,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+"4E07E3FF61EA404B90A1EE270B5CE579","05.PDMWorks Enterprise 관련",Exalead - One Part,Exalead - One Part,"","",intia,2018-10-31 00:00:00.000,2018-10-31 00:00:00.000,intia
+"4E3DEA7B2A54724CAF24FB8409FC7A3E","","",GRADIUS DLP SERVER- GM300(200user),"- CPU : Intel Q/C CPU * 1EA
+- Memory : 16GB 메모리
+- HDD : 6TB
+- Controller : 내장형 RAID 컨트롤러
+- ODD : DVD ROM, SATA, 내장
+- 전원이중화
+- OS : Microsoft® Windows Server® 2008 R2 for Embedded Systems Essentials Standard (1-4 CPU)
+- DBMS : Microsoft® SQL Server® 2008 R2 for Embedded Systems Standard (1 CPU)","",sjh,2014-12-26 00:00:00.000,2014-12-26 00:00:00.000,sjh
+"4FEC1FD5EF3C8241ACC2BCB31619B1AC","00.Subscription Service","",SOLIDWORKS Upgrade Media Kit, - 서비스팩 설치 DVD,"",admin,2015-01-28 00:00:00.000,2015-01-28 00:00:00.000,admin
+"512D176B2DD12E4F9B072E0DCC73E613","02.해석 제품",SolidWorks Plastics,Upgrade SOLIDWORKS Plastics Professional to SOLIDWORKS Plastics Premium,"*SOLIDWORKS Plastics Professional 기능 포함
+[Simulation Capabilities]
+ - 냉각 라인 해석
+ - 형상 적응형 냉각 해석
+ - 변형 해석
+[Model Geometry]
+ - 냉각 라인
+ - 배플 & 버블러
+ - 형상 적응형 냉각 수로
+ - 금형 인서트
+[Results]
+ - 파트 냉각 시간
+ - 냉각 완료시 파트 온도
+ - 냉각 완료시 금형 온도
+ - 잔류 응력에 의한 변형
+ - SOLIDWORKS Simulation Premium과 결과 호환","",jekim,2015-02-13 00:00:00.000,2015-02-13 00:00:00.000,jekim
+"51B20167B4CA88439B76D82FD529B170","01.SolidWorks 관련",SOLIDWORKS Electrical Schematic,SOLIDWORKS Electrical Schematic,"- SOLIDWORKS Electrical 2D 
+ - 직관적인 전기 배선도 Software
+ - 전기, PLC 배선도 자동화
+ - 배선도 프로젝트 관리
+ - 연관 배선도 양방향 업데이트
+ - 전기, PLC 배선도 라이브러리 제공
+ - single line 구성, diagram 작성
+ - cable 구성 및 간편한 wire 속성확인 및 선택
+ - cable 연결정보 확인, 변경정보 자동 Update
+ - 구성 부품 BOM확인
+ - 교육 1일 포함
+ - 라이브러리 구축 시 DATA Sheet 필요(고객이 제공 해 주어야 함) : 50개의 부품 무상 구축","",jmlee,2012-12-28 00:00:00.000,2016-09-21 00:00:00.000,kylee
+"51C6D8DC5FD4AA4294873A37E4C694FF","04.HW 관련",WD RED 1TB HDD,WD RED 1TB HDD,WD 3.5 inch SATAIII 5400RPM 64M NAS HDD,"",sjh,2014-07-29 00:00:00.000,2014-07-29 00:00:00.000,sjh
+"524D277E8DA74145B4FFD4C3A26EB45E","13. 3DEXPERIENCE Platform",PAU,"3D Product Architect","- 3D Annoation Insight
+   3D Tolerancing & Annotation에서 생성된 주석에 쉽게 액세스
+   주석과 지오메트리 사이의 교차 강조 표시
+- Product Structure Editor
+   Top-Down 설계 방법론 구현
+   상세 기구 설계 전 제품 구조 구성
+   기존 부품 검색을 통한 데이터 재활용
+   Web상에서 신규 어셈블리/파트/도면 생성
+- 3D Compose
+   모델 구조 탐색
+   교차 강조 표시를 통하여 선택한 객체 시각화","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,admin
+"52758061CCBACE4A996F9E5E3682007D","12.전략제품(보안)",시큐어디스크,[시큐어디스크] 기업용 솔루션(400 User license),"","",sjh,2014-08-12 00:00:00.000,2014-08-12 00:00:00.000,sjh
+"52BC4C04EB3D274AB500FC990D3A50B2","04.HW 관련",WorkStation,HP WorkStation Z800,"HP Z800 Workstation			
+HP Air Cooling Solution			
+HP Z800 850W 85% Efficient Chassis			
+Microsoft Vista64B Downgrade to XP64B OS			
+HP 1x Standard Heatsink Thermal Kit			
+Intel Xeon X5550 2.66 8MB/1333 QC CPU-1			
+HP Z800 Localization Kit			
+NVIDIA Quadro FX4800 1.5GB PCIe Graphics			
+HP 8GB (4x2GB) DDR3-1333 ECC 1-CPU RAM			
+HP 146GB SAS 15K 1st HDD			
+HP 300GB SAS 15K 2nd HDD			
+HP 16X DVD -RW SuperMulti SATA 1st Drive			
+HP 1.44MB Floppy Disk Drive			
+HP USB Optical Scroll Mouse			
+HP USB Standard Keyboard			
+HP L1950 19"" LCD Monitor			
+HP L2245wg 22-inch Widescreen LCD Monitor			
+","",misjid,2009-07-15 00:00:00.000,2009-12-14 00:00:00.000,misjid
+"530943178F9D884EB81D2F7CFE99A7F4","00.Subscription Service","",SOLIDWORKS Professional Subscription Service 3년,"","",kylee,2017-10-11 00:00:00.000,2017-10-11 00:00:00.000,kylee
+"54047DF32E0A914CA8AB20485B0A5275","08.기타",L2 Switch,CON-SNT-C29604TC,무상유지보수1년,"",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"54346B3A125C1547B47F87A8F18783C4","13. 3DEXPERIENCE Platform",XEN,Product Release Engineer,"- Engineering Release
+   제품의 명확한 정의를 위한 EBOM 편집 및 구성
+   신규 부품 추가, 수량 편집 등 엔지니어링 제품 관리
+   회사 표준에 따라 엔지니어링 아이템에 대한 부품 번호 지정
+   회사 표준 프로세스에 따른 변경 관리
+   변경 프로세스와 3D 데이터 간 Link
+   승인권자, 승인날짜, 변경 내용 확인
+   데이터 Maturity 관리
+   Data 소유권 할당
+   3D Play를 통하여 선택 부품 Cross-Highlight
+   6W Tag를 통한 데이터 검색","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"54F64E5C883DA84E898A0EB8C75856B6","08.기타",이하여백,------   이   하   여   백   ------,"","",shpark,2009-11-03 00:00:00.000,2012-02-20 00:00:00.000,shpark
+"55709DA029E23949B83C0064C61055D9","04.HW 관련",Diskstation DS 412 Plus,Synology Diskstation DS 412 Plus,"","",sjh,2014-07-29 00:00:00.000,2014-07-29 00:00:00.000,sjh
+"55897F195773A84BA7C939744003702B","09.제품관리","",SOLIDWORKS Office,"","",admin,2007-08-29 00:00:00.000,2016-07-06 00:00:00.000,ckjung
+"55C91425C7685B4F88B765447FCCB38D","04.HW 관련",ML350(타워형서버),ML350G10,"* ML350G10 G-6134 3.2GHz 1P 8Core*1. 
+  32GB. M.2 SSD 480GB*2. SAS 4TB 7.2K*5. 
+  4P 1G Onboard. DVDRW(외장). 전원이중화. 
+  3Y FC. WIN OS포함
+  Microsoft Windows Server 2019 5 Devices CAL","",kimhj,2019-07-05 00:00:00.000,2019-07-05 00:00:00.000,kimhj
+"57763B9E9BA1BA47ADA2F4265C297012","12.전략제품(보안)",SecureDISK,SecureDISK CAD,"보안대상
+내부 업무 자료- MS-Office, HWP, PDF, 등 업무 문서
+기업 내 지적 자산- 도면, 3D모델링 데이터, 디자인 콘텐츠 등- AutoCAD, 포토샵 등 그래픽 (EPS, AI) 결과물
+
+주요기능
+자료유출 원천차단- 개인PC 저장매체로 저장을 강제 차단
+- 온라인 자료 첨부 차단
+- 화면캡쳐, 문서 출력, 복사&붙이기 차단
+문서중앙화
+ 모든 내부 문서를 중앙 파일서버로 통합 저장
+ 자료유실 차단 및 업무 연속성 보장
+ 원활한 지식 공유 및 협업 환경 제공
+사용 친화성- 친숙한 윈도우탐색기 인터페이스 환경
+- 편리하고 효율적인 반출 프로세스 제공
+"," 
+ - 데몬		
+    - 인증 및 운영용 데몬		
+    - 파일 서버 제어용 데몬		
+  - 문서		
+    - Database Layout		
+    - 관리자용 매뉴얼		
+    - 설치 및 Setting",ktkim,2013-11-25 00:00:00.000,2014-07-16 00:00:00.000,ktkim
+"586EC55506A9334BB84B83FB66BF3A2F","","",- GRADIUS Manager S/W,"","",sjh,2014-12-26 00:00:00.000,2014-12-26 00:00:00.000,sjh
+"5A3317A14C598545AD23F24D57F076D1","01.SolidWorks 관련","",SOLIDWORKS Standard withCloud Services,"","",wjsdydtnr5,2023-10-12 00:00:00.000,2023-10-12 00:00:00.000,wjsdydtnr5
+"5AA0E48E0FCF60468D234A7580B74F0F","02.해석 제품",SOLIDWORKS Sustainability,SOLIDWORKS Sustainability,"환경 영향 대시보드와 주요 지표
+PE International의 GaBi LCA 환경 데이터베이스
+SolidWorks 인터페이스와 완벽하게 통합
+파트의 환경 영향 예상
+유사 재질 찾기 선택 도구
+사용자 정의 가능 보고서
+설계 결정을 비교하기 위한 기준선 설정
+기준선 비교 보고서
+새로운 재료 및 프로세스를 위한 GaBi 데이터베이스 업데이트
+새로운 재료 및 프로세스 요청
+제조 프로세스 입력 보기
+운송 모드 및 거리 입력 보기
+재활용 함유율 보기
+수명 종료 입력 보기
+재료 및 프로세스 요청에 대해 우선 순위 지원
+제조 프로세스 입력 수정 가능
+운송 모드 및 거리 입력 수정 가능
+재활용 함유율 수정 가능
+수명 종료 입력 수정 가능
+제품 수명 설명
+시간 기준 환경 평가 수행
+어셈블리의 환경 영향 예상
+SolidWorks 설정 지원
+""사용 단계"" 에너지 입력
+가장 영향이 큰 부품을 BOM에 포함한 보고서
+어셈블리 시각화 지원
+원재료 재무 영향 비교","",kwlee,2014-07-10 00:00:00.000,2015-02-05 00:00:00.000,admin
+"5B99A65D75AD1941A0A1D30A057A6258","13. 3DEXPERIENCE Platform",WKLX,Learning Experiences for 3DEXPERIENCE WORKS,"- 3DEXPERIENCE EDU Space 
+  - 온라인 교육 Tutorial","",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+"5BA17FCDCFFDD5428E4ADF5F460A947D","13. 3DEXPERIENCE Platform",SW3,"3DEXPERIENCE SOLIDWORKS Premium Package","- SOLIDWORKS Connected
+    Proffesional기능 + 추가 기능
+    곡면 전개
+    배관 및 배선 (Routing)
+
+- 3D Creator
+  xDesign
+    Web상 3D Modeling Tool
+    파라메트릭 모델링 기법
+
+- 3D Sculptor
+   xShape
+    서브디비전 모델링 기법
+    복잡한 곡면 설계 가능
+    산업 디자인용 색상표 이용하여 다양한 색상 정의
+
+- Linear Static Analysis
+- Time Based Motion Simulation
+- Part, Assembly 시뮬레이션
+- 분산 및 집중 질량
+- Solid, Shell, Beam 및 Truss Mesh
+- 합력 및 부품 변위 플롯
+- Von-Mises 응력, 주응력, 부품 응력 플롯
+- 주요 변형, 부품 변형, 변형 에너지 밀도 플롯
+- 다축 응력 하중 기반 볼트 및 핀 하중 계산
+- 모션해석결과 산출","",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+"5BBB9D973BC2D54ABD3145F4320AF93B","12.전략제품(보안)",Quorum Backup onQ,onQ-T20,"Tower Appliance, 4 CPU Cores, 16 GB RAM, 2.8 TB Usable Storage. Includes license for unlimited servers.  Supports a maximum of 1.2 TB customer data. Recommeded for up to 2 fiilovers","",ktkim,2014-04-10 00:00:00.000,2014-09-26 00:00:00.000,sjh
+"5C3952174F168741A985EE536C1D5769","06.AutoCAD 관련",AutoCAD Mechanical 2012 KO DVD - Sub 미포함,AutoCAD Mechanical 2012 KO DVD - Sub 미포함,"- AutoCAD 2012
+- 700,000개의 표준 부품과 피처
+- 제조용으로 확장된 도구 모음
+- 국제 제도 표준의 지원
+- 연관된 품번기호 및 재료명세서(BOM)","",shpark,2010-09-07 00:00:00.000,2012-01-04 00:00:00.000,shpark
+"5C4268AE7CD7324FAB34DE2CE40C50EA","13. 3DEXPERIENCE Platform",UDT,Collaborative Designer for Altium Designer,"","",kimhj,2023-07-04 00:00:00.000,2023-07-04 00:00:00.000,kimhj
+"5DD41771D48E834F8BDD3A2FB609633E","13. 3DEXPERIENCE Platform",XFO,"3D Sculptor","- 3D Sculptor
+   xShape
+    서브디비전 모델링 기법
+    복잡한 곡면 설계 가능
+    산업 디자인용 색상표 이용하여 다양한 색상 정의","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,admin
+"5DDBE1EEE5AB1A4185AAA9E5AFE75ADE","08.기타","",Lisence 분할,"","",mchjung,2012-09-10 00:00:00.000,2013-12-23 00:00:00.000,sjh
+"5DEAD1A65C3D3C468431C99F523C5BC4","00.Subscription Service","",nodeDATA Technical SupportⅠ," - Initial Subscription Service 포함
+ - SOLIDWORKS 환경 설정
+    - Template (파트/어셈블리/도면)
+    - 최적화 옵션 설정
+    - 사용자 정의 속성
+ - 방문 지원 2회
+","",admin,2015-01-28 00:00:00.000,2015-01-29 00:00:00.000,ksehee
+"5EED303D9E95674B93C122D20395E359","08.기타","",키오스,"","",wsshin,2015-01-15 00:00:00.000,2015-01-15 00:00:00.000,wsshin
+"5F0B701AA437DB4D93C8A0904B2FFB40","09.제품관리","","3DVIA Composer","","",nana,2008-06-12 00:00:00.000,2008-06-12 00:00:00.000,mihwa
+"5F33BA58C44BDD45A796A3805D527D22","12.전략제품(보안)",Open Product Review 3D,OPR 3D Standard,"","",ktkim,2013-12-05 00:00:00.000,2014-02-05 00:00:00.000,admin
+"5FE747C3C68E154A90EAFFA30E5F863E","","",HP 646901-371,"HP DL360p Gen8 E5-2630 Base AP Svr  6core 2.3GHz, 4 x 4GB PC3L-10600R,P420i / 1GB FBWC
+Processor : (1) ntel® E5-2600 Processors
+Cache Memory : 10MB (1 x 10MB) Level 3, 15MB (1x15MB) L3
+Memory : 4GB (1 x 4GB DDR3-1333MHz RDIMMs), 16GB (4 x 4GB DDR3-1333MHz RDIMMs)
+Network Controller : HP Ethernet 1Gb 4-port 331FLR Adapter
+Storage Controller : HP Smart Array P420i/ZM (RAID 0/1/1+0), HP Smart Array P420i/1GB with FBWC (RAID 0/1/1+0/5/5+0)
+Hard Drive : None ship standard; includes 7 SFF hard drive blanks
+Internal Storage : Standard: 8 SFF HDD Bays
+Optical Drive Bay : 1 (Optional: DVD-ROM, DVD-RW)
+PCI-Express Slots : 2 standard (1-FH/HL, 1-LP) PCIe 3.0
+Power Supply : (1) HP 460W Common Slot Gold Hot Plug Power Supply (92% Efficient), (1) HP 460W CS Platinum Plus Hot Plug Power Supply (94% Efficient)
+Fans : 6 Hot Plug Redundant Fan Modules
+Management : HP iLO Management Engine (standard)
+Optional: HP Insight Control
+Form Factor : Rack (1U)
+Warranty : Server Warranty includes 3-Year Parts, 3-Year Labor, 3-Year Onsite support with next business day response","",sjh,2013-12-24 00:00:00.000,2013-12-24 00:00:00.000,sjh
+"609BF18308A9004E89569FBBAC2A730E","08.기타",L2 Switch,CON-SNT-C29602PC,무상유지보수1년,"",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"610D2EC8F7C9F9408DA72D9E7EFDD513","08.기타",L2 Switch,WS-C2960-24TC-L,"Catalyst 2960 24 10/100 + 2T/SFP Lan Base Image
+무상유지보수1년","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"61DEA0869705854587BCFEE6D20F0473","01.SolidWorks 관련",Mold Design Using SolidWorks 교재(영문),Mold Design Using SolidWorks 교재(영문),"","",mchjung,2012-10-22 00:00:00.000,2012-10-22 00:00:00.000,mchjung
+"633B43418108F448B6F35EA361D1F519","01.SolidWorks 관련",SOLIDWORKS Electical,SOLIDWORKS Electical Schematic Professional 2016,"","",intia,2016-03-14 00:00:00.000,2016-03-14 00:00:00.000,intia
+"638BE9D4CBAF834EB7FE8F8E95447CED","02.해석 제품",SolidWorks Simulation 교재 (한글/영문),SolidWorks Simulation 교재 (한글/영문)," 개요, 1장. 해석 절차, 2장. 메시 컨트롤, 응력 집중, 경계조건, 3장. 접촉이 있는 어셈블리 해석, 4장. 대칭형 및 자유형 자체균형 어셈블리, 5장. 커넥터를 사용한 어셈블리 해석, 6장. 호환 가능 / 비호환 메시, 7장. 어셈블리 해석 메시 조정, 8장. 얇은 부품 해석, 9장. 쉘 & 솔리드 혼합 메시, 10장. 솔리드, 빔, 쉘 혼합 메시, 11장. 설계 스터디, 12장. 열응력 해석, 13장. Adaptive 메시, 14장. 대변위 해석, 부록 A: 메시, 솔버, 팁 및 요령, 부록 B: 고객 도움말 및 지원","",shpark,2010-12-09 00:00:00.000,2015-02-05 00:00:00.000,admin
+"641FD404D6FCD244AF699A287B4291E9","11.기타Software",CATIA,DP2(Drawing Product 2 Configuration 연간사용료,CATIA 2D,"",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+"64ACA624AFB2DC4C9CD6B274512DABA0","01.SolidWorks 관련",SOLIDWORKS Electrical 2D,SOLIDWORKS Electrical Schematic Professional,"","",ksllkd,2016-12-12 00:00:00.000,2016-12-12 00:00:00.000,ksllkd
+"6508EB7614FA6E4F96DADC9FC13F1C58","09.제품관리","",SolidWorks Flow Simulation on HVAC Module," - Radiation Mode (Discrete Ordinates)
+ - Building materials in the Engineering Database
+ - Comfort Parameters
+ - Mean Radiant Temperature (MRT)
+ - Operative Temperature
+ - Predicted Mean Vote (PMV)
+ - Predicted Percent Dissatisfied (PPD)
+ - Draft Temperature
+ - Air Diffusion Performance Index (ADPI)
+ - Contaminant Removal Effectiveness (CRE)
+ - Local Air Quality Index (LAQI)
+ - Flow Angle 
+","",jekim,2010-12-28 00:00:00.000,2011-02-22 00:00:00.000,jekim
+"652C63E3291FF44FA30097E2FC1A336C","01.SolidWorks 관련",SOLIDWORKS,SOLIDWORKS Standard," - SOLIDWORKS Design Software (Part, Assembly, Drawing)
+ - Sheetmetal Design Module (판금)
+ - Surface Design Module (곡면 모델링)
+ - SOLIDWORKSs Explorer
+ - Simulation XPress (단품 구조해석)
+ - Flow XPress (유동의 흐름 Viewing)
+ - DFM XPress (가공 시 에러 발생 부분 분석)
+ - DriveWorks XPress (유사한 제품 시리즈 생성)
+ - Physical Simulation and Animation (동영상 제작)
+ - SOLIDWORKS eDrawings
+ - SOLIDWORKS Utilities (데이타 비교)
+ - FeatureWorks (작업 이력 생성)
+ - 3D 파단도
+ - 3D Instant Website (웹게시판)","",jhkim,2008-09-24 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"66509C53964F81458FE668636B4CC1F5","01.SolidWorks 관련",LC,"02 LC YLC 미제공 제품 SWP","","",admin,2024-04-09 00:00:00.000,2024-04-09 00:00:00.000,admin
+"66AD7703DA522749B398804646BF4F15","","",OfficeStd 2013,"","",sjh,2014-04-28 00:00:00.000,2015-08-10 00:00:00.000,kylee
+"68374B659A639A488A9CEEE51252A2FC","01.SolidWorks 관련",SOLIDWORKS Inspection,SOLIDWORKS Inspection Standard,"","",ksllkd,2015-03-10 00:00:00.000,2016-02-03 00:00:00.000,ksllkd
+"68C40EC408A09843864B4B9F5DC91895","06.AutoCAD 관련",AUTOCAD LT,AUTOCAD LT 2015 RL2 DVD MS 5 Pack,"","",ktkim,2014-06-02 00:00:00.000,2014-06-02 00:00:00.000,ktkim
+"68E309F3D616A84AA3DD895B5B4FC024","10.MS계열 제품군",SQL Svr Standard Core,SQLSvrStdCore 2012 SNGL OLP 2Lic NL CoreLic Qlfd,"","소비자가격: 6,747,000",admin,2014-02-05 00:00:00.000,2014-02-05 00:00:00.000,ktkim
+"6A30F3F113899A45B3D4C9ABEC664062","01.SolidWorks 관련",Upgrade SOLIDWORKS Office Professional to SOLIDWOR,Upgrade SOLIDWORKS Professional to SOLIDWORKS Premium," - SOLIDWORKS Motion(구동 해석)
+ - SOLIDWORKS Simulation (설계자용 구조해석)
+ - SOLIDWORKS Routing (파이프와 배선, 하네스 설계)
+ - CircuitWorks(ECAD 데이타 호환)
+ - TolAnalyst(공차해석)
+ - SOLIDWORKS ScadTo3D(3D 스캔data를 3D 파일로 변환)","",admin,2007-09-03 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"6BD73E77094F5B4A8ECEEA497312423E","05.PDMWorks Enterprise 관련",SOLIDWORKS Manage PDM 25 PSL,SOLIDWORKS Manage PDM 25 PSL,"- SOLIDWORKS Manage Professional CAD Editor 
+- SOLIDWORKS Manage Professional Contributor 
+- SOLIDWORKS Manage Professional Viewer 
+- DBMS : Microsoft SQL Server 기반 
+* Install Typy에 따라 25 User 범위 내에서 CAD editor/ Contributor/Viewer 로 변경 사용 가능 
+* 세부기능 * 
+- 문서및 record의 검색, 미리보기,출력 
+- CAD Data 미리보기 (eDrawings 활용) 
+- CAD 데이터의 생성 및 편집 (SOLIDWORKS Add-in) 
+- non-CAD 데이터 미리 보기/생성 및 편집 
+- Project 진척 및 Timesheets 확인 및 수정 
+- Dashboards 확인 및 보고서 작성 및 문서 생성 
+- Process 및 기록 확인/ Process 시작 및 진행 
+- PDM Workflow에 의한 Rrocess 실행 
+- BOM 생성 및 수정/Task 지정 및 수정","",kimhj,2019-07-05 00:00:00.000,2019-07-05 00:00:00.000,kimhj
+"6C1664E10676864C94EE7866460C865E","12.전략제품(보안)",시큐어디스크,시큐어디스크 기업용 솔루션 (30 User license),"  - 데몬
+    - 인증 및 운영용 데몬
+    - 파일 서버 제어용 데몬
+  - 문서
+    - Database Layout
+    - 관리자용 매뉴얼","",sjh,2014-10-28 00:00:00.000,2014-10-28 00:00:00.000,sjh
+"6D6DFCCEFDF856468D21A2B5C4FF77AC","04.HW 관련",Dell Precision T7610,Dell Precision T7610,"Dell Precision T7610 CTO Base
+Dell Precision T7610 1300W TPM Chassis
+Dual Intel Xeon 프로세서 E5-2630 v2 (6 코어 HT, 2.6GHz Turbo, 15 MB),Dell Fixed Precision Tx610
+64GB (8x8GB) 1866MHz DDR3 ECC RDIMM
+256GB 2.5inch SATA Solid State Drive
+2TB 3.5인치 Serial ATA (7,200 Rpm) 하드 드라이브
+16x DVD+/-RW Drive
+3 GB NVIDIA Quadro K4000 (2DP & 1DVI-I) (2DP-DVI & 1DVI-VGA 어댑터)
+Windows® 7 Professional 64비트(한국어)
+Dell ™ MS 111 USB 옵티컬 마우스
+Dell™ KB212-B USB 기본형 비즈니스 키보드 (한국어)
+3년 ProSupport: 익일(영업일 기준) 방문 서비스
+","",hhk,2014-07-10 00:00:00.000,2014-07-10 00:00:00.000,hhk
+"6DB540E215BA3C4588B8CF1135A17F27","01.SolidWorks 관련",My SOLIDWORKS Professional,My SOLIDWORKS Professional,"","",intia,2018-06-11 00:00:00.000,2018-06-11 00:00:00.000,intia
+"6DCED5B7DEDC0C4DB0D12DAB25833A5A","13. 3DEXPERIENCE Platform",SFO,Structural Performance Engineer,"- Advanced Linear 해석
+- 고유 진동 해석
+- 정상 상태 열해석
+- 선형 좌굴 해석
+- 하모닉 해석
+- 모달 동적 해석
+- 비선형 정적 해석
+- 비선형 동적해석(Implicit)
+- 비정상상태 열해석
+- General Contact","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+"6E72585E816D6B4C8397E61E57163D65","06.AutoCAD 관련",Mechclick,MechClick CMB 2D,"","",ktkim,2014-05-20 00:00:00.000,2014-05-20 00:00:00.000,ktkim
+"6F66D4E441C74847AA790840A253200B","07.SolidWorks 교육관련",Surface 교육,Surface 교육,"","",admin,2008-01-08 00:00:00.000,2008-01-08 00:00:00.000,admin
+"6F93B342EDF1AF459AE18103C7518B29","02.해석 제품",SOLIDWORKS Simulation,Upgrade SOLIDWORKS Simulation Professional to SOLIDWORKS Simulation Premium,"*Simulation Professional 기능 포함
+[Simulation Capability]
+ - Modal Time Hiatory Analysis
+ - Harmonic Analysis
+ - Random Vibration Analysis
+ _ Response Spectrum Analysis
+ - Nonlinear Static Analysis
+ - Nonlinear Dynamic Analysis
+[재질 성]
+ - 비선형 탄성 
+ - Mooney-Rivlin 및 Ogden Hyperelastic 모델 
+ - 비선형 점탄성(크리프) 
+ - Nitinol 
+ - 적층 복합재
+[결과도구]
+ - PSD 출력을 이용한 응답 대 시간 또는 진동수 플롯 
+ - 진동수에 따른 응답 플롯
+","",admin,2009-02-17 00:00:00.000,2015-02-13 00:00:00.000,jekim
+"6FCBFE8D9ADAD248841762C8ED709ACB","01.SolidWorks 관련",SOLIDWORKS,SOLIDWORKS Professional," - SOLIDWORKS Design Software (Part, Assembly, Drawing)
+ - Sheetmetal Design Module (판금)
+ - Surface Design Module (곡면 모델링)
+ - SOLIDWORKSs Explorer
+ - Simulation XPress (단품 구조해석)
+ - Flow XPress (유동의 흐름 Viewing)
+ - DFM XPress (가공 시 에러 발생 부분 분석)
+ - DriveWorks XPress (유사한 제품 시리즈 생성)
+ - Physical Simulation and Animation (동영상 제작)
+ - SOLIDWORKS eDrawings
+ - SOLIDWORKS Utilities (데이타 비교)
+ - FeatureWorks (작업 이력 생성)
+ - 3D 파단도
+ - 3D Instant Website (웹게시판)
+ - SOLIDWORKS eDrawings Professional
+ - SOLIDWORKS Toolbox (라이브러리)
+ - PhotoView360 (실사 이미지 제작)
+ - Task Scheduler (작업 스케줄러)
+ - Design Checker (도면 비교 분석)
+ - SOLIDWORKS PDM Standard (설계 데이터 관리 프로그램)
+ - TolAnalyst (공차해석)
+ - SOLIDWORKS ScadTo3D (3D 스캔data를 3D 파일로 변환)
+ - SOLIDWORKS Visualize Standard (Rendering_이미지)
+ - CircuitWorks (ECAD 데이타 호환)
+ - Costing (제품 원가 계산)
+
+","",jhkim,2008-09-24 00:00:00.000,2019-08-19 00:00:00.000,ckjung
+"70008967A0DEDD4B820B2DBCBB8FB24A","05.PDMWorks Enterprise 관련",PDM Professional,SOLIDWORKS PDM Professional 2017 Processor License,"","",ksllkd,2016-10-21 00:00:00.000,2016-10-21 00:00:00.000,ksllkd
+"707911D82CF64346AF6ED4FE7E9076C1","01.SolidWorks 관련",LC,"03 LC YLC 미제공 제품 SWPre","","",admin,2024-04-09 00:00:00.000,2024-04-09 00:00:00.000,admin
+"708E5295B8D823458D83E9FFA18D5AA0","04.HW 관련",xSeries,x3300 M4,"x3300 M4 1x Xeon E5-2407 2.2GHz 6.4GTS 10MB 1066MHz 4C 80W 1x4GB (1Rx4), 4 HDD Bay(3.5"") HS SATA S/W RAID 0,1,10, SATA DVD-ROM, 1x460W fixed 3yr
+4GB (1x4GB, 1Rx4, 1.35V) PC3L-10600 CL9 ECC DDR3 1333MHz LP RDIMM
+ 1TB 7.2K 6Gbps NL SAS 3.5"" PI  
+ServeRAID M5110 SAS/SATA Controller - RAID 0,1,10(Std)
+ServeRAID M5100 Series 512MB Cache/RAID 5 Upgrade
+ServeRAID M5100 Series Battery Kit  (512MB Cache 와 함께 구매)
+","",ktkim,2014-02-05 00:00:00.000,2014-02-05 00:00:00.000,ktkim
+"71DC917B44C61E4EB46173A30D0B3ECD","02.해석 제품",SolidWorks Motion 교재 (영문),SolidWorks Motion 교재 (영문)," Introduction, Lesson1. Introduction to Motion Simulation and Forces, Lesson2. Building a Motion Model and Post-processing, Lesson3. Introduction to Contacts, Springs and Dampers, Lesson4. Advanced Contact, Lesson5. Curve to Curve Contact, Lesson6. CAM Synthesis, Lesson7. Flexible Joints, Lesson8. Redundancies, Lesson9. Export to FEA, Lesson10. Event Based Simulation, Lesson11. Design Project (Optional), Appendix A. Motion Study Convergence Solutions and Advanced Options, Appendix B. Mate Friction","",shpark,2010-12-09 00:00:00.000,2015-02-05 00:00:00.000,admin
+"72BD4CF9B6F9BC4CA44456E6E497920F","12.전략제품(보안)",Mirageworks,Mirageworks Communicator(MC),"","",ktkim,2014-05-16 00:00:00.000,2014-05-16 00:00:00.000,ktkim
+"7349E1470D7D9B4EB16C3EE35A1D728D","06.AutoCAD 관련",AutoCAD Electrical 2011 - Sub 포함,AutoCAD Electrical 2011 - Sub 포함,"- AutoCAD 2010
+- International Standard Symbol Libraries
+- 전기분야 Component Catalog (Part List) Database
+- 부품 Label (Tag ID) 자동 부여
+- 1year Sub-Scription Service 제공
+- On-Line Support 및 방문지원","",shpark,2011-03-04 00:00:00.000,2011-03-04 00:00:00.000,shpark
+"7415F41C22DF04468E5E51424928C382","13. 3DEXPERIENCE Platform",MDG,Mechanical Designer,"[Prerequisites]
+ - Collaborative Sharing (PCS : IFW+CSV)
+
+[Included Apps]
+ - CATIA Natural Shape
+ - CATIA Natural Assembly
+ - CATIA Bent Part Design
+ - CATIA Assembly Design
+ - CATIA Mechanical Systems Design
+ - CATIA Part Design
+ - CATIA Functional Part Design
+ - CATIA Drafting
+ - CATIA 2D Layout for 3D Design
+ - CATIA Generative Wireframe & Surface
+ - Converter for IGES
+ - Converter for STEP
+ - CATIA Component Family Definition
+ - CATIA 3D Templates Capture
+ - CATIA Engineering Templates Reuse
+ - CATIA Know-how Reuse
+ - SIMULIA Material Definition
+ - CATIA Product Structure Design
+ - CATIA 3D Printing
+ - CATIA Weight Analysis
+ - CATIA Engineering IP Control
+ - ENOVIA Design Review
+ - ENOVIA Interference Check
+ - ENOVIA Interference Finder","",kimhj,2023-09-13 00:00:00.000,2023-09-13 00:00:00.000,kimhj
+"7449990B711B9F4D8954D81838DB5277","10.MS계열 제품군",SQL Server Standard Edition,SQLSvrStd 2012 SNGL OLP NL,"","소비자가격: 1,493,000",admin,2014-02-05 00:00:00.000,2014-02-05 00:00:00.000,ktkim
+"74D3E260935BFD4C9100B158536E9D13","08.기타","",순번발행시스템키오스크(ND-101),"","",wsshin,2019-03-15 00:00:00.000,2019-03-15 00:00:00.000,wsshin
+"74FF322CFF6C4141B2C499239BD00863","10.MS계열 제품군",OS,Window Vista/XP OLP Single MA,"","",misjid,2009-07-06 00:00:00.000,2009-07-06 00:00:00.000,misjid
+"7503C6170368C84BA75024B90FF2E27C","10.MS계열 제품군",OS,Window Vista/XP OLV Single,"M/S OS MA/SA 포함제품
+3년 완납후 MA 비용 : 57000원/년(매년 금액변동 있음)
+","",misjid,2009-05-27 00:00:00.000,2009-07-06 00:00:00.000,misjid
+"751F1DDA5EC4FB41B87FC742BA58167C","13. 3DEXPERIENCE Platform",XSM,"3DEXPERIENCE SOLIDWORKS Simulation Designer","- Linear Static Analysis
+- Time Based Motion Simulation
+- Part, Assembly 시뮬레이션
+- 분산 및 집중 질량
+- Solid, Shell, Beam 및 Truss Mesh
+- 합력 및 부품 변위 플롯
+- Von-Mises 응력, 주응력, 부품 응력 플롯
+- 주요 변형, 부품 변형, 변형 에너지 밀도 플롯
+- 다축 응력 하중 기반 볼트 및 핀 하중 계산
+- 모션해석결과 산출","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"791641DF0CF095448E6435EF267577A0","00.Subscription Service",Full Subscription Backdating,Full Subscription Backdating," - SS 만료일로 부터 재갱신 전달까지 지불되지 않은 SS 비용
+
+ - 2016년 x월 진행 기준
+    - 201x년 x월 x일 만료(xx개월)
+","",ksehee,2016-01-13 00:00:00.000,2017-03-06 00:00:00.000,kylee
+"794E2FBF6BE3E8439C993525C90A1692","08.기타",L2 Switch,CON-SNT-C29602TC,무상유지보수1년,"",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+"7A4B86B3902C7B46BFEB62C8249FF4E4","07.SolidWorks 교육관련",PDMWork Group 컨설팅,PDMWork Group 컨설팅,"","",admin,2008-01-08 00:00:00.000,2008-01-08 00:00:00.000,admin
+"7AF2045D9C0E594EA8258A39D480BEBD","11.기타Software",PLC (Primary License Charge),PLC (Primary License Charge),"","",kylee,2015-10-14 00:00:00.000,2015-10-14 00:00:00.000,kylee
+"7AF4D1A4D0FA3A4889AE69B52E576047","01.SolidWorks 관련",SOLIDWORKS Visualize Professional 2016,SOLIDWORKS Visualize Professional,"- 렌더링 이미지
+- 곡면/파트 분할
+- 인공지능(AI) 디노이저
+- NVIDIA MDL 고급 재질 지원
+- 하이브리드 렌더링 모드
+- GPU 렌더링 가속화
+- 물리적 레이트레이싱(Raytracing)
+- 데칼
+- CAD Live-Update
+- 렌더링 애니메이션
+- Visualize Boost
+- 카메라 필터
+- 설정(Configuration)
+- 조명
+- VR 콘텐츠 생성
+- 차량 주행 시뮬레이터
+- 비디오 데칼","",admin,2016-03-09 00:00:00.000,2019-06-13 00:00:00.000,ksehee
+"7B14EE96F1701440B5DBE19387871245","12.전략제품(보안)",onQ-260-9,onQ-260-9,"- 2U 랙탑재형 어플라이언스 제품
+- 12 CPU cores, Main Memory : 64GB
+- Total Disk 용량 : 16TB
+- Repository Disk 용량 : 7.4TB (Data 저장 용량)
+- Recovery Node Disk 용량 : 7.4TB (Recovery/ Failover시)
+- 2 Gigabit 이더넷, 2 Power Supply
+- 서버 라이선스 무제한
+- OS+Appication+Data 통합 복제
+- 복제한 서버이미지를 이용한 서비스 대체(7Failover)
+- 중복제거(De-duplication) 스케쥴 복제
+- 복제된 서버 이미지에서 파일단위 복구
+- 복제된 Exchange 서버에서 메일단위 복구
+- 데이터 확장시 onQ 전용 Storage 추가 연결 가능(6TB~14TB)","",sjh,2014-06-19 00:00:00.000,2014-06-19 00:00:00.000,sjh
+"7C1E2B0597B0354F8572F835D369EA2B","04.HW 관련",ProSafe Plus Switch,ProSafe JGS516PE,"","",ktkim,2014-05-16 00:00:00.000,2014-05-16 00:00:00.000,ktkim
+"7CECA789C52FCC4396DF9CBBD3967F1E","01.SolidWorks 관련","",SOLIDWORKS Composer 2014," - 기술 도해
+ - 분해도
+ - 조립 지침서
+ - 제조,공정 지침서
+ - 현장 서비스 메뉴얼
+ - 현장 서비스 가이드 
+ - 제품 및 웹 카달로그
+ - 마케팅 자료
+
+ - 교육 1일 포함
+
+ - 네트워크 가격 포함","",ksllkd,2014-05-15 00:00:00.000,2014-09-03 00:00:00.000,hhk
+"7D66A97E6ED6064DAB526EC7A273CE56","12.전략제품(보안)",시큐어디스크,[시큐어디스크] 기업용 솔루션(600 User license),"","",sjh,2014-08-12 00:00:00.000,2014-08-12 00:00:00.000,sjh
+"7E60162144336242B5C9C5F4D5C09972","13. 3DEXPERIENCE Platform",ESX,Electrical Schematic Designer,"","",eojh,2023-09-26 00:00:00.000,2023-09-26 00:00:00.000,eojh
+"809917E2CE846847AC38627D468CB160","08.기타",Delcam for SolidWorks 2013-Network 45users,Delcam for SolidWorks 2013-Network 45users,"Delcam for SolidWorks is a SolidWorks Certified Gold Product that revolutionises CAM programming inside SolidWorks. Included 2.5D MIlling, 3 Levels fo 3-axis Milling, 4th-axis Indexing, Drilling, Turning, Turn/Mill, Feature Recognition, Machine Simulation, 
+Included SolidWorks Edu. Edition 2013-2014-45users & 1year sub-scription service","",sjh,2013-08-13 00:00:00.000,2013-08-13 00:00:00.000,sjh
+"813FB67693992B49BC5E72F304503841","13. 3DEXPERIENCE Platform",XMB-OC,Manufacturing Definition Creator,"","",yhi526,2022-12-28 00:00:00.000,2022-12-28 00:00:00.000,yhi526
+"81C94BF0C32C5B44984B9D993F16CF2E","08.기타",SMAP3D P&ID (Floating Type),SMAP3D P&ID (Floating Type),"","",ijhwang,2024-01-09 00:00:00.000,2024-01-09 00:00:00.000,ijhwang
+"8254739A85753D4C9ECECFC258232940","04.HW 관련",Z820,HP Z820 Workstation,"HP Z820 Workstation			
+HP Single Unit Packaging			
+HP Z820 850W 88% Efficient Chassis			
+HP Single Processor Air Cooling Kit			
+HP Z820 Country Kit			
+Windows 7 64 Bit Factory Image Recovery			
+Windows 7 Professional 64Bit OS			
+Intel Xeon E5-2640 2.50Ghz 15MB 1333 6C 1st CPU		
+16GB DDR3-1600 (4x4GB) 1CPU Reg RAM			
+500GB 7200 RPM SATA 1st Hard Drive			
+HP DisplayPort To DVI-D Adapter			
+NVIDIA Quadro K2000 2GB 1st GFX No cables included Graphics			
+HP USB Keyboard			
+HP USB Optical Mouse			
+16X SuperMulti DVDRW SATA 1st ODD			
+HP 3-3-3 Warranty(4/4/4 or 5/5/5로만 변경가능)			
+","",sjh,2014-01-09 00:00:00.000,2014-11-04 00:00:00.000,kylee
+"82D9D18A319DF34A90C7EF5AA709231B","11.기타Software",CATIA,HDX(Mechanical Shape Design),"CATIA 고급 사양
+- 고급 Surface 기능","",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+"82DE77554D878B47B432FD1DE80AE794","13. 3DEXPERIENCE Platform",XWC,"3DEXPERIENCE SOLIDWORKS Premium","- SOLIDWORKS Connected
+    Proffesional기능 + 추가 기능
+    곡면 전개
+    배관 및 배선 (Routing)
+
+
+- SOLIDWORKS Visualize Connected
+   고급 실사적 렌더링
+","",admin,2020-10-15 00:00:00.000,2022-01-18 00:00:00.000,admin
+"82E72E5CD04959429D3C2C1980768FE8","13. 3DEXPERIENCE Platform",SRD,Structural Designer,"- Linear 해석
+- 고유 진동 해석
+- 정상 상태 열해석
+- 선형 좌굴 해석
+","",admin,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+"838221346379DF46BB4B874348CFCAE0","04.HW 관련",WD RED 2TB HDD,WD RED 2TB HDD,WD 3.5 inch SATAIII 5400RPM 64M NAS HDD,"",sjh,2014-07-29 00:00:00.000,2014-07-29 00:00:00.000,sjh
+"83EC2D895FE42F46B22A08F2D872FBB9","13. 3DEXPERIENCE Platform",DRA,"3DEXPERIENCE DraftSight"," - DraftSight Connected
+   도면 작업 및 수정
+   DWG 설계 파일 보기, 공유, 마크업
+   Revision 관리
+   3DEXPERIENCE platform에서 최신 도면 액세스 및 공유
+   단편적이고 반복적인 배포 감소
+   Native App.",DRA,admin,2020-10-13 00:00:00.000,2022-01-18 00:00:00.000,admin
+"83F77E952E3F1040836FB6D4EA680D69","07.SolidWorks 교육관련",SolidWorks One-Site 교육,SolidWorks 업체 맞춤 교육,"- 업체 맞춤 교육
+  - SolidWorks및 Simulation의 업체 맞춤 교육
+  - 1Day 기준 견적이며 기간은 업체와 협의 후 진행","",chuls,2010-01-11 00:00:00.000,2010-01-11 00:00:00.000,chuls
+"85727208A9C8D240B4FC103F2C4BDB67","08.기타",SOLID CAM (3축),SOLID CAM (3축),"","",hm.kim,2016-10-21 00:00:00.000,2016-10-21 00:00:00.000,hm.kim
+"87A26B0AF4660E4F902CE0D0B812C94D","05.PDMWorks Enterprise 관련",Enterprise PDM,SOLIDWORKS Enterprise PDM 2010 Process for 25 User," - 전 User 사용 가능
+ - 설계자용(모든기능포함)
+ - CAD DATA 관리기능
+ - CAD 통합 환경 제공
+ - 권한에 따른 데이타 관리
+ - Revision 관리
+ - Secure acceess to engineering data
+ - Automated revision control
+ - Greater design re-use
+ - Automated process control(ECO/ECN)
+ - Contributor, Viewer 포함
+ - 동시 접속자 25 User ( CAD Editer, Contributor, Viewer 포함하여 25 User)","",misjid,2010-10-25 00:00:00.000,2015-06-03 00:00:00.000,ksehee
+"895BCDCE297DDE40A91B24605BB930B8","11.기타Software",Visual Assist X,Visual Assist X - Standard License,"","",sjh,2014-06-27 00:00:00.000,2014-06-27 00:00:00.000,sjh
+"898B27AF8B3ED74DA227FEF2B5DFF754","10.MS계열 제품군",SolidWorks Edu. Edition Network 2013-2014 - Class-,SolidWorks Edu. Edition Network 2013-2014 - Class-,"","",dsjang,2014-11-07 00:00:00.000,2014-11-07 00:00:00.000,dsjang
+"89ACEB3907B97841850CDC0B8E11E264","10.MS계열 제품군",Visual studio,VSPro 2013 SNGL OLP NL,"","",sjh,2014-06-26 00:00:00.000,2014-06-26 00:00:00.000,sjh
+"8BB8AB019E334A469ED5A8908E331722","","",HP 646901-371,"HP DL360p Gen8 E5-2630 Base AP Svr  6core 2.3GHz, 4 x 4GB PC3L-10600R,P420i / 1GB FBWC
+Processor : (1) ntel® E5-2600 Processors
+Cache Memory : 10MB (1 x 10MB) Level 3, 15MB (1x15MB) L3
+Memory : 4GB (1 x 4GB DDR3-1333MHz RDIMMs), 16GB (4 x 4GB DDR3-1333MHz RDIMMs)
+Network Controller : HP Ethernet 1Gb 4-port 331FLR Adapter
+Storage Controller : HP Smart Array P420i/ZM (RAID 0/1/1+0), HP Smart Array P420i/1GB with FBWC (RAID 0/1/1+0/5/5+0)
+Hard Drive : None ship standard; includes 7 SFF hard drive blanks
+Internal Storage : Standard: 8 SFF HDD Bays
+Optical Drive Bay : 1 (Optional: DVD-ROM, DVD-RW)
+PCI-Express Slots : 2 standard (1-FH/HL, 1-LP) PCIe 3.0
+Power Supply : (1) HP 460W Common Slot Gold Hot Plug Power Supply (92% Efficient), (1) HP 460W CS Platinum Plus Hot Plug Power Supply (94% Efficient)
+Fans : 6 Hot Plug Redundant Fan Modules
+Management : HP iLO Management Engine (standard)
+Optional: HP Insight Control
+Form Factor : Rack (1U)
+Warranty : Server Warranty includes 3-Year Parts, 3-Year Labor, 3-Year Onsite support with next business day response","",sjh,2013-12-24 00:00:00.000,2013-12-24 00:00:00.000,sjh
+"8BC7D0123B30F8489A11850DAF4BD009","06.AutoCAD 관련",Autodesk Product Design Suit,Autodesk Product Design Suit Standard,"","",ktkim,2013-11-22 00:00:00.000,2013-11-22 00:00:00.000,ktkim
+"8E6465360FC226418FD56864EF6905C0","00.Subscription Service",Flow Simulation HVAC Module Subscription Service,SOLIDWORKS Flow Simulation HVAC Module Subscription Service,"","",ksehee,2015-02-10 00:00:00.000,2015-02-10 00:00:00.000,ksehee
+"8E936DBCE750AB409633D2D957C8225A","05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Professional,SOLIDWORKS PDM Professional Process for 25 User," - 25 User 동시 접속 가능 라이센스
+ - CAD Editor, Contributor, Viewer 모두 사용
+ - 설계자용 (모든기능포함)
+ - SOLIDWORKS & MultiCAD Add-in 
+ - 설계 데이터 관리 
+ - 데이터 통합 환경 제공
+ - 다양한 권한 부여 설정 
+ - Automated revision control
+ - BOM 데이터 관리 
+ - 파일 & 폴더 템플릿 기능
+ - 기존 프로젝트 재활용 
+ - Automated process control(ECO/ECN)","",admin,2016-03-10 00:00:00.000,2018-02-22 00:00:00.000,ksllkd
+"8EB5C5B2DC207943A06346292290799A","13. 3DEXPERIENCE Platform",CSV,Collaborative Industry Innovator," - 3D Markup
+   언제든 어떤 장비로든 사용 가능한 웹 기반의 2D 및 3D 마크업
+ - Bookmark Editor
+   컨텐츠와 문서 협업을 위한 북마크 생성 및 관리
+ - Chage Action
+   변경 조치 생성, 할당, 관리를 통한 모든 관련 영역을 아우르는
+   명확한 변경 결정 커뮤니케이션
+ - Collaborative Lifecycle
+   제품 컨텐츠의 생성, 검토, 출도, 폐기 단계를 관리 및 캡처
+ - Compare
+   두 모델을 비교하여  차이점을 찾기 위한 손쉬운 비교
+ - 3D Space
+   협업 공간 생성, 관리, 멤버 추가 및 저장된 컨텐츠에 바로 접근
+ - Issue 3D Review
+   3D 모델의 맥락에서 제품의 문제 식별 및 분석
+ - Issue Management
+   제품의 문제를 팀 구성원들 간 생성, 구성 및 전달
+ - Product Explorer
+   3D 시각화 및 트리 구조화를 통한 컨텐츠 탐색
+ - Route Management
+   3D Dashboard 내 승인 경로 생성 및 관리",CSV,admin,2020-10-13 00:00:00.000,2020-10-15 00:00:00.000,admin
+"8EBD10D0E226734EA064F50C5A3B8082","11.기타Software",Modview Design Suite,Modview Design Suite Standard (32/64bit),"* AutoCAD의 동일한 메뉴, 명령어 지원
+* DWG, DXF 파일 호환
+* 3D CAD file import
+  - Autodesk Inventor,CATIA V4~V6, Creo, I-deas, IGES, Industry Foundation Classes (IFC), JT, Parasolid, PRC, Pro/Engineer, Siemens PLM Software NX, Solid Edge, SolidWorks, STEP, Stereo Lithography (STL), VDA-FS, VRML
+* 2D CAD file import
+  - AutoCAD, CATIA V4~V5, Siemens PLM Software NX, CGM, PLT
+* OUT Line 도면 기능
+  - 외형라인 추출
+* SECTION 기능
+  - 단면 추출
+* 3D annotation 추가 치수 기능
+  - 3D 상의 각도측정
+  - 좌표값 표시
+  - 주석 첨부
+* MCP기능
+  - 지그 및 단면정보 통합관리",시장가격 : 350만원 책,ktkim,2013-09-10 00:00:00.000,2014-03-20 00:00:00.000,ktkim
+"8FB216FE8021C9488731A337DDCB258F","13. 3DEXPERIENCE Platform",SUN-1K,SimUnit 1K Credits,"","",kimhj,2022-02-28 00:00:00.000,2022-02-28 00:00:00.000,kimhj
+"90C77DD1B7E66F46B1DF09C3FDA73165","01.SolidWorks 관련",Term License,SOLIDWORKS Simulation Premium Entrepreneur,"","",ksllkd,2017-07-20 00:00:00.000,2017-07-20 00:00:00.000,ksllkd
+"9142E4B3F6177F49814A4C87D3F857FA","04.HW 관련",Dell R740,Dell R740 (랙 서버용 H/W_OS 포함),"- Windows Server 2012R2 Standard Edition (5UserCal 포함)
+- Intel Xeon Gold 6134 3.2G, 8C/16T, 10.4GT/s, 
+  24.75M Cache, Turbo, HT, (130W) 
+  8GB RDIMM, 2666MT/s, Single Rank- (32GB) 
+  BOSS controller card + with 2 M.2 Sticks 480G 
+  (RAID 1),FH - 2개 
+  4TB 7.2K RPM NLSAS 12Gbps 512n 3.5in Hot-plug 
+  Hard Drive -(12TB 사용 - 레이드5구성) 
+  PERC H730P RAID Controller, 2GB NV Cache, Mini card","",kimhj,2019-07-03 00:00:00.000,2019-07-03 00:00:00.000,kimhj
+"9220EBB755A7C34DB62D93E59C192560","13. 3DEXPERIENCE Platform",XPR-OC,Product Communicator,"","",yhi526,2022-12-28 00:00:00.000,2022-12-28 00:00:00.000,yhi526
+"929DE73C6905B4499A9CCD1B1F7E93BB","10.MS계열 제품군",Windows Server Standard,WinSvrStd 2012 SNGL OLP NL 2Proc,"","",admin,2014-02-05 00:00:00.000,2014-04-22 00:00:00.000,sjh
+"936123F424CFD54B8933CE2626959F6D","12.전략제품(보안)",NH_SE,NETHELPER 보안모듈,"매체보안 
+시스템보안 
+네트워크보안 
+문서보안","",sjh,2014-04-22 00:00:00.000,2014-04-22 00:00:00.000,sjh
+"9418F418F9D5C643B09F384055961A07","10.MS계열 제품군",Office,Office Standard Single OLP MA,"","",misjid,2009-07-06 00:00:00.000,2009-07-06 00:00:00.000,misjid
+"95E98D7164CFA543A450C0A121E06CAC","01.SolidWorks 관련",NET Licence to Strand Alone 변경,NET Licence to Strand Alone 변경,"","",kylee,2016-11-23 00:00:00.000,2016-11-23 00:00:00.000,kylee
+"98945102A886524E9554459F075B4129","01.SolidWorks 관련",SolidWorks Inspection Standard 2014,SolidWorks Inspection Standard 2014,"","",ksllkd,2014-10-28 00:00:00.000,2014-10-28 00:00:00.000,ksllkd
+"98AB453046F13540AADA4152700341FE","04.HW 관련",HP ZR22w LCD Monitor,HP ZR22w LCD Monitor,"","",shpark,2012-04-16 00:00:00.000,2012-04-16 00:00:00.000,shpark
+"991DFEBD99A5FA478B24BF429E6CF66D","13. 3DEXPERIENCE Platform",UES,Collaborative Designer for SOLIDWORKS,"- SOLIDWORKS Connector
+    3DEXPERIENCE platform에 SOLIDWORKS Data 저장
+    Multi-CAD 데이터 관리
+    시뮬레이션, 제조에 SOLIDWORKS 데이터 그대로 활용
+    Revesion, Data 성숙도 등 Lifecycle 관리
+    할당 업무 확인, 변경 프로세스 확인, 승인절차 진행 등 변경 관리
+    업무 부여 및 공유, 업무 프로세스 관리 등 업무 관리
+    북마크 폴더로 구조화 및 팀원들과 북마크 공유
+","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+"99E76D9641896740BDED67085FA19B8C","11.기타Software",Teamcenter Visualization Mock-up,Visualization Mock-up,"","",ktkim,2014-01-17 00:00:00.000,2014-01-17 00:00:00.000,ktkim
+"9A1A8E7F37CEA7409DA44FB3FC9D607B","00.Subscription Service",Reinstallation Fee,Reinstallation Fee (With Backdating per seat)," - SS 만료 후, 재 계약 시 발생되는 추가 비용
+ - SS 만료 후, 3개월 內 계약 기준
+
+","",shpark,2009-11-06 00:00:00.000,2015-01-28 00:00:00.000,admin
+"9A20E20791391043A29E317A82A29BF6","06.AutoCAD 관련",AutoCAD LT subscription,AutoCAD LT subscription,"- 1 year
+- renewal","",sjh,2014-02-06 00:00:00.000,2014-02-06 00:00:00.000,sjh
+"9AB6E3D700C125499306282F98821B0F","10.MS계열 제품군",Windows Pro K,Win Pro K 7 Korean DVD,"","",ktkim,2013-10-07 00:00:00.000,2013-10-07 00:00:00.000,ktkim
+"9B2B8954D16CE4449759BB5025786627","04.HW 관련",DL380,DL380G10," HPE ProLiant DL380 Gen10 8LFF with Universal Media Bay
+ Configure-to-order Server 
+ HPE DL380 Gen10 Intel Xeon-Gold 6134 (3.2GHz/8-core/130W)
+ FIO Processor Kit 
+ HPE 16GB (1x16GB) Single Rank x4 DDR4-2666 CAS-19-19-19
+ Registered Smart Memory Kit 
+ HPE 4TB SAS 12G Midline 7.2K LFF (3.5in) SC 1yr Wty Digitally
+ Signed Firmware HDD 
+ HPE 480GB SATA 6G Read Intensive M.2 2280 3yr Wty Digitally
+ Signed Firmware SSD 
+ HPE 9.5mm SATA DVD-RW Optical Drive 
+ HPE 96W Smart Storage Battery (up to 20 Devices) with 145mm
+ Cable Kit 
+ HPE Smart Array P408i-a SR Gen10 (8 Internal Lanes/2GB
+ Cache) 12G SAS Modular Controller 
+ HPE 800W Flex Slot Platinum Hot Plug Low Halogen Power
+ Supply Kit 
+ HPE Gen10 2U Bezel Kit 
+ HPE 2U Large Form Factor Easy Install Rail Kit 
+ HPE 3 Year Foundation Care 24x7 DL380 Gen10 Service","",kimhj,2019-07-03 00:00:00.000,2019-07-03 00:00:00.000,kimhj
+"9BBD49A009D3C04DBA83437C05AED014","04.HW 관련",HP WorkStation,HP WorkStation Z600,"-Intel Xeon E5540 2.53 8MB/1066 QC CPU-1
+-NVIDIA Quadro FX580 512MB Graphics
+-HP 160GB SATA 7200 1st HDD
+-HP 4GB (2x2GB) DDR3-1333 ECC 1-CPU RAM
+-Microsoft Vista32B Downgrade to XP32B OS
+-HP 16X DVD+-RW SuperMulti SATA 1st Drive
+-Microsoft Vista32B Downgrade to XP32B OS
+","",misjid,2009-07-15 00:00:00.000,2009-07-15 00:00:00.000,misjid
+"9D5F925217D755449017CEC4B317E66F","08.기타","",SOLIDWORKS 기본교육 교재,"","",kylee,2016-06-20 00:00:00.000,2016-06-20 00:00:00.000,kylee
+"9D97C84236EFF04EAE5554C8BBC7B52C","08.기타",Rhino5,Rhino5,"","",wjsdydtnr5,2016-06-07 00:00:00.000,2016-06-07 00:00:00.000,wjsdydtnr5
+"9FF2503095F1D94D96F225EE34F6B4AB","02.해석 제품",EMS,COSMOSEMS,"- Electrostatic
+ - Conduction
+ - Magnetostatic
+ - AC Magnetics
+ - Transient
+ - Multi-physics
+ - Material
+   . Built-in extensive library
+   . Linear
+   . Nonlinear
+   . User-definabl
+ - Excitations
+   . Voltages
+   . Currents
+   . Charges
+   . Charge distributions
+   . Polarization
+   . Coils
+   . Magnets
+   . Pulses","",misjid,2008-03-19 00:00:00.000,2015-02-05 00:00:00.000,admin
+"9FFDD46788A5B0459CCF2BF2CAD0A403","04.HW 관련",Workstation,HP Workstation Z800,"- HP Air Cooling Solution
+- HP Z800 850W 85% Efficient Chassis
+- Microsoft Vista64B Downgrade to XP64B OS
+- HP 1x Standard Heatsink Thermal Kit
+- Intel Xeon X5550 2.66 8MB/1333 QC CPU-1
+- HP Z800 Localization Kit
+- NVIDIA Quadro FX4800 1.5GB PCIe Graphics
+- HP 8GB (4x2GB) DDR3-1333 ECC 1-CPU RAM
+- HP 146GB SAS 15K 1st HDD
+- HP 300GB SAS 15K 2nd HDD
+- HP 16X DVD -RW SuperMulti SATA 1st Drive
+- HP 1.44MB Floppy Disk Drive
+- HP USB Optical Scroll Mouse
+- HP USB Standard Keyboard","",shpark,2009-11-03 00:00:00.000,2009-11-03 00:00:00.000,shpark
+A01E9B0D8958BF4498757A25E5533662,"13. 3DEXPERIENCE Platform",XWB,"3DEXPERIENCE SOLIDWORKS Professional","- SOLIDWORKS Connected
+    Standard 기능 + 추가 기능
+    Xtended Reality (XR) Exporter
+    공차 누적 해석 (TolAnalyst)
+    비용 고려 설계 (Consting)
+    리버스 엔지니어링 (Scan To 3D)
+    Sub-D modeling (with xShape App)
+- SOLIDWORKS Visualize Connected
+   고급 실사적 렌더링","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+A13FA69A2FD6D6479A2F9D9926D40A1A,"01.SolidWorks 관련",SolidWorks Advanced Topics 교재,SolidWorks Advanced Topics 교재," 1장. 탑-다운 방식 어셈블리모델링, 2장. MotionManager, 3장. 파일 참조, 4장. 멀티바디 솔리드, 5장. 스윕, 6장. 로프트, 7장. 곡면 이해, 8장. 곡면 개요, 9장. 솔리드-곡면 하이브리드 모델링, 10장. 불러온 지오메트리 수정 및 편집, 11장. 판금 파트 모델링, 12장. 판금 폼 도구, 13장. 추가 판금 피처, 14장. 용접구조물, 15장. 코어와 캐비티, 16장. 다중 분할 방향","",shpark,2010-06-21 00:00:00.000,2010-10-07 00:00:00.000,shpark
+A14335752ECAC041B79B1BD43BB38BC7,"06.AutoCAD 관련",Product Design Suite,AutoDESK Product Design Suite Premium,"","New 10% DC ( FY14 Q3, 2013. 08. 07. ~ 2013. 10. 18 )
+프로모션 건으로 기간 종료후 발주는 거래처 확인 필",ktkim,2013-09-11 00:00:00.000,2013-09-13 00:00:00.000,ktkim
+A16CDB8813AD054EB25AC5785CEDD2B7,"09.제품관리","",SOLIDWORKS Simulation Professional,"","",admin,2007-08-30 00:00:00.000,2015-11-23 00:00:00.000,ksllkd
+A1B629170FA4C641A4A88E0499730951,"01.SolidWorks 관련","",SOLIDWORKS CAM Professional,"","",ckjung,2017-11-08 00:00:00.000,2017-11-08 00:00:00.000,ckjung
+A1C348AF92AC3A438D0990DD9A04DE9C,"10.MS계열 제품군",Windows Professional,WinPro 8.1 SNGL Upgrd OLP NL,"",본 항목의 대리점가격은 글로벌 라이선스를 사용하는 고객사에 제안하기 위해 받은 가격으로 일반적인 제안 가격에 맞지 않음,ktkim,2014-02-03 00:00:00.000,2014-02-03 00:00:00.000,ktkim
+A21A60635C53EC4FAE9A4E47EDCA93C1,"10.MS계열 제품군",Windows Server CAL,WinSvrCAL 2012 SNGL OLP NL UsrCAL,"","",admin,2014-02-05 00:00:00.000,2014-04-22 00:00:00.000,sjh
+A248DD50D996F2419A5C2674A98FB7CC,"00.Subscription Service","",SOLIDWORKS Traning Book (본사 교재)," - 기본 / 고급 / 도면 (1 Set 3권)
+ - 기타 교재 비용 별도","",admin,2015-01-28 00:00:00.000,2015-01-28 00:00:00.000,admin
+A257A675047DC140BBBA3920CA019AA0,"08.기타",SOLIDWORKS 제품용역,SOLIDWORKS 제품용역," - Special Service로 1회에 한함.
+","",hhk,2014-07-21 00:00:00.000,2014-07-21 00:00:00.000,hhk
+A257B9FB5F287841B8F05909C0B93BE5,"04.HW 관련",HP Z420 Workstaion,HP Z420 Workstaion,"","",kylee,2014-11-04 00:00:00.000,2014-11-04 00:00:00.000,kylee
+A2EE679229CE7542ACFF6F9D75713262,"04.HW 관련",Edison+ 듀오,Edison+ 듀오,"제작 크기		225 x 145 x 150 mm
+제품 사이즈	467 x 324 x 454 mm
+소프트웨어	Creator K
+적층두께		0.1 - 0.3 mm
+적층방식		FDM (Fused Deposition Modeling)
+재료		PLA
+","",sjh,2014-02-10 00:00:00.000,2014-02-10 00:00:00.000,sjh
+A33858EFD3BE654E8F0A0B34835766DF,"08.기타",rebless(렌탈),rebless(렌탈),"","",wsshin,2021-01-08 00:00:00.000,2021-01-08 00:00:00.000,wsshin
+A35F7FD6F7CF784485B6D8808FD5FAD5,"08.기타","",키오스크,"","",wsshin,2015-01-15 00:00:00.000,2015-01-15 00:00:00.000,wsshin
+A395D82610FF09479585417247C8676F,"01.SolidWorks 관련",Term License,SOLIDWORKS Flow Simulation Term License,"","",ksllkd,2020-05-13 00:00:00.000,2020-05-13 00:00:00.000,ksllkd
+A41D37CDA651EA46B7CC06147BF8F0F5,"09.제품관리","",DesignSTAR Designer,"","",nana,2007-11-27 00:00:00.000,2007-11-27 00:00:00.000,mihwa
+A538E8C22EA71A46B309D2F98C330247,"10.MS계열 제품군",Office,Office Standard Single OLV MA,"","",misjid,2009-07-06 00:00:00.000,2009-07-06 00:00:00.000,misjid
+A5562996B672334AA175227744A61C6D,"00.Subscription Service",SOLIDWORKS Plastics Premium,SOLIDWORKS Plastics Premium Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",ksehee,2015-02-26 00:00:00.000,2018-11-30 00:00:00.000,intia
+A63B06AD76A1A1409B80BE9BDFC5FCD4,"04.HW 관련",PowerEdge(TM) T110 II Server,Dell(TM) PowerEdge(TM) T110 II Server,"","",ktkim,2014-04-11 00:00:00.000,2014-04-11 00:00:00.000,ktkim
+A68BA12B85BDB14E9206922EEB614699,"00.Subscription Service","",+++ 상기 공통 사항 +++," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - ND Rename Standard 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",ksehee,2015-02-24 00:00:00.000,2015-02-24 00:00:00.000,ksehee
+A7798B345D955F41942AD663F74F4338,"01.SolidWorks 관련",SolidWorks Education Edition,SolidWorks Edu. Edition Class Pack Subs. Service 45 User Network,"","",shpark,2009-11-25 00:00:00.000,2013-08-13 00:00:00.000,sjh
+A7BC334313AD264DBD2A0092D4D18339,"12.전략제품(보안)",NH_AS,NETHELPER 자산관리,"자산관리
+- 소프트웨어관리
+- 하드웨어관리
+- 실물자산관","",admin,2014-02-05 00:00:00.000,2014-03-11 00:00:00.000,ktkim
+A86D3D26A4652A4BAA39F0E2F6E789AF,"01.SolidWorks 관련",SolidWorks Essentials 교재,SolidWorks Essentials 교재," 1장. 개요, 2장. 스케치, 3장. 기초 파트 모델링, 4장. 주조 모델링, 5장. 패턴, 6장. 회전 피처, 7장. 쉘링 및 보강대, 8장. 편집 : 수정, 9장. 편집 : 설계변경, 10장. 파트의 설정, 11장. 설계 변수 테이블 및 수식, 12장. 바텀-업(Bottom-Up) 방식 어셈블리 모델링, 13장. 어셈블리 사용, 14장. DimXper와 TolAnalyst 사용","",shpark,2010-05-19 00:00:00.000,2010-05-19 00:00:00.000,shpark
+A8FAE0DA99642E4E8FAD62DA4C955743,"05.PDMWorks Enterprise 관련",Enterprise PDM,SOLIDWORKS Enterprise PDM 2010 Process for 50 User," - 전 User 사용 가능
+ - 설계자용(모든기능포함)
+ - CAD DATA 관리기능
+ - CAD 통합 환경 제공
+ - 권한에 따른 데이타 관리
+ - Revision 관리
+ - Secure acceess to engineering data
+ - Automated revision control
+ - Greater design re-use
+ - Automated process control(ECO/ECN)
+ - Contributor, Viewer 포함
+ - 동시 접속자 50 User ( CAD Editer, Contributor, Viewer 포함하여 50 User)","",misjid,2010-10-25 00:00:00.000,2015-06-03 00:00:00.000,ksehee
+A900D89B7014A246BB36A7086A682541,"13. 3DEXPERIENCE Platform",XWAO,"3DEXPERIENCE SOLIDWORKS Standard Offer","- 3D Creator
+  xDesign
+  Web상 3D Modeling Tool
+  파라메트릭 모델링 기법
+
+- 3DEXPERIENCE SOLIDWORKS Standard
+  SOLIDWORKS Connected
+   기존 SOLIDWORKS와 유사한 UI
+   설계 데이터를 Cloud에 저장
+   제조와의 Process 통합
+   파트 및 어셈블리 모델링, 2D 도면
+   고급 CAD파일 불러오기/내보내기
+
+- Collaborative Industry Innovator
+   3D Markup
+     언제든 어떤 장비로든 사용 가능한 웹 기반의 2D 및 3D 마크업
+   Bookmark Editor
+     컨텐츠와 문서 협업을 위한 북마크 생성 및 관리
+   Chage Action
+     변경 조치 생성, 할당, 관리를 통한 모든 관련 영역을 아우르는
+     명확한 변경 결정 커뮤니케이션
+   Collaborative Lifecycle
+     제품 컨텐츠의 생성, 검토, 출도, 폐기 단계를 관리 및 캡처
+   Compare
+     두 모델을 비교하여  차이점을 찾기 위한 손쉬운 비교
+   3D Space
+     협업 공간 생성, 관리, 멤버 추가 및 저장된 컨텐츠에 바로 접근
+   Issue 3D Review
+     3D 모델의 맥락에서 제품의 문제 식별 및 분석
+   Issue Management
+     제품의 문제를 팀 구성원들 간 생성, 구성 및 전달
+   Product Explorer
+     3D 시각화 및 트리 구조화를 통한 컨텐츠 탐색
+   Route Management
+     3D Dashboard 내 승인 경로 생성 및 관리
+
+- Collaborative Business Innovator
+  3D Dashboard
+    업무 최적화를 위해 필요한 기능(app) 구성 가능
+    실시간으로 다른 팀원들 진행 상황 모니터링
+  3D Swym
+    공지사항 포스팅
+    작업 지시
+    기술 문서 공유 및 관리
+  3D Drive
+    안전한 데이터 공유 가능
+    링크 통해 외부 인원과 공유
+    SOLIDWORKS 데이터를 통합하여 다이렉트로 오픈 가능
+  3D Play
+    3D 모델 데이터 뷰어
+    CAD 없이 웹 브라우저를 통하여 언제든지 접근 가능
+    측정, 주석, 마크업 추가하여 상세한 리뷰 가능
+  3D Search and 6WTags
+    데이터 특성에 따라 원하는 데이터를 쉽게 검색","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+AA79BA6CC1558541B264D97993B4D5C9,"05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Standard Viewer,SOLIDWORKS PDM Standard Viewer,"","",intia,2016-03-25 00:00:00.000,2016-03-25 00:00:00.000,intia
+AAD4BC6AF5CB664887DF592631AF5364,"13. 3DEXPERIENCE Platform",PGB,Platform Extended Storage,- Platform 저장공간 추가 25GB,"",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+AB8FEEDF1F9AA147A494D4BA82720AF0,"13. 3DEXPERIENCE Platform",SW2,"3DEXPERIENCE SOLIDWORKS Professional Package","- SOLIDWORKS Connected
+    Standard 기능 + 추가 기능
+    Xtended Reality (XR) Exporter
+    공차 누적 해석 (TolAnalyst)
+    비용 고려 설계 (Consting)
+    리버스 엔지니어링 (Scan To 3D)
+    Sub-D modeling (with xShape App)
+- SOLIDWORKS Visualize Connected
+   고급 실사적 렌더링
+
+- 3D Creator
+  xDesign
+    Web상 3D Modeling Tool
+    파라메트릭 모델링 기법
+
+- 3D Sculptor
+   xShape
+    서브디비전 모델링 기법
+    복잡한 곡면 설계 가능
+    산업 디자인용 색상표 이용하여 다양한 색상 정의","",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+AC5139C959392A48BDE1116C5472F410,"08.기타",ND-100D,CD영상등록기(ND-100D),"","",wsshin,2017-11-27 00:00:00.000,2017-11-27 00:00:00.000,wsshin
+AC809FD32A9FE64DB2FC9C688E938AE4,"02.해석 제품",SOLIDWORKS Plastics Professional,SOLIDWORKS Plastics Professional,"[General]
+ - SOLIDWORKS-embedded 
+ - 4,000개 이상 상용 플라스틱 재질 포함, 사용자 정의 재질 지원
+ - Shell,  Solid 3D Mesh
+[Simulation Capabilities]
+ - 충전 단계(첫 번째 단계 사출), 보압단계(두 번째 단계 사출)
+ - 러너 균형 맞춤, 다중 게이트
+ - 코인젝션, 다중샷
+ - 인서트 오버몰딩
+ - 보조가스, 섬유해석
+ - 반응 사출 금형(RIM; 열경화성 수지)
+ - 복굴절, 밸브 게이트 (순차 사출)
+[Model Geometry]
+ - 러너 설계 마법사
+ - 핫 & 콜드 러너
+ - 다중 캐비티 금형, 패밀리 금형
+[Results]
+ - 충전시간, 충전 용이 
+ - 유동 선단 온도 및 충전 완료 시 온도
+ - 전단 응력, 전단률
+ - 충전 완료 시 압력
+ - 웰드라인, 공기 갇힘
+ - 싱크 마크
+ - 체적 추축
+ - 충전 완료시 고화층 비율
+ - 형체력, 주기시
+ - 자동 보고서 : MS office word, powerpoint, HTML","[General]
+ - SOLIDWORKS-embedded 
+ - 4,000+ Commercial Plastics  / Customizable
+ - Automatic / Global, Local Mesh Refinement 
+ - Boundary Mesh (shell) / Solid 3D Mesh
+[Simulation Capabilities]
+ - Filling Phase (1st stage injection) 
+ - Packing Phase (2nd stage injection) 
+ - Automatic Gate Location(s) 
+ - Instantaneous Fill Time Plot 
+ - Runner Balancing 
+ - Multi Gates
+ - Sink Mark Analysis 
+ - Symmetry Analysis
+[Advanced Simulation Capabilities]
+ - Co-Injection
+ - Multi-Shot
+ - Insert Overmolding 
+ - Gas-Assist 
+ - Fiber Analysis 
+ - Reaction Injection Molding (RIM; Thermosets) 
+ - Birefringence 
+ - Valve Gates (sequential injection) 
+ - Venting Analysis 	
+[ Mold Geometry Support]
+ - Runner Design Wizard 
+ - Sprues and Runners
+ - Hot & Cold Runners 
+ - Multi-Cavity Molds 
+ - Family Molds 
+
+
+[Results]
+ - Fill Time
+ - Air Trap
+ - Short Shot
+ - Ease of Fill 
+ - Results Adviser 
+ - eDrawings Support 
+ - Pressure at End of Fill 
+ - Flow Front Temperature 
+ - Temperature at End of Fill 
+ - Shear Stress 
+ - Shear Rate 
+ - Cooling Time 
+ - Weld Lines 
+ - Sink Marks 
+ - Frozen Layer Fraction at End of Fill
+ - Clamp Force 
+ - Cycle Time 
+ - Automatic report: MS office word, powerpoint, HTM
+",shpark,2012-12-20 00:00:00.000,2015-02-13 00:00:00.000,jekim
+ACA8890F371BC944982D3A8085781DE6,"11.기타Software",RedHat Enterprise Linux Server 6,RedHat Enterprise Linux x86_64,Media & install service pack,"",sjh,2013-12-24 00:00:00.000,2013-12-24 00:00:00.000,sjh
+ACD8D410D880A84497BFC5C4E0C825AD,"04.HW 관련",HP Workstation Z400,HP Workstation Z400,"HP Z400 Workstation			
+HP Air Cooling Solution			
+HP Z400 475W 85% Efficient Chassis			
+Microsoft Vista32B Downgrade to XP32B OS			
+HP High Perf Heatsink Thermal Kit			
+Intel Xeon W3520 2.66 8MB/1066 QC CPU			
+HP Z400 Localization Kit			
+NVIDIA Quadro FX1800 768MB Graphics			
+HP 4GB (2x2GB) DDR3-1333 ECC RAM			
+HP 250GB SATA 7200 1st HDD			
+HP 16X DVD -RW SuperMulti SATA 1st Drive			
+HP 1.44MB Floppy Disk Drive			
+HP USB Optical Scroll Mouse			
+HP USB Standard Keyboard			
+HP 19"" LCD Moniter","",trha,2009-06-23 00:00:00.000,2009-12-14 00:00:00.000,misjid
+ACE8B966D2734F4C8505BBEEA4D1BEF9,"01.SolidWorks 관련","3D Routing & Cabling module",elecworks for SolidWorks - 3D Routing & Cabling module," - elecworks for SolidWorks 에 추가 Module
+ - 3D 전기배선 자동 작성 및 최적화
+ - 전기배선길이 자동계산
+ - wire 길이 및 속성 BOM작성","",chuls,2012-01-05 00:00:00.000,2012-01-05 00:00:00.000,chuls
+AE023C50288EFF4194F85F98378F1EBC,"04.HW 관련",UP Plus2,UP Plus2,"제작 크기	    140 x 140 x 135 mm
+제품 사이즈  245 x 260 x 350 mm
+소프트웨어   UP Software
+적층두께	    0.15, 0.2, 0.25, 0.30, 0.35, 0.40 mm
+적층방식	    FDM (Fused Deposition Modeling)
+재료	    ABS Plastic
+","",sjh,2014-02-10 00:00:00.000,2014-02-10 00:00:00.000,sjh
+AE2892319F892840A8093396777604EE,"11.기타Software",WinSvrStd,WinSvrStd 2012R2 SNGL OLP NL 2Proc,"- Server2008 다운그레이드 가능
+- 영문언어 선택 사용 가능","",sjh,2014-08-20 00:00:00.000,2014-08-20 00:00:00.000,sjh
+AF59E9062E173A4BBEF27811F877368E,"00.Subscription Service",SOLIDWORKS InspectionStandard Subscription Service,SOLIDWORKS Inspection Standard Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",ksehee,2016-02-02 00:00:00.000,2018-11-30 00:00:00.000,intia
+AFD4B2678AE27D4D8FEA085C20029E99,"04.HW 관련",Switch(L2),Summit X250e-48t,"48 10/100BASE-TX, 2 gigabit combo ports (2 			unpopulated gigabit SFP and 10/100/1000BASE-T), 		2 SummitStack™ Stacking ports, ExtremeXOS™ Edge 		license, 1 AC PSU, connector for EPS-160 external 		redundant PSU													
+","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+B04CF61074A9C843AE7801C1608BCC56,"10.MS계열 제품군",Visual Studio Professional with MSDN,VSProwMSDN ALNG LicSAPk OLP NL Qlfd,"","",sjh,2014-06-26 00:00:00.000,2014-06-26 00:00:00.000,sjh
+B1EAB3C35ADB654D95B6CB0BFAFAA5CB,"09.제품관리",SOLIDWORKS Flow Simulation,SOLIDWORKS Flow Simulation Standalone,"","",ksllkd,2016-01-27 00:00:00.000,2019-02-14 00:00:00.000,ksllkd
+B44170ADA435214583F36A292B6A9FE5,"05.PDMWorks Enterprise 관련",SOLIDWORKS Manage Professional,SOLIDWORKS Manage Professional,"","",intia,2018-11-02 00:00:00.000,2018-11-02 00:00:00.000,intia
+B468FC1F750A254391031DFFF69EAFA3,"10.MS계열 제품군",OS,Window Vista/XP OLV Single MA,"","",misjid,2009-07-06 00:00:00.000,2009-07-06 00:00:00.000,misjid
+B49722F78B90B244ACDFB75DC2BBBA93,"13. 3DEXPERIENCE Platform",XWA,"3DEXPERIENCE SOLIDWORKS Standard"," - SOLIDWORKS Connected
+   기존 SOLIDWORKS와 유사한 UI
+   설계 데이터를 Cloud에 저장
+   3DEXPERIENCE platfom으로 연결하여
+   강력한 해석, 수준 높은 데이터 관리, 제조와의 Process 통합
+   파트 및 어셈블리 모델링
+   2D 도면 작성
+   설계 재사용 및 자동화
+   고급 CAD파일 불러오기/내보내기","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+B686BDC8474D0C4E9C84D77C93B01B92,"09.제품관리","",SolidWorks Professional,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+B6E9A7FDED87C2408EC4371BADEA5A04,"11.기타Software",Modview Design Suite,Modview Design Suite Professional (32/64bit),"- MDS Standard 기능포함
+- MDS Tran (data translation)","",ktkim,2014-03-20 00:00:00.000,2014-03-20 00:00:00.000,ktkim
+B7CCA96EBB3CB443A040C0FE4CE21070,"01.SolidWorks 관련",SOLIDWORKS Composer 2015,SOLIDWORKS Composer 2015," - 기술 도해
+ - 분해도
+ - 조립 지침서
+ - 제조,공정 지침서
+ - 현장 서비스 메뉴얼
+ - 현장 서비스 가이드 
+ - 제품 및 웹 카달로그
+ - 마케팅 자료","",ksllkd,2014-11-20 00:00:00.000,2015-12-23 00:00:00.000,admin
+B7DECC3D0C4A9D45B0CDF52180F3F39B,"01.SolidWorks 관련",LC,"01 LC YLC 미제공 제품 SW","","",admin,2024-04-09 00:00:00.000,2024-04-09 00:00:00.000,admin
+B82B11FF3FAE504A9C17857CAD27C7B9,"12.전략제품(보안)",MirageWorks,MirageWorks vDESK v2.0,"- Named User License
+- 유지보수 금액은 도입가의 15%","",admin,2014-02-05 00:00:00.000,2014-02-06 00:00:00.000,ktkim
+B9B9549EAA6A3C4C9F48DAE82484B375,"00.Subscription Service",SOLIDWORKS Plastics Professional,SOLIDWORKS Plastics Professional Subscription Serv," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :
+","",ksehee,2015-02-26 00:00:00.000,2018-11-30 00:00:00.000,intia
+BA235414284E934DA5510778A7A9AA7F,"04.HW 관련",Edison+ 싱글,Edison+ 싱글,"제작 크기		225 x 145 x 150 mm
+제품 사이즈	467 x 324 x 380 mm
+소프트웨어	Creator K
+적층두께		0.1 - 0.3 mm
+적층방식		FDM (Fused Deposition Modeling)
+재료		PLA
+","",sjh,2014-02-10 00:00:00.000,2014-02-10 00:00:00.000,sjh
+BBEDA0563F4D834287539D0D08F608E6,"09.제품관리","",SolidWorks Simulation,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+BBF44F659DDCF642AABD253E1C929E18,"05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Standard CAD Editor,SOLIDWORKS PDM Standard CAD Editor,"","",intia,2016-05-09 00:00:00.000,2016-05-09 00:00:00.000,intia
+BC9F04B10FFD5046BA9EE07DB8CCF391,"11.기타Software",아래한글,한컴오피스 한글 2014 라이선스,"","",misjid,2009-05-27 00:00:00.000,2014-04-08 00:00:00.000,ktkim
+BDD30DD33446BA488B85338C7E00DB03,"12.전략제품(보안)",시큐어디스크,"[계정연동]일반적인 사용자 계정, 조직도 연동"," - 인사DB상 동일 유저 라이선스 구매 시 연동가능
+","",sjh,2014-07-30 00:00:00.000,2014-07-30 00:00:00.000,sjh
+BDEE3EBC72B3D143A6CFDFC9272D30A3,"13. 3DEXPERIENCE Platform",SLL,Structural Engineer,"- Advanced Linear 해석
+- 고유 진동 해석
+- 정상 상태 열해석
+- 선형 좌굴 해석
+- 하모닉 해석
+- 모달 동적 해석","",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+BEEFB144CA542848B3910469B00D61E7,"01.SolidWorks 관련",SOLIDWORKS Inspection Standard,SOLIDWORKS Inspection Standard 2015,"","",ksllkd,2015-06-04 00:00:00.000,2015-06-04 00:00:00.000,ksllkd
+BF888478F011B34D91F23CB3C1298D36,"02.해석 제품",SolidWorks Plastics,Upgrade SOLIDWORKS Plastics Standard to SOLIDWORKS Plastics Professional,"*SOLIDWORKS Plastic Standard 기능 포함
+[Simulation Capabilities]
+ - 보압단계(두 번째 단계 사출)
+ - 러너 균형 맞춤
+ - 코인젝션
+ - 다중샷
+ - 인서트 오버몰딩
+ - 보조가스
+ - 섬유해석
+ - 반응 사출 금형(RIM; 열경화성 수지)
+ - 복굴절
+ - 밸브 게이트 (순차 사출)
+[Model Geometry]
+ - 러너 설계 마법사
+ - 핫 & 콜드 러너
+ - 다중 캐비티 금형
+ - 패밀리 금형
+[Results]
+ - 충전시간, 충전 용이 
+ - 유동 선단 온도 및 충전 완료 시 온도
+ - 전단 응력, 전단률
+ - 충전 완료 시 압력
+ - 웰드라인, 공기 갇힘
+ - 싱크 마크
+ - 체적 추축
+ - 충전 완료시 고화층 비율
+ - 형체력, 주기시
+ - 자동 보고서 : MS office word, powerpoint, HTML","",jekim,2015-02-13 00:00:00.000,2015-02-13 00:00:00.000,jekim
+C0410D153E25804ABF45705B97497278,"09.제품관리","",SolidWorks Simulation Premium,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+C0DDACA990D66448BD979596383022BB,"08.기타",CADMAS,CADMAS,"","",csh,2013-09-25 00:00:00.000,2013-09-25 00:00:00.000,csh
+C1D9295FFB68004BBCEC7ECD0F6C0133,"05.PDMWorks Enterprise 관련",Enterprise PDM,SolidWorks Enterprise PDM 2013 Process for 25 User,"","",ksllkd,2013-08-13 00:00:00.000,2013-08-13 00:00:00.000,ksllkd
+C1E3EB5FDF800B4FA91CEE5ADC9D86C5,"05.PDMWorks Enterprise 관련",SOLIDWORKS Manage PDM Professional Contributor,SOLIDWORKS Manage PDM Professional Contributor,"- 관리자용 (PMS) 
+- 문서및 record의 검색, 미리보기,출력 
+- CAD Data 미리보기 (eDrawings 활용) 
+- non-CAD 데이터 미리 보기 / non-CAD 생성 및 편집 
+- Project 진척 및 Timesheets 확인 및 수정 
+- Dashboards 확인 및 보고서 작성 및 문서 생성 
+- Process 및 기록 확인 / Process 시작 및 진행
+- PDM Workflow에 의한 Rrocess 실행 
+- BOM 생성 및 수정 / Task 지정 및 수정 
+- PDM workflows 에 포함","",kimhj,2019-07-05 00:00:00.000,2019-07-05 00:00:00.000,kimhj
+C213AE8995A7AD4BB8560A7F43B14864,"12.전략제품(보안)",인건비,구축,- 구축 범위 및 고객 요청에 의해 결정,"",ktkim,2014-03-18 00:00:00.000,2014-03-18 00:00:00.000,ktkim
+C2200FE97CEDB646AC6F5895F9476351,"01.SolidWorks 관련",SolidWorks Edu. Single-User Sub Service Renewal,SolidWorks Edu. Single-User Sub Service Renewal 1 Year," - 1년간 Sub Service : On/Off-Line 기술 지원 및 업그레이드
+ - 계약기간 : 계약일로부터 1년간","1. SolidWorks의 기본 Bundle 및 공급가격은 본사(SolidWorks Corp.) 가격정책 및 신버전 출시에 의해 변경 될 수 있습니다.
+2. 교육기관용 라이센스(Edu. License)는 교육 및 연구활동의 목적 이외의 일반 기업체에서는 사용할 수 없습니다.",shpark,2009-09-03 00:00:00.000,2009-09-03 00:00:00.000,shpark
+C2FC2AD67A4D704AA791D8813F8A1467,"11.기타Software",CATIA,HDX(Mechanical Shape Design) 연간사용료,"CATIA 고급 사양
+- 고급 Surface 기능","",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+C41FE762DAC93D478EB903E59FEF31BA,"01.SolidWorks 관련",DraftSight,DraftSight Enterprise," - 최소 2Copy 이상부터 부매 가능 
+ - 2D 설계 도구
+ - 2D 문서 도구
+ - 커뮤니티 지원
+ - PDF 언더레이(PDF 문서의 빠른 페이지 첨부)
+ - TOOLBOX 지원
+ - 배치 인쇄
+ - 도면 비교(그래픽 비교를 통한 유사 도면의 차이 검색)
+ - Power Trim
+ - CNC용 G코드 생성기
+ - DGN 가져오기 / 첨부
+ - Draftsight API 지원 및 업그레이드
+ - 이미지 추적기
+ - 표 셀에서 수식 사용
+ - 해치 및 그라디언트 트리밍
+ - 3D 모델링 도구
+ - 네트워크 라이선스
+ - 배포 마법사","",ckjung,2020-02-11 00:00:00.000,2023-02-16 00:00:00.000,heesun1403
+C4382BA5CEEC3744A3204928AA59E176,"11.기타Software",ADAMS,Adams Machinery Module Bundle(Include all Adams Ma,"","Adams Machinery Module Bundle(Include all Adams Machinery
+Paid-up 30,200,000
+E&S        6,040,000",ktkim,2014-03-03 00:00:00.000,2014-03-03 00:00:00.000,ktkim
+C56AD85A98C4C4458035567013B96C69,"01.SolidWorks 관련",SOLIDWORKS Visualize Professional,SOLIDWORKS Visualize Professional Entrepreneur,"","",ksllkd,2017-07-20 00:00:00.000,2017-07-20 00:00:00.000,ksllkd
+C7C9ABC5A0970843B7F51DF9CE829930,"11.기타Software",ADAMS,Adams Vibration,"","Adams Vibration
+Paid=up  11,800,000
+E&S         2,360,000",ktkim,2014-03-03 00:00:00.000,2014-03-03 00:00:00.000,ktkim
+C7DD0F311652B146AA90E498F587E13B,"01.SolidWorks 관련",SolidWorks Routing 교재(영문),SolidWorks Routing 교재(영문),"","",mchjung,2011-01-04 00:00:00.000,2011-03-25 00:00:00.000,mchjung
+C831097DFFABED4A9E69FA95C9EF8B5F,"12.전략제품(보안)",NH_ASPACK,NETHELPER 자산관리 Pack," Agent관리 	
+ 환경관리 	
+ 자산관리 
+	 소프트웨어관리 
+	 하드웨어관리 
+	 실물자산관리 
+ 배포관리 	
+ 전원관리 	
+ 장애관리 
+	 원격관리 
+	 장애처리 
+ 설치유도 
+	 AIMS 
+","",ktkim,2013-11-27 00:00:00.000,2014-02-05 00:00:00.000,admin
+C8564E0B3309AB429ADDDCF3243A2EDB,"10.MS계열 제품군",Dell 프리시즌 타워 5810,Dell 프리시즌 타워 5810,"인텔 제온 프로세서 E5-1630 v3 (Four Core HT, 10MB 캐시, 3.7GHz Turbo)
+16GB (4x4GB) 2133MHz DDR4 RDIMM ECC
+256GB 2.5인치 Serial ATA 솔리드 스테이트 드라이브
+ 3.5인치 1TB SATA 7.2k RPM HDD
+NVIDIA® Quadro® K2200 4GB (2 DP, DL-DVI-I) (1 DP to SL-DVI 어댑터)
+DVD+/-RW Drive
+전원 코드 220V (한국)
+Dell USB 옵티컬 마우스 - MS111 - 블랙
+Dell™ KB212-B USB 기본형 비즈니스 키보드 (한국어)
+Windows 7 Professional 한국어 64비트
+3년 ProSupport: 익일(영업일 기준) 방문 서비스
+","",thkim,2016-08-23 00:00:00.000,2016-08-23 00:00:00.000,thkim
+C9642889BEAFC34EAC84D4B6B3EC7ABE,"01.SolidWorks 관련","","3DVIA Composer Edu. Edition Net (10 User)"," - 기술 도해
+ - 분해도
+ - 조립 지침서
+ - 제조,공정 지침서
+ - 현장 서비스 메뉴얼
+ - 현장 서비스 가이드 
+ - 제품 및 웹 카달로그
+ - 마케팅 자료
+
+ - SolidWorks File Import Module 포함.
+ - 교육 1일 포함.","",shpark,2010-11-04 00:00:00.000,2010-11-04 00:00:00.000,shpark
+CA891ED9C30F67418F9B4DD07324DD7A,"10.MS계열 제품군",UP Mini,UP Mini,"제작 크기		120 x 120 x 120 mm
+제품 사이즈	240 x 355 x 340 mm
+소프트웨어	UP Software
+적층두께		0.20, 0.25,0.30, 0.35 mm
+적층방식		FDM (Fused Deposition Modeling)
+재료		ABS Plastic
+","",sjh,2014-02-10 00:00:00.000,2014-02-10 00:00:00.000,sjh
+CB470FDF8AB88A42A5C70AB80B221AB7,"11.기타Software",Modview Design Suite,Modview Design Suite Pro.DEMO용 for CH(32/64),"* Modview Design Suite Standard 포함
+* Weld 기능
+  - 용접점 자동생성 및 시뮬레이션, 관리
+* File Export기능","",ktkim,2013-09-10 00:00:00.000,2013-12-17 00:00:00.000,sjh
+CB6B20D9F6AB774E98CB443FCAB0CE8D,"00.Subscription Service","",SOLIDWORKS Advanced Training," - nodeDATA 모든 사내 정기교육 과정
+    - Advanced (Setting / 곡면 / 판금 / 용접 구조물 / 배관 / 애니메이션 / PhotoView360) 
+    - Simulation (구조 / 유동 / Plastics)
+    - EPDM 
+    - Composer
+    - Electrical (2D / 3D)
+    - Inspection 
+ - 인원 협의 필요","",admin,2015-01-28 00:00:00.000,2015-01-29 00:00:00.000,ksehee
+CBD506E58DA9DB4F82BFF028AF6A414E,"05.PDMWorks Enterprise 관련",SOLIDWORKS WorkGroup PDM Viewer,SOLIDWORKS WorkGroup PDM Viewer," - WorkGroup PDM 서버에 있는 파일에 대한 뷰어
+ - 파일 검색 및 레포트 
+ - 파일 데이터 속성 정보 확인
+ - 파일 미리 보기 
+ - 1 Seat 구입 시 5 User 사용가능","",intia,2016-09-19 00:00:00.000,2016-09-27 00:00:00.000,intia
+CBD6A54982F7AC4DB214CADE5C401D0F,"02.해석 제품",SOLIDWORKS Simulation Standard,SOLIDWORKS Simulation Standard,"[Simulation Capability]
+ - Linear Static Analysis
+ - Time Based Motion Simulation
+ - Fatigue Analysis
+ - Trend Tracker
+[Geometry]
+ - Part, Assembly 시뮬레이션
+ - Solid, Shell, Beam 및 Truss 모델벽
+ - 분산 및 집중 질량
+[결과 도구]
+ - 합력 및 부품 변위 플롯
+ - VonMises 응력, 주응력, 부품 응력 플롯
+ - 주요 변형, 부품 변형, 변형 에너지 밀도 플롯
+ - 다축 응력 하중 기반 볼트 및 핀 안전계수 플롯
+ - 다중 해석 스터디를 통해 결과 비교
+ - 피로 수명 및 손상 플롯 
+ - 모션 해석의 결과를 정적 해석 스터디에서 불러오기
+[결과 공통]
+ - HTML 및 DOC 보고서 형식
+ - 시뮬레이션 결과의 eDrawings 게시
+ - BMP, JPEG, VRML, XGL 또는 AVI 파일로 플롯 저장 
+ - 시뮬레이션 라이브러리 파일/템플릿",* 2014년 7월 31일 출시(SOLIDWORKS 2014 SP1.0 부터 적용),gongsa,2014-09-01 00:00:00.000,2016-05-11 00:00:00.000,jekim
+CCB1BEF91379DF4288F0F6EC83A69A4F,"00.Subscription Service",SOLIDWORKS Inspection Professional SS,SOLIDWORKS Inspection Professional Subscription Service,"- 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",ckjung,2016-02-02 00:00:00.000,2018-11-30 00:00:00.000,intia
+CCF5F50CB3C74946AFA5D8B9B0085582,"10.MS계열 제품군",SQL CAL,SQLCAL 2012 SNGL OLP NL UsrCAL,"","소비자가격: 421,000",admin,2014-02-05 00:00:00.000,2014-02-05 00:00:00.000,ktkim
+CD7310451144AA46AEEC9A15D3310BF6,"08.기타",S/W,V3 IS 8.0 Platinum (100~299),"
+
+","",misjid,2009-05-27 00:00:00.000,2009-05-27 00:00:00.000,misjid
+CD8B40ED9AD1754580F78CFFDC76371F,"00.Subscription Service",SOLIDWORKS Electrical 3D Sub,SOLIDWORKS Electrical 3D Subscription," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2013-10-02 00:00:00.000,2018-11-30 00:00:00.000,intia
+CD95FE7FDCB15E41B89E5C1BE733BC4C,"01.SolidWorks 관련",SolidWorks Sheet metal교재,SolidWorks Sheet metal교재(영문),"","",mchjung,2011-08-31 00:00:00.000,2011-08-31 00:00:00.000,mchjung
+CE5251050C77FA4B815318D3415E2006,"04.HW 관련",병렬UPS 장비,TJU701,"20KVA (40KVA 까지 확장 가능)		
+입/출력 전압 : 단상 220V					
+ES 100A 배터리, 12V (세방전지)16ea				
+Hour : 30분						
+큐비클 (배터리 함체)1ea													
+","",misjid,2009-05-18 00:00:00.000,2009-05-18 00:00:00.000,misjid
+CEC98D738327A34EB9A2501252CD8D73,"04.HW 관련",xSeries,x3650 M4,"1xSNB E5-2609 2.4GHz 4C 80W,1x4GB(1.35V,1RX4),8 HDD Bays(2.5"") 1 x 550W RoMB(Raid 0,1,10,no battery, no cache), 3yr
+4GB (1x4GB, 1Rx4, 1.35V) PC3L-10600 CL9 ECC DDR3 1333MHz LP RDIMM
+ 1TB 7.2K 6Gbps NL SAS 2.5"" SFF HS  
+ServeRAID M5100 Series 512MB Cache/RAID 5 Upgrade
+ System x 550W High Efficiency Platinum AC Power Supply
+IBM UltraSlim Enhanced SATA Multi-Burner
+x3650 M4 ODD Cable
+","100명 동시접속",ktkim,2014-02-05 00:00:00.000,2014-02-05 00:00:00.000,ktkim
+CFC859671A6C41469993AB874C2718BA,"04.HW 관련",HP 646901-371,HP 646901-371,"HP DL360p Gen8 E5-2630 Base AP Svr  6core 2.3GHz, 4 x 4GB PC3L-10600R,P420i / 1GB FBWC
+Processor : (1) ntel® E5-2600 Processors
+Cache Memory : 10MB (1 x 10MB) Level 3, 15MB (1x15MB) L3
+Memory : 4GB (1 x 4GB DDR3-1333MHz RDIMMs), 16GB (4 x 4GB DDR3-1333MHz RDIMMs)
+Network Controller : HP Ethernet 1Gb 4-port 331FLR Adapter
+Storage Controller : HP Smart Array P420i/ZM (RAID 0/1/1+0), HP Smart Array P420i/1GB with FBWC (RAID 0/1/1+0/5/5+0)
+Hard Drive : None ship standard; includes 7 SFF hard drive blanks
+Internal Storage : Standard: 8 SFF HDD Bays
+Optical Drive Bay : 1 (Optional: DVD-ROM, DVD-RW)
+PCI-Express Slots : 2 standard (1-FH/HL, 1-LP) PCIe 3.0
+Power Supply : (1) HP 460W Common Slot Gold Hot Plug Power Supply (92% Efficient), (1) HP 460W CS Platinum Plus Hot Plug Power Supply (94% Efficient)
+Fans : 6 Hot Plug Redundant Fan Modules
+Management : HP iLO Management Engine (standard)
+Optional: HP Insight Control
+Form Factor : Rack (1U)
+Warranty : Server Warranty includes 3-Year Parts, 3-Year Labor, 3-Year Onsite support with next business day response","",sjh,2013-12-24 00:00:00.000,2013-12-24 00:00:00.000,sjh
+D056182889349C4FA256215BC35C9413,"11.기타Software",ALC (Annual License Charge),ALC (Annual License Charge),"","",kylee,2015-10-14 00:00:00.000,2015-10-14 00:00:00.000,kylee
+D07FBFB8F5847B4F9CEE9D9D18C16B02,"10.MS계열 제품군",Visual Studio Premium with MSDN,VSPremwMSDN ALNG LicSAPk OLP NL Qlfd,"","",sjh,2014-06-26 00:00:00.000,2014-06-26 00:00:00.000,sjh
+D2599E9C8A121947B7FA1E42A4215C51,"10.MS계열 제품군",CATIA V5,"5691-ED2","CATIA V5 Academic Learn Package
+- Fully License for Education","매입 단가 부가세별도
+PLC: 976,500 
+RLC: 155,465
+
+부가세별도 List Price (포함가격)
+PLC+RLC = 1,484,900 (1,633,390 원)",ktkim,2014-07-17 00:00:00.000,2014-07-17 00:00:00.000,ktkim
+D299E69F097F1E4897CEABB644F15A82,"01.SolidWorks 관련",SOLIDWORKS Professional Term License,SOLIDWORKS Professional Term License,"","",ksllkd,2016-12-09 00:00:00.000,2016-12-09 00:00:00.000,ksllkd
+D2FA40B94A7CA44F8E44FAEBB0DC52A6,"00.Subscription Service",SOLIDWORKS PDM Standard Contributor Subscription,SOLIDWORKS PDM Standard Contributor Subscription,"","",intia,2016-03-25 00:00:00.000,2016-03-25 00:00:00.000,intia
+D4204659D74C6B4BB719CD9DC471C765,"08.기타",SMAP3D Piping (Floating Type),SMAP3D Piping (Floating Type),"","",ijhwang,2024-01-09 00:00:00.000,2024-01-09 00:00:00.000,ijhwang
+D4DEB995FFD09A428588F125347E7B97,"10.MS계열 제품군",MS Office,WinPro 8 MVL Legalization GetGenuine SMB,"","",ktkim,2013-10-07 00:00:00.000,2013-10-07 00:00:00.000,ktkim
+D550E584B7270747826AD3F55272ADA7,"05.PDMWorks Enterprise 관련",SolidWorks Workgroup PDM Contributor Network,SolidWorks Workgroup PDM Contributor Network," - Network Ver. (Not associated to an existing SNL installation)
+ - 제품 데이터 관리
+ - 보안 액세스 : 네트워크 상에서 또는 웹을 통해 허가된 개인에게 액세스 권한을 부여
+ - 수정 제어 : 파일을 덮어쓰는 것을 방지하고 리비젼 관리
+ - 파일 검색 : 메타데이타(사용자 정의 속성)을 검색
+ - Vault 설정 : 관리자 권한, 전체 설정, 로그 파일 위치를 지정
+ - 사용자와 그룹 : 사용자와 그룹을 추가, 수정, 삭제
+ - 검색 : 볼트 메타데이터의 색인을 사용
+ - 수정본 기록 구조 : 볼트에 문서 수정본 기록 구조를 정의
+ - 프로젝트 : 프로젝트와 권한, 대량 문서 체크인, 복사와 보관 문서 수정본 등을 관리
+ - 문서 수정 상태 : 문서를 개발하는 과정에서 그 수정 상태에 대한 규칙을 설정
+ - 속성 : 속성을 추가, 수정, 삭제, 매핑
+ - Vault Server Setting 1 Day
+ - 사용자 및 관리자 교육 1 Day","",shpark,2010-02-25 00:00:00.000,2010-02-25 00:00:00.000,shpark
+D56123187C60F84CA7BDC46E0A46E121,"13. 3DEXPERIENCE Platform",XPP,Project Planner,"- Project Planning
+   Project 생성 및 정의
+   Project 진행 상황 실시간 Update
+   Project Resource 및 업무 Drill-Down 보기
+   업무 생성 및 기간 설정
+   업무 담당자 지정
+   마일 스톤(중요 시점) 및 작업 간 관계 정의
+   Key 마일 스톤에 따른 일정 최적화
+   프로젝트 별 멤버 지정
+   프로젝트 산출물 및 참고 자료 관리
+   업무 별 산출물 연결","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+D677281B0EE1E04A8C4E3E6DA6657378,"07.SolidWorks 교육관련",Advance교육,Advance교육,"","",admin,2008-01-08 00:00:00.000,2008-01-08 00:00:00.000,admin
+D6B03EA4665045459A302A5D5623697F,"11.기타Software",HyperWorks V13.0,HyperWorks V13.0,"","",kylee,2015-10-14 00:00:00.000,2015-10-14 00:00:00.000,kylee
+D83AFB4914EFF64FB706C3BB106F3AEE,"02.해석 제품",SOLIDWORKS Plastics Premium,SOLIDWORKS Plastics Premium,"[General]
+ - SOLIDWORKS-embedded 
+ - 4,000개 이상 상용 플라스틱 재질 포함, 사용자 정의 재질 지원
+ - Shell,  Solid 3D Mesh 
+[Simulation Capabilities]
+ - 충전 단계(첫 번째 단계 사출), 보압단계(두 번째 단계 사출)
+ - 러너 균형 맞춤, 다중 게이트, 코인젝션, 다중샷
+ - 인서트 오버몰딩
+ - 보조가스, 섬유해석
+ - 반응 사출 금형(RIM; 열경화성 수지)
+ - 복굴절, 밸브 게이트 (순차 사출)
+ - 냉각 라인 해석
+ - 변형 해석
+[Model Geometry]
+ - 러너 설계 마법사, 핫 & 콜드 러너
+ - 다중 캐비티 금형, 패밀리 금형
+ - 냉각 라인, 배플 & 버블러,  형상 적응형 냉각 수로
+ - 금형 인서트
+[Results]
+ - 충전시간, 충전 용이 
+ - 유동 선단 온도 및 충전 완료 시 온도
+ - 전단 응력, 전단률
+ - 충전 완료 시 압력
+ - 웰드라인, 공기 갇힘
+ - 싱크 마크, 싱크 마크 프로파일
+ - 체적 추축, 충전 완료시 고화층 비율
+ - 형체력, 주기 시간
+ - 파트 냉각 시간, 냉각 완료시 파트 온도, 냉각 완료시 금형 온도
+ - 잔류 응력에 의한 변형
+ - 자동 보고서 : MS office word, powerpoint, HTML
+ - SOLIDWORKS SIMULATION Premium과 결과 호환","[General]
+- SOLIDWORKS-embedded 
+ - 4,000+ Commercial Plastics  / Customizable
+ - Automatic / Global, Local Mesh Refinement 
+ - Boundary Mesh (shell) / Solid 3D Mesh
+[Simulation Capabilities]
+ - Filling Phase (1st stage injection) 
+ - Packing Phase (2nd stage injection) 
+ - Automatic Gate Location(s) 
+ - Instantaneous Fill Time Plot 
+ - Runner Balancing 
+ - Sink Mark Analysis
+ - Multi Gates 
+ - Symmetry Analysis
+[Advanced Simulation Capabilities]
+ - Co-Injection
+ - Multi-Shot
+ - Insert Overmolding 
+ - Gas-Assist 
+ - Fiber Analysis 
+ - Reaction Injection Molding (RIM; Thermosets) 
+ - Birefringence 
+ - Valve Gates (sequential injection) 
+ - Venting Analysis 
+ - Cooling Line Analysis 
+ - Conformal Cooling Analysis 
+ - Warpage Analysis 	
+[ Mold Geometry Support]
+ - Runner Design Wizard 
+ - Sprues and Runners
+ - Hot & Cold Runners 
+ - Multi-Cavity Molds 
+ - Family Molds 
+ - Cooling Lines 
+ - Baffles & Bubblers 
+ - Conformal Cooling Channels 
+ - Mold Inserts 
+[Results]
+ - Fill Time 
+ - Air Trap
+ - Short Shot
+ - Ease of Fill 
+ - Results Adviser 
+ - eDrawings Support 
+ - Pressure at End of Fill 
+ - Flow Front Temperature 
+ - Temperature at End of Fill 
+ - Shear Stress 
+ - Shear Rate 
+ - Cooling Time 
+ - Weld Lines 
+ - Sink Marks 
+ - Frozen Layer Fraction at End of Fill
+ - Clamp Force 
+ - Cycle Time 
+ - Sink Mark Profiles
+ - Volumetric Shrinkage 
+ - Mold Temperature at Cooling End 
+ - Displacement due to Residual Stress 
+ - Automatic report: MS office word, powerpoint, HTML
+*SOLIDWORKS SIMULATION Premium과 결과 호환",shpark,2014-04-08 00:00:00.000,2015-02-13 00:00:00.000,jekim
+D8A1967A571DF84F91011450B78798B3,"05.PDMWorks Enterprise 관련",SolidWorks Workgroup PDM Contributor,SolidWorks Workgroup PDM Contributor," - Stand Alone Ver.
+ - 제품 데이터 관리
+ - 보안 액세스 : 네트워크 상에서 또는 웹을 통해 허가된 개인에게 액세스 권한을 부여
+ - 수정 제어 : 파일을 덮어쓰는 것을 방지하고 리비젼 관리
+ - 파일 검색 : 메타데이타(사용자 정의 속성)을 검색
+ - Vault 설정 : 관리자 권한, 전체 설정, 로그 파일 위치를 지정
+ - 사용자와 그룹 : 사용자와 그룹을 추가, 수정, 삭제
+ - 검색 : 볼트 메타데이터의 색인을 사용
+ - 수정본 기록 구조 : 볼트에 문서 수정본 기록 구조를 정의
+ - 프로젝트 : 프로젝트와 권한, 대량 문서 체크인, 복사와 보관 문서 수정본 등을 관리
+ - 문서 수정 상태 : 문서를 개발하는 과정에서 그 수정 상태에 대한 규칙을 설정
+ - 속성 : 속성을 추가, 수정, 삭제, 매핑
+ - Vault Server Setting 1 Day
+ - 사용자 및 관리자 교육 1 Day","",shpark,2010-02-25 00:00:00.000,2010-02-25 00:00:00.000,shpark
+D97CF5F99987374AA91390CE4A9B501E,"01.SolidWorks 관련",SolidWorks Advanced Part Modeling 교재(영문),SolidWorks Advanced Part Modeling 교재(영문),"","",mchjung,2012-10-22 00:00:00.000,2012-10-22 00:00:00.000,mchjung
+D9DC6DE4FB60C743BD914C571CEDBD93,"10.MS계열 제품군",OS,Window Vista/XP OLP Single,M/S OS MA/SA 제외 제품,"",misjid,2009-05-27 00:00:00.000,2009-07-06 00:00:00.000,misjid
+DA171A5D478EDF45AB5EBE550DC1E365,"08.기타","",Draftsight,"","",ckjung,2017-03-30 00:00:00.000,2017-03-30 00:00:00.000,ckjung
+DBA9ED90AF9E2E4B8715A1A76172DE3B,"00.Subscription Service",SOLIDWORKS Simulation,SOLIDWORKS Simulation Professional Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2009-02-17 00:00:00.000,2018-11-30 00:00:00.000,intia
+DCD7C2F4EF86E243BB15EE78C14379DD,"",SX mini-GBIC,Interface,"Mini-GBIC, SFP, 1000BaseSX, LC Connector, 550m 		transmission with 50/125 μm MMF and 275m 			transmission with 62.5/125 μm MMF													
+","",misjid,2009-05-08 00:00:00.000,2009-05-08 00:00:00.000,misjid
+DD3BEFC43CB892468D3832347454D9A0,"11.기타Software",CATIA,MCE(Mechanical Product Creation),"CATIA 고급 사양
+- 고급 Solid 기능","",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+DE639F8FC9750744AEF77F0C04A6D38A,"04.HW 관련",병렬UPS장비,SURT20KRMXLI," 출력 용량  16 kW / 20 kVA   
+ 최대 구성 전력  16 kW / 20 kVA   
+ 공칭 출력 전압  230V   
+ Output Voltage Note  220 : 230 또는 240 공칭 출력 전압에 대해 구성가능   
+ 100% 부하에서의 효율  94%   
+ 출력전압 파형 왜율  5% 미만   
+ 출력주파수(전원에 동기)  50/60Hz +/- 3Hz ~ +/- 0.1 사용자 조정 가능   
+ Crest Factor  3 : 1   
+ 파형  정현파   
+ 출력배선연결  (1) Hard Wire 3-wire (H N + G)    
+ (1) Hard Wire 5-wire (3PH + N + G)    
+ (8) IEC 320 C19    
+ (2) IEC Jumpers    
+ efficiency_half_load  94%   
+ Bypass  내장 정적 바이패스,내부 바이패스(자동 및 수동),외부 바이패스(옵션)   
+ 입력  
+ 공칭 입력 전압  230V   
+ 입력 주파수  40 - 70Hz(자동 감지)   
+ 입력배선연결  Hard Wire 3 wire (1PH+N+G)    
+ Hard Wire 5-wire (3PH + N + G)    
+ 허용 입력 전압 범위 
+  160 - 280V   
+ 기타 입력 전압  220,240   
+ 최대 입력 전류  111A   
+ 입력 차단기 용량  125A   
+ input_harmonic_distortion  Less than 5% for full load   
+ 배터리 & 정전보상시간  
+ 배터리 유형  무보수 무누액 연축전지(sealed Lead-Acid battery) : 누액방지   
+ 사전 설치된 배터리  4   
+ 일반적인 충전시간  2.50 시간   
+ 교체 배터리 카트리지  RBC44   
+ RBC™ 수량  4   
+ nominal_battery_voltage  +/-192 V (split battery referenced to neutral)   
+ discharge_battery_voltage  +/-154 V   
+ inverter_efficiency  93%   
+ 통신 & 관리  
+ 인터페이스 포트  DB-9 RS-232,RJ-45 10/100 Base-T,스마트 슬롯   
+ 사전 설치된 SmartSlot™ 카드  AP9619   
+ 제어판  다기능 LCD 상태 및 제어 콘솔   
+ 경보음  시청각 경보 - 지연 조절 가능   
+ Emergency Power Off (EPO)  예   
+ 서지 방지 및 필터링  
+ 필터링  전시간 다중극 잡음 필터링 : 0.3% IEEE 서지 렛스루 : 제로 클램핑 응답시간 : UL 1449 충족합니다   
+ 외형  
+ 최대 높이  533.00 mm   
+ 최대 폭  432.00 mm   
+ 최대 깊이  773.00 mm   
+ 랙 높이  12U   
+ 순중량  247.73 KG   
+ 선적 중량  314.27 KG   
+ 선적 높이  990.00 mm   
+ 선적 폭  610.00 mm   
+ 선적 깊이  1003.00 mm   
+ 색상  Black   
+ Units per Pallet  1.00   
+ 환경  
+ 주위 온도(동작시)  0 - 40 °C   
+ 상대 습도(동작시)  0%   
+ 고도(동작시)  0-3000 미터   
+ 보관 온도  -15 - 45 °C   
+ 보관 상대 습도  0%   
+ 보관 고도  0-15000 미터   
+ 소음(1m 거리)  59.00 dBA   
+ 발열량  3461.00 BTU/hr   
+ 적합 규격  
+ 승인  EN/IEC 62040-2,EN/IEC 62040-1-1,VDE   
+ 표준 보증  2 years repair or replace   
+ Runtime  
+ 최대부하  16000W 시   5Min 
+ 중간부하    8000W 시  15Min 
+ 출장 설치비 포함
+","",misjid,2009-05-18 00:00:00.000,2009-05-18 00:00:00.000,misjid
+DEE4F1293A46D7458CE6309488897088,"11.기타Software",S/W,알약 1.0 (100~299),"
+
+","",misjid,2009-05-27 00:00:00.000,2009-07-06 00:00:00.000,misjid
+DF1157CC04E06A4E9E0BCD45C0AB2DBF,"04.HW 관련",백신,Office scan server 8.0,"","",misjid,2009-05-18 00:00:00.000,2009-05-18 00:00:00.000,misjid
+E093C7511E80AC42984774DF2CC3543E,"05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Professional,SOLIDWORKS PDM Professional CAD Editor," - 설계자용 (모든기능포함)
+ - SOLIDWORKS & MultiCAD Add-in 
+ - 설계 데이터 관리 
+ - 데이터 통합 환경 제공
+ - 다양한 권한 부여 설정 
+ - Automated revision control
+ - BOM 데이터 관리 
+ - 파일 & 폴더 템플릿 기능
+ - 기존 프로젝트 재활용 
+ - Automated process control(ECO/ECN)
+","",admin,2009-02-17 00:00:00.000,2017-03-08 00:00:00.000,ksllkd
+E09F467F0048CA4D8AAEC34EEA6929C0,"01.SolidWorks 관련","",SOLIDWORKS Composer 2013," - 기술 도해
+ - 분해도
+ - 조립 지침서
+ - 제조,공정 지침서
+ - 현장 서비스 메뉴얼
+ - 현장 서비스 가이드 
+ - 제품 및 웹 카달로그
+ - 마케팅 자료
+
+ - 교육 1일 포함","",misjid,2010-05-19 00:00:00.000,2014-04-23 00:00:00.000,ksehee
+E1CB830290C79C4D9AD63B36C598BFC3,"10.MS계열 제품군",Office,Office Standard Single OLP,"
+
+","",misjid,2009-05-27 00:00:00.000,2009-07-06 00:00:00.000,misjid
+E27CAC2422CC324181F124704ECE2B43,"08.기타",L2 Switch,WS-C2960-24PC-L,"Catalyst 2960 24 10/100 PoE + 2 T/SFP LAN Image
+무상유지보수1년","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+E3862159A8ABDA4AB9BF50DE4C673CD5,"01.SolidWorks 관련","",SOLIDWORKS Composer Player Pro 2016,"","",ksllkd,2016-06-09 00:00:00.000,2016-06-09 00:00:00.000,ksllkd
+E3E2FAAFFE984C4CA6A87EE1E44D03A4,"08.기타",Rhinoceros 4.0 (Rhino 3D),Rhinoceros 4.0 (Rhino 3D),"","",sjh,2014-01-14 00:00:00.000,2014-01-14 00:00:00.000,sjh
+E4109364CD23F0459E2713FE116A9FD4,"00.Subscription Service",SOLIDWORKS Electrical 2D Sub,SOLIDWORKS Electrical 2D Subscription," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2013-10-02 00:00:00.000,2018-11-30 00:00:00.000,intia
+E4A41B7A87EA8B42A2A3998C275B5FB8,"04.HW 관련","4600",HP xw4600,"RV724AV	        HP xw4600 Workstation			
+GH476AV	        HP xw4600 80  Energy Efficient Chassis (필수)	
+GR524AV#AB1  Microsoft Vista32B Downgrade to XP32B OS		
+GK767AV         Intel Core 2 Quad Q6600 2.40 8M/1066 CPU		
+GH487AV#AB1  HP xw4600 Workstation Localization Kit		
+GP511AV         NVIDIA Quadro FX1700 512MB PCIe Graphics	
+GH569AV         HP 4GB (2x2GB) DDR2-800 ECC RAM		
+GH496AV         HP 250GB SATA 3Gb/s NCQ 7200 1st HDD		
+GH545AV         HP 16X DVD -RW SuperMulti SATA 1st Drive		
+GH488AV         HP 1.44MB Floppy Disk Drive			
+GH538AV         HP USB Optical Scroll Mouse			
+GH531AV#AB1  HP USB Standard Keyboard			
+","",misjid,2008-03-24 00:00:00.000,2008-03-24 00:00:00.000,misjid
+E55C75E1C260BE46AD317F2ED036F1B5,"02.해석 제품",SolidWorks Simulation Premium: Dynamics 교재 (영문,SolidWorks Simulation Premium: Dynamics 교재 (영문)," Introduction, Lesson1. Vibration of a Pipe, Lesson2. Transient Shock Analysis According to MILS-STD-810F, Lesson3. Harmonic Analysis of a Bracket, Lesson4. Random Vibration Analysis According to MIL-STD-810F, Lesson5. Nonlinear Dynamic Analysis of an Electronic Enclosure","",shpark,2010-12-09 00:00:00.000,2015-02-05 00:00:00.000,admin
+E6022862AB1D5D4D853BBDBB52C2BE33,"08.기타",S/W,ProDskTp,M/S OS EA 제품,"",misjid,2009-05-27 00:00:00.000,2009-05-27 00:00:00.000,misjid
+E6D2A051A1916B4C91FFEC6E3375B769,"05.PDMWorks Enterprise 관련",PDM Professional,SOLIDWORKS PDM Professional Processor License - 50,"","",ksllkd,2018-05-02 00:00:00.000,2018-05-02 00:00:00.000,ksllkd
+E6D62689DF13924E9D29F59463DBCCE5,"10.MS계열 제품군",MS Office,OfficeStd 2013 SNGL OLP NL,"","글로벌 라이선스 사용 업체에 제안하는 특별 가격
+- 별도 문의해야",ktkim,2014-02-04 00:00:00.000,2014-04-08 00:00:00.000,ktkim
+E78A6B19E67E254BAC7D7DFEB5FA38DE,"08.기타",Interface,GLC-LH-SM=,"GE SFP, LC connector LX/LH transceiver","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+E8DB1E38A5F9544DA71F4E3E61200B7C,"00.Subscription Service","",SOLIDWORKS Media Kit, - 정식 설치 DVD,"",admin,2015-01-28 00:00:00.000,2015-01-28 00:00:00.000,admin
+EB1966FFBE2FF043AB6254DB3F2EA880,"09.제품관리","",SolidWorks Education Edition,"","",nana,2008-09-26 00:00:00.000,2008-09-26 00:00:00.000,mihwa
+EB68F4ABA5DA6640AFEA224513BAFAEB,"08.기타",보안팩(2~49),보안팩(2~49),"","",kylee,2016-12-06 00:00:00.000,2016-12-06 00:00:00.000,kylee
+EC4B0B6ECCC12B4EAA6768AF19DDDF67,"12.전략제품(보안)",시큐어디스크,시큐어디스크 기업용 솔루션 (200 User license),"  - 데몬
+    - 인증 및 운영용 데몬
+    - 파일 서버 제어용 데몬
+  - 문서
+    - Database Layout
+    - 관리자용 매뉴얼","",sjh,2014-08-06 00:00:00.000,2014-08-06 00:00:00.000,sjh
+EC6A778C6FC9084CBE0DFBD0DB4AF9AE,"01.SolidWorks 관련",SolidWorks Simulation 교재,SolidWorks Simulation 교재," FEA 소개, 단원1. 구멍이 있는 사각형판의 정적 해석, 단원2. L브래킷의 정적 해석, 단원3. 펜치의 접촉/틈해석, 단원4. 휠 어셈블리의 끼워 맞춤 해석, 단원5. 카르단 조인트의 정적 해석, 단원6. 커넥터
+단원7. 고급 비호환 본드를 메시하는 호환/비호환 솔리드 요소, 단원8. 풀리의 쉘 해석, 단원9. 압력 용기 어셈블리의 혼합 메시, 단원10. 설계 시나리오를 사용한 자동차 서스펜션 해석, 단원11. 지지 브래킷의 정적 해석, 단원12. 바이메탈 스트립의 열응력 해석, 단원13. 컨베이어 프레임의 빔 해석, 단원14. 클램프의 대변위 해석, 부록 A: 메시,솔버,팁 및 요령, 부록 B: 고객 도움말 및 지원","",shpark,2010-05-19 00:00:00.000,2010-05-19 00:00:00.000,shpark
+EC956786A3D8B84AB19FDA5D4F32E9B0,"07.SolidWorks 교육관련",OFFICE 교육,OFFICE 교육,"","",admin,2008-01-08 00:00:00.000,2008-01-08 00:00:00.000,admin
+EC9BC24F653559469828D37DC5510282,"00.Subscription Service","",ND Rename Professional," - 파일 이름 변경 
+ - 사용자 정의 속성 변경 
+ - Template 양식 변경
+ - DWG/DXF/PDF 변환","",admin,2015-01-28 00:00:00.000,2015-01-29 00:00:00.000,ksehee
+ECB9E8C2D30FCE43A40DECCFED8B905E,"01.SolidWorks 관련","",Draftsight Standard,"","",jhkim,2020-03-19 00:00:00.000,2020-03-19 00:00:00.000,jhkim
+ED0331D7D83BAB429BDE985156C0109E,"05.PDMWorks Enterprise 관련",SOLIDWORKS PDM Professional,SOLIDWORKS PDM Professional 2016 Consulting," - 투입 기간 : 1개월 
+ - 설계 데이터 관리 전문 컨설팅
+ - SOLIDWORKS PDM Professional Implementation
+ - Stae Of Work 분석
+ - Product Customizing
+    1. 사용자, 그룹
+    2. BOM 템플릿 
+    3. Data 정리 구조 
+    4. Numbering Conversion
+    5. 공용품 관리
+    6. 데이터 카드 (파일 형식 별 데이터 카드, 폴더 카드) 
+    7. 주요 속성 값 및 적용 파일 형식 선정
+    8. Revision 
+    9. 템플릿 구성 (파일 템플릿, 프로젝트 템플릿)
+    10. 워크플로우
+  - 기타 구현 사항은 별도 협의 필요
+  - 교육 (사용자 교육, 관리자 교육)
+","",admin,2016-03-10 00:00:00.000,2016-03-10 00:00:00.000,admin
+ED21FB542C23194280891F042D61ACBC,"00.Subscription Service",SOLIDWORKS PDM,SOLIDWORKS PDM Professional Viewer Subscription Service," - EPDM 제품은 SS 만료 시, 신규 구매를 해야 함.
+ - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2011-06-09 00:00:00.000,2018-11-30 00:00:00.000,intia
+ED92862D83B1D84B946854F3F8CAA460,"01.SolidWorks 관련",SolidWorks Special Guide 교재,SolidWorks Special Guide 교재,"- 제1장 파트 편, 제2장 조립 편, 제3장 도면 편, 제4장 곡면 편, 제5장 판금 편, 부록(도면모음)","",shpark,2010-07-19 00:00:00.000,2010-07-19 00:00:00.000,shpark
+EDF9EEF1DBAD59408E0D52786138466F,"12.전략제품(보안)",시큐어디스크,시큐어디스크 기업용 솔루션 (150 User license),"  - 데몬
+    - 인증 및 운영용 데몬
+    - 파일 서버 제어용 데몬
+  - 문서
+    - Database Layout
+    - 관리자용 매뉴얼","",sjh,2014-07-30 00:00:00.000,2014-07-30 00:00:00.000,sjh
+EE0090A549487C45B0777889A8CE9C0C,"","",Discovery Module(Option 모듈-200user),"  - 암호화 : 개인정보 및 중요정보가 검출된 문서는 암호화 처리
+  - 완전삭제 : 개인정보 및 중요정보가 검출된 문서는 완전삭제 처리
+  - 강제 회수 : 개인정보 및 중요정보가 검출된 문서는 관리자에 의한 회수
+  - 이동/격리 : 개인정보 또는 중요정보가 검출된 문서는 특정폴더로 이동/격리","",sjh,2014-12-26 00:00:00.000,2014-12-26 00:00:00.000,sjh
+EE2006634CB4D0498D576C48F70FF6A1,"01.SolidWorks 관련",SOLIDWORKS Composer,SOLIDWORKS Composer," - 기술 도해
+ - 분해도
+ - 조립 지침서
+ - 제조,공정 지침서
+ - 현장 서비스 메뉴얼
+ - 현장 서비스 가이드 
+ - 제품 및 웹 카달로그
+ - 마케팅 자료","",ksllkd,2015-11-11 00:00:00.000,2016-11-22 00:00:00.000,ksllkd
+EFD5DE0FCB77364FAB57D4FF7256A31C,"13. 3DEXPERIENCE Platform",SW1,"3DEXPERIENCE SOLIDWORKS Standard Package"," - SOLIDWORKS Connected
+   기존 SOLIDWORKS와 유사한 UI
+   설계 데이터를 Cloud에 저장
+   3DEXPERIENCE platfom으로 연결하여
+   강력한 해석, 수준 높은 데이터 관리, 제조와의 Process 통합
+   파트 및 어셈블리 모델링
+   2D 도면 작성
+   설계 재사용 및 자동화
+   고급 CAD파일 불러오기/내보내기
+
+- 3D Creator
+  xDesign
+    Web상 3D Modeling Tool
+    파라메트릭 모델링 기법
+
+","",ksehee,2022-01-18 00:00:00.000,2022-01-18 00:00:00.000,ksehee
+F0442AD13B0E884EB1D04B5310B98DFE,"09.제품관리","",SolidWorks Motion,"","",admin,2007-08-29 00:00:00.000,2008-11-03 00:00:00.000,mihwa
+F06D95ED1EC1914C9B6E59749A930670,"01.SolidWorks 관련","",Draftsihgt Professional,"","",dnlee,2020-04-28 00:00:00.000,2020-04-28 00:00:00.000,dnlee
+F0AD63F89CC0B3459E740DD4E96CB9F4,"08.기타",UTM장비,ASA5540-BUN-K5,"ASA5540 Appliance with SW, HA, 4GE+1FE, 3DES/AE
+CON-SNT-AS4BUNK9
+무상유지보수 1년","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+F17F419BAFB05A47B338D4F9B88E9B95,"02.해석 제품",SOLIDWORKS Flow Simulation Electronic Module,SOLIDWORKS Flow Simulation Electronic Module,"[Analysis Capabilities]
+ - Joule heating
+[Fluid and Solid Properties]
+ - Library of contact thermal resistance
+ - Library of typical IC packages
+ - Additional library of fans
+ - Additional database of solids
+[Environment]
+ - Library of thermoelectric coolers
+ - Printed circuit boards model
+ - Heat pipes model
+ - Two-resistor components model
+ - Library of two-resistor components
+ - Electrical conditions (current, voltage)
+ - Electrical contact resistance","",admin,2012-11-23 00:00:00.000,2015-02-12 00:00:00.000,jekim
+F2D00AA2A02B264392531BFAD921475F,"11.기타Software",CATIA,CAT(CATIA Team PLM) 연간사용료,"CATIA 기본사양
+- 기본 Surface 기능
+- 기본 Solid 기능
+- 도면작성 기능
+- IGES 모듈 포함
+- STEP 모듈 포함","",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+F2F94817D8FE4C47818B2A97BC16CD05,"08.기타",Rack,디포그통신랙2000,"19"" H 2000","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+F317BD0399CF14479A7DD774D7AE0EFD,"01.SolidWorks 관련","",SOLIDWORKS Inspection Professional,"","",ksllkd,2014-11-20 00:00:00.000,2017-12-13 00:00:00.000,ksllkd
+F40116BE7B01734AA457202E050E8D6B,"05.PDMWorks Enterprise 관련","",SOLIDWORKS PDM Professional Installation,"","",kiyeol,2016-06-13 00:00:00.000,2019-05-03 00:00:00.000,ksllkd
+F444FA86BFFABF4CA279E97DCE51C207,"04.HW 관련",HP Z440 Workstation,HP Z440 Workstation,"","",kylee,2015-09-10 00:00:00.000,2015-09-10 00:00:00.000,kylee
+F4BEB4D984473E439C5F54073C354281,"01.SolidWorks 관련",Term License,SOLIDWORKS Premium Entrepreneur,"","",ksllkd,2017-07-20 00:00:00.000,2017-07-20 00:00:00.000,ksllkd
+F5C8471E70C8724EBE4DDB9287DB5497,"04.HW 관련",xSeries,x3550 M4,"","",ktkim,2014-05-26 00:00:00.000,2014-05-26 00:00:00.000,ktkim
+F5D19ECE5D5CBE4B8651DB430044A1FB,"11.기타Software",CATIA,DP2(Drawing Product 2 Configuration,CATIA 2D,"",misjid,2010-01-25 00:00:00.000,2010-01-25 00:00:00.000,misjid
+F61DE3AA0DA93B48A3C90EA6F9B75A71,"08.기타",ND-400S,CD영상등록SOFT,"","",wsshin,2017-11-27 00:00:00.000,2017-11-27 00:00:00.000,wsshin
+F63162B6F7A2DA48BC4E7864F884E497,"01.SolidWorks 관련",SOLIDWORKS Electrical 3D,SOLIDWORKS Electrical 3D,"- SOLIDWORKS Electrical 2D 데이터 import
+  - 2D 배선도 3D자동 구성 및 확인
+  - SOLIDWORKS Electrical 2D 와 SOLIDWORKS 양방향 Update
+  - 케비넷, 덕트, 레일 등 3D 라이브러리 제공
+  - 전장 부품 자동 조립, 자동 구성
+  - SOLIDWORKS 도면 SOLIDWORKS Electrical 2D에서 확인
+  - 부품 리스트 (BOM) 양방향 Update
+  - 3D 전기배선 자동 작성 및 최적화
+  - 전기배선길이 자동계산
+  - wire 길이 및 속성 BOM작성
+  - 교육 1일 포함
+  - 라이브러리 구축 시 DATA Sheet 필요(고객이 제공 해 주어야 함) : 50개의 부품 무상 구축","",jmlee,2012-12-28 00:00:00.000,2016-09-21 00:00:00.000,kylee
+F70B7A1769791C4A95B1DC44D51E7FC0,"04.HW 관련",랙킷,"42U Rack","AF001A	              HP Universal Rack 10642 G2 Pallet ALL
+AF054A	              HP 10642 G2 Sidepanel ALL
+252663-B24	16A Model - mPDU, 16A High
+336044-B21	1x8-Port KVM Server Console Switch
+263474-B23	CAT5 UTP Cables 12ft (8/pack)
+262587-B21	IP Console Switch Interface adapter (8 pack)
+","",misjid,2009-05-08 00:00:00.000,2009-05-08 00:00:00.000,misjid
+F72DEA97932D8A4093BEB52CB7453AA4,"00.Subscription Service",SOLIDWORKS Simulation,SOLIDWORKS Motion Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2009-02-17 00:00:00.000,2018-11-30 00:00:00.000,intia
+F77994F9D91ED741B386DE9187619A4D,"08.기타",SMAP3D Piping+ISO (Node Locked Type),SMAP3D Piping+ISO (Node Locked Type),"","",kylee,2017-12-22 00:00:00.000,2017-12-22 00:00:00.000,kylee
+F8FE29F4FAF7AD46A93DC99280E066CE,"01.SolidWorks 관련",eDrawings Professional,eDrawings Professional,"","",misjid,2009-06-09 00:00:00.000,2020-05-22 00:00:00.000,ksllkd
+F9996F3944FB4B408BF75AA97D6E4B69,"04.HW 관련",Switch(L3),Summit X450a-24t,"24 10/100/1000BASE-T, 4 unpopulated mini-GBIC 
+ports, option slot for 10 Gigabit option card XGM2-		2xn/xf, 2 SummitStackTM Stacking ports, 1 AC PSU,		ExtremeXOSTM Advanced Edge license, connector
+for EPS-500 or EPS-LD external redundant PSU													
+","",misjid,2009-05-08 00:00:00.000,2009-05-18 00:00:00.000,misjid
+FA2D1069AD6CAA41B7510D112E7D320A,"12.전략제품(보안)",onQ-140-9,onQ-140-9,"- 1U 랙탑재형 어플라이언스 제품
+- 4 CPU cores, Main Memory : 32GB
+- Total Disk 용량 : 8.0TB
+- Repository Disk 용량 : 3.8TB (Data 저장 용량)
+- Recovery Node Disk 용량 : 3.8TB (Recovery/ Failover시)
+- 2 Gigabit 이더넷, 2 Power Supply
+- 서버 라이선스 무제한
+- OS+Appication+Data 통합 복제
+- 복제한 서버이미지를 이용한 서비스 대체(7Failover)
+- 중복제거(De-duplication) 스케쥴 복제
+- 복제된 서버 이미지에서 파일단위 복구
+- 복제된 Exchange 서버에서 메일단위 복구
+- 데이터 확장시 onQ 전용 Storage 추가 연결 가능(6TB~14TB)","",ktkim,2014-03-13 00:00:00.000,2014-06-19 00:00:00.000,sjh
+FAC7C9991051B1439167506688C204A9,"10.MS계열 제품군",Office,MS Office Pro 2007 Single OLV,"MA/SA  포함제품
+매년 구매금액의 30% MA/SA 비용발생
+
+","",misjid,2009-05-27 00:00:00.000,2009-07-06 00:00:00.000,misjid
+FB4442A8FA6C4F44A061E9960857CC60,"03.ND 관련",DX TOOL,DX TOOL,"1. 속성 편집
+   - SOLIDWORKS Assembly, Part의 속성들을 한번에 추가, 수정
+   - 주요 옵션 : 속성 수정 항목 파일 저장 & 불러오기
+
+2. 파일 이름 변경
+   - SOLIDWORKS 참조 관계가 온전히 유지 된 상태로 이름 변경
+   - 주요 옵션 : 도면 포함, 파일 이름 일괄 변경 
+
+3. 파일 변환
+   - SOLIDWORKS 도면 파일을 PDF, DXG, DWG 형식으로 변환 
+   - 주요 옵션 : 파일 형식 2개 이상 동시 변환 
+
+4. 도면 작성
+   - 업체 도면 템플릿을 이용하여 자동으로 대량의 도면 생성 
+   - 주요 옵션 : 도면뷰 및 BOM 생성 (치수 자동 생성은 아님) 
+
+5. BOM 엑셀 출력
+   - 업체 BOM 템플릿을 사용하여 엑셀 저장
+   - 주요 옵션 : 업체 양식 Customizing 가능 (비용 별도 협의) 
+
+6. 인쇄
+   - 대량의 파일을 순차적으로 인쇄하는 기능 
+   - 주요 옵션 : 한 부씩 인쇄, 용지 맞춤 기능 제공
+","",admin,2016-04-11 00:00:00.000,2018-02-07 00:00:00.000,kylee
+FB6CB084EE86C64BBE541EA0BFDF8256,"02.해석 제품",SOLIDWORKS Plastics Standard,SOLIDWORKS Plastics Standard,"[General]
+ - SOLIDWORKS-embedded 
+ - 4,000개 이상 상용 플라스틱 재질 포함, 사용자 정의 재질 지원
+ - Shell,  Solid 3D Mesh 
+[Simulation Capabilities]
+ - 충전 단계(첫 번째 단계 사출)
+ - 자동 게이트 위치
+ - 즉각적인 충전 시간 플롯
+ - 다중 게이트
+[Results]
+ - 충전시간, 충전 용이 
+ - 유동 선단 온도 및 충전 완료 시 온도
+ - 전단 응력, 전단률
+ - 충전 완료 시 압력
+ - 웰드라인, 공기 갇힘
+ - 싱크 마크
+ - 충전 완료시 고화층 비율
+ - 형체력, 주기시
+ - 자동 보고서 : MS office word, powerpoint, HTML","[General]
+- SOLIDWORKS-embedded 
+ - 4,000+ Commercial Plastics  / Customizable
+ - Automatic / Global, Local Mesh Refinement 
+ - Boundary Mesh (shell) / Solid 3D Mesh
+[Simulation Capabilities]
+ - Filling Phase (1st stage injection) 
+ - Packing Phase (2nd stage injection) 
+ - Automatic Gate Location(s) 
+ - Instantaneous Fill Time Plot 
+ - Runner Balancing 
+ - Sink Mark Analysis
+ - Multi Gates 
+ - Symmetry Analysis
+[Advanced Simulation Capabilities]
+ - Co-Injection
+ - Multi-Shot
+ - Insert Overmolding 
+ - Gas-Assist 
+ - Fiber Analysis 
+ - Reaction Injection Molding (RIM; Thermosets) 
+ - Birefringence 
+ - Valve Gates (sequential injection) 
+ - Venting Analysis 
+ - Cooling Line Analysis 
+ - Conformal Cooling Analysis 
+ - Warpage Analysis 	
+[ Mold Geometry Support]
+ - Runner Design Wizard 
+ - Sprues and Runners
+ - Hot & Cold Runners 
+ - Multi-Cavity Molds 
+ - Family Molds 
+ - Cooling Lines 
+ - Baffles & Bubblers 
+ - Conformal Cooling Channels 
+ - Mold Inserts 
+[Results]
+ - Fill Time 
+ - Air Trap
+ - Short Shot
+ - Ease of Fill 
+ - Results Adviser 
+ - eDrawings Support 
+ - Pressure at End of Fill 
+ - Flow Front Temperature 
+ - Temperature at End of Fill 
+ - Shear Stress 
+ - Shear Rate 
+ - Cooling Time 
+ - Weld Lines 
+ - Sink Marks 
+ - Frozen Layer Fraction at End of Fill
+ - Clamp Force 
+ - Cycle Time 
+ - Sink Mark Profiles
+ - Volumetric Shrinkage 
+ - Mold Temperature at Cooling End 
+ - Displacement due to Residual Stress 
+ - Automatic report: MS office word, powerpoint, HTML
+*SOLIDWORKS SIMULATION Premium과 결과 호환",admin,2012-11-23 00:00:00.000,2015-02-13 00:00:00.000,jekim
+FBA02FBFC4E148499827263015EB43C7,"13. 3DEXPERIENCE Platform",NBA,Social Business Analyst,"- Library
+   뉴스, 웹 사이트 등에서 키워드 검색
+- Feed Reader
+   최신 컨텐츠 확인
+- Social Analytics
+   Insight 확보를 위해 정해진 영역에 대한 분석 및 비교
+   주제, 언급되는 web상의 위치, 인물 등으로 Topic 분석
+   데이터의 그래프화
+- Metrics Reader
+   그래프 비교
+- Potion
+   Dashboard를 수시 모니터링하지 않고 상황에 대한 능동적 대처
+   트리거 조건 충족 시 자동 상호 작용
+","",admin,2020-10-15 00:00:00.000,2020-10-15 00:00:00.000,admin
+FC037EBC4E55CC488821E801D17F97D0,"06.AutoCAD 관련","",Autodesk Plant Design Suite Ultimate Multi-user Li,"","",kylee,2016-06-21 00:00:00.000,2016-06-21 00:00:00.000,kylee
+FC29114F4A161844A72CB419985D9653,"01.SolidWorks 관련",SOLIDWORKS EDU Edition,SOLIDWORKS EDU Edition,"","",syjo,2015-01-20 00:00:00.000,2015-01-20 00:00:00.000,syjo
+FC76A7336BF7B445930F855E0CE4D4F3,"01.SolidWorks 관련",Global License,Global License,"","",intia,2017-07-31 00:00:00.000,2017-07-31 00:00:00.000,intia
+FCA3951B4860CA4794C1B21B42642883,"08.기타",Interface,GLC-SX-MM=,"GE SFP, LC connector SX transceiver","",misjid,2009-05-29 00:00:00.000,2009-05-29 00:00:00.000,misjid
+FCE5C22DB4095F458AF9E5FFB0709232,"08.기타",ND-200S,CD영상등록기(ND-200S),"","",wsshin,2017-11-27 00:00:00.000,2017-11-27 00:00:00.000,wsshin
+FE01C9459DE9D44983BF1B36118D3433,"08.기타",ND-1000,rebless(복합재활로봇),"","",wsshin,2021-01-08 00:00:00.000,2021-07-09 00:00:00.000,wsshin
+FE4C3F6A06CAFA4AA7C81503E554E10A,"00.Subscription Service",SOLIDWORKS Composer Subscription Service,SOLIDWORKS Composer Subscription Service," - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",suuk,2011-04-25 00:00:00.000,2018-11-30 00:00:00.000,intia
+FE7F8244BE019E4F9CA9EDA33570C97A,"00.Subscription Service",SOLIDWORKS PDM,SOLIDWORKS PDM Professional Contributor Subscription Service," - EPDM 제품은 SS 만료 시, 신규 구매를 해야 함.
+ - 설치 매뉴얼 제공
+ - 차기 버전 Upgrade 1회
+ - On-Line 기술 지원 (전화 및 원격지원)
+ - nodeDATA 교육 (1 Seat 당 1명 기준)
+    - 쿠폰 2장 제공
+ - nodeDATA On-Line 교육(Webcast)
+ - nodeDATA 세미나
+ - nodeDATA 홈페이지 로열 회원 등급 부여
+    - 기술 문서 및 동영상 열람
+ - 최신 뉴스레터 제공
+ - Disable Request Service(라이선스 재 활성)
+ - DX TOOL 제공
+ - SOLIDWORKS Customer Portal 이용 
+    - Service Request / Enhancement Request / Knowledge Base
+ - SOLIDWORKS Beta 체험 및 Awards
+ - 계약기간 : 1년간 (2015.mm.dd ~ 2016.mm.dd)
+ - 대상 S/N :","",admin,2011-06-09 00:00:00.000,2018-11-30 00:00:00.000,intia
+FEBF977954E1AC42B75AA02B44B4E621,"10.MS계열 제품군",Office,MS Office Pro 2007 Single OLP,"MA/SA 미포함제품
+
+","",misjid,2009-05-27 00:00:00.000,2009-07-06 00:00:00.000,misjid
+FF249A030F05354F9162863499EA5C06,"08.기타",ND-300M,CD영상등록기(ND-300M),"","",wsshin,2017-11-27 00:00:00.000,2017-11-27 00:00:00.000,wsshin
+FFA906FBB5BD724BAA765FAE4770121B,"04.HW 관련","",HP Z620 Workstation,"","",kylee,2014-11-04 00:00:00.000,2014-11-05 00:00:00.000,kylee

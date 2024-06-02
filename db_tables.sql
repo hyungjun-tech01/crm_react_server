@@ -1286,8 +1286,8 @@ CREATE TABLE tbl_purchase_info (
   po_number varchar(50), 
   product_type varchar(50), 
   module varchar(50), 
-  receipt_date timestamp, 
-  delivery_date timestamp, 
+  receipt_date date, 
+  delivery_date date, 
   MA_finish_date date, 
   InvoiceNo varchar(50), 
   price numeric NULL, 
@@ -1404,8 +1404,8 @@ insert into tbl_purchase_info (
   po_number , 
   product_type , 
   module , 
-  receipt_date::timestamp ,  
-  delivery_date::timestamp , 
+  receipt_date::date ,  
+  delivery_date::date , 
   MA_finish_date::date , 
   InvoiceNo , 
   price ::numeric, 
@@ -1503,3 +1503,45 @@ select guid  ,
   select * from tbl_MA_contract;
 
   drop table if exists tbl_MA_contract_temp;
+
+  --품목관리 table : tbl_product_info 
+ drop table  tbl_product_info;
+
+ create table tbl_product_info
+(product_code  varchar(32) not null PRIMARY KEY,
+product_class  varchar(100), 
+model_name     varchar(50),  
+product_name   varchar(255), 
+detail_desc    text, 
+memo           text, 
+creater        varchar(100), 
+create_date    timestamp, 
+modify_date    timestamp, 
+recent_user    varchar(100)
+)
+
+create table tbl_product_info_temp
+(product_code  varchar(32) ,
+product_class  varchar(100), 
+model_name     varchar(50),  
+product_name   varchar(255), 
+detail_desc    text, 
+memo           text, 
+creater        varchar(100), 
+create_date    varchar(100), 
+modify_date    varchar(100), 
+recent_user    varchar(100)
+)
+
+copy tbl_product_info_temp(
+  (product_code,
+product_class,
+model_name   ,
+product_name ,
+detail_desc  ,
+memo         ,
+creater      ,
+create_date  ,
+modify_date  ,
+recent_user  ,
+)
