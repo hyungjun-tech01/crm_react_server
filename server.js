@@ -434,7 +434,7 @@ app.get('/purchases', async(req, res) => {
     }
 });
 
-app.get('/companyMaContract', async(req, res) => {
+app.post('/companyMaContract', async(req, res) => {
     console.log("[Get] comapany ma contract", req.body.company_code);
     const { 
         company_code               = defaultNull(req.body.company_code) 
@@ -1295,16 +1295,16 @@ app.post('/modifyPurchase', async(req, res) => {
                 v_purchase_code  
             ]);
         }
-        const out_purchse_code = v_purchase_code;
+        const out_purchase_code = v_purchase_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
         const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
         const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
         
-        res.json({ out_purchse_code: out_purchse_code,  out_create_user:out_create_user, 
+        res.json({ out_purchase_code: out_purchase_code,  out_create_user:out_create_user, 
            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
    
-        console.log({ out_purchse_code: out_purchse_code,  out_create_user:out_create_user, 
+        console.log({ out_purchase_code: out_purchase_code,  out_create_user:out_create_user, 
                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
    
         res.end();
@@ -1354,7 +1354,7 @@ app.post('/modifyTransaction', async(req, res) => {
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
             throw new Error('modify user는 user_id 이어야 합니다.');
-        }        
+        }7        
 
         if (action_type === 'ADD') {
             if (lead_code === null || lead_code === "") {
