@@ -1505,7 +1505,7 @@ select guid  ,
   drop table if exists tbl_MA_contract_temp;
 
   --품목관리 table : tbl_product_info : 2024.06.02 
- drop table  tbl_product_info;
+ drop table if exists tbl_product_info;
 
  create table tbl_product_info
 (product_code  varchar(32) not null PRIMARY KEY,
@@ -1531,7 +1531,7 @@ creater        varchar(100),
 create_date    varchar(100), 
 modify_date    varchar(100), 
 recent_user    varchar(100)
-)
+);
 
 copy tbl_product_info_temp(
 product_code,
