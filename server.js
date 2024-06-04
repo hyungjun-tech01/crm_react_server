@@ -1282,15 +1282,15 @@ app.post('/modifyPurchase', async(req, res) => {
                     ma_finish_date    = COALESCE($12::date, ma_finish_date),  
                     invoiceno         = COALESCE($13, invoiceno ),  
                     price             = COALESCE($14::numeric, price),  
-                    recent_user       = COALESCE($16, recent_user), 
-                    modify_date       = COALESCE($17::timestamp, modify_date),  
-                    purchase_memo     = COALESCE($18, purchase_memo),  
-                    status            = COALESCE($19, status),  
-                    hq_finish_date    = COALESCE($20::date, hq_finish_date),  
-                    quantity          = COALESCE($21, quantity),  
-                    regcode           = COALESCE($22, regcode),  
-                    ma_contact_date   = COALESCE($23::date, ma_contact_date)
-                where purchase_code = $24
+                    recent_user       = COALESCE($15, recent_user), 
+                    modify_date       = COALESCE($16::timestamp, modify_date),  
+                    purchase_memo     = COALESCE($17, purchase_memo),  
+                    status            = COALESCE($18, status),  
+                    hq_finish_date    = COALESCE($19::date, hq_finish_date),  
+                    quantity          = COALESCE($20, quantity),  
+                    regcode           = COALESCE($21, regcode),  
+                    ma_contact_date   = COALESCE($22::date, ma_contact_date)
+                where purchase_code = $23
             `,[company_code   ,  
                 product_code   ,  
                 product_class  ,  
@@ -1306,7 +1306,7 @@ app.post('/modifyPurchase', async(req, res) => {
                 invoiceno      ,  
                 price          ,  
                 modify_user      ,
-                modify_date      ,
+                currentDate.currdate    ,
                 purchase_memo    ,
                 status           ,
                 hq_finish_date   ,
