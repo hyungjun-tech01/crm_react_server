@@ -1928,8 +1928,13 @@ app.post('/modifyProduct', async(req, res) => {
         action_type                = defaultNull(req.body.action_type),
         product_code               = defaultNull(req.body.product_code),
         product_class              = defaultNull(req.body.product_class),
+        manufacturer               = defaultNull(req.body.manufacturer),
         model_name                 = defaultNull(req.body.model_name),
         product_name               = defaultNull(req.body.product_name),
+        unit                       = defaultNull(req.body.unit),
+        cost_price                 = defaultNull(req.body.cost_price),
+        reseller_price             = defaultNull(req.body.reseller_price),
+        list_price                 = defaultNull(req.body.list_price),
         detail_desc                = defaultNull(req.body.detail_desc),
         memo                       = defaultNull(req.body.memo),
         modify_user                = defaultNull(req.body.modify_user)
@@ -1955,22 +1960,32 @@ app.post('/modifyProduct', async(req, res) => {
 
             v_product_code  = pk_code();
             const response = await pool.query(`insert into tbl_product_info(
-                product_code, 
+                product_code  ,
                 product_class ,
+                manufacturer  ,
                 model_name    ,
                 product_name  ,
+                unit          ,
+                cost_price    ,
+                reseller_price,
+                list_price    ,
                 detail_desc   ,
                 memo          ,
-                creater       ,
+                creator       ,
                 create_date   ,
                 modify_date   ,
                 recent_user    )
-                values($1,$2,$3,$4,$5,$6,$7,$8::timestamp,$9::timestamp,$10)`,
+                values($1,$2,$3,$4,$5,$6,$7::numeric,$8::numeric, $9::numeric, $10, $11, $12, $13::timestamp,$14::timestamp,$15)`,
                 [
                     v_product_code        ,
                     product_class         ,
+                    manufacturer          ,
                     model_name            ,
                     product_name          ,
+                    unit                  ,
+                    cost_price            ,
+                    reseller_price        ,
+                    list_price            ,
                     detail_desc           ,
                     memo                  ,
                     modify_user           ,
@@ -1984,20 +1999,30 @@ app.post('/modifyProduct', async(req, res) => {
 
             const response = await pool.query(`
                 update tbl_product_info 
-                product_class = COALESCE($1, product_class),
-                model_name    = COALESCE($2, model_name),
-                product_name  = COALESCE($3, product_name),
-                detail_desc   = COALESCE($4, detail_desc),
-                memo          = COALESCE($5, memo),
-                modify_date   = COALESCE($6, modify_date),
-                recent_user   = COALESCE($7, recent_user) 
-                where product_code = $8
+                    product_class  = COALESCE($1 , product_class),
+                    manufacturer   = COALESCE($2 , manufacturer),
+                    model_name     = COALESCE($3 , model_name),
+                    product_name   = COALESCE($4 , product_name),
+                    unit           = COALESCE($5 , unit),
+                    cost_price     = COALESCE($6 , cost_price),
+                    reseller_price = COALESCE($7 , reseller_price),
+                    list_price     = COALESCE($8 , list_price),
+                    detail_desc    = COALESCE($9 , detail_desc),
+                    memo           = COALESCE($10 , memo),
+                    modify_date    = COALESCE($11 , modify_date),
+                    recent_user    = COALESCE($12 , recent_user)
+                where product_code = $13
             `,[
-                product_class           ,
-                model_name              ,
-                product_name            ,
-                detail_desc             ,
-                memo                    ,
+                product_class ,
+                manufacturer  ,
+                model_name    ,
+                product_name  ,
+                unit          ,
+                cost_price    ,
+                reseller_price,
+                list_price    ,
+                detail_desc   ,
+                memo          ,
                 currentDate.currdate    ,
                 modify_user             ,
                 v_product_code

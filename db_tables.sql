@@ -1578,3 +1578,263 @@ recent_user  from tbl_product_info_temp;
 select * from tbl_product_info;
 
 drop table tbl_product_info_temp;
+
+-- 위까지  dev 적용 완료 (6/6)
+
+-- purchase_info 새로 import 
+
+delete from tbl_purchase_info;
+
+CREATE TABLE tbl_purchase_info_temp (
+  purchase_code varchar(32), 
+  company_code varchar(32), 
+  product_code varchar(32), 
+  product_class varchar(100), 
+  product_name varchar(255), 
+  serial_number varchar(50), 
+  licence_Info varchar(50), 
+  po_number varchar(50), 
+  product_type varchar(50), 
+  module varchar(50), 
+  receipt_date varchar(50),  
+  delivery_date varchar(50), 
+  MA_finish_date varchar(50), 
+  InvoiceNo varchar(50), 
+  price varchar(50), 
+  register varchar(30),
+  registration_date varchar(50),  
+  recent_user varchar(30), 
+  modify_date varchar(50), 
+  purchase_memo text, 
+  status varchar(50), 
+  hq_finish_date varchar(50), 
+  quantity varchar(50), 
+  regcode varchar(50), 
+  MA_contact_date varchar(50)
+);
+
+
+copy tbl_purchase_info_temp
+( purchase_code , 
+  company_code , 
+  product_code , 
+  product_class, 
+  product_name , 
+  serial_number, 
+  licence_Info , 
+  po_number , 
+  product_type , 
+  module , 
+  receipt_date ,  
+  delivery_date , 
+  MA_finish_date , 
+  InvoiceNo , 
+  price , 
+  register ,
+  registration_date ,  
+  recent_user , 
+  modify_date , 
+  purchase_memo , 
+  status , 
+  hq_finish_date , 
+  quantity , 
+  regcode , 
+  MA_contact_date )
+from 'd:\tbl_purchase_info20240605.csv' csv;
+
+-- 데이터 확인
+select * from tbl_purchase_info_temp;
+
+-- 헤더 삭제 
+delete from tbl_purchase_info_temp 
+where purchase_code = 'purchase_code';
+
+
+insert into tbl_purchase_info (
+  purchase_code , 
+  company_code , 
+  product_code , 
+  product_class, 
+  product_name , 
+  serial_number, 
+  licence_Info , 
+  po_number , 
+  product_type , 
+  module , 
+  receipt_date ,  
+  delivery_date , 
+  MA_finish_date , 
+  InvoiceNo , 
+  price , 
+  register ,
+  registration_date ,  
+  recent_user , 
+  modify_date , 
+  purchase_memo, 
+  status , 
+  hq_finish_date , 
+  quantity , 
+  regcode , 
+  MA_contact_date 
+) select 
+ purchase_code , 
+  company_code , 
+  product_code , 
+  product_class, 
+  product_name , 
+  serial_number, 
+  licence_Info , 
+  po_number , 
+  product_type , 
+  module , 
+  receipt_date::date ,  
+  delivery_date::date , 
+  MA_finish_date::date , 
+  InvoiceNo , 
+  price ::numeric, 
+  register ,
+  registration_date::timestamp ,  
+  recent_user , 
+  modify_date::timestamp , 
+  purchase_memo, 
+  status , 
+  hq_finish_date::date , 
+  quantity::integer , 
+  regcode , 
+  MA_contact_date::date  from tbl_purchase_info_temp;
+
+  -- tbl_product_info : 다시 생성 
+drop table tbl_product_info ;
+
+create table tbl_product_info (
+product_code      varchar(32) primary key,
+product_class      varchar(100) not null,
+manufacturer       varchar(100) not null,
+model_name         varchar(100),
+product_name       varchar(255),
+unit               varchar(100),
+cost_price         numeric     , 
+reseller_price     numeric     ,
+list_price         numeric     ,  
+detail_desc        text        ,
+memo               text        , 
+creator            varchar(100),
+create_date        timestamp   ,
+modify_date        timestamp   ,
+recent_user        varchar(100)
+);
+
+create table tbl_product_info_temp (
+product_code      varchar(32) ,
+product_class      varchar(100),
+manufacturer       varchar(100),
+model_name         varchar(100),
+product_name       varchar(255),
+unit               varchar(100),
+cost_price         varchar(100),       
+reseller_price     varchar(100),       
+list_price         varchar(100),       
+detail_desc        text        ,
+memo               text        ,
+creator            varchar(100),
+create_date        varchar(100),   
+modify_date        varchar(100),   
+recent_user        varchar(100)
+);
+
+copy tbl_product_info_temp(
+product_code  ,
+product_class ,
+manufacturer  ,
+model_name    ,
+product_name  ,
+unit          ,
+cost_price    ,
+reseller_price,
+list_price    ,
+detail_desc   ,
+memo          ,
+creator       ,
+create_date   ,
+modify_date   ,
+recent_user   
+) from 'd:\tbl_product_info20240605.csv' csv;
+
+delete from tbl_product_info_temp 
+where product_code = 'product_code';
+
+insert into tbl_product_info(
+  product_code  ,
+product_class ,
+manufacturer  ,
+model_name    ,
+product_name  ,
+unit          ,
+cost_price    ,
+reseller_price,
+list_price    ,
+detail_desc   ,
+memo          ,
+creator       ,
+create_date   ,
+modify_date   ,
+recent_user   
+) select 
+product_code  ,
+product_class ,
+manufacturer  ,
+model_name    ,
+product_name  ,
+unit          ,
+cost_price::numeric    ,
+reseller_price::numeric,
+list_price::numeric    ,
+detail_desc   ,
+memo          ,
+creator       ,
+create_date::timestamp   ,
+modify_date::timestamp   ,
+recent_user   from tbl_product_info_temp;
+
+-- tbl_product_class_list 생성
+create table tbl_product_class_list(
+product_class_code   varchar(32) primary key,
+product_class_name   VARCHAR(100) not null,
+product_class_order  INTEGER,
+product_class_memo   TEXT
+);
+
+
+create table tbl_product_class_list_temp(
+product_class_code   VARCHAR(100),
+product_class_name   VARCHAR(100),
+product_class_order  VARCHAR(100),
+product_class_memo   TEXT
+);
+
+
+ copy tbl_product_class_list_temp(
+product_class_code  ,
+product_class_name  ,
+product_class_order ,
+product_class_memo  
+) from 'd:\tbl_product_class_list20240605.csv' csv;
+
+delete from tbl_product_class_list_temp 
+where product_class_code = 'product_class_code';
+
+insert into tbl_product_class_list(
+  product_class_code  ,
+product_class_name  ,
+product_class_order ,
+product_class_memo   
+) select 
+ product_class_code  ,
+product_class_name  ,
+product_class_order::integer ,
+product_class_memo   from tbl_product_class_list_temp;
+
+select * from tbl_product_class_list;
+
+drop table tbl_product_class_list_temp;
+
