@@ -1903,7 +1903,7 @@ app.post('/modifyMaContract', async(req, res) => {
 
             const response = await pool.query(`
                 update tbl_MA_contract 
-                    purchase_code            = COALESCE($1, purchase_code) ,
+                    set  purchase_code            = COALESCE($1, purchase_code) ,
                     ma_company_code          = COALESCE($2, ma_company_code) ,
                     ma_contract_date         = COALESCE($3::date, ma_contract_date) ,
                     ma_finish_date           = COALESCE($4::date, ma_finish_date) ,
@@ -2021,7 +2021,7 @@ app.post('/modifyProduct', async(req, res) => {
 
             const response = await pool.query(`
                 update tbl_product_info 
-                    product_class  = COALESCE($1 , product_class),
+                set product_class  = COALESCE($1 , product_class),
                     manufacturer   = COALESCE($2 , manufacturer),
                     model_name     = COALESCE($3 , model_name),
                     product_name   = COALESCE($4 , product_name),
@@ -2119,7 +2119,7 @@ app.post('/modifyProductClass', async(req, res) => {
         if (action_type === 'UPDATE') {
             const response = await pool.query(`
             update tbl_product_class_list 
-                product_class_name    = COALESCE($1 , product_class_name),
+                set product_class_name    = COALESCE($1 , product_class_name),
                 product_class_order   = COALESCE($2 , product_class_order),
                 product_class_memo    = COALESCE($3 , product_class_memo),
             where product_class_code = $4
