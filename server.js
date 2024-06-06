@@ -519,6 +519,28 @@ app.get('/product', async(req, res) => {
     }
 });
 
+app.get('/productClass', async(req, res) => {
+    try{
+        console.log("[Get] productClass");
+        const allproductClassResult = await pool.query(`
+        select * 
+            from tbl_product_class_list tpc
+            order by tpc.product_class_order`);
+
+        if(allproductClassResult.rows.length > 0) {
+            const allproductsClass = allproductClassResult.rows;
+            res.json(allproductsClass);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err.message});        
+        res.end();
+    }
+});
 
 app.get('/getallusers', async(req, res) => {
     console.log("[Get] all users");
@@ -2044,6 +2066,85 @@ app.post('/modifyProduct', async(req, res) => {
     }catch(err){
         console.error(err);
         res.json({message:err.message});
+        res.end();              
+    }
+});
+
+// create/update product class  
+app.post('/modifyProductClass', async(req, res) => {
+    const  { 
+        action_type                = defaultNull(req.body.action_type),
+        product_class_code         = defaultNull(req.body.product_class_code),
+        product_class_name         = defaultNull(req.body.product_class_name),
+        product_class_order        = defaultNull(req.body.product_class_order),
+        product_class_memo         = defaultNull(req.body.product_class_memo),
+        modify_user               = defaultNull(req.body.modify_user)
+    } = req.body;
+
+    try{
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currentDate = current_date.rows[0];
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
+
+        let v_product_class_code = product_class_code;
+
+        if (action_type === 'ADD') {
+            v_product_class_code  = pk_code();
+
+            const v_product_class_order = await pool.query(`select max(product_class_order)+1 from tbl_product_class_list`,[]);
+
+            const response = await pool.query(`insert into tbl_product_class_list(
+                product_class_code  ,
+                product_class_name  ,
+                product_class_order ,
+                product_class_memo      )
+                values($1,$2,$3::integer,$4)`,
+                [
+                    v_product_class_code  ,
+                    product_class_name    ,
+                    v_product_class_order ,
+                    product_class_memo
+                ]
+            );       
+        }
+        if (action_type === 'UPDATE') {
+            const response = await pool.query(`
+            update tbl_product_class_list 
+                product_class_name    = COALESCE($1 , product_class_name),
+                product_class_order   = COALESCE($2 , product_class_order),
+                product_class_memo    = COALESCE($3 , product_class_memo),
+            where product_class_code = $4
+            `,[
+                product_class_name ,
+                product_class_order,
+                product_class_memo ,
+                v_product_class_code
+            ]);
+        }
+
+        const out_product_class_code = v_product_class_code;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ message:'success', out_product_class_code: out_product_class_code,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_product_class_code: out_product_class_code,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});   
         res.end();              
     }
 });
