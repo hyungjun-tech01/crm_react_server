@@ -4,7 +4,7 @@ drop table if exists tbl_company_info;
 
 create table tbl_company_info
 (company_code                 varchar	(32)   PRIMARY KEY,
-company_number               varchar	(50)   not null,
+company_number               varchar	(50)   ,
 group_                        varchar	(255)  ,
 company_scale                varchar	(100)  ,
 deal_type                    varchar	(100)  ,
@@ -1839,3 +1839,184 @@ select * from tbl_product_class_list;
 drop table tbl_product_class_list_temp;
 
 
+-- 2024.06.0 company info 다시 전체 로드 
+drop table tbl_company_info_temp;
+
+create table tbl_company_info_temp
+(company_code                 varchar	(32)   PRIMARY KEY,
+company_number               varchar	(50)   ,
+group_                        varchar	(255)  ,
+company_scale                varchar	(100)  ,
+deal_type                    varchar	(100)  ,
+company_name                 varchar	(50)   ,
+company_name_eng             varchar	(100)  ,
+business_registration_code   varchar	(50)   ,
+establishment_date           varchar	(50)	         ,
+closure_date                 varchar	(50)	         ,
+ceo_name                     varchar	(50)   ,
+business_type                varchar	(100)  ,
+business_item                varchar	(100)  ,
+industry_type                varchar	(50)   ,
+company_zip_code             varchar	(50)   ,
+company_address              varchar	(255)  ,
+company_phone_number         varchar	(50)   ,
+company_fax_number           varchar	(50)   ,
+homepage                     varchar	(255)  ,
+memo                         text	         ,
+create_user                  varchar	(50)   ,
+create_date                  varchar	(50)	         ,
+modify_date                  varchar	(50)	         ,
+recent_user                  varchar	(50)   ,
+counter                      varchar	(50)	     ,
+account_code                 varchar	(50)   ,
+bank_name                    varchar	(50)   ,
+account_owner                varchar	(50)   ,
+sales_resource               varchar	(50)   ,
+application_engineer         varchar	(50)   ,
+region                       varchar	(50)   
+);
+
+
+-- temp table 
+COPY tbl_company_info_temp (  
+  company_code           ,  
+company_number            ,
+group_                    ,
+company_scale             ,
+deal_type                 ,
+company_name              ,
+company_name_eng          ,
+business_registration_code,
+establishment_date        ,
+closure_date              ,
+ceo_name                  ,
+business_type             ,
+business_item             ,
+industry_type             ,
+company_zip_code          ,
+company_address           ,
+company_phone_number      ,
+company_fax_number        ,
+homepage                  ,
+memo                      ,
+create_user               ,
+create_date               ,
+modify_date               ,
+recent_user               ,
+counter                   ,
+account_code              ,
+bank_name                 ,
+account_owner             ,
+sales_resource            ,
+application_engineer      ,
+region                    )
+ FROM 'd:\tbl_company_info20240607.csv' csv;
+
+-- 헤더 삭제 
+ delete from tbl_company_info_temp 
+ where company_code = 'company_code';
+
+-- 테이블 새로 생성 ; company_number not null 조건 삭제 
+ drop table if exists tbl_company_info;
+
+create table tbl_company_info
+(company_code                 varchar	(32)   PRIMARY KEY,
+company_number               varchar	(50)   ,
+group_                        varchar	(255)  ,
+company_scale                varchar	(100)  ,
+deal_type                    varchar	(100)  ,
+company_name                 varchar	(50)   ,
+company_name_eng             varchar	(100)  ,
+business_registration_code   varchar	(50)   ,
+establishment_date           date	         ,
+closure_date                 date	         ,
+ceo_name                     varchar	(50)   ,
+business_type                varchar	(100)  ,
+business_item                varchar	(100)  ,
+industry_type                varchar	(50)   ,
+company_zip_code             varchar	(50)   ,
+company_address              varchar	(255)  ,
+company_phone_number         varchar	(50)   ,
+company_fax_number           varchar	(50)   ,
+homepage                     varchar	(255)  ,
+memo                         text	         ,
+create_user                  varchar	(50)   ,
+create_date                  timestamp	         ,
+modify_date                  timestamp	         ,
+recent_user                  varchar	(50)   ,
+counter                      integer	     ,
+account_code                 varchar	(50)   ,
+bank_name                    varchar	(50)   ,
+account_owner                varchar	(50)   ,
+sales_resource               varchar	(50)   ,
+application_engineer         varchar	(50)   ,
+region                       varchar	(50)   
+);
+
+ -- temp ->  본테이블로 이전
+insert into tbl_company_info (  
+company_code           ,  
+company_number            ,
+group_                    ,
+company_scale             ,
+deal_type                 ,
+company_name              ,
+company_name_eng          ,
+business_registration_code,
+establishment_date        ,
+closure_date              ,
+ceo_name                  ,
+business_type             ,
+business_item             ,
+industry_type             ,
+company_zip_code          ,
+company_address           ,
+company_phone_number      ,
+company_fax_number        ,
+homepage                  ,
+memo                      ,
+create_user               ,
+create_date               ,
+modify_date               ,
+recent_user               ,
+counter                   ,
+account_code              ,
+bank_name                 ,
+account_owner             ,
+sales_resource            ,
+application_engineer      ,
+region                   )
+select   company_code     ,  
+company_number            ,
+group_                    ,
+company_scale             ,
+deal_type                 ,
+company_name              ,
+company_name_eng          ,
+business_registration_code,
+establishment_date::date  ,
+closure_date::date        ,
+ceo_name                  ,
+business_type             ,
+business_item             ,
+industry_type             ,
+company_zip_code          ,
+company_address           ,
+company_phone_number      ,
+company_fax_number        ,
+homepage                  ,
+memo                      ,
+create_user               ,
+create_date::timestamp    ,
+modify_date::timestamp    ,
+recent_user               ,
+counter::integer          ,
+account_code              ,
+bank_name                 ,
+account_owner             ,
+sales_resource            ,
+application_engineer      ,
+region                   
+from tbl_company_info_temp;
+
+drop table tbl_company_info_temp;
