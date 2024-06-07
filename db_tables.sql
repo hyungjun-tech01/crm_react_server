@@ -1839,7 +1839,7 @@ select * from tbl_product_class_list;
 drop table tbl_product_class_list_temp;
 
 
--- 2024.06.0 company info 다시 전체 로드 
+-- 2024.06.07 company info 다시 전체 로드 
 drop table tbl_company_info_temp;
 
 create table tbl_company_info_temp
