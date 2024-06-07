@@ -1838,3 +1838,4 @@ select * from tbl_product_class_list;
 
 drop table tbl_product_class_list_temp;
 
+
