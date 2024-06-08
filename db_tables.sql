@@ -2057,4 +2057,4 @@ from tbl_company_info_temp;
 
 drop table tbl_company_info_temp;
 
--- 6월 8일 dev 적용 
+-- 위까지 6월 8일 dev 적용 
