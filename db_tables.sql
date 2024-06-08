@@ -1279,7 +1279,7 @@ CREATE TABLE tbl_purchase_info (
   purchase_code varchar(32) PRIMARY KEY , 
   company_code varchar(32), 
   product_code varchar(32), 
-  product_class varchar(100), 
+  product_class_name varchar(100), 
   product_name varchar(255), 
   serial_number varchar(50), 
   licence_Info varchar(50), 
@@ -1306,7 +1306,7 @@ CREATE TABLE tbl_purchase_info (
   purchase_code varchar(32), 
   company_code varchar(32), 
   product_code varchar(32), 
-  product_class varchar(100), 
+  product_class_name varchar(100), 
   product_name varchar(255), 
   serial_number varchar(50), 
   licence_Info varchar(50), 
@@ -1335,7 +1335,7 @@ copy tbl_purchase_info_temp
 ( purchase_code , 
   company_code , 
   product_code , 
-  product_class, 
+  product_class_name, 
   product_name , 
   serial_number, 
   licence_Info , 
@@ -1371,7 +1371,7 @@ insert into tbl_purchase_info (
   purchase_code , 
   company_code , 
   product_code , 
-  product_class, 
+  product_class_name, 
   product_name , 
   serial_number, 
   licence_Info , 
@@ -1397,7 +1397,7 @@ insert into tbl_purchase_info (
  purchase_code , 
   company_code , 
   product_code , 
-  product_class, 
+  product_class_name, 
   product_name , 
   serial_number, 
   licence_Info , 
@@ -1509,7 +1509,7 @@ select guid  ,
 
  create table tbl_product_info
 (product_code  varchar(32) not null PRIMARY KEY,
-product_class  varchar(100), 
+product_class_name  varchar(100), 
 model_name     varchar(50),  
 product_name   varchar(255), 
 detail_desc    text, 
@@ -1522,7 +1522,7 @@ recent_user    varchar(100)
 
 create table tbl_product_info_temp
 (product_code  varchar(32) ,
-product_class  varchar(100), 
+product_class_name  varchar(100), 
 model_name     varchar(50),  
 product_name   varchar(255), 
 detail_desc    text, 
@@ -1535,7 +1535,7 @@ recent_user    varchar(100)
 
 copy tbl_product_info_temp(
 product_code,
-product_class,
+product_class_name,
 model_name   ,
 product_name ,
 detail_desc  ,
@@ -1555,7 +1555,7 @@ where product_code = '품목코드';
 
 insert into tbl_product_info
 (product_code,
-product_class,
+product_class_name,
 model_name   ,
 product_name ,
 detail_desc  ,
@@ -1565,7 +1565,7 @@ create_date  ,
 modify_date  ,
 recent_user  )
 select product_code,
-product_class,
+product_class_name,
 model_name   ,
 product_name ,
 detail_desc  ,
@@ -1585,11 +1585,41 @@ drop table tbl_product_info_temp;
 
 delete from tbl_purchase_info;
 
+drop table if exists tbl_purchase_info;
+
+CREATE TABLE tbl_purchase_info (
+  purchase_code varchar(32) PRIMARY KEY , 
+  company_code varchar(32), 
+  product_code varchar(32), 
+  product_class_name varchar(100), 
+  product_name varchar(255), 
+  serial_number varchar(50), 
+  licence_Info varchar(50), 
+  po_number varchar(50), 
+  product_type varchar(50), 
+  module varchar(50), 
+  receipt_date date, 
+  delivery_date date, 
+  MA_finish_date date, 
+  InvoiceNo varchar(50), 
+  price numeric NULL, 
+  register varchar(30),
+  registration_date timestamp, 
+  recent_user varchar(30), 
+  modify_date timestamp, 
+  purchase_memo text, 
+  status varchar(50), 
+  hq_finish_date date, 
+  quantity integer, 
+  regcode varchar(50), 
+  MA_contact_date date);
+  
+
 CREATE TABLE tbl_purchase_info_temp (
   purchase_code varchar(32), 
   company_code varchar(32), 
   product_code varchar(32), 
-  product_class varchar(100), 
+  product_class_name varchar(100), 
   product_name varchar(255), 
   serial_number varchar(50), 
   licence_Info varchar(50), 
@@ -1618,7 +1648,7 @@ copy tbl_purchase_info_temp
 ( purchase_code , 
   company_code , 
   product_code , 
-  product_class, 
+  product_class_name, 
   product_name , 
   serial_number, 
   licence_Info , 
@@ -1654,7 +1684,7 @@ insert into tbl_purchase_info (
   purchase_code , 
   company_code , 
   product_code , 
-  product_class, 
+  product_class_name, 
   product_name , 
   serial_number, 
   licence_Info , 
@@ -1680,7 +1710,7 @@ insert into tbl_purchase_info (
  purchase_code , 
   company_code , 
   product_code , 
-  product_class, 
+  product_class_name, 
   product_name , 
   serial_number, 
   licence_Info , 
@@ -1703,12 +1733,14 @@ insert into tbl_purchase_info (
   regcode , 
   MA_contact_date::date  from tbl_purchase_info_temp;
 
+  drop table tbl_purchase_info_temp;
+
   -- tbl_product_info : 다시 생성 
 drop table tbl_product_info ;
 
 create table tbl_product_info (
 product_code      varchar(32) primary key,
-product_class      varchar(100) not null,
+product_class_name      varchar(100) not null,
 manufacturer       varchar(100) not null,
 model_name         varchar(100),
 product_name       varchar(255),
@@ -1726,7 +1758,7 @@ recent_user        varchar(100)
 
 create table tbl_product_info_temp (
 product_code      varchar(32) ,
-product_class      varchar(100),
+product_class_name      varchar(100),
 manufacturer       varchar(100),
 model_name         varchar(100),
 product_name       varchar(255),
@@ -1744,7 +1776,7 @@ recent_user        varchar(100)
 
 copy tbl_product_info_temp(
 product_code  ,
-product_class ,
+product_class_name ,
 manufacturer  ,
 model_name    ,
 product_name  ,
@@ -1765,7 +1797,7 @@ where product_code = 'product_code';
 
 insert into tbl_product_info(
   product_code  ,
-product_class ,
+product_class_name ,
 manufacturer  ,
 model_name    ,
 product_name  ,
@@ -1781,7 +1813,7 @@ modify_date   ,
 recent_user   
 ) select 
 product_code  ,
-product_class ,
+product_class_name ,
 manufacturer  ,
 model_name    ,
 product_name  ,
@@ -1796,28 +1828,32 @@ create_date::timestamp   ,
 modify_date::timestamp   ,
 recent_user   from tbl_product_info_temp;
 
+drop table tbl_product_info_temp;
+
 -- tbl_product_class_list 생성
+drop table tbl_product_class_list;
+
 create table tbl_product_class_list(
 product_class_code   varchar(32) primary key,
 product_class_name   VARCHAR(100) not null,
-product_class_order  INTEGER,
-product_class_memo   TEXT
+"order"  INTEGER,
+memo   TEXT
 );
 
 
 create table tbl_product_class_list_temp(
 product_class_code   VARCHAR(100),
 product_class_name   VARCHAR(100),
-product_class_order  VARCHAR(100),
-product_class_memo   TEXT
+"order"  VARCHAR(100),
+memo   TEXT
 );
 
 
  copy tbl_product_class_list_temp(
 product_class_code  ,
 product_class_name  ,
-product_class_order ,
-product_class_memo  
+"order" ,
+memo  
 ) from 'd:\tbl_product_class_list20240605.csv' csv;
 
 delete from tbl_product_class_list_temp 
@@ -1826,13 +1862,13 @@ where product_class_code = 'product_class_code';
 insert into tbl_product_class_list(
   product_class_code  ,
 product_class_name  ,
-product_class_order ,
-product_class_memo   
+"order" ,
+memo   
 ) select 
  product_class_code  ,
 product_class_name  ,
-product_class_order::integer ,
-product_class_memo   from tbl_product_class_list_temp;
+"order"::integer ,
+memo   from tbl_product_class_list_temp;
 
 select * from tbl_product_class_list;
 
@@ -2020,3 +2056,5 @@ region
 from tbl_company_info_temp;
 
 drop table tbl_company_info_temp;
+
+-- 6월 8일 dev 적용 
