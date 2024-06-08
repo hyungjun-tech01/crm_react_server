@@ -523,9 +523,12 @@ app.get('/productClass', async(req, res) => {
     try{
         console.log("[Get] productClass");
         const allproductClassResult = await pool.query(`
-        select * 
+        select product_class_code  ,
+                product_class_name  ,
+                "order" ,
+                memo  
             from tbl_product_class_list tpc
-            order by tpc.product_class_order`);
+            order by "order"`);
 
         if(allproductClassResult.rows.length > 0) {
             const allproductsClass = allproductClassResult.rows;
@@ -1177,7 +1180,7 @@ app.post('/modifyPurchase', async(req, res) => {
         purchase_code       = defaultNull(req.body.purchase_code), 
         company_code        = defaultNull(req.body.company_code),
         product_code        = defaultNull(req.body.product_code),
-        product_class       = defaultNull(req.body.product_class),
+        product_class_name       = defaultNull(req.body.product_class_name),
         product_name        = defaultNull(req.body.product_name),
         serial_number       = defaultNull(req.body.serial_number),
         licence_info        = defaultNull(req.body.licence_info),
@@ -1227,7 +1230,7 @@ app.post('/modifyPurchase', async(req, res) => {
                     purchase_code  ,     
                     company_code   ,    
                     product_code   ,      
-                    product_class  ,     
+                    product_class_name  ,     
                     product_name   ,    
                     serial_number  ,     
                     licence_info   ,      
@@ -1256,7 +1259,7 @@ app.post('/modifyPurchase', async(req, res) => {
                 v_purchase_code, 
                 company_code   ,  
                 product_code   ,  
-                product_class  ,  
+                product_class_name  ,  
                 product_name   ,  
                 serial_number  ,  
                 licence_info   ,  
@@ -1292,7 +1295,7 @@ app.post('/modifyPurchase', async(req, res) => {
                update tbl_purchase_info 
                set  company_code      = COALESCE($1, company_code ),  
                     product_code      = COALESCE($2, product_code),  
-                    product_class     = COALESCE($3, product_class),  
+                    product_class_name     = COALESCE($3, product_class_name),  
                     product_name      = COALESCE($4, product_name),  
                     serial_number     = COALESCE($5, serial_number),  
                     licence_info      = COALESCE($6, licence_info),  
@@ -1315,7 +1318,7 @@ app.post('/modifyPurchase', async(req, res) => {
                 where purchase_code = $23
             `,[company_code   ,  
                 product_code   ,  
-                product_class  ,  
+                product_class_name  ,  
                 product_name   ,  
                 serial_number  ,  
                 licence_info   ,  
@@ -1949,7 +1952,7 @@ app.post('/modifyProduct', async(req, res) => {
     const  { 
         action_type                = defaultNull(req.body.action_type),
         product_code               = defaultNull(req.body.product_code),
-        product_class              = defaultNull(req.body.product_class),
+        product_class_name              = defaultNull(req.body.product_class_name),
         manufacturer               = defaultNull(req.body.manufacturer),
         model_name                 = defaultNull(req.body.model_name),
         product_name               = defaultNull(req.body.product_name),
@@ -1983,7 +1986,7 @@ app.post('/modifyProduct', async(req, res) => {
             v_product_code  = pk_code();
             const response = await pool.query(`insert into tbl_product_info(
                 product_code  ,
-                product_class ,
+                product_class_name ,
                 manufacturer  ,
                 model_name    ,
                 product_name  ,
@@ -2000,7 +2003,7 @@ app.post('/modifyProduct', async(req, res) => {
                 values($1,$2,$3,$4,$5,$6,$7::numeric,$8::numeric, $9::numeric, $10, $11, $12, $13::timestamp,$14::timestamp,$15)`,
                 [
                     v_product_code        ,
-                    product_class         ,
+                    product_class_name         ,
                     manufacturer          ,
                     model_name            ,
                     product_name          ,
@@ -2021,7 +2024,7 @@ app.post('/modifyProduct', async(req, res) => {
 
             const response = await pool.query(`
                 update tbl_product_info 
-                set product_class  = COALESCE($1 , product_class),
+                set product_class_name  = COALESCE($1 , product_class_name),
                     manufacturer   = COALESCE($2 , manufacturer),
                     model_name     = COALESCE($3 , model_name),
                     product_name   = COALESCE($4 , product_name),
@@ -2035,7 +2038,7 @@ app.post('/modifyProduct', async(req, res) => {
                     recent_user    = COALESCE($12 , recent_user)
                 where product_code = $13
             `,[
-                product_class ,
+                product_class_name ,
                 manufacturer  ,
                 model_name    ,
                 product_name  ,
@@ -2076,8 +2079,8 @@ app.post('/modifyProductClass', async(req, res) => {
         action_type                = defaultNull(req.body.action_type),
         product_class_code         = defaultNull(req.body.product_class_code),
         product_class_name         = defaultNull(req.body.product_class_name),
-        product_class_order        = defaultNull(req.body.product_class_order),
-        product_class_memo         = defaultNull(req.body.product_class_memo),
+        product_class_order        = defaultNull(req.body.order),
+        product_class_memo         = defaultNull(req.body.memo),
         modify_user               = defaultNull(req.body.modify_user)
     } = req.body;
 
@@ -2105,8 +2108,8 @@ app.post('/modifyProductClass', async(req, res) => {
             const response = await pool.query(`insert into tbl_product_class_list(
                 product_class_code  ,
                 product_class_name  ,
-                product_class_order ,
-                product_class_memo      )
+                "order" ,
+                memo      )
                 values($1,$2,$3::integer,$4)`,
                 [
                     v_product_class_code  ,
@@ -2120,8 +2123,8 @@ app.post('/modifyProductClass', async(req, res) => {
             const response = await pool.query(`
             update tbl_product_class_list 
                 set product_class_name    = COALESCE($1 , product_class_name),
-                product_class_order   = COALESCE($2 , product_class_order),
-                product_class_memo    = COALESCE($3 , product_class_memo),
+                "order"   = COALESCE($2 , "order"),
+                memo    = COALESCE($3 , memo),
             where product_class_code = $4
             `,[
                 product_class_name ,
