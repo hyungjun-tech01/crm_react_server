@@ -2057,3 +2057,32 @@ from tbl_company_info_temp;
 drop table tbl_company_info_temp;
 
 -- 위까지 6월 8일 dev 적용 
+
+--6월 9일 tbl_user_info : l_job_type(SR/AE) 추가 , l_is_work 재직여부 추가 
+ALTER TABLE tbl_user_info add  COLUMN l_job_type varchar(30);
+ALTER TABLE tbl_user_info add  COLUMN l_is_work varchar(10);
+
+update tbl_user_info
+set l_is_work = 'N'
+where user_name like '%퇴사자%';
+
+update tbl_user_info
+set l_is_work = 'Y'
+where l_is_work is null;
+
+
+WITH rows_to_update AS (
+    SELECT user_id
+    FROM tbl_user_info
+    WHERE l_is_work = 'Y'
+    LIMIT 14
+)
+UPDATE tbl_user_info
+SET l_job_type = 'SR'
+WHERE user_id IN (SELECT user_id FROM rows_to_update);
+
+update tbl_user_info
+set l_job_type = 'AE'
+where l_job_type is null;
+
+
