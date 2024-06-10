@@ -1834,10 +1834,10 @@ drop table tbl_product_info_temp;
 drop table tbl_product_class_list;
 
 create table tbl_product_class_list(
-product_class_code   va rchar(32) primary key,
+product_class_code   varchar(32) primary key,
 product_class_name   VARCHAR(100) not null,
 "order"  INTEGER,
-text);
+memo  text);
 
 
 create table tbl_product_class_list_temp(
@@ -1875,7 +1875,7 @@ drop table tbl_product_class_list_temp;
 
 
 -- 2024.06.07 company info 다시 전체 로드 
-drop table tbl_company_info_temp;
+drop table if exists tbl_company_info_temp;
 
 create table tbl_company_info_temp
 (company_code                 varchar	(32)   PRIMARY KEY,
