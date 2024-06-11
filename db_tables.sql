@@ -2086,3 +2086,6 @@ set l_job_type = 'AE'
 where l_job_type is null;
 
 
+-- 6월 11일 tbl_lead_info 에 memo 추가 
+
+ALTER TABLE tbl_lead_info add  COLUMN memo text;
