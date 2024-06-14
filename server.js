@@ -1064,8 +1064,8 @@ app.post('/modifyConsult', async(req, res) => {
                 application_engineer
             )
              values(
-                $1,$2,$3::date,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21::timestamp,$22,
-                $23,$24::timestamp,$25, $26);
+                $1,$2,$3::timestamp,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20::timestamp,$21,$22,
+                $23::timestamp,$24,$25);
             `,[ v_consulting_code,
                 lead_code               , 
                 receipt_date            , 
@@ -1115,32 +1115,30 @@ app.post('/modifyConsult', async(req, res) => {
             const response = await pool.query(`
             update tbl_consulting_info 
                set lead_code               = COALESCE($1, lead_code), 
-                   receipt_date            = COALESCE($2::date, receipt_date), 
-                   receipt_time            = COALESCE($3, receipt_time), 
-                   consulting_type         = COALESCE($4, consulting_type), 
-                   receiver                = COALESCE($5, receiver), 
-                   sales_representative    = COALESCE($6, sales_representative), 
-                   company_name            = COALESCE($7, company_name), 
-                   company_code            = COALESCE($8, company_code), 
-                   lead_name               = COALESCE($9, lead_name), 
-                   department              = COALESCE($10, department), 
-                   position                = COALESCE($11, position), 
-                   phone_number            = COALESCE($12, phone_number), 
-                   mobile_number           = COALESCE($13, mobile_number), 
-                   email                   = COALESCE($14, email), 
-                   request_content         = COALESCE($15, request_content), 
-                   status                  = COALESCE($16, status), 
-                   lead_time               = COALESCE($17, lead_time), 
-                   action_content          = COALESCE($18, action_content), 
-                   request_type            = COALESCE($19, request_type), 
-                   recent_user             = COALESCE($20, recent_user),
-                   modify_date             = COALESCE($21::timestamp, modify_date),
-                   product_type            = COALESCE($22, product_type),
-                   application_engineer    = COALESCE($23, application_engineer)
-                where consulting_code = $24;
+                   receipt_date            = COALESCE($2::timestamp, receipt_date), 
+                   consulting_type         = COALESCE($3, consulting_type), 
+                   receiver                = COALESCE($4, receiver), 
+                   sales_representative    = COALESCE($5, sales_representative), 
+                   company_name            = COALESCE($6, company_name), 
+                   company_code            = COALESCE($7, company_code), 
+                   lead_name               = COALESCE($8, lead_name), 
+                   department              = COALESCE($9, department), 
+                   position                = COALESCE($10, position), 
+                   phone_number            = COALESCE($11, phone_number), 
+                   mobile_number           = COALESCE($12, mobile_number), 
+                   email                   = COALESCE($13, email), 
+                   request_content         = COALESCE($14, request_content), 
+                   status                  = COALESCE($15, status), 
+                   lead_time               = COALESCE($16, lead_time), 
+                   action_content          = COALESCE($17, action_content), 
+                   request_type            = COALESCE($18, request_type), 
+                   recent_user             = COALESCE($19, recent_user),
+                   modify_date             = COALESCE($20::timestamp, modify_date),
+                   product_type            = COALESCE($21, product_type),
+                   application_engineer    = COALESCE($22, application_engineer)
+                where consulting_code = $23;
             `,[lead_code               , 
                 receipt_date            , 
-                receipt_time            , 
                 consulting_type         , 
                 receiver                , 
                 sales_representative    , 

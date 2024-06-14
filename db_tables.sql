@@ -2093,3 +2093,32 @@ ALTER TABLE tbl_lead_info add  COLUMN memo text;
 -- 6월 14일 tbl_consulting_info 에 application_engineer  추가
 alter table tbl_consulting_info add column application_engineer varchar(50);
 
+-- 6월 14일 tbl_consulting_info 에 receipt_date를 timestamo로 변경 
+alter table tbl_consulting_info add column receipt_date1 timestamp;
+
+UPDATE tbl_consulting_info t
+SET receipt_date1 = (
+    SELECT 
+        TO_TIMESTAMP(
+            REPLACE(REPLACE(to_char(t2.receipt_date, 'YYYY-MM-DD') || ' ' || t2.receipt_time, '오전', 'AM'), '오후', 'PM'), 
+            'YYYY-MM-DD AM HH12:MI:SS'
+        )
+    FROM tbl_consulting_info t2
+    WHERE t2.consulting_code = t.consulting_code
+);
+
+update tbl_consulting_info
+set receipt_date = null;
+
+ALTER TABLE tbl_consulting_info ALTER COLUMN receipt_date TYPE timestamp;
+
+update tbl_consulting_info 
+set receipt_date = receipt_date1;
+
+alter table tbl_consulting_info drop column receipt_date1;
+
+alter table tbl_consulting_info drop column receipt_time;
+
+select * from tbl_consulting_info;
+
+
