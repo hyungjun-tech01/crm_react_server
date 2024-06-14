@@ -316,7 +316,8 @@ app.post('/companyConsultings', async(req, res) => {
                 creater,
                 modify_date,
                 recent_user,
-                product_type          
+                product_type,
+                application_engineer          
            from tbl_consulting_info
               where company_code = $1
               order by modify_date desc`, [company_code]);
@@ -992,7 +993,8 @@ app.post('/modifyConsult', async(req, res) => {
         action_content          = defaultNull(req.body.action_content), 
         request_type            = defaultNull(req.body.request_type), 
         modify_user             = defaultNull(req.body.modify_user),            
-        product_type            = defaultNull(req.body.product_type)
+        product_type            = defaultNull(req.body.product_type),
+        application_engineer    = defaultNull(req.body.application_engineer)
         } = req.body;
 
     try{
@@ -1058,11 +1060,12 @@ app.post('/modifyConsult', async(req, res) => {
                 creater                 ,
                 recent_user             ,
                 modify_date             ,
-                product_type            
+                product_type            ,
+                application_engineer
             )
              values(
                 $1,$2,$3::date,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21::timestamp,$22,
-                $23,$24::timestamp,$25);
+                $23,$24::timestamp,$25, $26);
             `,[ v_consulting_code,
                 lead_code               , 
                 receipt_date            , 
@@ -1087,7 +1090,8 @@ app.post('/modifyConsult', async(req, res) => {
                 modify_user             ,
                 modify_user             ,
                 currentDate.currdate     ,
-                product_type
+                product_type             ,
+                application_engineer
             ]);
         }
 
@@ -1131,8 +1135,9 @@ app.post('/modifyConsult', async(req, res) => {
                    request_type            = COALESCE($19, request_type), 
                    recent_user             = COALESCE($20, recent_user),
                    modify_date             = COALESCE($21::timestamp, modify_date),
-                   product_type            = COALESCE($22, product_type)
-                where consulting_code = $23;
+                   product_type            = COALESCE($22, product_type),
+                   application_engineer    = COALESCE($23, application_engineer)
+                where consulting_code = $24;
             `,[lead_code               , 
                 receipt_date            , 
                 receipt_time            , 
@@ -1153,8 +1158,9 @@ app.post('/modifyConsult', async(req, res) => {
                 action_content          , 
                 request_type            , 
                 modify_user             ,
-                currentDate.currdate     ,
+                currentDate.currdate    ,
                 product_type            ,
+                application_engineer    ,
                 v_consulting_code
             ]);
         }      

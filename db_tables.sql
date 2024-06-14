@@ -2089,3 +2089,7 @@ where l_job_type is null;
 -- 6월 11일 tbl_lead_info 에 memo 추가 
 
 ALTER TABLE tbl_lead_info add  COLUMN memo text;
+
+-- 6월 14일 tbl_consulting_info 에 application_engineer  추가
+alter table tbl_consulting_info add column application_engineer varchar(50);
+
