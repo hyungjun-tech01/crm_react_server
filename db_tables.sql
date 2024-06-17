@@ -2121,4 +2121,4 @@ alter table tbl_consulting_info drop column receipt_time;
 
 select * from tbl_consulting_info;
 
-
+-- 위까지 6월 17일 dev 적용 
