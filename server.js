@@ -468,6 +468,40 @@ app.post('/companyMaContract', async(req, res) => {
     }
 });
 
+app.post('/purchaseMaContract', async(req, res) => {
+    console.log("[Get] purchase ma contract", req.body.purchase_code);
+    const { 
+        purchase_code               = defaultNull(req.body.purchase_code) 
+    } = req.body;
+
+    try{
+        const purchaseMaContractResult = await pool.query(`
+            select tpi.product_code, 
+                tpi.product_name, 
+                tpi.serial_number, 
+                tci.company_name, 
+                tmc.* 
+                from tbl_ma_contract tmc , tbl_purchase_info tpi, tbl_company_info tci
+                where tmc.purchase_code = $1
+                and tmc.purchase_code = tpi.purchase_code
+                and tmc.ma_company_code = tci.company_code
+                order by tmc.ma_modify_date desc`, [purchase_code]);  
+
+        if(purchaseMaContractResult.rows.length > 0) {
+            const purchaseMaContract = purchaseMaContractResult.rows;
+            res.json(purchaseMaContract);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err});        
+        res.end();
+    }
+});
+
 app.post('/companyPurchases', async(req, res) => {
     console.log("[Get] company purchase", req.body.company_code);
     const { 
