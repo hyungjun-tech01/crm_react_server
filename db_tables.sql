@@ -2122,3 +2122,88 @@ alter table tbl_consulting_info drop column receipt_time;
 select * from tbl_consulting_info;
 
 -- 위까지 6월 17일 dev 적용 
+
+-- 6월 19일 tbl_ma_contract table 재생성 MA_code, ma_type 추가 
+drop table tbl_MA_contract; 
+
+CREATE TABLE tbl_MA_contract (
+MA_code varchar(32) PRIMARY KEY , 
+purchase_code varchar(32) not null, 
+MA_company_code varchar(32), 
+MA_contract_date date, 
+MA_finish_date date , 
+MA_Type varchar(50), 
+MA_price numeric,
+MA_memo varchar(100),
+MA_register varchar(30),
+MA_registration_date timestamp,
+MA_recent_user varchar(30), 
+MA_modify_date timestamp);    
+
+create table tbl_MA_contract_temp (
+  MA_code varchar(32)  , 
+purchase_code varchar(32) , 
+MA_company_code varchar(32), 
+MA_contract_date varchar(32), 
+MA_finish_date varchar(32) , 
+MA_Type varchar(50), 
+MA_price varchar(32),
+MA_memo varchar(100),
+MA_register varchar(30),
+MA_registration_date varchar(32),
+MA_recent_user varchar(30), 
+MA_modify_date varchar(32)
+);
+
+copy tbl_MA_contract_temp
+( MA_code  ,
+	purchase_code  ,
+	MA_company_code ,
+	MA_contract_date ,
+	MA_finish_date ,
+  MA_Type, 
+	MA_price ,
+	MA_memo ,
+	MA_register,
+	MA_registration_date,
+	MA_recent_user ,
+	MA_modify_date )
+from 'd:\tbl_MA_contract202406190939.csv' csv;
+
+
+-- 헤더 삭제 
+delete from tbl_MA_contract_temp 
+where MA_code = 'MA_code';
+
+insert into tbl_MA_contract(
+  MA_code  ,
+	purchase_code  ,
+	MA_company_code ,
+	MA_contract_date ,
+	MA_finish_date ,
+  MA_Type,
+	MA_price ,
+	MA_memo ,
+	MA_register,
+	MA_registration_date,
+	MA_recent_user ,
+	MA_modify_date
+)
+select MA_code  ,
+	purchase_code  ,
+	MA_company_code ,
+	MA_contract_date::date ,
+	MA_finish_date::date ,
+  MA_Type,
+	MA_price::numeric ,
+	MA_memo ,
+	MA_register,
+	MA_registration_date::timestamp,
+	MA_recent_user ,
+	MA_modify_date::timestamp 
+  from tbl_MA_contract_temp;
+
+  select * from tbl_MA_contract; -- 확인 
+
+
+  drop table tbl_MA_contract_temp;  -- temp drop 
