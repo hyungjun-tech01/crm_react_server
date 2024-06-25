@@ -2207,3 +2207,49 @@ select MA_code  ,
 
 
   drop table tbl_MA_contract_temp;  -- temp drop 
+
+-- 2024.06.25 테이블 수정 , pk varchar32 -> 36 
+ALTER TABLE tbl_company_info ALTER COLUMN company_code TYPE varchar(36);
+
+ALTER TABLE tbl_lead_info ALTER COLUMN lead_code TYPE varchar(36);
+ALTER TABLE tbl_lead_info ALTER COLUMN company_code TYPE varchar(36);
+
+
+ALTER TABLE tbl_consulting_info ALTER COLUMN consulting_code TYPE varchar(36);
+ALTER TABLE tbl_consulting_info ALTER COLUMN lead_code TYPE varchar(36);
+
+
+ALTER TABLE tbl_purchase_info ALTER COLUMN purchase_code TYPE varchar(36);
+ALTER TABLE tbl_purchase_info ALTER COLUMN company_code TYPE varchar(36);
+ALTER TABLE tbl_purchase_info ALTER COLUMN product_code TYPE varchar(36);
+
+-- 컬럼 이름 변경 : invoiceno invoice_number
+ALTER TABLE tbl_purchase_info RENAME COLUMN invoiceno TO invoice_number; 
+
+
+
+ALTER TABLE tbl_MA_contract ALTER COLUMN MA_code TYPE varchar(36);
+ALTER TABLE tbl_MA_contract ALTER COLUMN purchase_code TYPE varchar(36);
+ALTER TABLE tbl_MA_contract ALTER COLUMN MA_company_code TYPE varchar(36);
+
+
+ALTER TABLE tbl_transaction_info ALTER COLUMN transaction_code TYPE varchar(36);
+ALTER TABLE tbl_transaction_info ALTER COLUMN lead_code TYPE varchar(36);
+
+
+ALTER TABLE tbl_quotation_info ALTER COLUMN quotation_code TYPE varchar(36);
+ALTER TABLE tbl_quotation_info ALTER COLUMN lead_code TYPE varchar(36);
+
+
+ALTER TABLE tbl_product_info ALTER COLUMN product_code TYPE varchar(36);
+
+
+ALTER TABLE tbl_product_class_list ALTER COLUMN product_class_code TYPE varchar(36);
+
+
+
+
+
+
+
+
