@@ -23,7 +23,7 @@ BEGIN
 	            tax_price	           ,
             	total_price	         ,
 	            memo	               ,
-            	trasaction_sub_index ,
+            	transaction_sub_index ,
             	lead_code	           ,
             	company_name	       ,
             	statement_number	   ,
