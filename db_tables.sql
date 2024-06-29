@@ -2248,4 +2248,7 @@ ALTER TABLE tbl_product_info ALTER COLUMN product_code TYPE varchar(36);
 
 ALTER TABLE tbl_product_class_list ALTER COLUMN product_class_code TYPE varchar(36);
 
+-- 2024.06.29 tbl_transaction_info lead_code => company_code 변경 
+
+ALTER TABLE tbl_transaction_info RENAME COLUMN lead_code TO company_code;
 
