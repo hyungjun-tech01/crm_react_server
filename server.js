@@ -1469,7 +1469,7 @@ app.post('/modifyTransaction', async(req, res) => {
     const  { 
         action_type                = defaultNull(req.body.action_type),
         transaction_code           = defaultNull(req.body.transaction_code),
-        lead_code                  = defaultNull(req.body.lead_code),
+        company_code                  = defaultNull(req.body.company_code),
         publish_type               = defaultNull(req.body.publish_type),
         transaction_type           = defaultNull(req.body.transaction_type),
         business_registration_code = defaultNull(req.body.business_registration_code),
@@ -1506,8 +1506,8 @@ app.post('/modifyTransaction', async(req, res) => {
         }7        
 
         if (action_type === 'ADD') {
-            if (lead_code === null || lead_code === "") {
-                throw new Error('lead_code not null입니다.');
+            if (company_code === null || company_code === "") {
+                throw new Error('company_code not null입니다.');
             }
             if (publish_date === null || publish_date === "") {
                 throw new Error('publish_date는 not null입니다.');
@@ -1516,7 +1516,7 @@ app.post('/modifyTransaction', async(req, res) => {
             const response = await pool.query(`
                 insert into tbl_transaction_info(
                     transaction_code          ,
-                    lead_code                 ,
+                    company_code                 ,
                     publish_type              ,
                     transaction_type          ,
                     business_registration_code,
@@ -1540,7 +1540,7 @@ app.post('/modifyTransaction', async(req, res) => {
                     $14::numeric,$15::numeric,$16,$17,$18::timestamp,$19, $20, $21)
             `,[
                 v_transaction_code,
-                lead_code                   ,                
+                company_code                   ,                
                 publish_type                ,
                 transaction_type            ,
                 business_registration_code  ,
@@ -1567,7 +1567,7 @@ app.post('/modifyTransaction', async(req, res) => {
 
             const response = await pool.query(`
                 update tbl_transaction_info 
-                  set  lead_code                  = COALESCE($1 , lead_code),
+                  set  company_code                  = COALESCE($1 , company_code),
                         publish_type               = COALESCE($2 , publish_type),
                         transaction_type           = COALESCE($3 , transaction_type),
                         business_registration_code = COALESCE($4 , business_registration_code),
@@ -1587,7 +1587,7 @@ app.post('/modifyTransaction', async(req, res) => {
                         transaction_contents       = COALESCE($18 , transaction_contents),
                         currency                   = COALESCE($19 , currency)    
                 where transaction_code = $20
-            `,[ lead_code                 ,         
+            `,[ company_code                 ,         
                 publish_type              ,
                 transaction_type          ,
                 business_registration_code,
