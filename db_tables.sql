@@ -2140,6 +2140,8 @@ MA_registration_date timestamp,
 MA_recent_user varchar(30), 
 MA_modify_date timestamp);    
 
+drop table if exists tbl_MA_contract_temp;
+
 create table tbl_MA_contract_temp (
   MA_code varchar(32)  , 
 purchase_code varchar(32) , 
@@ -2245,11 +2247,5 @@ ALTER TABLE tbl_product_info ALTER COLUMN product_code TYPE varchar(36);
 
 
 ALTER TABLE tbl_product_class_list ALTER COLUMN product_class_code TYPE varchar(36);
-
-
-
-
-
-
 
 

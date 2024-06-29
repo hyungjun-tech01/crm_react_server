@@ -28,6 +28,23 @@ const pk_code = () => {
 //값이 없으면 null로 세팅
 const defaultNull = (value) => value === undefined ? null : value;
 
+// formating date string 
+const formatDate = (date_value) => {
+    if(date_value === undefined || date_value === null) return "";
+    
+    let  converted = null;
+    if(typeof date_value === 'string') {
+        converted = new Date(date_value);
+    } else {
+        converted = date_value;
+    }
+    const month = converted.getMonth() + 1;
+    const date = converted.getDate();
+    return converted.getFullYear()
+          + "." + (month < 10 ? "0" + month.toString() : month.toString())
+          + "." + (date < 10 ? "0" + date.toString() : date.toString());
+};
+
 try {
     fsUpper.readdirSync('uploads');
 } catch (error) {
@@ -189,11 +206,56 @@ app.get('/', (req, res)=>{
 });
 
 ////////////////// crm schema query, modify /////////////////////////
-app.get('/companies', async(req, res) => {
+app.post('/companies', async(req, res) => {
+    const { 
+        queryConditions               = defaultNull(req.body.queryConditions), 
+        checkedDates                  = defaultNull(req.body.checkedDates),
+        singleDate                    = defaultNull(req.body.singleDate),
+    } = req.body;
+
+    let queryString = "";
+    if (queryConditions !== null && queryConditions.length !== 0){
+        for (const i of queryConditions){
+            if( i.companyColumn.value !== undefined || i.companyColumn.value !== null || i.companyColumn.value !== ""){
+                if ( i.columnQueryCondition.value === "like")
+                queryString = queryString 
+                            + i.companyColumn.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'%" + i.multiQueryInput + "%'" + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "is null" || i.columnQueryCondition.value === "is not null")
+                queryString = queryString 
+                        + i.companyColumn.value + " "
+                        + i.columnQueryCondition.value + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "=")
+                queryString = queryString 
+                            + i.companyColumn.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'" + i.multiQueryInput + "'" + " " + i.andOr + " ";
+            }
+        }
+    }
+
+    if (checkedDates !== null && checkedDates.length !== 0){
+        queryString += " company_code in (select company_code from tbl_purchase_info where "
+        for (const i of checkedDates){
+        console.log(formatDate(i.fromDate), formatDate(i.toDate));
+        queryString = queryString
+                    +"(" + i.label + " between " 
+                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' +1 )" +" And ";
+        }
+        queryString = queryString.replace(/And\s*$/, '');
+        queryString += " )";
+    }
+
+    console.log('queryString:', queryString.replace(/And\s*$/, ''));      
+    queryString = queryString.replace(/And\s*$/, '');
+
+
     try{
         console.log("[Get] Companies");
         const allCompaniesResult = await pool.query(`
             select * from tbl_company_info
+            ${queryString ? `WHERE ${queryString}` : ''}
             order by modify_date desc`);
 
         if(allCompaniesResult.rows.length > 0) {
