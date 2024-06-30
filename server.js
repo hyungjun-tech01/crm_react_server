@@ -668,8 +668,8 @@ app.get('/getallusers', async(req, res) => {
         t.email as "email", 
         t.private_group  as "private_group",
         t.memo  as "memo",
-        t.l_job_type as "jobType",
-        t.l_is_work as "isWork"
+        t.job_type as "jobType",
+        t.is_work as "isWork"
         FROM tbl_user_info t`);
         if(users.rows.length >0) {
             const allusers = users.rows;

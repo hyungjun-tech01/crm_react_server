@@ -2324,3 +2324,7 @@ ALTER TABLE tbl_product_class_list RENAME COLUMN "order" TO product_class_order;
 ALTER TABLE tbl_product_class_list RENAME COLUMN memo TO product_class_memo;
 
 ALTER TABLE tbl_user_info RENAME COLUMN group_ TO private_group;
+
+
+ALTER TABLE tbl_user_info RENAME COLUMN l_job_type TO job_type;
+ALTER TABLE tbl_user_info RENAME COLUMN l_is_work  TO is_work;
