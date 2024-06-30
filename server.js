@@ -635,10 +635,10 @@ app.get('/productClass', async(req, res) => {
         const allproductClassResult = await pool.query(`
         select product_class_code  ,
                 product_class_name  ,
-                "order" ,
+                product_class_order ,
                 memo  
             from tbl_product_class_list tpc
-            order by "order"`);
+            order by product_class_order`);
 
         if(allproductClassResult.rows.length > 0) {
             const allproductsClass = allproductClassResult.rows;

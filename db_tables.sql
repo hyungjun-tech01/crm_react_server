@@ -1836,14 +1836,14 @@ drop table tbl_product_class_list;
 create table tbl_product_class_list(
 product_class_code   varchar(32) primary key,
 product_class_name   VARCHAR(100) not null,
-"order"  INTEGER,
+product_class_order  INTEGER,
 memo  text);
 
 
 create table tbl_product_class_list_temp(
 product_class_code   VARCHAR(100),
 product_class_name   VARCHAR(100),
-"order"  VARCHAR(100),
+product_class_order  VARCHAR(100),
 memo   TEXT
 );
 
@@ -1851,7 +1851,7 @@ memo   TEXT
  copy tbl_product_class_list_temp(
 product_class_code  ,
 product_class_name  ,
-"order" ,
+product_class_order ,
 memo  
 ) from 'd:\tbl_product_class_list20240605.csv' csv;
 
@@ -1861,12 +1861,12 @@ where product_class_code = 'product_class_code';
 insert into tbl_product_class_list(
   product_class_code  ,
 product_class_name  ,
-"order" ,
+product_class_order ,
 memo   
 ) select 
  product_class_code  ,
 product_class_name  ,
-"order"::integer ,
+product_class_order::integer ,
 memo   from tbl_product_class_list_temp;
 
 select * from tbl_product_class_list;
@@ -2316,3 +2316,7 @@ drop table if exists tbl_transaction_sub_temp;
 drop procedure p_insert_transaction_sub();
 
 -- 20204.06.30 dev 적용 여기까지 
+
+-- 2024.06.30 tbl_product_class_list order 컬럼 변경 product_class_order
+
+ALTER TABLE tbl_product_class_list RENAME COLUMN "order" TO product_class_order;
