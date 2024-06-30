@@ -236,13 +236,27 @@ app.post('/companies', async(req, res) => {
     }
 
     if (checkedDates !== null && checkedDates.length !== 0){
-        queryString += " company_code in (select company_code from tbl_purchase_info where "
+        queryString += " company_code in (select company_code from tbl_purchase_info where ";
         for (const i of checkedDates){
         console.log(formatDate(i.fromDate), formatDate(i.toDate));
         queryString = queryString
                     +"(" + i.label + " between " 
-                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' +1 )" +" And ";
+                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
         }
+        queryString = queryString.replace(/And\s*$/, '');
+        queryString += " )";
+    }
+
+    console.log("singleDate", singleDate);
+    if(singleDate !== null && singleDate.length !== 0){
+        queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
+        for (const i of singleDate){
+            console.log(formatDate(i.fromDate), formatDate(i.toDate));
+            queryString = queryString
+                        +"(" + i.label + " <= " 
+                        +"'"+ formatDate(i.fromDate) + "'" + " ) " + " And ";
+            }
+
         queryString = queryString.replace(/And\s*$/, '');
         queryString += " )";
     }
