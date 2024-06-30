@@ -2322,3 +2322,5 @@ drop procedure p_insert_transaction_sub();
 ALTER TABLE tbl_product_class_list RENAME COLUMN "order" TO product_class_order;
 
 ALTER TABLE tbl_product_class_list RENAME COLUMN memo TO product_class_memo;
+
+ALTER TABLE tbl_user_info RENAME COLUMN group_ TO private_group;
