@@ -2315,4 +2315,4 @@ drop table if exists tbl_transaction_sub_temp;
 -- 프로시져 drop 
 drop procedure p_insert_transaction_sub();
 
-
+-- 20204.06.30 dev 적용 여기까지 
