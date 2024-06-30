@@ -2320,3 +2320,5 @@ drop procedure p_insert_transaction_sub();
 -- 2024.06.30 tbl_product_class_list order 컬럼 변경 product_class_order
 
 ALTER TABLE tbl_product_class_list RENAME COLUMN "order" TO product_class_order;
+
+ALTER TABLE tbl_product_class_list RENAME COLUMN memo TO product_class_memo;

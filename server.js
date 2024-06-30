@@ -636,7 +636,7 @@ app.get('/productClass', async(req, res) => {
         select product_class_code  ,
                 product_class_name  ,
                 product_class_order ,
-                memo  
+                product_class_memo  
             from tbl_product_class_list tpc
             order by product_class_order`);
 
