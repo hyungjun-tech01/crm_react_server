@@ -2328,3 +2328,8 @@ ALTER TABLE tbl_user_info RENAME COLUMN group_ TO private_group;
 
 ALTER TABLE tbl_user_info RENAME COLUMN l_job_type TO job_type;
 ALTER TABLE tbl_user_info RENAME COLUMN l_is_work  TO is_work;
+
+alter table tbl_lead_info rename column leads_name to lead_name;  -- dev serv만 적용 local은 적용되어 있음
+alter table tbl_lead_info rename column leads_index to lead_index;  -- dev serv만 적용 local은 적용되어 있음
+
+-- 20204.06.30 dev 적용 여기까지 
