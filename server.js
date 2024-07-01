@@ -2281,7 +2281,7 @@ app.post('/modifyUser', async(req, res) => {
         department                 = defaultNull(req.body.department),
         position                   = defaultNull(req.body.position),
         email                      = defaultNull(req.body.email),
-        group_                     = defaultNull(req.body.group_),
+        private_group              = defaultNull(req.body.private_group),
         memo                       = defaultNull(req.body.memo),
         modify_user                = defaultNull(req.body.modify_user),
     } = req.body;
@@ -2325,7 +2325,7 @@ app.post('/modifyUser', async(req, res) => {
                     department,
                     position,
                     email,
-                    group_,
+                    private_group,
                     memo
                 )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10 )
             `,[userId, 
@@ -2336,7 +2336,7 @@ app.post('/modifyUser', async(req, res) => {
                department,
                position,
                email,
-               group_,
+               private_group,
                memo
             ]);
         }
@@ -2361,10 +2361,10 @@ app.post('/modifyUser', async(req, res) => {
                    department       = COALESCE( $5, department),
                    position         = COALESCE( $6, position),
                    email            = COALESCE( $7, email),
-                   group_           = COALESCE( $8, group_),
+                   private_group           = COALESCE( $8, private_group),
                    memo             = COALESCE( $9, memo)
                 where user_id = $10
-            `,[userName, hashPassword, mobileNumber, phoneNumber, department, position, email, group_, memo, userId]);
+            `,[userName, hashPassword, mobileNumber, phoneNumber, department, position, email, private_group, memo, userId]);
         }
 
         const out_user_id = userId;
@@ -2400,7 +2400,7 @@ app.post('/login', async(req, res) => {
         t.department as "department", 
         t.position as "position", 
         t.email as "email", 
-        t.group_  as "group_",
+        t.private_group  as "private_group",
         t.memo  as "memo"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length){ 
@@ -2418,7 +2418,7 @@ app.post('/login', async(req, res) => {
                       department: users.rows[0].department,
                       position: users.rows[0].position, 
                       email: users.rows[0].email, 
-                      group_: users.rows[0].group_, 
+                      private_group: users.rows[0].private_group, 
                       memo: users.rows[0].memo,
                       token: token,
                       message:"success"});
@@ -2447,7 +2447,7 @@ app.post('/getuser', async(req, res) => {
         t.department as "department", 
         t.position as "position", 
         t.email as "email", 
-        t.group_  as "group_",
+        t.private_group  as "private_group",
         t.memo  as "memo"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length) 
@@ -2481,7 +2481,7 @@ app.get('/passHash', async(req, res) => {
         t.department as "department", 
         t.position as "position", 
         t.email as "phone", 
-        t.group_  as "group_",
+        t.private_group  as "private_group",
         t.memo  as "memo"
         FROM tbl_user_info t `, []);
 
