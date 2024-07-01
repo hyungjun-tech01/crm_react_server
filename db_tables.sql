@@ -2333,3 +2333,5 @@ alter table tbl_lead_info rename column leads_name to lead_name;  -- dev serv만
 alter table tbl_lead_info rename column leads_index to lead_index;  -- dev serv만 적용 local은 적용되어 있음
 
 -- 20204.06.30 dev 적용 여기까지 
+-- 2024.07.01 tbl_user_info 의 password 컬럼 크기 늘림 : dev server 만 
+alter table tbl_user_info ALTER COLUMN password TYPE varchar(1000);

@@ -124,7 +124,7 @@ BEGIN
         i_application_engineer      ,
         i_region                    );
 
-    elsif(i_action_type = 'UPDATE') then      
+    (i_action_type = 'UPDATE') then      
 
        update tbl_company_info
        set company_number =  COALESCE(i_company_number ,company_number) ,
