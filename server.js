@@ -216,19 +216,19 @@ app.post('/companies', async(req, res) => {
     let queryString = "";
     if (queryConditions !== null && queryConditions.length !== 0){
         for (const i of queryConditions){
-            if( i.companyColumn.value !== undefined || i.companyColumn.value !== null || i.companyColumn.value !== ""){
+            if( i.column.value !== undefined || i.column.value !== null || i.column.value !== ""){
                 if ( i.columnQueryCondition.value === "like")
                 queryString = queryString 
-                            + i.companyColumn.value + " "
+                            + i.column.value + " "
                             + i.columnQueryCondition.value + " "
                             + "'%" + i.multiQueryInput + "%'" + " " + i.andOr + " ";
                 if ( i.columnQueryCondition.value === "is null" || i.columnQueryCondition.value === "is not null")
                 queryString = queryString 
-                        + i.companyColumn.value + " "
+                        + i.column.value + " "
                         + i.columnQueryCondition.value + " " + i.andOr + " ";
                 if ( i.columnQueryCondition.value === "=")
                 queryString = queryString 
-                            + i.companyColumn.value + " "
+                            + i.column.value + " "
                             + i.columnQueryCondition.value + " "
                             + "'" + i.multiQueryInput + "'" + " " + i.andOr + " ";
             }
