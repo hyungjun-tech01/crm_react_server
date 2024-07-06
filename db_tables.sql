@@ -2333,5 +2333,59 @@ alter table tbl_lead_info rename column leads_name to lead_name;  -- dev serv만
 alter table tbl_lead_info rename column leads_index to lead_index;  -- dev serv만 적용 local은 적용되어 있음
 
 -- 20204.06.30 dev 적용 여기까지 
+
 -- 2024.07.01 tbl_user_info 의 password 컬럼 크기 늘림 : dev server 만 
 alter table tbl_user_info ALTER COLUMN password TYPE varchar(1000);
+
+-- 2024.07.06 tbl_user_info 
+CREATE TABLE tbl_account_info (
+accound_code                  VARCHAR(36) primary key, 
+business_registration_code      VARCHAR(50),
+company_name                    VARCHAR(100),
+company_name_en                 VARCHAR(100),
+ceo_name                        VARCHAR(255),
+company_address                 VARCHAR(255),
+company_zip_code                VARCHAR(50),
+business_type                   VARCHAR(100),
+business_item                   VARCHAR(100),
+phone_number                    VARCHAR(100),
+fax_number                      VARCHAR(100),
+email                           VARCHAR(100),
+homepage                        VARCHAR(100),
+memo                            text	,
+event                           text	
+);
+
+insert into tbl_account_info(
+accound_code              ,
+business_registration_code,
+company_name              ,
+company_name_en           ,
+ceo_name                  ,
+company_address           ,
+company_zip_code          ,
+business_type             ,
+business_item             ,
+phone_number              ,
+fax_number                ,
+email                     ,
+homepage                  ,
+memo                      ,
+event                     )
+values(
+  '1',
+'106-86-26016',
+'노드데이타',
+'Node Date Co. Ltd.',
+'김신일'
+'서울특별시 금천구 가산디지털 1로 128 1811 (STX V-Tower)',
+'12034',
+'도소매서비스',
+'컴퓨터및주변기기,S/W개발,공급,자문',
+'02-595-4450 / 051-517-445',
+'02-595-4454 / 051-518-4452',
+'sinil@nodedate.com',
+'www.nodedata.com',
+'',
+''
+);
