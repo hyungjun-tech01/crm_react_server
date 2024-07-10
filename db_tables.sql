@@ -2389,3 +2389,11 @@ values(
 '',
 ''
 );
+
+-- 2024.07.10 tbl_company_info 테이블 변경 
+alter  table tbl_company_info rename column group_ to company_group;
+alter  table tbl_company_info rename column company_name_eng to company_name_en;
+
+alter table tbl_lead_info rename column group_ to lead_group;
+
+alter table tbl_lead_info add column deal_type varchar(50);
