@@ -2390,10 +2390,33 @@ values(
 ''
 );
 
--- 2024.07.10 tbl_company_info 테이블 변경 
+-- 2024.07.10 tbl_company_info 테이블 변경 : 엑셀자료와 맞춤
 alter  table tbl_company_info rename column group_ to company_group;
 alter  table tbl_company_info rename column company_name_eng to company_name_en;
 
 alter table tbl_lead_info rename column group_ to lead_group;
 
 alter table tbl_lead_info add column deal_type varchar(50);
+
+alter table tbl_consulting_info rename column ceater to creator;
+
+--이미 company_code 이면 수행 필요 없음
+alter table tbl_transaction_info rename column lead_code to company_code;
+
+alter table tbl_transaction_info rename column creater to creator;
+
+alter table tbl_transaction_info drop column currency;
+
+alter table tbl_transaction_info add column paid_money numeric;
+alter table tbl_transaction_info add column bank_name varchar(50);
+alter table tbl_transaction_info add column account_owner varchar(50);
+alter table tbl_transaction_info add column account_number varchar(50);
+alter table tbl_transaction_info add column card_name varchar(50);
+alter table tbl_transaction_info add column card_number varchar(50);
+alter table tbl_transaction_info add column is_bill_publish varchar(100);
+
+
+alter table tbl_quotation_info drop column quotation_contents;
+alter table tbl_quotation_info drop column currency;
+
+alter table tbl_product_info rename column product_class_name to product_class;
