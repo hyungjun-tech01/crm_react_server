@@ -2398,7 +2398,7 @@ alter table tbl_lead_info rename column group_ to lead_group;
 
 alter table tbl_lead_info add column deal_type varchar(50);
 
-alter table tbl_consulting_info rename column ceater to creator;
+alter table tbl_consulting_info rename column creater to creator;
 
 --이미 company_code 이면 수행 필요 없음
 alter table tbl_transaction_info rename column lead_code to company_code;
