@@ -1500,7 +1500,6 @@ app.post('/modifyTransaction', async(req, res) => {
         payment_type               = defaultNull(req.body.payment_type),
         modify_user                = defaultNull(req.body.modify_user),
         transaction_contents       = defaultNull(req.body.transaction_contents),
-        currency                   = defaultNull(req.body.currency)
     } = req.body;
 
     try{
@@ -1548,10 +1547,9 @@ app.post('/modifyTransaction', async(req, res) => {
                     creater                   ,
                     modify_date               ,
                     recent_user               ,
-                    transaction_contents      ,
-                    currency                          
+                    transaction_contents              
                 ) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11::date,$12,$13::numeric,
-                    $14::numeric,$15::numeric,$16,$17,$18::timestamp,$19, $20, $21)
+                    $14::numeric,$15::numeric,$16,$17,$18::timestamp,$19, $20)
             `,[
                 v_transaction_code,
                 company_code                   ,                
@@ -1572,8 +1570,7 @@ app.post('/modifyTransaction', async(req, res) => {
                 modify_user               ,
                 currentDate.currdate         ,
                 modify_user               ,
-                transaction_contents      ,
-                currency                  
+                transaction_contents
             ]);
 
         }
@@ -1598,9 +1595,8 @@ app.post('/modifyTransaction', async(req, res) => {
                         payment_type               = COALESCE($15 , payment_type),
                         modify_date                = COALESCE($16::timestamp , modify_date),
                         recent_user                = COALESCE($17 , recent_user),
-                        transaction_contents       = COALESCE($18 , transaction_contents),
-                        currency                   = COALESCE($19 , currency)    
-                where transaction_code = $20
+                        transaction_contents       = COALESCE($18 , transaction_contents)
+                where transaction_code = $19
             `,[ company_code                 ,         
                 publish_type              ,
                 transaction_type          ,
@@ -1619,7 +1615,6 @@ app.post('/modifyTransaction', async(req, res) => {
                 currentDate.currdate      ,
                 modify_user               ,
                 transaction_contents      ,
-                currency                  ,
                 v_transaction_code
             ]);
         }
