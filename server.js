@@ -1624,7 +1624,7 @@ app.post('/modifyTransaction', async(req, res) => {
                         business_item              = COALESCE($22 , business_item),
                         business_registration_code = COALESCE($23 , business_registration_code),
                         modify_date                = COALESCE($24::timestamp , modify_date),
-                        recent_user                = COALESCE($25 , recent_user),
+                        recent_user                = COALESCE($25 , recent_user)
                         
                 where transaction_code = $26
             `,[ transaction_title         ,
