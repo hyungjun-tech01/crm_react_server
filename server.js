@@ -693,11 +693,11 @@ app.post('/modifyCompany', async(req, res) => {
         action_type                = defaultNull(req.body.action_type) ,   
         company_code               = defaultNull(req.body.company_code) ,
         company_number             = defaultNull(req.body.company_number) , 
-        company                     = defaultNull(req.body.company_group) ,
+        company_group              = defaultNull(req.body.company_group) ,
         company_scale              = defaultNull(req.body.company_scale) ,
         deal_type                  = defaultNull(req.body.deal_type) ,
         company_name               = defaultNull(req.body.company_name) ,
-        company_name_eng           = defaultNull(req.body.company_name_eng) ,
+        company_name_en            = defaultNull(req.body.company_name_en) ,
         business_registration_code = defaultNull(req.body.business_registration_code) ,
         establishment_date         = defaultNull(req.body.establishment_date) ,
         closure_date               = defaultNull(req.body.closure_date) ,
@@ -751,7 +751,7 @@ app.post('/modifyCompany', async(req, res) => {
             insert into tbl_company_info(
                 company_code                   ,
                 company_number                 ,
-                group_                         ,
+                company_group                         ,
                 company_scale                  ,
                 deal_type                      ,
                 company_name                   ,
@@ -783,7 +783,7 @@ app.post('/modifyCompany', async(req, res) => {
             values(
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 
                 $18, $19, $20, $21, $22::timestamp, $23::timestamp, $24, $25::integer, $26, $27, $28, $29, $30, $31);
-            `,[v_company_code,v_company_number,group_,company_scale,deal_type,company_name,company_name_eng,
+            `,[v_company_code,v_company_number,company_group,company_scale,deal_type,company_name,company_name_eng,
                business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
                memo,modify_user,currentDate.currdate,currentDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
@@ -794,11 +794,11 @@ app.post('/modifyCompany', async(req, res) => {
             const response = await pool.query(`
             update tbl_company_info
               set company_number =  COALESCE($1 ,company_number) ,
-                  group_ =  COALESCE($2, group_)  ,
+                  company_group =  COALESCE($2, company_group)  ,
                   company_scale =  COALESCE($3, company_scale)  ,
                   deal_type  =  COALESCE($4, deal_type) ,
                   company_name  =  COALESCE($5, company_name) ,
-                  company_name_eng  =  COALESCE($6, company_name_eng) ,
+                  company_name_en  =  COALESCE($6, company_name_en) ,
                   business_registration_code  =  COALESCE($7, business_registration_code),
                   establishment_date =  COALESCE($8::date,establishment_date::date) ,
                   closure_date  =  COALESCE( $9::date, closure_date::date) ,
@@ -822,7 +822,7 @@ app.post('/modifyCompany', async(req, res) => {
                   application_engineer   =  COALESCE($27, application_engineer)        ,
                   region                 =  COALESCE( $28, region)       
              where company_code = $29;
-            `,[company_number,group_,company_scale,deal_type,company_name,company_name_eng,
+            `,[company_number,company_group,company_scale,deal_type,company_name,company_name_en,
                 business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                 industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
                 memo,currentDate.currdate, modify_user,counter,account_code,bank_name,account_owner,
