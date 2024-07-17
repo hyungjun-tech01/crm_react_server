@@ -2394,6 +2394,8 @@ values(
 alter  table tbl_company_info rename column group_ to company_group;
 alter  table tbl_company_info rename column company_name_eng to company_name_en;
 
+-- 2024.07.18 compnay_info table 수정 
+
 alter table tbl_lead_info rename column group_ to lead_group;
 
 alter table tbl_lead_info add column deal_type varchar(50);
