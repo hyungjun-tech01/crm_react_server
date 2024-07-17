@@ -755,7 +755,7 @@ app.post('/modifyCompany', async(req, res) => {
                 company_scale                  ,
                 deal_type                      ,
                 company_name                   ,
-                company_name_eng               ,
+                company_name_en                ,
                 business_registration_code     ,
                 establishment_date             ,
                 closure_date                   ,
@@ -783,7 +783,7 @@ app.post('/modifyCompany', async(req, res) => {
             values(
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 
                 $18, $19, $20, $21, $22::timestamp, $23::timestamp, $24, $25::integer, $26, $27, $28, $29, $30, $31);
-            `,[v_company_code,v_company_number,company_group,company_scale,deal_type,company_name,company_name_eng,
+            `,[v_company_code,v_company_number,company_group,company_scale,deal_type,company_name,company_name_en,
                business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
                memo,modify_user,currentDate.currdate,currentDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
