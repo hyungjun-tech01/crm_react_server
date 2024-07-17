@@ -2,6 +2,7 @@ node_modules/
 uploads/*
 thumbnails/*
 temp_output/
+.env
 
 .prettierrcv
 .prettierrc
