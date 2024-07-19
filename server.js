@@ -882,7 +882,8 @@ app.post('/modifyLead', async(req, res) => {
         counter                 = defaultNull(req.body.counter)    ,
         application_engineer    = defaultNull(req.body.application_engineer)    ,
         status                  = defaultNull(req.body.status)   ,
-        memo                  = defaultNull(req.body.memo)     
+        memo                    = defaultNull(req.body.memo)     ,
+        deal_type              = defaultNull(req.body.deal_type)
                  } = req.body;
     try{
        
@@ -951,10 +952,11 @@ app.post('/modifyLead', async(req, res) => {
                 counter                 ,
                 application_engineer    ,
                 status                  ,
-                memo  )
+                memo                    ,
+                deal_type )
              values(
                 $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,
-                $23,$24,$25,$26,$27,$28, $29 );
+                $23,$24,$25,$26,$27,$28, $29, $30 );
             `,[ v_lead_code,
                 company_code            ,
                 lead_index             ,
@@ -983,7 +985,8 @@ app.post('/modifyLead', async(req, res) => {
                 counter                 ,
                 application_engineer    ,
                 status                  ,
-                memo]);
+                memo                    ,
+                deal_type]);
         }
         if (action_type === 'UPDATE') {
             if(company_code !== null) {
@@ -1021,8 +1024,9 @@ app.post('/modifyLead', async(req, res) => {
                    counter  = COALESCE($23::integer, counter)   ,
                    application_engineer = COALESCE($24, application_engineer)   ,
                    status               = COALESCE($25, status)   ,
-                   memo               = COALESCE($26, memo)     
-               where lead_code = $27;
+                   memo                 = COALESCE($26, memo)       ,
+                   deal_type            = COALESCE($27, deal_type)
+               where lead_code = $28;
             `,[company_code            ,
                 lead_index             ,
                 company_index           ,
@@ -1045,10 +1049,11 @@ app.post('/modifyLead', async(req, res) => {
                 homepage                ,
                 currentDate.currdate     ,
                 modify_user             ,
-                counter,
-                application_engineer,
-                status,
-                memo,
+                counter                 ,
+                application_engineer    ,
+                status                  ,
+                memo                    ,
+                deal_type               ,
                 v_lead_code
             ]);
         }      
