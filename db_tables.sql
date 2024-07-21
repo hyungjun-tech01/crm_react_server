@@ -2425,4 +2425,8 @@ alter table tbl_product_info rename column product_class_name to product_class;
 
 -- 2024.07.19 
 alter table tbl_lead_info drop column lead_number;
-alter table tbl_lead_info add column memo;
+alter table tbl_lead_info add column memo text;
+
+alter table tbl_quotation_info drop column currency;
+
+alter table tbl_quotation_info add column quotation_contents text;
