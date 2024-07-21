@@ -2418,10 +2418,7 @@ alter table tbl_transaction_info add column card_number varchar(50);
 alter table tbl_transaction_info add column is_bill_publish varchar(100);
 
 
-alter table tbl_quotation_info drop column quotation_contents;
-alter table tbl_quotation_info drop column currency;
-
-alter table tbl_product_info rename column product_class_name to product_class;
+alter table tbl_product_info rename column product_class to product_class_name;
 
 -- 2024.07.19 
 alter table tbl_lead_info drop column lead_number;

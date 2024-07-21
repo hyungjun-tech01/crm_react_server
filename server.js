@@ -287,15 +287,75 @@ app.post('/companies', async(req, res) => {
     }
 });
 
-app.get('/leads', async(req, res) => {
+app.post('/leads', async(req, res) => {
+
+    const { 
+        queryConditions               = defaultNull(req.body.queryConditions), 
+        checkedDates                  = defaultNull(req.body.checkedDates),
+        singleDate                    = defaultNull(req.body.singleDate),
+    } = req.body;
+
+    let queryString = "";
+    if (queryConditions !== null && queryConditions.length !== 0){
+        for (const i of queryConditions){
+            if( i.column.value !== undefined || i.column.value !== null || i.column.value !== ""){
+                if ( i.columnQueryCondition.value === "like")
+                queryString = queryString 
+                            + i.column.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'%" + i.multiQueryInput + "%'" + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "is null" || i.columnQueryCondition.value === "is not null")
+                queryString = queryString 
+                        + i.column.value + " "
+                        + i.columnQueryCondition.value + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "=")
+                queryString = queryString 
+                            + i.column.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'" + i.multiQueryInput + "'" + " " + i.andOr + " ";
+            }
+        }
+    }
+
+    if (checkedDates !== null && checkedDates.length !== 0){
+        queryString += " company_code in (select company_code from tbl_purchase_info where ";
+        for (const i of checkedDates){
+        console.log(formatDate(i.fromDate), formatDate(i.toDate));
+        queryString = queryString
+                    +"(" + i.label + " between " 
+                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+        }
+        queryString = queryString.replace(/And\s*$/, '');
+        queryString += " )";
+    }
+
+    console.log("singleDate", singleDate);
+    if(singleDate !== null && singleDate.length !== 0){
+        queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
+        for (const i of singleDate){
+            console.log(formatDate(i.fromDate), formatDate(i.toDate));
+            queryString = queryString
+                        +"(" + i.label + " <= " 
+                        +"'"+ formatDate(i.fromDate) + "'" + " ) " + " And ";
+            }
+
+        queryString = queryString.replace(/And\s*$/, '');
+        queryString += " )";
+    }
+
+    console.log('queryString:', queryString.replace(/And\s*$/, ''));      
+    queryString = queryString.replace(/And\s*$/, '');
+
     try{
-        console.log("[Get] leads");
+        console.log("[Post]] leads");
         const allLeadsResult = await pool.query(`
             select * from tbl_lead_info
+            ${queryString ? `WHERE ${queryString}` : ''}            
             order by modify_date desc`);
 
         if(allLeadsResult.rows.length > 0) {
             const allLeads = allLeadsResult.rows;
+            console.log(allLeads);
             res.json(allLeads);
             res.end();
         }else{
