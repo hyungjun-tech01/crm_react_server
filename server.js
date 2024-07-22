@@ -355,7 +355,6 @@ app.post('/leads', async(req, res) => {
 
         if(allLeadsResult.rows.length > 0) {
             const allLeads = allLeadsResult.rows;
-            console.log(allLeads);
             res.json(allLeads);
             res.end();
         }else{
