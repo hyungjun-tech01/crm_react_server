@@ -329,7 +329,7 @@ app.post('/leads', async(req, res) => {
         queryString += " )";
     }
 
-    console.log("singleDate", singleDate);
+    console.log("lead singleDate", singleDate);
     if(singleDate !== null && singleDate.length !== 0){
         queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
         for (const i of singleDate){
@@ -343,7 +343,7 @@ app.post('/leads', async(req, res) => {
         queryString += " )";
     }
 
-    console.log('queryString:', queryString.replace(/And\s*$/, ''));      
+    console.log('lead queryString:', queryString.replace(/And\s*$/, ''));      
     queryString = queryString.replace(/And\s*$/, '');
 
     try{
