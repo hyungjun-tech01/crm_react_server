@@ -1375,7 +1375,6 @@ app.post('/modifyPurchase', async(req, res) => {
         quantity            = defaultNull(req.body.quantity),
         regcode             = defaultNull(req.body.regcode),
         ma_contact_date     = defaultNull(req.body.ma_contact_date),
-        currency            = defaultNull(req.body.currency)
     } = req.body;
     try{
 
@@ -1781,7 +1780,6 @@ app.post('/modifyQuotation', async(req, res) => {
         print_template             = defaultNull(req.body.print_template)   ,
         quotation_table            = defaultNull(req.body.quotation_table)   ,
         company_code               = defaultNull(req.body.company_code)   ,
-        currency                   = defaultNull(req.body.currency)   ,
         quotation_contents         = defaultNull(req.body.quotation_contents) 
     } = req.body;
     try{
@@ -1856,12 +1854,11 @@ app.post('/modifyQuotation', async(req, res) => {
                 print_template               ,
                 quotation_table              ,
                 company_code                 ,
-                currency                     ,
                 quotation_contents           ) 
                 values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15::date,
                        $16,$17,$18,$19,$20,$21,$22::date,$23,$24,$25,$26::numeric,$27::numeric,$28::numeric,$29::numeric,$30::numeric,
                        $31::numeric,$32::numeric,$33::numeric,$34::numeric,$35::numeric,$36::numeric,$37::numeric,$38,$39,$40::numeric,$41,$42::timestamp,$43::timestamp,$44,$45,
-                       $46,$47,$48, $49)`,
+                       $46,$47,$48)`,
                 [
                     v_quotation_code           ,
                     lead_code                  ,
@@ -1910,7 +1907,6 @@ app.post('/modifyQuotation', async(req, res) => {
                     print_template            ,
                     quotation_table           ,
                     company_code              ,
-                    currency                  ,
                     quotation_contents         
             ]);        
         }
@@ -1970,8 +1966,7 @@ app.post('/modifyQuotation', async(req, res) => {
                    print_template              = COALESCE($42 , print_template) ,
                    quotation_table             = COALESCE($43 , quotation_table) ,
                    company_code                = COALESCE($44 , company_code) ,
-                   currency                    = COALESCE($45 , currency) ,
-                   quotation_contents          = COALESCE($46 , quotation_contents) 
+                   quotation_contents          = COALESCE($45 , quotation_contents) 
                 where quotation_code = $47
             `,[
                 lead_code                ,
@@ -2018,7 +2013,6 @@ app.post('/modifyQuotation', async(req, res) => {
                 print_template           ,
                 quotation_table          ,
                 company_code             ,
-                currency                 ,
                 quotation_contents       ,
                 v_quotation_code
             ]);
