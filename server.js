@@ -681,7 +681,6 @@ app.post('/purchaseMaContract', async(req, res) => {
 
         if(purchaseMaContractResult.rows.length > 0) {
             const purchaseMaContract = purchaseMaContractResult.rows;
-            console.log(purchaseMaContract);
             res.json(purchaseMaContract);
             res.end();
         }else{
