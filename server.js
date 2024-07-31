@@ -1677,9 +1677,9 @@ app.post('/modifyTransaction', async(req, res) => {
                     business_registration_code  ,
                     creator                     ,
                     modify_date                 ,
-                    recent_user                 ,
+                    recent_user                 
                 ) values($1,$2,$3,$4,$5::date,$6,$7,$8::numeric,$9::numeric,$10::numeric,
-                    $11::numeric,$12,$13,$14,$15,$16,$17,$18,$19,$20
+                    $11::numeric,$12,$13,$14,$15,$16,$17,$18,$19,$20,
                     $21,$22,$23,$24,$25,$26::timestamp,$27)
             `,[
                 v_transaction_code          ,
