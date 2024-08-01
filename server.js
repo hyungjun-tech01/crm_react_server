@@ -422,7 +422,7 @@ app.post('/consultings', async(req, res) => {
         queryString += " )";
     }
 
-    console.log('lead queryString:', queryString.replace(/And\s*$/, ''));      
+    console.log('consulting queryString:', queryString.replace(/And\s*$/, ''));      
     queryString = queryString.replace(/And\s*$/, '');
 
     try{
