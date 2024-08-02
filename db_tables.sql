@@ -2427,3 +2427,46 @@ alter table tbl_lead_info add column memo text;
 alter table tbl_quotation_info drop column currency;
 
 alter table tbl_quotation_info add column quotation_contents text;
+
+-- 2024.08.02 세금계산서 테이블 추가 , list_collection 추가 
+drop table if exists  tbl_tax_invoice;
+
+create table tbl_tax_invoice  (              
+tax_invoice_code              varchar(36) primary key , 
+lead_code                     varchar(32),  
+publish_type                  varchar(10), 
+transaction_type              varchar(10), 
+invoice_type                  varchar(10), 
+index1                        integer    ,
+index2                        integer    ,
+business_registration_code    varchar(50), 
+company_name                  varchar(50),
+ceo_name                      varchar(50), 
+company_address               varchar(100),
+business_type                 varchar(50), 
+business_item                 varchar(50),
+create_date                   timestamp  , 
+supply_price                  numeric    ,
+tax_price                     numeric    , 
+total_price                   numeric    , 
+cash_amount                   numeric    , 
+check_amount                  numeric    , 
+note_amount                   numeric    , 
+receivable_amount             numeric    , 
+receive_type                  varchar(10), 
+memo                          varchar(50), 
+summary                       varchar(50), 
+invoice_contents              text       ,                            
+modify_date                   timestamp  ,
+creator                       varchar(50),  
+recent_user                   varchar(50)  );
+
+
+drop table if exists  tbl_list_collection;
+
+create table tbl_list_collection(
+list_name VARCHAR(255) not null,
+	list_item_code  varchar(36) primary key,
+	list_item_value VARCHAR(255),
+	list_item_order numeric,
+	list_item_memo TEXT);
