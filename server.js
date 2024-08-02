@@ -771,6 +771,29 @@ app.get('/productClass', async(req, res) => {
     }
 });
 
+app.get('/taxInvoice', async(req, res) => {
+    try{
+        console.log("[Get] tax Invoice");
+        const allTaxInvoiceResult = await pool.query(`
+        select * 
+            from tbl_tax_invoice tti
+            order by tti.modify_date desc`);
+
+        if(allTaxInvoiceResult.rows.length > 0) {
+            const alltaxInvoices = allTaxInvoiceResult.rows;
+            res.json(alltaxInvoices);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err.message});        
+        res.end();
+    }
+});
+
 app.get('/getallusers', async(req, res) => {
     console.log("[Get] all users");
     try{
@@ -2289,12 +2312,12 @@ app.post('/modifyProduct', async(req, res) => {
                     model_name     = COALESCE($3 , model_name),
                     product_name   = COALESCE($4 , product_name),
                     unit           = COALESCE($5 , unit),
-                    cost_price     = COALESCE($6 , cost_price),
-                    reseller_price = COALESCE($7 , reseller_price),
-                    list_price     = COALESCE($8 , list_price),
+                    cost_price     = COALESCE($6::numeric , cost_price),
+                    reseller_price = COALESCE($7::numeric , reseller_price),
+                    list_price     = COALESCE($8::numeric , list_price),
                     detail_desc    = COALESCE($9 , detail_desc),
                     memo           = COALESCE($10 , memo),
-                    modify_date    = COALESCE($11 , modify_date),
+                    modify_date    = COALESCE($11::timestamp , modify_date),
                     recent_user    = COALESCE($12 , recent_user)
                 where product_code = $13
             `,[
@@ -2527,6 +2550,201 @@ app.post('/modifyUser', async(req, res) => {
         res.end();              
     }
 });
+
+// create/update tax invoice
+app.post('/modifyTaxInvoice', async(req, res) => {
+    const  { 
+        action_type                = defaultNull(req.body.action_type),
+        tax_invoice_code          = defaultNull(req.body.tax_invoice_code),
+        lead_code                 = defaultNull(req.body.lead_code),
+        publish_type              = defaultNull(req.body.publish_type),
+        transaction_type          = defaultNull(req.body.transaction_type),
+        invoice_type              = defaultNull(req.body.invoice_type),
+        index1                    = defaultNull(req.body.index1),
+        index2                    = defaultNull(req.body.index2),
+        business_registration_code= defaultNull(req.body.business_registration_code),
+        company_name              = defaultNull(req.body.company_name),
+        ceo_name                  = defaultNull(req.body.ceo_name),
+        company_address           = defaultNull(req.body.company_address),
+        business_type             = defaultNull(req.body.business_type),
+        business_item             = defaultNull(req.body.business_item),
+        supply_price              = defaultNull(req.body.supply_price),
+        tax_price                 = defaultNull(req.body.tax_price),
+        total_price               = defaultNull(req.body.total_price),
+        cash_amount               = defaultNull(req.body.cash_amount),
+        check_amount              = defaultNull(req.body.check_amount),
+        note_amount               = defaultNull(req.body.note_amount),
+        receivable_amount         = defaultNull(req.body.receivable_amount),
+        receive_type              = defaultNull(req.body.receive_type),
+        memo                      = defaultNull(req.body.memo),
+        summary                   = defaultNull(req.body.summary),
+        invoice_contents          = defaultNull(req.body.invoice_contents),
+        modify_date               = defaultNull(req.body.modify_date),
+        modify_user               = defaultNull(req.body.modify_user),
+    } = req.body;
+
+    try{
+
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currentDate = current_date.rows[0];
+        let v_tax_invoice_code = tax_invoice_code;
+
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }        
+
+        if (action_type === 'ADD') {
+
+            v_tax_invoice_code  = pk_code();
+            const response = await pool.query(`insert into tbl_tax_invoice(
+                tax_invoice_code           ,    
+                lead_code                  , 
+                publish_type               , 
+                transaction_type           , 
+                invoice_type               , 
+                index1                     , 
+                index2                     , 
+                business_registration_code , 
+                company_name               , 
+                ceo_name                   , 
+                company_address            , 
+                business_type              , 
+                business_item              , 
+                create_date                , 
+                supply_price               , 
+                tax_price                  , 
+                total_price                , 
+                cash_amount                , 
+                check_amount               , 
+                note_amount                , 
+                receivable_amount          , 
+                receive_type               , 
+                memo                       , 
+                summary                    , 
+                invoice_contents           , 
+                modify_date                , 
+                creator                    , 
+                recent_user                 )
+                values($1,$2,$3,$4,$5,$6::integer,$7::integer,$8, $9, $10, $11, $12, $13,$14::timestamp,$15::numeric,
+                    $16::numeric,$17::numeric,$18::numeric,$19::numeric,$20::numeric,$21::numeric,$22,$23,$24,$25,$26::timestamp,$27,$28  
+                    )`,
+                [
+                    v_tax_invoice_code    ,
+                    lead_code    ,
+                    publish_type          ,
+                    transaction_type            ,
+                    invoice_type          ,
+                    index1                  ,
+                    index2            ,
+                    business_registration_code        ,
+                    company_name            ,
+                    ceo_name           ,
+                    company_address                  ,
+                    business_type           ,
+                    business_item  ,
+                    currentDate.currdate  ,
+                    supply_price,
+                    tax_price,
+                    total_price,
+                    cash_amount                , 
+                    check_amount               , 
+                    note_amount                , 
+                    receivable_amount          , 
+                    receive_type               , 
+                    memo                       , 
+                    summary                    , 
+                    invoice_contents           , 
+                    currentDate.currdate       , 
+                    modify_user,
+                    modify_user
+            ]);       
+
+        }
+        if (action_type === 'UPDATE') {
+
+            const response = await pool.query(`
+                update tbl_tax_invoice 
+                set lead_code                  = COALESCE($1 ,lead_code), 
+                    publish_type               = COALESCE($2 ,publish_type), 
+                    transaction_type           = COALESCE($3 ,transaction_type ), 
+                    invoice_type               = COALESCE($4 ,transaction_type ), 
+                    index1                     = COALESCE($5::integer ,index1 ), 
+                    index2                     = COALESCE($6::integer ,index2 ), 
+                    business_registration_code = COALESCE($7 ,business_registration_code ), 
+                    company_name               = COALESCE($8 ,company_name ), 
+                    ceo_name                   = COALESCE($9 ,ceo_name ), 
+                    company_address            = COALESCE($10 ,company_address ), 
+                    business_type              = COALESCE($11 ,business_type ), 
+                    business_item              = COALESCE($12 ,business_item ), 
+                    supply_price               = COALESCE($13::numeric , supply_price), 
+                    tax_price                  = COALESCE($14::numeric , tax_price), 
+                    total_price                = COALESCE($15::numeric , total_price), 
+                    cash_amount                = COALESCE($16::numeric , cash_amount), 
+                    check_amount               = COALESCE($17::numeric , check_amount), 
+                    note_amount                = COALESCE($18::numeric , note_amount), 
+                    receivable_amount          = COALESCE($29::numeric , receivable_amount), 
+                    receive_type               = COALESCE($20 , receive_type), 
+                    memo                       = COALESCE($21 , memo), 
+                    summary                    = COALESCE($22 , summary), 
+                    invoice_contents           = COALESCE($23 , invoice_contents), 
+                    modify_date                = COALESCE($24::timestamp , modify_date), 
+                    recent_user                = COALESCE($25 , recent_user) 
+                where tax_invoice_code = $26    
+            `,[
+                lead_code                 ,           
+                publish_type              ,
+                transaction_type          ,
+                invoice_type              ,
+                index1                    ,
+                index2                    ,
+                business_registration_code,
+                company_name              ,
+                ceo_name                  ,
+                company_address           ,
+                business_type             ,
+                business_item             ,
+                supply_price              ,
+                tax_price                 ,
+                total_price               ,
+                cash_amount               ,
+                check_amount              ,
+                note_amount               ,
+                receivable_amount         ,
+                receive_type              ,
+                memo                      ,
+                summary                   ,
+                invoice_contents          ,
+                currentDate.currdate      ,
+                modify_user               ,
+                v_tax_invoice_code  
+            ]);            
+        }
+
+        const out_tax_invoice_code = v_tax_invoice_code;
+        const out_create_user = action_type === 'ADD' ? modify_user : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_modify_date = currentDate.currdate;
+        const out_recent_user = modify_user;
+        
+        res.json({ out_tax_invoice_code: out_tax_invoice_code,  out_create_user:out_create_user, 
+           out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_tax_invoice_code: out_tax_invoice_code,  out_create_user:out_create_user, 
+               out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});
+        res.end();              
+    }
+});
+
 /////////////////////////////////////////////////////////////////////
 
 //login
