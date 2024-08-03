@@ -398,7 +398,7 @@ app.post('/consultings', async(req, res) => {
     }
 
     if (checkedDates !== null && checkedDates.length !== 0){
-        queryString += " company_code in (select company_code from tbl_purchase_info where ";
+        //queryString += " company_code in (select company_code from tbl_purchase_info where ";
         for (const i of checkedDates){
         console.log(formatDate(i.fromDate), formatDate(i.toDate));
         queryString = queryString
@@ -406,11 +406,11 @@ app.post('/consultings', async(req, res) => {
                     +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
         }
         queryString = queryString.replace(/And\s*$/, '');
-        queryString += " )";
+        //queryString += " )";
     }
 
     if(singleDate !== null && singleDate.length !== 0){
-        queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
+        //queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
         for (const i of singleDate){
             console.log(formatDate(i.fromDate), formatDate(i.toDate));
             queryString = queryString
@@ -419,7 +419,7 @@ app.post('/consultings', async(req, res) => {
             }
 
         queryString = queryString.replace(/And\s*$/, '');
-        queryString += " )";
+        //queryString += " )";
     }
 
     console.log('consulting queryString:', queryString.replace(/And\s*$/, ''));      
@@ -597,7 +597,7 @@ app.post('/quotations', async(req, res) => {
                     +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
         }
         queryString = queryString.replace(/And\s*$/, '');
-        queryString += " )";
+       
     }
 
     if(singleDate !== null && singleDate.length !== 0){
@@ -613,7 +613,7 @@ app.post('/quotations', async(req, res) => {
         queryString += " )";
     }
 
-    console.log('consulting queryString:', queryString.replace(/And\s*$/, ''));      
+    console.log('quotations queryString:', queryString.replace(/And\s*$/, ''));      
     queryString = queryString.replace(/And\s*$/, '');
 
     try{
