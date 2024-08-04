@@ -243,9 +243,10 @@ app.post('/companies', async(req, res) => {
                         +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";                       
             }
         }
+        queryString = queryString.replace(/And\s*$/, '');
 
         if(checkedDates.length >= 2){
-            queryString += " company_code in (select company_code from tbl_purchase_info where ";
+            queryString += " and company_code in (select company_code from tbl_purchase_info where ";
             for (const i of checkedDates){
                 if( i.label !== "modify_date"){
                 queryString = queryString
@@ -328,15 +329,27 @@ app.post('/leads', async(req, res) => {
     }
 
     if (checkedDates !== null && checkedDates.length !== 0){
-        queryString += " company_code in (select company_code from tbl_purchase_info where ";
         for (const i of checkedDates){
-        console.log(formatDate(i.fromDate), formatDate(i.toDate));
-        queryString = queryString
-                    +"(" + i.label + " between " 
-                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+            if( i.label === "modify_date"){
+                queryString = queryString
+                        +"(" + i.label + " between " 
+                        +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";                       
+            }
         }
         queryString = queryString.replace(/And\s*$/, '');
-        queryString += " )";
+
+        if(checkedDates.length >= 2){
+            queryString += "and company_code in (select company_code from tbl_purchase_info where ";
+            for (const i of checkedDates){
+                if( i.label !== "modify_date"){
+                queryString = queryString
+                            +"(" + i.label + " between " 
+                            +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+                }
+            }
+            queryString = queryString.replace(/And\s*$/, '');
+            queryString += " )";
+        }
     }
 
     if(singleDate !== null && singleDate.length !== 0){
@@ -648,11 +661,69 @@ app.post('/quotations', async(req, res) => {
     }
 });
 
-app.get('/transactions', async(req, res) => {
+app.post('/transactions', async(req, res) => {
+
+    const { 
+        queryConditions               = defaultNull(req.body.queryConditions), 
+        checkedDates                  = defaultNull(req.body.checkedDates),
+        singleDate                    = defaultNull(req.body.singleDate),
+    } = req.body;
+
+    let queryString = "";
+    if (queryConditions !== null && queryConditions.length !== 0){
+        for (const i of queryConditions){
+            if( i.column.value !== undefined || i.column.value !== null || i.column.value !== ""){
+                if ( i.columnQueryCondition.value === "like")
+                queryString = queryString 
+                            + i.column.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'%" + i.multiQueryInput + "%'" + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "is null" || i.columnQueryCondition.value === "is not null")
+                queryString = queryString 
+                        + i.column.value + " "
+                        + i.columnQueryCondition.value + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "=")
+                queryString = queryString 
+                            + i.column.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'" + i.multiQueryInput + "'" + " " + i.andOr + " ";
+            }
+        }
+    }
+
+    if (checkedDates !== null && checkedDates.length !== 0){
+        // queryString += " company_code in (select company_code from tbl_purchase_info where ";
+        for (const i of checkedDates){
+        console.log(formatDate(i.fromDate), formatDate(i.toDate));
+        queryString = queryString
+                    +"(" + i.label + " between " 
+                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+        }
+        queryString = queryString.replace(/And\s*$/, '');
+       
+    }
+
+    if(singleDate !== null && singleDate.length !== 0){
+        //queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
+        for (const i of singleDate){
+            console.log(formatDate(i.fromDate), formatDate(i.toDate));
+            queryString = queryString
+                        +"(" + i.label + " >= " 
+                        +"'"+ formatDate(i.fromDate) + "'" + " ) " + " And ";
+            }
+
+        queryString = queryString.replace(/And\s*$/, '');
+        queryString += " )";
+    }
+
+    console.log('transaction queryString:', queryString.replace(/And\s*$/, ''));      
+    queryString = queryString.replace(/And\s*$/, '');
+    
     try{
         console.log("[Get] transactions");
         const allTransactionsResult = await pool.query(`
             select * from tbl_transaction_info
+            ${queryString ? `WHERE ${queryString}` : ''}                      
             order by modify_date desc`);
 
         if(allTransactionsResult.rows.length > 0) {
@@ -670,13 +741,71 @@ app.get('/transactions', async(req, res) => {
     }
 });
 
-app.get('/purchases', async(req, res) => {
+app.post('/purchases', async(req, res) => {
+
+    const { 
+        queryConditions               = defaultNull(req.body.queryConditions), 
+        checkedDates                  = defaultNull(req.body.checkedDates),
+        singleDate                    = defaultNull(req.body.singleDate),
+    } = req.body;
+
+    let queryString = "";
+    if (queryConditions !== null && queryConditions.length !== 0){
+        for (const i of queryConditions){
+            if( i.column.value !== undefined || i.column.value !== null || i.column.value !== ""){
+                if ( i.columnQueryCondition.value === "like")
+                queryString = queryString 
+                            + i.column.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'%" + i.multiQueryInput + "%'" + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "is null" || i.columnQueryCondition.value === "is not null")
+                queryString = queryString 
+                        + i.column.value + " "
+                        + i.columnQueryCondition.value + " " + i.andOr + " ";
+                if ( i.columnQueryCondition.value === "=")
+                queryString = queryString 
+                            + i.column.value + " "
+                            + i.columnQueryCondition.value + " "
+                            + "'" + i.multiQueryInput + "'" + " " + i.andOr + " ";
+            }
+        }
+    }
+
+    if (checkedDates !== null && checkedDates.length !== 0){
+        // queryString += " company_code in (select company_code from tbl_purchase_info where ";
+        for (const i of checkedDates){
+        console.log(formatDate(i.fromDate), formatDate(i.toDate));
+        queryString = queryString
+                    +"( tpi." + i.label + " between " 
+                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+        }
+        queryString = queryString.replace(/And\s*$/, '');
+       
+    }
+
+    if(singleDate !== null && singleDate.length !== 0){
+        //queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
+        for (const i of singleDate){
+            console.log(formatDate(i.fromDate), formatDate(i.toDate));
+            queryString = queryString
+                        +"(" + i.label + " >= " 
+                        +"'"+ formatDate(i.fromDate) + "'" + " ) " + " And ";
+            }
+
+        queryString = queryString.replace(/And\s*$/, '');
+        queryString += " )";
+    }
+
+    console.log('purchase queryString:', queryString.replace(/And\s*$/, ''));      
+    queryString = queryString.replace(/And\s*$/, '');
+        
     try{
         console.log("[Get] purchases");
         const allpurchasesResult = await pool.query(`
         select tci.company_name, tpi.* 
             from tbl_purchase_info tpi, tbl_company_info tci
             where tpi.company_code = tci.company_code
+            ${queryString ? `AND ${queryString}` : ''}                   
             order by tpi.modify_date desc`);
 
         if(allpurchasesResult.rows.length > 0) {
