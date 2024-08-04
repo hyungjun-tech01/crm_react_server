@@ -236,17 +236,27 @@ app.post('/companies', async(req, res) => {
     }
 
     if (checkedDates !== null && checkedDates.length !== 0){
-        queryString += " company_code in (select company_code from tbl_purchase_info where ";
         for (const i of checkedDates){
-        console.log(formatDate(i.fromDate), formatDate(i.toDate));
-        queryString = queryString
-                    +"(" + i.label + " between " 
-                    +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+            if( i.label === "modify_date"){
+                queryString = queryString
+                        +"(" + i.label + " between " 
+                        +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";                       
+            }
         }
-        queryString = queryString.replace(/And\s*$/, '');
-        queryString += " )";
-    }
 
+        if(checkedDates.length >= 2){
+            queryString += " company_code in (select company_code from tbl_purchase_info where ";
+            for (const i of checkedDates){
+                if( i.label !== "modify_date"){
+                queryString = queryString
+                            +"(" + i.label + " between " 
+                            +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
+                }
+            }
+            queryString = queryString.replace(/And\s*$/, '');
+            queryString += " )";
+        }
+    }
 
     if(singleDate !== null && singleDate.length !== 0){
         queryString += " and company_code in (select company_code from tbl_purchase_info where "; 
