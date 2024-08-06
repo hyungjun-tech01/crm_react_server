@@ -968,7 +968,7 @@ app.get('/productClass', async(req, res) => {
     }
 });
 
-app.get('/taxInvoice', async(req, res) => {
+app.post('/taxInvoice', async(req, res) => {
     const { 
         company_code               = defaultNull(req.body.company_code) 
     } = req.body;    
