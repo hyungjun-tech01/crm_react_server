@@ -969,12 +969,16 @@ app.get('/productClass', async(req, res) => {
 });
 
 app.get('/taxInvoice', async(req, res) => {
+    const { 
+        company_code               = defaultNull(req.body.company_code) 
+    } = req.body;    
     try{
         console.log("[Get] tax Invoice");
         const allTaxInvoiceResult = await pool.query(`
         select * 
             from tbl_tax_invoice tti
-            order by tti.modify_date desc`);
+            where tti.company_code = $1
+            order by tti.modify_date desc`, [company_code]);  
 
         if(allTaxInvoiceResult.rows.length > 0) {
             const alltaxInvoices = allTaxInvoiceResult.rows;
