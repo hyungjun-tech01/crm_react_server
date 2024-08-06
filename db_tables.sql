@@ -2433,7 +2433,7 @@ drop table if exists  tbl_tax_invoice;
 
 create table tbl_tax_invoice  (              
 tax_invoice_code              varchar(36) primary key , 
-lead_code                     varchar(32),  
+company_code                     varchar(36),  
 publish_type                  varchar(10), 
 transaction_type              varchar(10), 
 invoice_type                  varchar(10), 
@@ -2470,3 +2470,7 @@ list_name VARCHAR(255) not null,
 	list_item_value VARCHAR(255),
 	list_item_order numeric,
 	list_item_memo TEXT);
+
+  -- 2024.08.06  tax table 변경 
+  alter table tbl_tax_invoice drop column lead_code; 
+  alter table tbl_tax_invoice add column company_code varchar(36); 

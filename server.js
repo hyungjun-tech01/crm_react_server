@@ -2753,7 +2753,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
     const  { 
         action_type                = defaultNull(req.body.action_type),
         tax_invoice_code          = defaultNull(req.body.tax_invoice_code),
-        lead_code                 = defaultNull(req.body.lead_code),
+        company_code                 = defaultNull(req.body.company_code),
         publish_type              = defaultNull(req.body.publish_type),
         transaction_type          = defaultNull(req.body.transaction_type),
         invoice_type              = defaultNull(req.body.invoice_type),
@@ -2776,7 +2776,6 @@ app.post('/modifyTaxInvoice', async(req, res) => {
         memo                      = defaultNull(req.body.memo),
         summary                   = defaultNull(req.body.summary),
         invoice_contents          = defaultNull(req.body.invoice_contents),
-        modify_date               = defaultNull(req.body.modify_date),
         modify_user               = defaultNull(req.body.modify_user),
     } = req.body;
 
@@ -2801,7 +2800,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
             v_tax_invoice_code  = pk_code();
             const response = await pool.query(`insert into tbl_tax_invoice(
                 tax_invoice_code           ,    
-                lead_code                  , 
+                company_code                  , 
                 publish_type               , 
                 transaction_type           , 
                 invoice_type               , 
@@ -2833,33 +2832,33 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     )`,
                 [
                     v_tax_invoice_code    ,
-                    lead_code    ,
+                    company_code          ,
                     publish_type          ,
-                    transaction_type            ,
+                    transaction_type      ,
                     invoice_type          ,
-                    index1                  ,
-                    index2            ,
-                    business_registration_code        ,
-                    company_name            ,
-                    ceo_name           ,
-                    company_address                  ,
-                    business_type           ,
-                    business_item  ,
+                    index1                ,
+                    index2                ,
+                    business_registration_code ,
+                    company_name          ,
+                    ceo_name              ,
+                    company_address       ,
+                    business_type         ,
+                    business_item         ,
                     currentDate.currdate  ,
-                    supply_price,
-                    tax_price,
-                    total_price,
-                    cash_amount                , 
-                    check_amount               , 
-                    note_amount                , 
-                    receivable_amount          , 
-                    receive_type               , 
-                    memo                       , 
-                    summary                    , 
-                    invoice_contents           , 
-                    currentDate.currdate       , 
-                    modify_user,
-                    modify_user
+                    supply_price          ,
+                    tax_price             ,
+                    total_price           ,
+                    cash_amount           , 
+                    check_amount          , 
+                    note_amount           , 
+                    receivable_amount     , 
+                    receive_type          , 
+                    memo                  , 
+                    summary               , 
+                    invoice_contents      , 
+                    currentDate.currdate  , 
+                    modify_user           ,
+                    modify_user 
             ]);       
 
         }
@@ -2867,7 +2866,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
 
             const response = await pool.query(`
                 update tbl_tax_invoice 
-                set lead_code                  = COALESCE($1 ,lead_code), 
+                set company_code                  = COALESCE($1 ,company_code), 
                     publish_type               = COALESCE($2 ,publish_type), 
                     transaction_type           = COALESCE($3 ,transaction_type ), 
                     invoice_type               = COALESCE($4 ,transaction_type ), 
@@ -2894,7 +2893,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     recent_user                = COALESCE($25 , recent_user) 
                 where tax_invoice_code = $26    
             `,[
-                lead_code                 ,           
+                company_code                 ,           
                 publish_type              ,
                 transaction_type          ,
                 invoice_type              ,
