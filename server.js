@@ -18,6 +18,9 @@ const { v4: uuid } = require('uuid');
 const sharp = require('sharp');
 const { timeStamp } = require('console');
 
+// nodemailer 를 사용하여 mail Test
+const nodemailer = require('nodemailer'); // 이메일 전송을 위한 nodemailer 모듈 불러오기
+
 
 // uuid 로  pk 생성 
 const pk_code = () => {
@@ -145,6 +148,39 @@ app.post('/upload', upload.single('file'),async (req, res) => {
             };
         };
     };
+});
+
+app.post('/sendMail', async (req, res) => {
+    const { email, title, message, file } = req.body;
+    console.log('send mail', );
+    try {
+        let transporter = nodemailer.createTransport({
+            port: 587,
+            host: 'smtp.gmail.com',
+            auth: {
+                user: 'whmoon00@gmail.com', //송신할 이메일
+                pass: 'bsxa addo bxin vxxd',
+            },
+        });
+        
+        let mailOptions = {
+            from: 'whmoon00@gmail.com', //송신할 이메일
+            to: email, //수신할 이메일
+            subject: title,
+            html: `
+            <div>
+                ${message}
+            </div>
+            `,
+           //attachments: [{ path: file }],
+       };
+       await transporter
+       .sendMail(mailOptions)
+       .then(() => res.status(200).send('저장 및 발송 성공'))
+       .catch(() => res.status(500).send('에러'));
+    } catch (err) {
+        console.error(err);
+    }
 });
 
 app.post('/deleteFile', async (req, res) => {

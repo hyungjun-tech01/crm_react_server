@@ -2474,3 +2474,12 @@ list_name VARCHAR(255) not null,
   -- 2024.08.06  tax table 변경 
   alter table tbl_tax_invoice drop column lead_code; 
   alter table tbl_tax_invoice add column company_code varchar(36); 
+
+-- 2024.08.10 nodemailer 설치  : node 버전 올림. s
+npm install nodemailer
+
+nvm install 20.3.0
+
+nvm use 20.3.0
+
+npm install sharp --ignore-scripts
