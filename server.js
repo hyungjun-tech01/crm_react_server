@@ -153,7 +153,11 @@ app.post('/upload', upload.single('file'),async (req, res) => {
 });
 
 app.post('/sendMail', async (req, res) => {
-    const { email, title, message, file } = req.body;
+    const { email, 
+            title, 
+            message, 
+            filename,
+            file } = req.body;
     console.log('send mail', );
     try {
         let transporter = nodemailer.createTransport({
@@ -174,7 +178,9 @@ app.post('/sendMail', async (req, res) => {
                 ${message}
             </div>
             `,
-           attachments: [{ path: file }],
+           attachments: [{
+            filename: filename, 
+            path: file }],
        };
        await transporter
        .sendMail(mailOptions)
