@@ -2483,3 +2483,14 @@ nvm install 20.3.0
 nvm use 20.3.0
 
 npm install sharp --ignore-scripts
+
+-- 2024.08.13 : 임시 문제 해결 tbl_transaction_info
+update tbl_transaction_info
+set transaction_contents = 
+(select transaction_contents 
+       from tbl_transaction_info 
+       where modify_date = (select max(modify_date)
+                               from tbl_transaction_info 
+                               where transaction_contents is not null
+                               limit 1) ) ;
+
