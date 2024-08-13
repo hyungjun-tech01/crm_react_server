@@ -1077,7 +1077,7 @@ app.post('/taxInvoice', async(req, res) => {
         for (const i of checkedDates){
         console.log(formatDate(i.fromDate), formatDate(i.toDate));
         queryString = queryString
-                    +"( tpi." + i.label + " between " 
+                    +"( tti." + i.label + " between " 
                     +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
         }
         queryString = queryString.replace(/And\s*$/, '');
