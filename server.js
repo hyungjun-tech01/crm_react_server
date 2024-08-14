@@ -30,6 +30,15 @@ const pk_code = () => {
 //값이 없으면 null로 세팅
 const defaultNull = (value) => value === undefined ? null : value;
 
+const defaultIntegerNull = (value) => 
+{
+    console.log('defaultIntegerNull', value);
+    if(value === undefined || value === "" || value === null) 
+        return  0; 
+    else
+        return value;
+}
+
 // formating date string 
 const formatDate = (date_value) => {
     if(date_value === undefined || date_value === null) return "";
@@ -1077,7 +1086,7 @@ app.post('/taxInvoice', async(req, res) => {
         for (const i of checkedDates){
         console.log(formatDate(i.fromDate), formatDate(i.toDate));
         queryString = queryString
-                    +"( tti." + i.label + " between " 
+                    +"(" + i.label + " between " 
                     +"'"+ formatDate(i.fromDate) +"'" + " and " + "'" + formatDate(i.toDate) + "' )" +" And ";
         }
         queryString = queryString.replace(/And\s*$/, '');
@@ -2882,6 +2891,7 @@ app.post('/modifyUser', async(req, res) => {
 
 // create/update tax invoice
 app.post('/modifyTaxInvoice', async(req, res) => {
+    console.log('modifyTaxInvoice');
     const  { 
         action_type                = defaultNull(req.body.action_type),
         tax_invoice_code          = defaultNull(req.body.tax_invoice_code),
@@ -2911,8 +2921,13 @@ app.post('/modifyTaxInvoice', async(req, res) => {
         modify_user               = defaultNull(req.body.modify_user),
     } = req.body;
 
+    console.log('modifyTaxInvoice index1 index2', index1, index2);
+    let v_index1 = defaultIntegerNull(index1);
+    let v_index2 = defaultIntegerNull(index2);
+    console.log(index1, index2);
     try{
 
+        console.log('modifyTaxInvoice1');
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_tax_invoice_code = tax_invoice_code;
@@ -2927,6 +2942,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
             throw new Error('modify user는 user_id 이어야 합니다.');
         }        
 
+        console.log('modifyTaxInvoice2');
         if (action_type === 'ADD') {
 
             v_tax_invoice_code  = pk_code();
@@ -2968,8 +2984,8 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     publish_type          ,
                     transaction_type      ,
                     invoice_type          ,
-                    index1                ,
-                    index2                ,
+                    v_index1                ,
+                    v_index2                ,
                     business_registration_code ,
                     company_name          ,
                     ceo_name              ,
@@ -2992,7 +3008,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     modify_user           ,
                     modify_user 
             ]);       
-
+            console.log('modifyTaxInvoice3');
         }
         if (action_type === 'UPDATE') {
 
