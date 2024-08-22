@@ -2919,6 +2919,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
         summary                   = defaultNull(req.body.summary),
         invoice_contents          = defaultNull(req.body.invoice_contents),
         modify_user               = defaultNull(req.body.modify_user),
+        sequence_number           = defaultNull(req.body.sequence_number),
     } = req.body;
 
     console.log('modifyTaxInvoice index1 index2', index1, index2);
@@ -2974,9 +2975,10 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                 invoice_contents           , 
                 modify_date                , 
                 creator                    , 
-                recent_user                 )
+                recent_user                ,
+                sequence_number )
                 values($1,$2,$3,$4,$5,$6::integer,$7::integer,$8, $9, $10, $11, $12, $13,$14::timestamp,$15::numeric,
-                    $16::numeric,$17::numeric,$18::numeric,$19::numeric,$20::numeric,$21::numeric,$22,$23,$24,$25,$26::timestamp,$27,$28  
+                    $16::numeric,$17::numeric,$18::numeric,$19::numeric,$20::numeric,$21::numeric,$22,$23,$24,$25,$26::timestamp,$27,$28, $29    
                     )`,
                 [
                     v_tax_invoice_code    ,
@@ -3006,7 +3008,8 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     invoice_contents      , 
                     currentDate.currdate  , 
                     modify_user           ,
-                    modify_user 
+                    modify_user           ,
+                    sequence_number
             ]);       
             console.log('modifyTaxInvoice3');
         }
@@ -3038,8 +3041,9 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     summary                    = COALESCE($22 , summary), 
                     invoice_contents           = COALESCE($23 , invoice_contents), 
                     modify_date                = COALESCE($24::timestamp , modify_date), 
-                    recent_user                = COALESCE($25 , recent_user) 
-                where tax_invoice_code = $26    
+                    recent_user                = COALESCE($25 , recent_user) ,
+                    sequence_number            = COALESCE($26 , sequence_number)   
+                where tax_invoice_code = $27    
             `,[
                 company_code                 ,           
                 publish_type              ,
@@ -3066,6 +3070,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                 invoice_contents          ,
                 currentDate.currdate      ,
                 modify_user               ,
+                sequence_number           ,
                 v_tax_invoice_code  
             ]);            
         }

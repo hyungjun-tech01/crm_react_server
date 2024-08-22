@@ -2494,3 +2494,5 @@ set transaction_contents =
                                where transaction_contents is not null
                                limit 1) ) ;
 
+-- 2024.08.22 : sequence_number 추가 
+alter table tbl_tax_invoice add column sequence_number varchar(50);
