@@ -2496,3 +2496,8 @@ set transaction_contents =
 
 -- 2024.08.22 : sequence_number 추가 
 alter table tbl_tax_invoice add column sequence_number varchar(50);
+
+-- 2024.08.26 
+alter table tbl_product_info RENAME COLUMN  product_class to product_class_name;
+
+alter table tbl_quotation_info add column quotation_contents text;

@@ -2779,7 +2779,8 @@ app.post('/modifyUser', async(req, res) => {
         action_type                = defaultNull(req.body.action_type),
         userId                     = defaultNull(req.body.userId),
         userName                   = defaultNull(req.body.userName),
-        password                   = defaultNull(req.body.password),
+        current_password           = defaultNull(req.body.current_password),
+        change_password            = defaultNull(req.body.change_password),
         mobileNumber               = defaultNull(req.body.mobileNumber),
         phoneNumber                = defaultNull(req.body.phoneNumber),
         department                 = defaultNull(req.body.department),
@@ -2790,7 +2791,7 @@ app.post('/modifyUser', async(req, res) => {
         modify_user                = defaultNull(req.body.modify_user),
     } = req.body;
 
-    console.log('modifyUser', userId, userName, action_type);
+    console.log('v', userId, userName, action_type);
 
     try{
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
@@ -2849,28 +2850,59 @@ app.post('/modifyUser', async(req, res) => {
             if (modify_user === null ){
                 throw new Error('modify user는 not null입니다.');
             }
-            if(password !== null){
-                const salt = bcrypt.genSaltSync(10);
-                hashPassword = bcrypt.hashSync(password, salt);
-            }else{
-                hashPassword = null;
-            }
 
             const response = await pool.query(`
                 update tbl_user_info 
                    set user_name    = COALESCE( $1, user_name ),
-                   password         = COALESCE( $2, password),
-                   mobile_number    = COALESCE( $3, mobile_number),
-                   phone_number     = COALESCE( $4, phone_number),
-                   department       = COALESCE( $5, department),
-                   position         = COALESCE( $6, position),
-                   email            = COALESCE( $7, email),
-                   private_group           = COALESCE( $8, private_group),
-                   memo             = COALESCE( $9, memo)
-                where user_id = $10
-            `,[userName, hashPassword, mobileNumber, phoneNumber, department, position, email, private_group, memo, userId]);
+                   mobile_number    = COALESCE( $2, mobile_number),
+                   phone_number     = COALESCE( $3, phone_number),
+                   department       = COALESCE( $4, department),
+                   position         = COALESCE( $5, position),
+                   email            = COALESCE( $6, email),
+                   private_group           = COALESCE( $7, private_group),
+                   memo             = COALESCE( $8, memo)
+                where user_id = $9
+            `,[userName, mobileNumber, phoneNumber, department, position, email, private_group, memo, userId]);
         }
 
+        if (action_type === 'UPDATE_PASSWORD') {
+            if (modify_user === null ){
+                throw new Error('modify user는 not null입니다.');
+            }
+            if(change_password !== null){
+                const salt = bcrypt.genSaltSync(10);
+                hashPassword = bcrypt.hashSync(change_password, salt);
+            }else{
+                hashPassword = null;
+            }
+
+            const users = await pool.query(`
+                SELECT t.user_id as "userId", 
+                t.password as "password"
+                FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
+        
+            if(!users.rows.length){ 
+                console.log("fail");
+                return res.json({message:"Invalid_current_password"});
+            }
+
+            const success = await bcrypt.compare(current_password, users.rows[0].password);
+            if(success){
+                // update password 
+                console.log("success", users.rows[0]);
+                const response = await pool.query(`
+                    update tbl_user_info 
+                    set password    = COALESCE( $1, password)
+                    where user_id = $2
+                `,[change_password,  userId]);
+            }else{
+                console.log("fail");
+                res.json({message:"Invalid_currnet_password"});
+            }
+            res.end();
+
+
+        }
         const out_user_id = userId;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
         const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
@@ -3163,6 +3195,7 @@ app.post('/getuser', async(req, res) => {
         if(!users.rows.length) 
             return res.json({message:'User does not exist'});
 
+        console.log(users.rows[0]);    
         res.json(users.rows[0]); // 결과 리턴을 해 줌 .
         res.end();
 
@@ -3179,7 +3212,7 @@ app.post('/getuser', async(req, res) => {
 app.get('/passHash', async(req, res) => {
     console.log('passHash');
     const salt = bcrypt.genSaltSync(10);
-    //  const hashPassword = bcrypt.hashSync(password, salt);
+    //  const hashPassword = bcrypt.hashSync(password, salt);vs
       const hashPassword = bcrypt.hashSync('demo', salt);
     try{
         const users = await pool.query(`
