@@ -2791,8 +2791,6 @@ app.post('/modifyUser', async(req, res) => {
         modify_user                = defaultNull(req.body.modify_user),
     } = req.body;
 
-    console.log('v', userId, userName, action_type);
-
     try{
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
@@ -2870,8 +2868,10 @@ app.post('/modifyUser', async(req, res) => {
                 throw new Error('modify user는 not null입니다.');
             }
             if(change_password !== null){
-                const salt = bcrypt.genSaltSync(10);
-                hashPassword = bcrypt.hashSync(change_password, salt);
+                if( change_password !== '') {
+                    const salt = bcrypt.genSaltSync(10);
+                    hashPassword = bcrypt.hashSync(change_password, salt);
+                }
             }else{
                 hashPassword = null;
             }
@@ -2882,26 +2882,30 @@ app.post('/modifyUser', async(req, res) => {
                 FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         
             if(!users.rows.length){ 
-                console.log("fail");
-                return res.json({message:"Invalid_current_password"});
+                console.log("fail invalid_current_user");
+                res.json({message:"invalid_current_user"});
+                res.end();   
+                return ;
             }
 
             const success = await bcrypt.compare(current_password, users.rows[0].password);
             if(success){
+                console.log(change_password, );
                 // update password 
-                console.log("success", users.rows[0]);
+                const salt = bcrypt.genSaltSync(10);
+                const hashPassword1 = bcrypt.hashSync(change_password, salt);
+
                 const response = await pool.query(`
                     update tbl_user_info 
                     set password    = COALESCE( $1, password)
                     where user_id = $2
-                `,[change_password,  userId]);
+                `,[hashPassword1,  userId]);
             }else{
-                console.log("fail");
-                res.json({message:"Invalid_currnet_password"});
+                console.log("fail Invalid_current_password");
+                res.json({message:"Invalid_current_password"});
+                res.end();   
+                return;
             }
-            res.end();
-
-
         }
         const out_user_id = userId;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
@@ -2911,6 +2915,7 @@ app.post('/modifyUser', async(req, res) => {
         
         res.json({ message:'success', out_user_id: out_user_id,  out_create_user:out_create_user, 
            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
+        res.end();                    
    
         console.log({ out_user_id: out_user_id,  out_create_user:out_create_user, 
                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });        
@@ -3146,8 +3151,8 @@ app.post('/login', async(req, res) => {
         t.memo  as "memo"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length){ 
-            console.log("fail");
-            return res.json({message:"Invalid email or password"});
+            console.log("invalid id fail");
+            return res.json({message:"Invalid userId or password"});
         }
 
         const success = await bcrypt.compare(password, users.rows[0].password);
@@ -3164,10 +3169,10 @@ app.post('/login', async(req, res) => {
                       memo: users.rows[0].memo,
                       token: token,
                       message:"success"});
-            console.log("success", users.rows[0]);
+            console.log("login success",  users.rows[0].userId);
         }else{
-            console.log("fail");
-            res.json({message:"Invalid email or password"});
+            console.log("invalid password fail");
+            res.json({message:"Invalid userId or password"});
         }
         res.end();
     }catch(err){

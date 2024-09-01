@@ -1219,7 +1219,7 @@ copy tbl_quotation_sub_info_temp
 -- procedure 실행 
 call p_insert_quotation_sub();
 
--- 데이터 확인 
+-- 데이터 확인  
 select * from tbl_quotation_info;
 
 -- temp table 삭제 
