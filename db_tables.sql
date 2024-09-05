@@ -2501,3 +2501,6 @@ alter table tbl_tax_invoice add column sequence_number varchar(50);
 alter table tbl_product_info RENAME COLUMN  product_class to product_class_name;
 
 alter table tbl_quotation_info add column quotation_contents text;
+
+--2024.09.03 
+alter table  tbl_consulting_info ALTER COLUMN modify_date TYPE timestamp;

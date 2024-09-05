@@ -2954,7 +2954,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
         receive_type              = defaultNull(req.body.receive_type),
         memo                      = defaultNull(req.body.memo),
         summary                   = defaultNull(req.body.summary),
-        invoice_contents          = defaultNull(req.body.invoice_contents),
+        invoice_contents          =  defaultNull(req.body.invoice_contents),
         modify_user               = defaultNull(req.body.modify_user),
         sequence_number           = defaultNull(req.body.sequence_number),
     } = req.body;
@@ -2962,7 +2962,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
     console.log('modifyTaxInvoice index1 index2', index1, index2);
     let v_index1 = defaultIntegerNull(index1);
     let v_index2 = defaultIntegerNull(index2);
-    console.log(index1, index2);
+    console.log(action_type, index1, index2);
     try{
 
         console.log('modifyTaxInvoice1');
@@ -2973,6 +2973,9 @@ app.post('/modifyTaxInvoice', async(req, res) => {
         if (modify_user === null ){
             throw new Error('modify user는 not null입니다.');
         }
+        if(company_code === null || company_code === ''){
+            throw new Error('company는 not null입니다.');
+        }
 
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
@@ -2980,7 +2983,6 @@ app.post('/modifyTaxInvoice', async(req, res) => {
             throw new Error('modify user는 user_id 이어야 합니다.');
         }        
 
-        console.log('modifyTaxInvoice2');
         if (action_type === 'ADD') {
 
             v_tax_invoice_code  = pk_code();
@@ -3072,7 +3074,7 @@ app.post('/modifyTaxInvoice', async(req, res) => {
                     cash_amount                = COALESCE($16::numeric , cash_amount), 
                     check_amount               = COALESCE($17::numeric , check_amount), 
                     note_amount                = COALESCE($18::numeric , note_amount), 
-                    receivable_amount          = COALESCE($29::numeric , receivable_amount), 
+                    receivable_amount          = COALESCE($19::numeric , receivable_amount), 
                     receive_type               = COALESCE($20 , receive_type), 
                     memo                       = COALESCE($21 , memo), 
                     summary                    = COALESCE($22 , summary), 
