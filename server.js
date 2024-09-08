@@ -1195,7 +1195,8 @@ app.post('/modifyCompany', async(req, res) => {
         account_owner              = defaultNull(req.body.account_owner) ,
         sales_resource             = defaultNull(req.body.sales_resource) ,
         application_engineer       = defaultNull(req.body.application_engineer) ,
-        region                     = defaultNull(req.body.region)
+        region                     = defaultNull(req.body.region),
+        site_id                    = defaultNull(req.body.site_id)
     } = req.body;    
 
     try{
@@ -1209,6 +1210,8 @@ app.post('/modifyCompany', async(req, res) => {
             throw new Error('modify user는 not null입니다.');
         }
 
+       
+
         const modify_user_exist = await pool.query(`select user_id from tbl_user_info
                                                     where user_id = $1`,[modify_user]);
         if (modify_user_exist.rows.length === 0 ){
@@ -1216,6 +1219,18 @@ app.post('/modifyCompany', async(req, res) => {
         }
 
         if (action_type === 'ADD') {
+            if (company_name === null ){
+                throw new Error('company_name은 not null입니다.');
+            }
+    
+            if (site_id === null ){
+                throw new Error('site_id는 not null입니다.');
+            }
+    
+            if (sales_resource === null ){
+                throw new Error('sales_resource는 not null입니다.');
+            }
+
             v_company_code  = pk_code();
 
             // 현재 db에 있는 sequence에서  company_number 하나 생성해서 입력
@@ -1256,15 +1271,16 @@ app.post('/modifyCompany', async(req, res) => {
                 account_owner                  ,
                 sales_resource                 ,
                 application_engineer           ,
-                region                         )
+                region                         ,
+                site_id)
             values(
                 $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, 
-                $18, $19, $20, $21, $22::timestamp, $23::timestamp, $24, $25::integer, $26, $27, $28, $29, $30, $31);
+                $18, $19, $20, $21, $22::timestamp, $23::timestamp, $24, $25::integer, $26, $27, $28, $29, $30, $31, $32);
             `,[v_company_code,v_company_number,company_group,company_scale,deal_type,company_name,company_name_en,
                business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
                memo,modify_user,currentDate.currdate,currentDate.currdate,modify_user,counter,account_code,bank_name,account_owner,
-               sales_resource,application_engineer,region
+               sales_resource,application_engineer,region, site_id
             ]);
         }
         if (action_type === 'UPDATE') {
@@ -1297,13 +1313,14 @@ app.post('/modifyCompany', async(req, res) => {
                   account_owner        =  COALESCE( $25, account_owner)         ,
                   sales_resource       =  COALESCE( $26, sales_resource)        ,
                   application_engineer   =  COALESCE($27, application_engineer)        ,
-                  region                 =  COALESCE( $28, region)       
-             where company_code = $29;
+                  region                 =  COALESCE( $28, region),
+                  site_id                =  COALESCE($29, site_id)       
+             where company_code = $30;
             `,[company_number,company_group,company_scale,deal_type,company_name,company_name_en,
                 business_registration_code,establishment_date,closure_date,ceo_name,business_type,business_item,
                 industry_type,company_zip_code,company_address,company_phone_number,company_fax_number,homepage,
                 memo,currentDate.currdate, modify_user,counter,account_code,bank_name,account_owner,
-                sales_resource,application_engineer,region,v_company_code
+                sales_resource,application_engineer,region,site_id, v_company_code
             ]);
            // update 
         }  

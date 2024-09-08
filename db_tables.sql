@@ -2504,3 +2504,10 @@ alter table tbl_quotation_info add column quotation_contents text;
 
 --2024.09.03 
 alter table  tbl_consulting_info ALTER COLUMN modify_date TYPE timestamp;
+
+--2024.09.05
+alter table tbl_tax_invoice rename column lead_code to company_code; 
+alter table tbl_tax_invoice add column invoice_contents text;
+
+-- 2024.09.07
+alter table tbl_company_info add column site_id varchar(50);
