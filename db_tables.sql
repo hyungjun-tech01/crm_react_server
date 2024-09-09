@@ -2511,3 +2511,5 @@ alter table tbl_tax_invoice add column invoice_contents text;
 
 -- 2024.09.07
 alter table tbl_company_info add column site_id varchar(50);
+--2024.09.08 
+alter table tbl_lead_info add column email2 varchar(255);
