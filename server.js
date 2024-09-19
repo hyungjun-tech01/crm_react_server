@@ -2174,6 +2174,43 @@ app.post('/modifyTransaction', async(req, res) => {
     }
 });
 
+// get sequence next number 
+app.post('/getSequenceNext', async(req, res) => {
+
+    const  { 
+        modify_user                = defaultNull(req.body.modify_user)   ,  
+    } = req.body;
+
+    let v_quotation_number_result;
+    console.log('getSequenceNext');
+
+    try{   
+                  
+        if (modify_user === null ){
+            throw new Error('modify user는 not null입니다.');
+        }
+
+        const modify_user_exist = await pool.query(`select user_id from tbl_user_info
+                                                    where user_id = $1`,[modify_user]);
+        if (modify_user_exist.rows.length === 0 ){
+            throw new Error('modify user는 user_id 이어야 합니다.');
+        }         
+    
+        // 현재 db에 있는 sequence에서  quotation_number 하나 생성해서 입력
+        const quotation_number_result = await pool.query(`
+        select nextval(\'index_number_seq\') quotation_number ;`);
+
+        v_quotation_number_result = parseInt(quotation_number_result.rows[0].quotation_number);    
+
+        res.json({ out_quotation_number:v_quotation_number_result }); // 결과 리턴을 해 줌 .  
+    
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});
+        res.end();              
+    }
+});    
+
 // create/update quotation info 
 app.post('/modifyQuotation', async(req, res) => {
     const  { 
