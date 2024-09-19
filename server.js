@@ -2229,6 +2229,7 @@ app.post('/modifyQuotation', async(req, res) => {
         const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
         const currentDate = current_date.rows[0];
         let v_quotation_code = quotation_code;
+        let v_quotation_number_result = quotation_number;
 
         if (modify_user === null ){
             throw new Error('modify user는 not null입니다.');
@@ -2248,6 +2249,13 @@ app.post('/modifyQuotation', async(req, res) => {
                 throw new Error('quotation_date는 not null입니다.');
             }
             v_quotation_code  = pk_code();
+
+             // 현재 db에 있는 sequence에서  quotation_number 하나 생성해서 입력
+             const quotation_number_result = await pool.query(`
+                select nextval(\'index_number_seq\') quotation_number ;`);
+
+            v_quotation_number_result = parseInt(quotation_number_result.rows[0].quotation_number);    
+
             const response = await pool.query(`insert into tbl_quotation_info(
                 quotation_code               ,           
                 lead_code                    ,
@@ -2297,7 +2305,7 @@ app.post('/modifyQuotation', async(req, res) => {
                 quotation_table              ,
                 company_code                 ,
                 quotation_contents           ) 
-                values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15::date,
+                values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13::text,$14,$15::date,
                        $16,$17,$18,$19,$20,$21,$22::date,$23,$24,$25,$26::numeric,$27::numeric,$28::numeric,$29::numeric,$30::numeric,
                        $31::numeric,$32::numeric,$33::numeric,$34::numeric,$35::numeric,$36::numeric,$37::numeric,$38,$39,$40::numeric,$41,$42::timestamp,$43::timestamp,$44,$45,
                        $46,$47,$48)`,
@@ -2314,7 +2322,7 @@ app.post('/modifyQuotation', async(req, res) => {
                     fax_number                ,
                     email                     ,
                     quotation_type            ,
-                    quotation_number          ,
+                    v_quotation_number_result ,
                     quotation_send_type       ,
                     quotation_date            ,
                     delivery_location         ,
@@ -2422,7 +2430,7 @@ app.post('/modifyQuotation', async(req, res) => {
                 fax_number               ,
                 email                    ,
                 quotation_type           ,
-                quotation_number         ,
+                v_quotation_number_result,
                 quotation_send_type      ,
                 quotation_date           ,
                 delivery_location        ,
@@ -2461,15 +2469,16 @@ app.post('/modifyQuotation', async(req, res) => {
         }
 
         const out_quotation_code = v_quotation_code;
+        const out_quotation_number = v_quotation_number_result ;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
         const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
         const out_modify_date = currentDate.currdate;
         const out_recent_user = modify_user;
         
-        res.json({ out_quotation_code: out_quotation_code,  out_create_user:out_create_user, 
+        res.json({ out_quotation_code: out_quotation_code, out_quotation_number:out_quotation_number, out_create_user:out_create_user, 
            out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user }); // 결과 리턴을 해 줌 .  
    
-        console.log({ out_quotation_code: out_quotation_code,  out_create_user:out_create_user, 
+        console.log({ out_quotation_code: out_quotation_code,  out_quotation_number:out_quotation_number, out_create_user:out_create_user, 
                out_create_date:out_create_date, out_modify_date:out_modify_date, out_recent_user:out_recent_user });
 
     }catch(err){
