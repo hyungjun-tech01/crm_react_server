@@ -2287,12 +2287,13 @@ app.post('/modifyQuotation', async(req, res) => {
             }
             v_quotation_code  = pk_code();
 
-             // 현재 db에 있는 sequence에서  quotation_number 하나 생성해서 입력
-             const quotation_number_result = await pool.query(`
+            if( v_quotation_number_result  === null) {
+               // 현재 db에 있는 sequence에서  quotation_number 하나 생성해서 입력
+               const quotation_number_result = await pool.query(`
                 select nextval(\'index_number_seq\') quotation_number ;`);
 
-            v_quotation_number_result = parseInt(quotation_number_result.rows[0].quotation_number);    
-
+               v_quotation_number_result = parseInt(quotation_number_result.rows[0].quotation_number);    
+            }
             const response = await pool.query(`insert into tbl_quotation_info(
                 quotation_code               ,           
                 lead_code                    ,
