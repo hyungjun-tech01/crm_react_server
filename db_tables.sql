@@ -2514,3 +2514,5 @@ alter table tbl_company_info add column site_id varchar(50);
 --2024.09.08 
 alter table tbl_lead_info add column email2 varchar(255);
 
+--2024.09.20 
+CREATE SEQUENCE quotation_reset_seq START 1;

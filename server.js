@@ -2175,7 +2175,7 @@ app.post('/modifyTransaction', async(req, res) => {
 });
 
 // get sequence next number 
-app.post('/getSequenceNext', async(req, res) => {
+app.post('/getQuotationNumber', async(req, res) => {
 
     const  { 
         modify_user                = defaultNull(req.body.modify_user)   ,  
@@ -2196,12 +2196,30 @@ app.post('/getSequenceNext', async(req, res) => {
             throw new Error('modify user는 user_id 이어야 합니다.');
         }         
     
-        // 현재 db에 있는 sequence에서  quotation_number 하나 생성해서 입력
-        const quotation_number_result = await pool.query(`
-        select nextval(\'index_number_seq\') quotation_number ;`);
+        const current_date = await pool.query(`select to_char(current_date,'YYMMDD') currdate`);
+        const currentDate = current_date.rows[0].currdate;
 
-        v_quotation_number_result = parseInt(quotation_number_result.rows[0].quotation_number);    
+        const todayCount = await pool.query(`
+            select count(*) today_count from tbl_quotation_info
+            where  create_date >= current_date`);
 
+        let v_number_result;
+
+        if(todayCount.rows[0].today_count === 0) {
+            // alter sequence  
+            await pool.query(`ALTER SEQUENCE quotation_reset_seq RESTART WITH 1`);
+        }
+
+        // 현재 db에 있는 sequence에서  _number 하나 생성해서 입력
+        const number_result = await pool.query(`
+        select nextval(\'quotation_reset_seq\') number_result ;`);
+
+        v_number_result = parseInt(number_result.rows[0].number_result);
+        const formattedNumber = v_number_result.toString().padStart(4, '0');
+        v_quotation_number_result = currentDate + formattedNumber;
+
+        console.log(v_quotation_number_result);
+        
         res.json({ out_quotation_number:v_quotation_number_result }); // 결과 리턴을 해 줌 .  
     
     }catch(err){
