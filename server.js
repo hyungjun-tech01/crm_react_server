@@ -92,7 +92,7 @@ app.set('etag', false);
 const options = { etag : false };
 
 app.post('/upload', upload.single('file'),async (req, res) => {
-    const cardId = req.body.cardId;
+    const fileId = pk_code();
     const fileExt = req.body.fileExt;
     const fileData = req.file.buffer; // 이미지 데이터가 여기에 들어온다고 가정합니다.
     const fileName = req.body.fileName;
@@ -101,34 +101,26 @@ app.post('/upload', upload.single('file'),async (req, res) => {
     const dirname = uuid();
     let dirName = path.join('uploads', dirname);
 
-    // /카드 id 폴더가 없으면 생성  --> uuid를 사용하는 것으로 대체
     try {
-        // fsUpper.readdirSync(`uploads/${dirname}`);
         fsUpper.mkdirSync(dirName);
     } catch (error) {
-        // console.error('uploads/cardid  폴더가 없어 cardid 폴더를 생성합니다.');
-        console.error('첨부 파일을 위한 폴더 생성에 실패하여 cardid 폴더로 생성합니다.');
-        dirName = path.join('uploads', cardId + "_" + dirname);
-        fsUpper.mkdirSync(dirName);
+        console.error(err);
+        res.status(500).send('업로드를 위한 경로 생성에 오류가 발생했습니다.');
     }
 
     // 이미지를 저장할 경로 및 파일 이름
     
     const filePath = path.join(dirName, fileName);
+    let ret = {id:fileId, fileName:fileName, dirName:dirname, url:filePath, coverUrl: '', width: 0, height: 0};
 
     try {
         // 이미지 데이터를 바이너리로 변환하여 파일에 저장 (동기) -> 앞에 await를 붙히면 프로세스가 안 끝남.
-        writeFileAsync(filePath, fileData, 'binary');
         console.log('파일 저장 성공:', filePath); 
-        res.json({fileName:fileName, dirName:dirname});
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('파일 업로드 중 오류가 발생했습니다.');
-    } finally{
-        res.end();
-        console.log('final:', filePath);
+        writeFileAsync(filePath, fileData, 'binary');
 
         if(imageWidth) {
+            console.log('파일 종류 : image'); 
+            console.log(`- width: ${imageWidth} / height: ${imageHeight}`);
             const thumbnailPath = path.join(dirName, 'thumbnail');
             try {
                 fsUpper.mkdirSync(thumbnailPath);
@@ -142,8 +134,6 @@ app.post('/upload', upload.single('file'),async (req, res) => {
                 animated: true,
             });
 
-            console.log('[Check] thumbnail path :', thumbnailPath);
-            console.log('[Check] file ext :', fileExt)
             try {
                 await image
                 .resize(
@@ -156,10 +146,23 @@ app.post('/upload', upload.single('file'),async (req, res) => {
                     : undefined,
                 )
                 .toFile(path.join(thumbnailPath, `cover-256.${fileExt}`));
+
+                ret.imageWidth = imageWidth;
+                ret.imageHeight = imageHeight;
+                ret.coverUrl = path.join(thumbnailPath, `cover-256.${fileExt}`);
+                res.json(ret);
             } catch (error) {
                 console.log(error);
+                res.json(ret);
             };
-        };
+        } else {
+            res.json(ret);
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('파일 업로드 중 오류가 발생했습니다.');
+    } finally{
+        res.end();
     };
 });
 
