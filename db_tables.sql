@@ -2516,3 +2516,7 @@ alter table tbl_lead_info add column email2 varchar(255);
 
 --2024.09.20 
 CREATE SEQUENCE quotation_reset_seq START 1;
+
+--2024.09.24
+nvm install 20.5.0
+nvm use 20.5.0
