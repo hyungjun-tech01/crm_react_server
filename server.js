@@ -92,7 +92,7 @@ app.set('etag', false);
 const options = { etag : false };
 
 app.post('/upload', upload.single('file'),async (req, res) => {
-    const fileId = pk_code();
+    const fileCode = pk_code();
     const fileExt = req.body.fileExt;
     const fileData = req.file.buffer; // 이미지 데이터가 여기에 들어온다고 가정합니다.
     const fileName = req.body.fileName;
@@ -111,7 +111,7 @@ app.post('/upload', upload.single('file'),async (req, res) => {
     // 이미지를 저장할 경로 및 파일 이름
     
     const filePath = path.join(dirName, fileName);
-    let ret = {id:fileId, dirName:dirname, fileName:fileName, fileExt:fileExt, url:filePath, coverUrl: '', width: 0, height: 0};
+    let ret = {id:fileCode, dirName:dirname, fileName:fileName, fileExt:fileExt, url:filePath, coverUrl: '', width: 0, height: 0};
 
     try {
         // 이미지 데이터를 바이너리로 변환하여 파일에 저장 (동기) -> 앞에 await를 붙히면 프로세스가 안 끝남.
