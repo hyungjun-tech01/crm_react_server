@@ -2520,3 +2520,7 @@ CREATE SEQUENCE quotation_reset_seq START 1;
 --2024.09.24
 nvm install 20.5.0
 nvm use 20.5.0
+
+--2024.09.25
+alter table tbl_consulting_info add column request_attachment_code varchar(36);
+alter table tbl_consulting_info add column action_attachment_code varchar(36);
