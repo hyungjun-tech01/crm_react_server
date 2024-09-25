@@ -92,12 +92,10 @@ app.set('etag', false);
 const options = { etag : false };
 
 app.post('/upload', upload.single('file'),async (req, res) => {
-    const fileCode = pk_code();
+    const attachmentCode = req.body.attachmentCode || pk_code();
     const fileExt = req.body.fileExt;
     const fileData = req.file.buffer; // 이미지 데이터가 여기에 들어온다고 가정합니다.
     const fileName = req.body.fileName;
-    const imageWidth = req.body.width ? req.body.width : null;
-    const imageHeight = req.body.height ? req.body.height : null;
     const dirname = uuid();
     let dirName = path.join('uploads', dirname);
 
@@ -111,53 +109,53 @@ app.post('/upload', upload.single('file'),async (req, res) => {
     // 이미지를 저장할 경로 및 파일 이름
     
     const filePath = path.join(dirName, fileName);
-    let ret = {id:fileCode, dirName:dirname, fileName:fileName, fileExt:fileExt, url:filePath, coverUrl: '', width: 0, height: 0};
+    let ret = {code:attachmentCode, dirName:dirname, fileName:fileName, fileExt:fileExt, url:filePath};
 
     try {
         // 이미지 데이터를 바이너리로 변환하여 파일에 저장 (동기) -> 앞에 await를 붙히면 프로세스가 안 끝남.
         console.log('파일 저장 성공:', filePath); 
         writeFileAsync(filePath, fileData, 'binary');
 
-        if(imageWidth) {
-            console.log('파일 종류 : image'); 
-            console.log(`- width: ${imageWidth} / height: ${imageHeight}`);
-            const thumbnailPath = path.join(dirName, 'thumbnail');
-            try {
-                fsUpper.mkdirSync(thumbnailPath);
-            } catch (error) {
-                console.log('fail to make folder for thumbnail :', error);
-            };
+        // if(imageWidth) {
+        //     console.log('파일 종류 : image'); 
+        //     console.log(`- width: ${imageWidth} / height: ${imageHeight}`);
+        //     const thumbnailPath = path.join(dirName, 'thumbnail');
+        //     try {
+        //         fsUpper.mkdirSync(thumbnailPath);
+        //     } catch (error) {
+        //         console.log('fail to make folder for thumbnail :', error);
+        //     };
             
-            // thumbnail 생성
-            const isPortrait = imageHeight > imageWidth;
-            const image = sharp(filePath, {
-                animated: true,
-            });
+        //     // thumbnail 생성
+        //     const isPortrait = imageHeight > imageWidth;
+        //     const image = sharp(filePath, {
+        //         animated: true,
+        //     });
 
-            try {
-                await image
-                .resize(
-                    256,
-                    isPortrait ? 320 : undefined,
-                    imageWidth < 256 || (isPortrait && imageHeight < 320)
-                    ? {
-                        kernel: sharp.kernel.nearest,
-                        }
-                    : undefined,
-                )
-                .toFile(path.join(thumbnailPath, `cover-256.${fileExt}`));
+        //     try {
+        //         await image
+        //         .resize(
+        //             256,
+        //             isPortrait ? 320 : undefined,
+        //             imageWidth < 256 || (isPortrait && imageHeight < 320)
+        //             ? {
+        //                 kernel: sharp.kernel.nearest,
+        //                 }
+        //             : undefined,
+        //         )
+        //         .toFile(path.join(thumbnailPath, `cover-256.${fileExt}`));
 
-                ret.imageWidth = imageWidth;
-                ret.imageHeight = imageHeight;
-                ret.coverUrl = path.join(thumbnailPath, `cover-256.${fileExt}`);
-                res.json(ret);
-            } catch (error) {
-                console.log(error);
-                res.json(ret);
-            };
-        } else {
+        //         ret.imageWidth = imageWidth;
+        //         ret.imageHeight = imageHeight;
+        //         ret.coverUrl = path.join(thumbnailPath, `cover-256.${fileExt}`);
+        //         res.json(ret);
+        //     } catch (error) {
+        //         console.log(error);
+        //         res.json(ret);
+        //     };
+        // } else {
             res.json(ret);
-        }
+        // }
     } catch (err) {
         console.error(err);
         res.status(500).send('파일 업로드 중 오류가 발생했습니다.');
