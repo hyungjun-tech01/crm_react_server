@@ -2524,3 +2524,16 @@ nvm use 20.5.0
 --2024.09.25
 alter table tbl_consulting_info add column request_attachment_code varchar(36);
 alter table tbl_consulting_info add column action_attachment_code varchar(36);
+
+-- 2024.09.26 
+create table tbl_attachment_info
+(       
+UUID             varchar(36) primary key,
+attachment_code  varchar(36) ,
+dir_name         varchar(256),
+file_name        varchar(256),
+file_ext         varchar(16) ,
+attachment_index  integer,
+create_date                   timestamp ,
+creator                       varchar(50) 
+);

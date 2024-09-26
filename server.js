@@ -1133,6 +1133,34 @@ app.post('/taxInvoice', async(req, res) => {
     }
 });
 
+app.post('/attachment', async(req, res) => {
+    const { 
+        attachment_code                    = defaultNull(req.body.attachment_code),
+    } = req.body;
+    try{
+        console.log("[Get] attachment");
+        const attachmentResult = await pool.query(`
+        select * 
+            from tbl_attachment_info tai
+            WHERE attachment_code = $1
+            order by tai.modify_date desc`,[attachment_code]);  
+
+        if(attachmentResult.rows.length > 0) {
+            const allAttachment = attachmentResult.rows;
+            res.json(allAttachment);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+    }catch(err){
+        console.log(err);
+        res.json({message:err.message});        
+        res.end();
+    }
+});
+
+
 app.get('/getallusers', async(req, res) => {
     console.log("[Get] all users");
     try{
@@ -1604,7 +1632,9 @@ app.post('/modifyConsult', async(req, res) => {
         request_type            = defaultNull(req.body.request_type), 
         modify_user             = defaultNull(req.body.modify_user),            
         product_type            = defaultNull(req.body.product_type),
-        application_engineer    = defaultNull(req.body.application_engineer)
+        application_engineer    = defaultNull(req.body.application_engineer),
+        request_attachment_code = defaultNull(req.body.request_attachment_code),
+        action_attachment_code  = defaultNull(req.body.action_attachment_code),
         } = req.body;
 
     try{
@@ -1670,11 +1700,13 @@ app.post('/modifyConsult', async(req, res) => {
                 recent_user             ,
                 modify_date             ,
                 product_type            ,
-                application_engineer
+                application_engineer    ,
+                request_attachment_code ,
+                action_attachment_code
             )
              values(
                 $1,$2,$3::timestamp,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20::timestamp,$21,$22,
-                $23::timestamp,$24,$25);
+                $23::timestamp,$24,$25, $26, $27);
             `,[ v_consulting_code,
                 lead_code               , 
                 receipt_date            , 
@@ -1699,7 +1731,9 @@ app.post('/modifyConsult', async(req, res) => {
                 modify_user             ,
                 currentDate.currdate     ,
                 product_type             ,
-                application_engineer
+                application_engineer     ,
+                request_attachment_code  ,
+                action_attachment_code
             ]);
         }
 
@@ -1743,8 +1777,10 @@ app.post('/modifyConsult', async(req, res) => {
                    recent_user             = COALESCE($19, recent_user),
                    modify_date             = COALESCE($20::timestamp, modify_date),
                    product_type            = COALESCE($21, product_type),
-                   application_engineer    = COALESCE($22, application_engineer)
-                where consulting_code = $23;
+                   application_engineer    = COALESCE($22, application_engineer),
+                   request_attachment_code = COALESCE($23, request_attachment_code),
+                   action_attachment_code  = COALESCE($24, action_attachment_code)
+                where consulting_code = $25;
             `,[lead_code               , 
                 receipt_date            , 
                 consulting_type         , 
@@ -1767,6 +1803,8 @@ app.post('/modifyConsult', async(req, res) => {
                 currentDate.currdate    ,
                 product_type            ,
                 application_engineer    ,
+                request_attachment_code ,
+                action_attachment_code  ,
                 v_consulting_code
             ]);
         }      
