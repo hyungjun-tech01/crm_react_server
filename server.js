@@ -1143,7 +1143,7 @@ app.post('/attachment', async(req, res) => {
         select * 
             from tbl_attachment_info tai
             WHERE attachment_code = $1
-            order by tai.modify_date desc`,[attachment_code]);  
+            order by attachment_index `,[attachment_code]);  
 
         if(attachmentResult.rows.length > 0) {
             const allAttachment = attachmentResult.rows;
@@ -3258,6 +3258,89 @@ app.post('/modifyTaxInvoice', async(req, res) => {
         res.json({message:err.message});
         res.end();              
     }
+});
+
+// create/update ma contract info 
+app.post('/modifyAttachment', async(req, res) => {
+    console.log('modifyAttachment');
+    const  { 
+        action_type              = defaultNull(req.body.action_type),
+        attachment_code          = defaultNull(req.body.attachment_code),
+        uuid                     = defaultNull(req.body.uuid),
+        dir_name                 = defaultNull(req.body.dir_name),  
+        file_name                = defaultNull(req.body.file_name),
+        file_ext                 = defaultNull(req.body.file_ext),
+        creator                  = defaultNull(req.body.creator),
+        }    = req.body;
+
+    try{
+        // ADD인데 attachment_code === null 이면 완전 추가  new attachment_code , uuid 리턴 
+        // ADD인데 attachment_code === null 이 아니면 있는 attachment 에다가 line 추가, 받은 attachment_code , uuid 리턴 
+        // DELETE uuid 있으으면 그것 삭제 
+        let v_attachment_code = attachment_code;
+        let v_uuid = uuid;
+        let v_attachment_index;
+        const current_date = await pool.query(`select to_char(now(),'YYYY.MM.DD HH24:MI:SS') currdate`);
+        const currentDate = current_date.rows[0];
+
+        if (action_type === 'ADD') {
+            if(v_attachment_code === null || v_attachment_code === ""){
+                v_attachment_code = pk_code();
+                v_attachment_index = 1;
+            }else{
+              const count_attach = await pool.query(`select max(attachment_index)+1 count_attach from 
+                                                     tbl_attachment_info tai 
+                                                     where attachment_code = $1`,[v_attachment_code]);
+                v_attachment_index  = count_attach.rows[0].count_attach;                                   
+            }   
+            v_uuid = pk_code();
+            const response = await pool.query(`insert into tbl_attachment_info(
+                uuid            ,
+                attachment_code ,
+                dir_name        ,  
+                file_name       ,
+                file_ext        ,
+                attachment_index,
+                create_date     ,
+                creator    )
+                values($1,$2,$3,$4,$5,$6::integer,$7::timestamp,$8)`,
+                [
+                    v_uuid              ,
+                    v_attachment_code   ,
+                    dir_name            ,
+                    file_name           ,
+                    file_ext            ,
+                    v_attachment_index  ,
+                    currentDate.currdate,
+                    creator
+            ]);       
+        }else if(action_type === 'DELETE'){
+            const response = await pool.query(`delete from tbl_attachment_info 
+               where uuid = $1`,[v_uuid]);
+        }
+
+        const out_attachment_code = v_attachment_code;
+        const out_uuid = v_uuid;
+        const out_attachment_index = v_attachment_index;
+        const out_create_user = action_type === 'ADD' ? creator : "";
+        const out_create_date = action_type === 'ADD' ? currentDate.currdate : "";
+        const out_delete_date =  action_type === 'DELETE' ? currentDate.currdate : "";
+        
+        res.json({ out_attachment_code: out_attachment_code,  out_uuid:out_uuid, out_attachment_index:out_attachment_index,
+                   out_create_user:out_create_user, out_create_date:out_create_date, 
+                   out_delete_date:out_delete_date }); // 결과 리턴을 해 줌 .  
+   
+        console.log({ out_attachment_code: out_attachment_code,  out_uuid:out_uuid, out_attachment_index:out_attachment_index,
+            out_create_user:out_create_user, out_create_date:out_create_date, 
+            out_delete_date:out_delete_date });
+
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});
+        res.end();              
+    }
+
 });
 
 /////////////////////////////////////////////////////////////////////
