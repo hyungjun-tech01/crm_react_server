@@ -2529,8 +2529,8 @@ alter table tbl_consulting_info add column action_attachment_code varchar(36);
 create table tbl_attachment_info
 (       
 UUID             varchar(36) primary key,
-attachment_code  varchar(36) ,
-dir_name         varchar(256),
+attachment_code  varchar(36)  not null,
+dir_name         varchar(256) not null,
 file_name        varchar(256),
 file_ext         varchar(16) ,
 attachment_index  integer,
