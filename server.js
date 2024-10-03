@@ -232,12 +232,13 @@ app.post('/deleteFile', async (req, res) => {
                                     fsUpper.unlinkSync(thumbnailPath);
                                 }
                                 fsUpper.rmdirSync(thumbnailDir);
-                                fsUpper.rmdirSync(fileDir);
                             };
                         });
                     };
                 };
             });
+            // file directory 삭제 : thumnail directory 없으면 삭제 안되어서 여기로 이동함.
+            fsUpper.rmdirSync(fileDir);
             console.log('파일 삭제 성공:', filePath); 
             res.json({fileName:fileName, filePath:filePath});
         }else{
