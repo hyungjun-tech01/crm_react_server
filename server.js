@@ -2221,7 +2221,7 @@ app.post('/getQuotationNumber', async(req, res) => {
     } = req.body;
 
     let v_quotation_number_result;
-    console.log('getSequenceNext');
+    console.log('getQuotationNumber');
 
     try{   
                   
