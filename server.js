@@ -3360,7 +3360,9 @@ app.post('/login', async(req, res) => {
         t.position as "position", 
         t.email as "email", 
         t.private_group  as "private_group",
-        t.memo  as "memo"
+        t.memo  as "memo",
+        t.job_type as "jobType",
+        t.is_work as "isWork"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length){ 
             console.log("invalid id fail");
@@ -3379,6 +3381,8 @@ app.post('/login', async(req, res) => {
                       email: users.rows[0].email, 
                       private_group: users.rows[0].private_group, 
                       memo: users.rows[0].memo,
+                      jobType:users.rows[0].jobType,
+                      isWork : users.rows[0].isWork,
                       token: token,
                       message:"success"});
             console.log("login success",  users.rows[0].userId);
@@ -3407,7 +3411,9 @@ app.post('/getuser', async(req, res) => {
         t.position as "position", 
         t.email as "email", 
         t.private_group  as "private_group",
-        t.memo  as "memo"
+        t.memo  as "memo",
+        t.job_type as "jobType",
+        t.is_work as "isWork"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length) 
             return res.json({message:'User does not exist'});

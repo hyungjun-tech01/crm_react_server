@@ -2537,3 +2537,6 @@ attachment_index  integer,
 create_date                   timestamp ,
 creator                       varchar(50) 
 );
+
+--2024.10.05 , 관리자 여부 추가
+alter table tbl_user_info add is_admin varchar(10);
