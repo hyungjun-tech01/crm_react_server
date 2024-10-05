@@ -859,7 +859,7 @@ app.post('/purchases', async(req, res) => {
     try{
         console.log("[Get] purchases");
         const allpurchasesResult = await pool.query(`
-        select tci.company_name, tpi.* 
+        select tci.company_name, tci.company_name_en, tpi.* 
             from tbl_purchase_info tpi, tbl_company_info tci
             where tpi.company_code = tci.company_code
             ${queryString ? `AND ${queryString}` : ''}                   
