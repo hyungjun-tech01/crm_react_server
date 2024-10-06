@@ -1175,7 +1175,8 @@ app.get('/getallusers', async(req, res) => {
         t.private_group  as "private_group",
         t.memo  as "memo",
         t.job_type as "jobType",
-        t.is_work as "isWork"
+        t.is_work as "isWork",
+        t.user_role as "userRole"
         FROM tbl_user_info t`);
         if(users.rows.length >0) {
             const allusers = users.rows;
@@ -3362,7 +3363,8 @@ app.post('/login', async(req, res) => {
         t.private_group  as "private_group",
         t.memo  as "memo",
         t.job_type as "jobType",
-        t.is_work as "isWork"
+        t.is_work as "isWork",
+        t.user_role as "userRole"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length){ 
             console.log("invalid id fail");
@@ -3383,6 +3385,7 @@ app.post('/login', async(req, res) => {
                       memo: users.rows[0].memo,
                       jobType:users.rows[0].jobType,
                       isWork : users.rows[0].isWork,
+                      userRole: users.rows[0].userRole,
                       token: token,
                       message:"success"});
             console.log("login success",  users.rows[0].userId);
@@ -3413,7 +3416,8 @@ app.post('/getuser', async(req, res) => {
         t.private_group  as "private_group",
         t.memo  as "memo",
         t.job_type as "jobType",
-        t.is_work as "isWork"
+        t.is_work as "isWork",
+        t.user_role as "userRole"
         FROM tbl_user_info t WHERE t.user_id = $1`, [userId]);
         if(!users.rows.length) 
             return res.json({message:'User does not exist'});
