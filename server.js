@@ -1177,7 +1177,8 @@ app.get('/getallusers', async(req, res) => {
         t.job_type as "jobType",
         t.is_work as "isWork",
         t.user_role as "userRole"
-        FROM tbl_user_info t`);
+        FROM tbl_user_info t
+        order by is_work desc`);
         if(users.rows.length >0) {
             const allusers = users.rows;
             res.json(allusers);
@@ -2916,6 +2917,8 @@ app.post('/modifyUser', async(req, res) => {
         email                      = defaultNull(req.body.email),
         private_group              = defaultNull(req.body.private_group),
         memo                       = defaultNull(req.body.memo),
+        isWork                     = defaultNull(req.body.isWork),
+        jobType                     = defaultNull(req.body.jobType),
         modify_user                = defaultNull(req.body.modify_user),
     } = req.body;
 
@@ -2957,18 +2960,22 @@ app.post('/modifyUser', async(req, res) => {
                     position,
                     email,
                     private_group,
-                    memo
-                )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10 )
+                    memo,
+                    is_work,
+                    job_type
+                )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10, $11, $12 )
             `,[userId, 
                userName,
-               hashPassword,
+                ,
                mobileNumber,
                phoneNumber,
                department,
                position,
                email,
                private_group,
-               memo
+               memo,
+               isWork,
+               jobType
             ]);
         }
         if (action_type === 'UPDATE') {
@@ -2986,9 +2993,11 @@ app.post('/modifyUser', async(req, res) => {
                    position         = COALESCE( $5, position),
                    email            = COALESCE( $6, email),
                    private_group           = COALESCE( $7, private_group),
-                   memo             = COALESCE( $8, memo)
-                where user_id = $9
-            `,[userName, mobileNumber, phoneNumber, department, position, email, private_group, memo, userId]);
+                   memo             = COALESCE( $8, memo),
+                   is_work          = COALESCE($9, is_Work),
+                   job_type         = COALESCE($10, job_type)
+                where user_id = $11
+            `,[userName, mobileNumber, phoneNumber, department, position, email, private_group, memo, isWork, jobType, userId]);
         }
 
         if (action_type === 'UPDATE_PASSWORD') {
