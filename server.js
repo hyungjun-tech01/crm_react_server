@@ -2918,7 +2918,8 @@ app.post('/modifyUser', async(req, res) => {
         private_group              = defaultNull(req.body.private_group),
         memo                       = defaultNull(req.body.memo),
         isWork                     = defaultNull(req.body.isWork),
-        jobType                     = defaultNull(req.body.jobType),
+        jobType                    = defaultNull(req.body.jobType),
+        userRole                   = defaultNull(req.body.userRole),
         modify_user                = defaultNull(req.body.modify_user),
     } = req.body;
 
@@ -2962,11 +2963,11 @@ app.post('/modifyUser', async(req, res) => {
                     private_group,
                     memo,
                     is_work,
-                    job_type
-                )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10, $11, $12 )
+                    job_type,
+                )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10, $11, $12, $13 )
             `,[userId, 
                userName,
-                ,
+               hashPassword ,
                mobileNumber,
                phoneNumber,
                department,
@@ -2975,7 +2976,8 @@ app.post('/modifyUser', async(req, res) => {
                private_group,
                memo,
                isWork,
-               jobType
+               jobType,
+               userRole
             ]);
         }
         if (action_type === 'UPDATE') {
@@ -2995,9 +2997,10 @@ app.post('/modifyUser', async(req, res) => {
                    private_group           = COALESCE( $7, private_group),
                    memo             = COALESCE( $8, memo),
                    is_work          = COALESCE($9, is_Work),
-                   job_type         = COALESCE($10, job_type)
-                where user_id = $11
-            `,[userName, mobileNumber, phoneNumber, department, position, email, private_group, memo, isWork, jobType, userId]);
+                   job_type         = COALESCE($10, job_type),
+                   user_role        = COALESCE($11, user_role)
+                where user_id = $12
+            `,[userName, mobileNumber, phoneNumber, department, position, email, private_group, memo, isWork, jobType, userRole, userId]);
         }
 
         if (action_type === 'UPDATE_PASSWORD') {
