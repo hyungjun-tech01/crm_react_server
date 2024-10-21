@@ -1178,7 +1178,7 @@ app.get('/getallusers', async(req, res) => {
         t.is_work as "isWork",
         t.user_role as "userRole"
         FROM tbl_user_info t
-        order by is_work desc`);
+        order by is_work desc, user_name asc`);
         if(users.rows.length >0) {
             const allusers = users.rows;
             res.json(allusers);
@@ -2980,7 +2980,7 @@ app.post('/modifyUser', async(req, res) => {
                userRole
             ]);
         }
-        if (action_type === 'UPDATE') {
+        if (action_type === 'UPDATE' || action_type === 'UPDATE_USER') {
  
             if (modify_user === null ){
                 throw new Error('modify user는 not null입니다.');
