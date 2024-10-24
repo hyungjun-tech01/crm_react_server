@@ -73,6 +73,7 @@ app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded( {extended : false } ));
 app.use('/uploads', express.static('uploads'));
+app.use('/files', express.static('files'));
 
 // req body 전송 한계 용량을 늘려
 //app.use(express.json({ limit: '25mb' })); // JSON 데이터에 대해 50MB로 제한
@@ -3441,6 +3442,42 @@ app.post('/getuser', async(req, res) => {
     }catch(err){
         console.error(err);
         res.json({message:err});        
+        res.end();
+    }
+});
+
+//get account info
+app.get('/getAccountInfo', async(req, res) => {
+    console.log("[Get] account information");
+    try{
+        const accounts = await pool.query(`
+        SELECT t.account_code as "account_code", 
+            t.business_registration_code as "business_registration_code", 
+            t.company_name_en as "company_name_en",
+            t.ceo_name as "ceo_name",
+            t.company_address as "company_address",
+            t.company_zip_code as "company_zip_code",
+            t.business_type as "business_type",
+            t.business_item as "business_item",
+            t.phone_number as "phone_number",
+            t.fax_number as "fax_number",
+            t.email as "email",
+            t.homepage as "homepage",
+            t.memo as "memo",
+            t.event as "event",
+        FROM tbl_account_info t`);
+        if(accounts.rows.length >0) {
+            const account = accounts.rows[0];
+            res.json(account);
+            res.end();
+        }else{
+            res.json({message:'no data'});        
+            res.end();
+        }
+
+    }catch(err){
+        console.error(err);
+        res.json({message:err.message});        
         res.end();
     }
 });
