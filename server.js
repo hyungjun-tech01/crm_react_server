@@ -2909,6 +2909,7 @@ app.post('/modifyUser', async(req, res) => {
         action_type                = defaultNull(req.body.action_type),
         userId                     = defaultNull(req.body.userId),
         userName                   = defaultNull(req.body.userName),
+        password                   = defaultNull(req.body.password),
         current_password           = defaultNull(req.body.current_password),
         change_password            = defaultNull(req.body.change_password),
         mobileNumber               = defaultNull(req.body.mobileNumber),
@@ -2965,6 +2966,7 @@ app.post('/modifyUser', async(req, res) => {
                     memo,
                     is_work,
                     job_type,
+                    user_role
                 )values( $1,$2,$3,$4,$5,$6,$7,$8,$9,$10, $11, $12, $13 )
             `,[userId, 
                userName,
