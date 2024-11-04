@@ -73,7 +73,6 @@ app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded( {extended : false } ));
 app.use('/uploads', express.static('uploads'));
-app.use('/files', express.static('files'));
 
 // req body 전송 한계 용량을 늘려
 //app.use(express.json({ limit: '25mb' })); // JSON 데이터에 대해 50MB로 제한
@@ -1356,7 +1355,15 @@ app.post('/modifyCompany', async(req, res) => {
                 sales_resource,application_engineer,region,site_id, v_company_code
             ]);
            // update 
-        }  
+        }
+        if (action_type === 'DELETE') {
+            const response = await pool.query(`
+                delete from tbl_company_info 
+                where company_code = $1
+                and modify_user = $2;
+            `,[v_company_code, modify_user
+            ]);  // delete 
+        }
         const out_company_code = v_company_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
         const out_create_date = action_type === 'ADD' ? currentDate.currdate:"";
