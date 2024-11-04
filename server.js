@@ -97,6 +97,7 @@ app.post('/upload', upload.single('file'),async (req, res) => {
     const fileData = req.file.buffer; // 이미지 데이터가 여기에 들어온다고 가정합니다.
     const fileName = req.body.fileName;
     const dirname = uuid();
+    const encodedName = encodeURI(fileName);
     let dirName = path.join('uploads', dirname);
 
     try {
@@ -109,11 +110,11 @@ app.post('/upload', upload.single('file'),async (req, res) => {
     // 이미지를 저장할 경로 및 파일 이름
     
     const filePath = path.join(dirName, fileName);
-    let ret = {dirName:dirname, fileName:fileName, fileExt:fileExt, url:filePath};
+    const fileUrl = path.join(dirName, encodedName);
+    let ret = {dirName:dirname, fileName:fileName, fileExt:fileExt, url:fileUrl};
 
     try {
         // 이미지 데이터를 바이너리로 변환하여 파일에 저장 (동기) -> 앞에 await를 붙히면 프로세스가 안 끝남.
-        console.log('파일 저장 성공:', filePath); 
         writeFileAsync(filePath, fileData, 'binary');
 
         // if(imageWidth) {
