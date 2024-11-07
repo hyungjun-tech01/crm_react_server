@@ -1360,7 +1360,7 @@ app.post('/modifyCompany', async(req, res) => {
             const response = await pool.query(`
                 delete from tbl_company_info 
                 where company_code = $1
-                and modify_user = $2;
+                and create_user = $2;
             `,[v_company_code, modify_user
             ]);  // delete 
         }
