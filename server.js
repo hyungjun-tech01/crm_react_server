@@ -1592,7 +1592,15 @@ app.post('/modifyLead', async(req, res) => {
                 email2                  ,
                 v_lead_code
             ]);
-        }      
+        }
+        if (action_type === 'DELETE') {
+            const response = await pool.query(`
+            delete from tbl_lead_info 
+            where lead_code = $1
+            and create_user = $2;
+        `,[v_lead_code, modify_user
+        ]);  // delete 
+        }
 
 
      const out_lead_code = v_lead_code;
