@@ -1826,7 +1826,15 @@ app.post('/modifyConsult', async(req, res) => {
                 action_attachment_code  ,
                 v_consulting_code
             ]);
-        }      
+        }  
+        if (action_type === 'DELETE') {    
+            const response = await pool.query(`
+            delete from tbl_consulting_info 
+            where consulting_code = $1
+            and creator = $2;
+        `,[v_consulting_code, modify_user
+        ]);  // delete 
+        }
 
         const out_consulting_code = v_consulting_code;
         const out_create_user = action_type === 'ADD' ? modify_user : "";
