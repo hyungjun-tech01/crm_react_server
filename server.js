@@ -1654,6 +1654,7 @@ app.post('/modifyConsult', async(req, res) => {
         application_engineer    = defaultNull(req.body.application_engineer),
         request_attachment_code = defaultNull(req.body.request_attachment_code),
         action_attachment_code  = defaultNull(req.body.action_attachment_code),
+        memo  = defaultNull(req.body.memo),
         } = req.body;
 
     try{
@@ -1721,11 +1722,12 @@ app.post('/modifyConsult', async(req, res) => {
                 product_type            ,
                 application_engineer    ,
                 request_attachment_code ,
-                action_attachment_code
+                action_attachment_code  ,
+                memo
             )
              values(
                 $1,$2,$3::timestamp,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20::timestamp,$21,$22,
-                $23::timestamp,$24,$25, $26, $27);
+                $23::timestamp,$24,$25, $26, $27, $28);
             `,[ v_consulting_code,
                 lead_code               , 
                 receipt_date            , 
@@ -1752,7 +1754,8 @@ app.post('/modifyConsult', async(req, res) => {
                 product_type             ,
                 application_engineer     ,
                 request_attachment_code  ,
-                action_attachment_code
+                action_attachment_code   ,
+                memo
             ]);
         }
 
@@ -1798,8 +1801,9 @@ app.post('/modifyConsult', async(req, res) => {
                    product_type            = COALESCE($21, product_type),
                    application_engineer    = COALESCE($22, application_engineer),
                    request_attachment_code = COALESCE($23, request_attachment_code),
-                   action_attachment_code  = COALESCE($24, action_attachment_code)
-                where consulting_code = $25;
+                   action_attachment_code  = COALESCE($24, action_attachment_code) ,
+                   memo                    = COALESCE($25, memo) 
+                where consulting_code = $26;
             `,[lead_code               , 
                 receipt_date            , 
                 consulting_type         , 
@@ -1824,6 +1828,7 @@ app.post('/modifyConsult', async(req, res) => {
                 application_engineer    ,
                 request_attachment_code ,
                 action_attachment_code  ,
+                memo                    ,
                 v_consulting_code
             ]);
         }  

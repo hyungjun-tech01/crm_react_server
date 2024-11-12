@@ -2540,3 +2540,6 @@ creator                       varchar(50)
 
 --2024.10.05 , 관리자 여부 추가
 alter table tbl_user_info add user_role varchar(10);
+
+--2024.11.13 , tbl_consulting_info memo 추가 
+alter table tbl_consulting_info add memo text;
