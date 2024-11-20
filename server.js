@@ -3495,7 +3495,7 @@ app.get('/getAccountInfo', async(req, res) => {
             t.email as "email",
             t.homepage as "homepage",
             t.memo as "memo",
-            t.event as "event",
+            t.event as "event"
         FROM tbl_account_info t`);
         if(accounts.rows.length >0) {
             const account = accounts.rows[0];

@@ -2543,3 +2543,6 @@ alter table tbl_user_info add user_role varchar(10);
 
 --2024.11.13 , tbl_consulting_info memo 추가 
 alter table tbl_consulting_info add memo text;
+
+--2024.11.20 , tbl_account_info 오류 수정 
+alter table tbl_account_info rename column accound_code to account_code;
