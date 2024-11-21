@@ -3483,7 +3483,8 @@ app.get('/getAccountInfo', async(req, res) => {
     try{
         const accounts = await pool.query(`
         SELECT t.account_code as "account_code", 
-            t.business_registration_code as "business_registration_code", 
+            t.business_registration_code as "business_registration_code",
+            t.company_name as "company_name",
             t.company_name_en as "company_name_en",
             t.ceo_name as "ceo_name",
             t.company_address as "company_address",
