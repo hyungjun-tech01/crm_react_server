@@ -3477,6 +3477,25 @@ app.post('/getuser', async(req, res) => {
     }
 });
 
+//get all salesperson
+app.get('/getSalespersons', async(req, res) => {
+    console.log("[Get] current salespersons");
+    try{
+        const users = await pool.query(`
+            SELECT
+                t.user_id as "userId",
+                t.user_name as "userName"
+            FROM tbl_user_info t
+            WHERE t.job_type='SR' AND t.is_work='Y'
+            order by user_name asc`
+        );
+        res.json(users.rows);
+        res.end();
+    }catch(err){
+        throw new Error('Database Error :', err);
+    }
+});
+
 //get account info
 app.get('/getAccountInfo', async(req, res) => {
     console.log("[Get] account information");
@@ -3513,7 +3532,6 @@ app.get('/getAccountInfo', async(req, res) => {
         res.end();
     }
 });
-
 
 
 // password hash처리 임시 
